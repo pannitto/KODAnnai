@@ -6474,7 +6474,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     current: 263,
     next: 265,
     prev_name: "吹き抜け右手のドアを通る",
-    curr_name: "",
+    curr_name: "エレベーター奥へ左折する",
     next_name: "",
     image: "260_263_265.png",
   },
