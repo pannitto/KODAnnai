@@ -1,0 +1,2056 @@
+{
+  "total": 216,
+  "duplicates": [
+    {
+      "id": "1",
+      "count": 2,
+      "entries": [
+        {
+          "id": "1",
+          "locid": "1",
+          "name": "パンフレット配布所",
+          "organizer": "",
+          "line": 48
+        },
+        {
+          "id": "1",
+          "locid": "2",
+          "name": "パンフレット配布所",
+          "organizer": "",
+          "line": 49
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "count": 2,
+      "entries": [
+        {
+          "id": "2",
+          "locid": "2",
+          "name": "information",
+          "organizer": "",
+          "line": 57
+        },
+        {
+          "id": "2",
+          "locid": "3",
+          "name": "information",
+          "organizer": "",
+          "line": 58
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "count": 2,
+      "entries": [
+        {
+          "id": "3",
+          "locid": "3",
+          "name": "キャンパスMAP",
+          "organizer": "",
+          "line": 74
+        },
+        {
+          "id": "3",
+          "locid": "4",
+          "name": "キャンパスMAP",
+          "organizer": "",
+          "line": 75
+        }
+      ]
+    },
+    {
+      "id": "4",
+      "count": 2,
+      "entries": [
+        {
+          "id": "4",
+          "locid": "4",
+          "name": "正門",
+          "organizer": "",
+          "line": 83
+        },
+        {
+          "id": "4",
+          "locid": "5",
+          "name": "正門",
+          "organizer": "",
+          "line": 84
+        }
+      ]
+    },
+    {
+      "id": "5",
+      "count": 2,
+      "entries": [
+        {
+          "id": "5",
+          "locid": "5",
+          "name": "来場者アンケート景品配布所",
+          "organizer": "KODAIRA祭実行委員会",
+          "line": 92
+        },
+        {
+          "id": "5",
+          "locid": "6",
+          "name": "来場者アンケート景品配布所",
+          "organizer": "KODAIRA祭実行委員会",
+          "line": 93
+        }
+      ]
+    },
+    {
+      "id": "6",
+      "count": 2,
+      "entries": [
+        {
+          "id": "6",
+          "locid": "6",
+          "name": "パネルアート",
+          "organizer": "KODAIRA祭実行委員会",
+          "line": 101
+        },
+        {
+          "id": "6",
+          "locid": "7",
+          "name": "パネルアート",
+          "organizer": "KODAIRA祭実行委員会",
+          "line": 102
+        }
+      ]
+    },
+    {
+      "id": "7",
+      "count": 2,
+      "entries": [
+        {
+          "id": "7",
+          "locid": "7",
+          "name": "屋台王決定戦投票所",
+          "organizer": "KODAIRA祭実行委員会",
+          "line": 110
+        },
+        {
+          "id": "7",
+          "locid": "8",
+          "name": "屋台王決定戦投票所",
+          "organizer": "KODAIRA祭実行委員会",
+          "line": 111
+        }
+      ]
+    },
+    {
+      "id": "8",
+      "count": 2,
+      "entries": [
+        {
+          "id": "8",
+          "locid": "8",
+          "name": "",
+          "organizer": "1クラス",
+          "line": 120
+        },
+        {
+          "id": "8",
+          "locid": "9",
+          "name": "",
+          "organizer": "1クラス",
+          "line": 121
+        }
+      ]
+    },
+    {
+      "id": "9",
+      "count": 2,
+      "entries": [
+        {
+          "id": "9",
+          "locid": "9",
+          "name": "",
+          "organizer": "2クラス",
+          "line": 129
+        },
+        {
+          "id": "9",
+          "locid": "10",
+          "name": "",
+          "organizer": "2クラス",
+          "line": 130
+        }
+      ]
+    },
+    {
+      "id": "10",
+      "count": 2,
+      "entries": [
+        {
+          "id": "10",
+          "locid": "10",
+          "name": "",
+          "organizer": "3クラス",
+          "line": 138
+        },
+        {
+          "id": "10",
+          "locid": "11",
+          "name": "",
+          "organizer": "3クラス",
+          "line": 139
+        }
+      ]
+    },
+    {
+      "id": "11",
+      "count": 2,
+      "entries": [
+        {
+          "id": "11",
+          "locid": "11",
+          "name": "",
+          "organizer": "4クラス",
+          "line": 147
+        },
+        {
+          "id": "11",
+          "locid": "12",
+          "name": "",
+          "organizer": "4クラス",
+          "line": 148
+        }
+      ]
+    },
+    {
+      "id": "12",
+      "count": 2,
+      "entries": [
+        {
+          "id": "12",
+          "locid": "12",
+          "name": "",
+          "organizer": "5クラス",
+          "line": 156
+        },
+        {
+          "id": "12",
+          "locid": "13",
+          "name": "",
+          "organizer": "5クラス",
+          "line": 157
+        }
+      ]
+    },
+    {
+      "id": "13",
+      "count": 2,
+      "entries": [
+        {
+          "id": "13",
+          "locid": "13",
+          "name": "",
+          "organizer": "6クラス",
+          "line": 165
+        },
+        {
+          "id": "13",
+          "locid": "14",
+          "name": "",
+          "organizer": "6クラス",
+          "line": 166
+        }
+      ]
+    },
+    {
+      "id": "14",
+      "count": 2,
+      "entries": [
+        {
+          "id": "14",
+          "locid": "14",
+          "name": "",
+          "organizer": "7クラス",
+          "line": 174
+        },
+        {
+          "id": "14",
+          "locid": "15",
+          "name": "",
+          "organizer": "7クラス",
+          "line": 175
+        }
+      ]
+    },
+    {
+      "id": "15",
+      "count": 2,
+      "entries": [
+        {
+          "id": "15",
+          "locid": "15",
+          "name": "",
+          "organizer": "8クラス",
+          "line": 183
+        },
+        {
+          "id": "15",
+          "locid": "16",
+          "name": "",
+          "organizer": "8クラス",
+          "line": 184
+        }
+      ]
+    },
+    {
+      "id": "16",
+      "count": 2,
+      "entries": [
+        {
+          "id": "16",
+          "locid": "16",
+          "name": "",
+          "organizer": "9クラス",
+          "line": 192
+        },
+        {
+          "id": "16",
+          "locid": "17",
+          "name": "",
+          "organizer": "9クラス",
+          "line": 193
+        }
+      ]
+    },
+    {
+      "id": "17",
+      "count": 2,
+      "entries": [
+        {
+          "id": "17",
+          "locid": "17",
+          "name": "",
+          "organizer": "10クラス",
+          "line": 201
+        },
+        {
+          "id": "17",
+          "locid": "18",
+          "name": "",
+          "organizer": "10クラス",
+          "line": 202
+        }
+      ]
+    },
+    {
+      "id": "18",
+      "count": 2,
+      "entries": [
+        {
+          "id": "18",
+          "locid": "18",
+          "name": "",
+          "organizer": "11クラス",
+          "line": 210
+        },
+        {
+          "id": "18",
+          "locid": "19",
+          "name": "",
+          "organizer": "11クラス",
+          "line": 211
+        }
+      ]
+    },
+    {
+      "id": "19",
+      "count": 2,
+      "entries": [
+        {
+          "id": "19",
+          "locid": "19",
+          "name": "",
+          "organizer": "12クラス",
+          "line": 219
+        },
+        {
+          "id": "19",
+          "locid": "20",
+          "name": "",
+          "organizer": "12クラス",
+          "line": 220
+        }
+      ]
+    },
+    {
+      "id": "20",
+      "count": 2,
+      "entries": [
+        {
+          "id": "20",
+          "locid": "20",
+          "name": "",
+          "organizer": "13クラス",
+          "line": 228
+        },
+        {
+          "id": "20",
+          "locid": "21",
+          "name": "",
+          "organizer": "13クラス",
+          "line": 229
+        }
+      ]
+    },
+    {
+      "id": "21",
+      "count": 2,
+      "entries": [
+        {
+          "id": "21",
+          "locid": "21",
+          "name": "",
+          "organizer": "14クラス",
+          "line": 237
+        },
+        {
+          "id": "21",
+          "locid": "22",
+          "name": "",
+          "organizer": "14クラス",
+          "line": 238
+        }
+      ]
+    },
+    {
+      "id": "22",
+      "count": 2,
+      "entries": [
+        {
+          "id": "22",
+          "locid": "22",
+          "name": "",
+          "organizer": "15クラス",
+          "line": 246
+        },
+        {
+          "id": "22",
+          "locid": "23",
+          "name": "",
+          "organizer": "15クラス",
+          "line": 247
+        }
+      ]
+    },
+    {
+      "id": "23",
+      "count": 2,
+      "entries": [
+        {
+          "id": "23",
+          "locid": "23",
+          "name": "",
+          "organizer": "16クラス",
+          "line": 255
+        },
+        {
+          "id": "23",
+          "locid": "24",
+          "name": "",
+          "organizer": "16クラス",
+          "line": 256
+        }
+      ]
+    },
+    {
+      "id": "24",
+      "count": 2,
+      "entries": [
+        {
+          "id": "24",
+          "locid": "24",
+          "name": "",
+          "organizer": "17クラス",
+          "line": 264
+        },
+        {
+          "id": "24",
+          "locid": "25",
+          "name": "",
+          "organizer": "17クラス",
+          "line": 265
+        }
+      ]
+    },
+    {
+      "id": "25",
+      "count": 2,
+      "entries": [
+        {
+          "id": "25",
+          "locid": "25",
+          "name": "",
+          "organizer": "18クラス",
+          "line": 273
+        },
+        {
+          "id": "25",
+          "locid": "26",
+          "name": "",
+          "organizer": "18クラス",
+          "line": 274
+        }
+      ]
+    },
+    {
+      "id": "26",
+      "count": 2,
+      "entries": [
+        {
+          "id": "26",
+          "locid": "26",
+          "name": "",
+          "organizer": "19クラス",
+          "line": 282
+        },
+        {
+          "id": "26",
+          "locid": "27",
+          "name": "",
+          "organizer": "19クラス",
+          "line": 283
+        }
+      ]
+    },
+    {
+      "id": "27",
+      "count": 2,
+      "entries": [
+        {
+          "id": "27",
+          "locid": "27",
+          "name": "",
+          "organizer": "20クラス",
+          "line": 291
+        },
+        {
+          "id": "27",
+          "locid": "28",
+          "name": "",
+          "organizer": "20クラス",
+          "line": 292
+        }
+      ]
+    },
+    {
+      "id": "28",
+      "count": 2,
+      "entries": [
+        {
+          "id": "28",
+          "locid": "28",
+          "name": "",
+          "organizer": "21クラス",
+          "line": 300
+        },
+        {
+          "id": "28",
+          "locid": "29",
+          "name": "",
+          "organizer": "21クラス",
+          "line": 301
+        }
+      ]
+    },
+    {
+      "id": "29",
+      "count": 2,
+      "entries": [
+        {
+          "id": "29",
+          "locid": "29",
+          "name": "",
+          "organizer": "22クラス",
+          "line": 309
+        },
+        {
+          "id": "29",
+          "locid": "30",
+          "name": "",
+          "organizer": "22クラス",
+          "line": 310
+        }
+      ]
+    },
+    {
+      "id": "30",
+      "count": 2,
+      "entries": [
+        {
+          "id": "30",
+          "locid": "30",
+          "name": "",
+          "organizer": "23クラス",
+          "line": 318
+        },
+        {
+          "id": "30",
+          "locid": "31",
+          "name": "",
+          "organizer": "23クラス",
+          "line": 319
+        }
+      ]
+    },
+    {
+      "id": "31",
+      "count": 2,
+      "entries": [
+        {
+          "id": "31",
+          "locid": "31",
+          "name": "",
+          "organizer": "24クラス",
+          "line": 327
+        },
+        {
+          "id": "31",
+          "locid": "32",
+          "name": "",
+          "organizer": "24クラス",
+          "line": 328
+        }
+      ]
+    },
+    {
+      "id": "32",
+      "count": 2,
+      "entries": [
+        {
+          "id": "32",
+          "locid": "32",
+          "name": "",
+          "organizer": "25クラス",
+          "line": 336
+        },
+        {
+          "id": "32",
+          "locid": "33",
+          "name": "",
+          "organizer": "25クラス",
+          "line": 337
+        }
+      ]
+    },
+    {
+      "id": "33",
+      "count": 2,
+      "entries": [
+        {
+          "id": "33",
+          "locid": "33",
+          "name": "ゴミステーション",
+          "organizer": "",
+          "line": 345
+        },
+        {
+          "id": "33",
+          "locid": "34",
+          "name": "ゴミステーション",
+          "organizer": "",
+          "line": 346
+        }
+      ]
+    },
+    {
+      "id": "34",
+      "count": 2,
+      "entries": [
+        {
+          "id": "34",
+          "locid": "34",
+          "name": "KODAステージ",
+          "organizer": "",
+          "line": 363
+        },
+        {
+          "id": "34",
+          "locid": "35",
+          "name": "KODAステージ",
+          "organizer": "",
+          "line": 364
+        }
+      ]
+    },
+    {
+      "id": "35",
+      "count": 2,
+      "entries": [
+        {
+          "id": "35",
+          "locid": "35",
+          "name": "",
+          "organizer": "26クラス",
+          "line": 374
+        },
+        {
+          "id": "35",
+          "locid": "36",
+          "name": "",
+          "organizer": "26クラス",
+          "line": 375
+        }
+      ]
+    },
+    {
+      "id": "36",
+      "count": 2,
+      "entries": [
+        {
+          "id": "36",
+          "locid": "36",
+          "name": "",
+          "organizer": "27クラス",
+          "line": 383
+        },
+        {
+          "id": "36",
+          "locid": "37",
+          "name": "",
+          "organizer": "27クラス",
+          "line": 384
+        }
+      ]
+    },
+    {
+      "id": "37",
+      "count": 2,
+      "entries": [
+        {
+          "id": "37",
+          "locid": "37",
+          "name": "",
+          "organizer": "28クラス",
+          "line": 392
+        },
+        {
+          "id": "37",
+          "locid": "38",
+          "name": "",
+          "organizer": "28クラス",
+          "line": 393
+        }
+      ]
+    },
+    {
+      "id": "38",
+      "count": 2,
+      "entries": [
+        {
+          "id": "38",
+          "locid": "38",
+          "name": "",
+          "organizer": "29クラス",
+          "line": 401
+        },
+        {
+          "id": "38",
+          "locid": "39",
+          "name": "",
+          "organizer": "29クラス",
+          "line": 402
+        }
+      ]
+    },
+    {
+      "id": "39",
+      "count": 2,
+      "entries": [
+        {
+          "id": "39",
+          "locid": "39",
+          "name": "",
+          "organizer": "30クラス",
+          "line": 410
+        },
+        {
+          "id": "39",
+          "locid": "40",
+          "name": "",
+          "organizer": "30クラス",
+          "line": 411
+        }
+      ]
+    },
+    {
+      "id": "40",
+      "count": 2,
+      "entries": [
+        {
+          "id": "40",
+          "locid": "40",
+          "name": "",
+          "organizer": "31クラス",
+          "line": 419
+        },
+        {
+          "id": "40",
+          "locid": "41",
+          "name": "",
+          "organizer": "31クラス",
+          "line": 420
+        }
+      ]
+    },
+    {
+      "id": "41",
+      "count": 2,
+      "entries": [
+        {
+          "id": "41",
+          "locid": "41",
+          "name": "フィールド",
+          "organizer": "",
+          "line": 429
+        },
+        {
+          "id": "41",
+          "locid": "42",
+          "name": "フィールド",
+          "organizer": "",
+          "line": 430
+        }
+      ]
+    },
+    {
+      "id": "42",
+      "count": 2,
+      "entries": [
+        {
+          "id": "42",
+          "locid": "42",
+          "name": "ゴミステーション",
+          "organizer": "",
+          "line": 438
+        },
+        {
+          "id": "42",
+          "locid": "43",
+          "name": "ゴミステーション",
+          "organizer": "",
+          "line": 439
+        }
+      ]
+    },
+    {
+      "id": "43",
+      "count": 2,
+      "entries": [
+        {
+          "id": "43",
+          "locid": "43",
+          "name": "ファミリーエリア休憩所(晴天時のみ)",
+          "organizer": "",
+          "line": 456
+        },
+        {
+          "id": "43",
+          "locid": "44",
+          "name": "ファミリーエリア休憩所(晴天時のみ)",
+          "organizer": "",
+          "line": 457
+        }
+      ]
+    },
+    {
+      "id": "44",
+      "count": 2,
+      "entries": [
+        {
+          "id": "44",
+          "locid": "44",
+          "name": "顔出しパネル",
+          "organizer": "KODAIRA祭実行委員会",
+          "line": 465
+        },
+        {
+          "id": "44",
+          "locid": "45",
+          "name": "顔出しパネル",
+          "organizer": "KODAIRA祭実行委員会",
+          "line": 466
+        }
+      ]
+    },
+    {
+      "id": "45",
+      "count": 2,
+      "entries": [
+        {
+          "id": "45",
+          "locid": "45",
+          "name": "スノードーム工房",
+          "organizer": "KODAIRA祭実行委員会",
+          "line": 474
+        },
+        {
+          "id": "45",
+          "locid": "46",
+          "name": "スノードーム工房",
+          "organizer": "KODAIRA祭実行委員会",
+          "line": 475
+        }
+      ]
+    },
+    {
+      "id": "46",
+      "count": 2,
+      "entries": [
+        {
+          "id": "46",
+          "locid": "46",
+          "name": "ちびっこ館トイレ",
+          "organizer": "",
+          "line": 484
+        },
+        {
+          "id": "46",
+          "locid": "47",
+          "name": "ちびっこ館トイレ",
+          "organizer": "",
+          "line": 485
+        }
+      ]
+    },
+    {
+      "id": "47",
+      "count": 2,
+      "entries": [
+        {
+          "id": "47",
+          "locid": "47",
+          "name": "ベビーカー預かり所",
+          "organizer": "",
+          "line": 493
+        },
+        {
+          "id": "47",
+          "locid": "48",
+          "name": "ベビーカー預かり所",
+          "organizer": "",
+          "line": 494
+        }
+      ]
+    },
+    {
+      "id": "48",
+      "count": 2,
+      "entries": [
+        {
+          "id": "48",
+          "locid": "48",
+          "name": "救護室",
+          "organizer": "",
+          "line": 502
+        },
+        {
+          "id": "48",
+          "locid": "49",
+          "name": "救護室",
+          "organizer": "",
+          "line": 503
+        }
+      ]
+    },
+    {
+      "id": "49",
+      "count": 2,
+      "entries": [
+        {
+          "id": "49",
+          "locid": "49",
+          "name": "授乳室",
+          "organizer": "",
+          "line": 511
+        },
+        {
+          "id": "49",
+          "locid": "50",
+          "name": "授乳室",
+          "organizer": "",
+          "line": 512
+        }
+      ]
+    },
+    {
+      "id": "50",
+      "count": 2,
+      "entries": [
+        {
+          "id": "50",
+          "locid": "50",
+          "name": "おむつ替え室",
+          "organizer": "",
+          "line": 520
+        },
+        {
+          "id": "50",
+          "locid": "51",
+          "name": "おむつ替え室",
+          "organizer": "",
+          "line": 521
+        }
+      ]
+    },
+    {
+      "id": "51",
+      "count": 5,
+      "entries": [
+        {
+          "id": "51",
+          "locid": "51",
+          "name": "アトラクション企画",
+          "organizer": "KODAIRA祭実行委員会",
+          "line": 529
+        },
+        {
+          "id": "51",
+          "locid": "51",
+          "name": "アトラクション企画",
+          "organizer": "KODAIRA祭実行委員会",
+          "line": 530
+        },
+        {
+          "id": "51",
+          "locid": "51",
+          "name": "工作企画",
+          "organizer": "KODAIRA祭実行委員会",
+          "line": 539
+        },
+        {
+          "id": "51",
+          "locid": "51",
+          "name": "ショー企画",
+          "organizer": "KODAIRA祭実行委員会",
+          "line": 548
+        },
+        {
+          "id": "51",
+          "locid": "55",
+          "name": "絵本企画",
+          "organizer": "KODAIRA祭実行委員会",
+          "line": 557
+        }
+      ]
+    },
+    {
+      "id": "55",
+      "count": 2,
+      "entries": [
+        {
+          "id": "55",
+          "locid": "55",
+          "name": "モザイクアート",
+          "organizer": "KODAIRA祭実行委員会",
+          "line": 566
+        },
+        {
+          "id": "55",
+          "locid": "56",
+          "name": "モザイクアート",
+          "organizer": "KODAIRA祭実行委員会",
+          "line": 567
+        }
+      ]
+    },
+    {
+      "id": "56",
+      "count": 2,
+      "entries": [
+        {
+          "id": "56",
+          "locid": "56",
+          "name": "企画本館案内MAP",
+          "organizer": "",
+          "line": 575
+        },
+        {
+          "id": "56",
+          "locid": "57",
+          "name": "企画本館案内MAP",
+          "organizer": "",
+          "line": 576
+        }
+      ]
+    },
+    {
+      "id": "57",
+      "count": 2,
+      "entries": [
+        {
+          "id": "57",
+          "locid": "57",
+          "name": "オブジェ",
+          "organizer": "KODAIRA祭実行委員会",
+          "line": 584
+        },
+        {
+          "id": "57",
+          "locid": "58",
+          "name": "オブジェ",
+          "organizer": "KODAIRA祭実行委員会",
+          "line": 585
+        }
+      ]
+    },
+    {
+      "id": "58",
+      "count": 2,
+      "entries": [
+        {
+          "id": "58",
+          "locid": "58",
+          "name": "飲料販売所",
+          "organizer": "",
+          "line": 593
+        },
+        {
+          "id": "58",
+          "locid": "59",
+          "name": "飲料販売所",
+          "organizer": "",
+          "line": 594
+        }
+      ]
+    },
+    {
+      "id": "59",
+      "count": 2,
+      "entries": [
+        {
+          "id": "59",
+          "locid": "59",
+          "name": "飲食スペース",
+          "organizer": "",
+          "line": 602
+        },
+        {
+          "id": "59",
+          "locid": "60",
+          "name": "飲食スペース",
+          "organizer": "",
+          "line": 603
+        }
+      ]
+    },
+    {
+      "id": "60",
+      "count": 3,
+      "entries": [
+        {
+          "id": "60",
+          "locid": "60",
+          "name": "企画本館1F多目的トイレ",
+          "organizer": "",
+          "line": 612
+        },
+        {
+          "id": "60",
+          "locid": "60",
+          "name": "企画本館1F多目的トイレ",
+          "organizer": "",
+          "line": 613
+        },
+        {
+          "id": "60",
+          "locid": "62",
+          "name": "企画本館1F男女トイレ①",
+          "organizer": "",
+          "line": 622
+        }
+      ]
+    },
+    {
+      "id": "62",
+      "count": 2,
+      "entries": [
+        {
+          "id": "62",
+          "locid": "62",
+          "name": "",
+          "organizer": "チーム・えんのした",
+          "line": 630
+        },
+        {
+          "id": "62",
+          "locid": "63",
+          "name": "",
+          "organizer": "チーム・えんのした",
+          "line": 631
+        }
+      ]
+    },
+    {
+      "id": "63",
+      "count": 2,
+      "entries": [
+        {
+          "id": "63",
+          "locid": "63",
+          "name": "本館ステージ(雨天時)",
+          "organizer": "",
+          "line": 639
+        },
+        {
+          "id": "63",
+          "locid": "64",
+          "name": "本館ステージ(雨天時)",
+          "organizer": "",
+          "line": 640
+        }
+      ]
+    },
+    {
+      "id": "64",
+      "count": 2,
+      "entries": [
+        {
+          "id": "64",
+          "locid": "64",
+          "name": "企画本館1F男女トイレ②",
+          "organizer": "",
+          "line": 648
+        },
+        {
+          "id": "64",
+          "locid": "65",
+          "name": "企画本館1F男女トイレ②",
+          "organizer": "",
+          "line": 649
+        }
+      ]
+    },
+    {
+      "id": "65",
+      "count": 2,
+      "entries": [
+        {
+          "id": "65",
+          "locid": "65",
+          "name": "",
+          "organizer": "ストリートダンスサークル CHERISH",
+          "line": 657
+        },
+        {
+          "id": "65",
+          "locid": "66",
+          "name": "",
+          "organizer": "ストリートダンスサークル CHERISH",
+          "line": 658
+        }
+      ]
+    },
+    {
+      "id": "66",
+      "count": 2,
+      "entries": [
+        {
+          "id": "66",
+          "locid": "66",
+          "name": "",
+          "organizer": "一橋大学軽音楽部",
+          "line": 666
+        },
+        {
+          "id": "66",
+          "locid": "67",
+          "name": "",
+          "organizer": "一橋大学軽音楽部",
+          "line": 667
+        }
+      ]
+    },
+    {
+      "id": "67",
+      "count": 2,
+      "entries": [
+        {
+          "id": "67",
+          "locid": "67",
+          "name": "",
+          "organizer": "一橋大学・津田塾大学写真部",
+          "line": 675
+        },
+        {
+          "id": "67",
+          "locid": "68",
+          "name": "",
+          "organizer": "一橋大学・津田塾大学写真部",
+          "line": 676
+        }
+      ]
+    },
+    {
+      "id": "68",
+      "count": 2,
+      "entries": [
+        {
+          "id": "68",
+          "locid": "68",
+          "name": "",
+          "organizer": "ゆびっこ",
+          "line": 684
+        },
+        {
+          "id": "68",
+          "locid": "69",
+          "name": "",
+          "organizer": "ゆびっこ",
+          "line": 685
+        }
+      ]
+    },
+    {
+      "id": "69",
+      "count": 2,
+      "entries": [
+        {
+          "id": "69",
+          "locid": "69",
+          "name": "",
+          "organizer": "一橋大学モダンジャズ研究会",
+          "line": 693
+        },
+        {
+          "id": "69",
+          "locid": "70",
+          "name": "",
+          "organizer": "一橋大学モダンジャズ研究会",
+          "line": 694
+        }
+      ]
+    },
+    {
+      "id": "70",
+      "count": 2,
+      "entries": [
+        {
+          "id": "70",
+          "locid": "70",
+          "name": "",
+          "organizer": "パフォーマンスサークルまれひと",
+          "line": 702
+        },
+        {
+          "id": "70",
+          "locid": "71",
+          "name": "",
+          "organizer": "パフォーマンスサークルまれひと",
+          "line": 703
+        }
+      ]
+    },
+    {
+      "id": "71",
+      "count": 2,
+      "entries": [
+        {
+          "id": "71",
+          "locid": "71",
+          "name": "",
+          "organizer": "ボードゲームサークルJuego",
+          "line": 711
+        },
+        {
+          "id": "71",
+          "locid": "72",
+          "name": "",
+          "organizer": "ボードゲームサークルJuego",
+          "line": 712
+        }
+      ]
+    },
+    {
+      "id": "72",
+      "count": 2,
+      "entries": [
+        {
+          "id": "72",
+          "locid": "72",
+          "name": "",
+          "organizer": "一橋大学アカペラサークルThe First Cry",
+          "line": 720
+        },
+        {
+          "id": "72",
+          "locid": "73",
+          "name": "",
+          "organizer": "一橋大学アカペラサークルThe First Cry",
+          "line": 721
+        }
+      ]
+    },
+    {
+      "id": "73",
+      "count": 2,
+      "entries": [
+        {
+          "id": "73",
+          "locid": "73",
+          "name": "企画本館2F男女トイレ",
+          "organizer": "",
+          "line": 729
+        },
+        {
+          "id": "73",
+          "locid": "74",
+          "name": "企画本館2F男女トイレ",
+          "organizer": "",
+          "line": 730
+        }
+      ]
+    },
+    {
+      "id": "74",
+      "count": 2,
+      "entries": [
+        {
+          "id": "74",
+          "locid": "74",
+          "name": "",
+          "organizer": "一橋いしぶみの会 協力 一橋新聞部",
+          "line": 738
+        },
+        {
+          "id": "74",
+          "locid": "75",
+          "name": "",
+          "organizer": "一橋いしぶみの会 協力 一橋新聞部",
+          "line": 739
+        }
+      ]
+    },
+    {
+      "id": "75",
+      "count": 4,
+      "entries": [
+        {
+          "id": "75",
+          "locid": "75",
+          "name": "カジノ企画",
+          "organizer": "KODAIRA祭実行委員会",
+          "line": 747
+        },
+        {
+          "id": "75",
+          "locid": "76",
+          "name": "カジノ企画",
+          "organizer": "KODAIRA祭実行委員会",
+          "line": 748
+        },
+        {
+          "id": "75",
+          "locid": "75",
+          "name": "",
+          "organizer": "一橋大学フォークソングクラブ",
+          "line": 774
+        },
+        {
+          "id": "75",
+          "locid": "76",
+          "name": "",
+          "organizer": "一橋大学フォークソングクラブ",
+          "line": 775
+        }
+      ]
+    },
+    {
+      "id": "76",
+      "count": 4,
+      "entries": [
+        {
+          "id": "76",
+          "locid": "76",
+          "name": "ミステリーカフェ",
+          "organizer": "KODAIRA祭実行委員会",
+          "line": 756
+        },
+        {
+          "id": "76",
+          "locid": "77",
+          "name": "ミステリーカフェ",
+          "organizer": "KODAIRA祭実行委員会",
+          "line": 757
+        },
+        {
+          "id": "76",
+          "locid": "76",
+          "name": "",
+          "organizer": "一橋大学表千家茶道部",
+          "line": 783
+        },
+        {
+          "id": "76",
+          "locid": "77",
+          "name": "",
+          "organizer": "一橋大学表千家茶道部",
+          "line": 784
+        }
+      ]
+    },
+    {
+      "id": "77",
+      "count": 4,
+      "entries": [
+        {
+          "id": "77",
+          "locid": "77",
+          "name": "コダッチャ",
+          "organizer": "KODAIRA祭実行委員会",
+          "line": 765
+        },
+        {
+          "id": "77",
+          "locid": "75",
+          "name": "コダッチャ",
+          "organizer": "KODAIRA祭実行委員会",
+          "line": 766
+        },
+        {
+          "id": "77",
+          "locid": "77",
+          "name": "",
+          "organizer": "一橋創作同好会",
+          "line": 792
+        },
+        {
+          "id": "77",
+          "locid": "78",
+          "name": "",
+          "organizer": "一橋創作同好会",
+          "line": 793
+        }
+      ]
+    },
+    {
+      "id": "78",
+      "count": 2,
+      "entries": [
+        {
+          "id": "78",
+          "locid": "78",
+          "name": "",
+          "organizer": "一橋いしぶみの会 協力 一橋新聞部",
+          "line": 801
+        },
+        {
+          "id": "78",
+          "locid": "79",
+          "name": "",
+          "organizer": "一橋いしぶみの会 協力 一橋新聞部",
+          "line": 802
+        }
+      ]
+    },
+    {
+      "id": "79",
+      "count": 2,
+      "entries": [
+        {
+          "id": "79",
+          "locid": "79",
+          "name": "",
+          "organizer": "一橋・津田塾大学美術部",
+          "line": 810
+        },
+        {
+          "id": "79",
+          "locid": "80",
+          "name": "",
+          "organizer": "一橋・津田塾大学美術部",
+          "line": 811
+        }
+      ]
+    },
+    {
+      "id": "80",
+      "count": 2,
+      "entries": [
+        {
+          "id": "80",
+          "locid": "80",
+          "name": "",
+          "organizer": "SURREAL",
+          "line": 819
+        },
+        {
+          "id": "80",
+          "locid": "81",
+          "name": "",
+          "organizer": "SURREAL",
+          "line": 820
+        }
+      ]
+    },
+    {
+      "id": "81",
+      "count": 2,
+      "entries": [
+        {
+          "id": "81",
+          "locid": "81",
+          "name": "企画本館3F男女トイレ",
+          "organizer": "",
+          "line": 828
+        },
+        {
+          "id": "81",
+          "locid": "82",
+          "name": "企画本館3F男女トイレ",
+          "organizer": "",
+          "line": 829
+        }
+      ]
+    },
+    {
+      "id": "82",
+      "count": 2,
+      "entries": [
+        {
+          "id": "82",
+          "locid": "82",
+          "name": "",
+          "organizer": "一橋津田塾Unplugged",
+          "line": 837
+        },
+        {
+          "id": "82",
+          "locid": "83",
+          "name": "",
+          "organizer": "一橋津田塾Unplugged",
+          "line": 838
+        }
+      ]
+    },
+    {
+      "id": "83",
+      "count": 2,
+      "entries": [
+        {
+          "id": "83",
+          "locid": "83",
+          "name": "受験生相談室",
+          "organizer": "KODAIRA祭実行委員会",
+          "line": 846
+        },
+        {
+          "id": "83",
+          "locid": "84",
+          "name": "受験生相談室",
+          "organizer": "KODAIRA祭実行委員会",
+          "line": 847
+        }
+      ]
+    },
+    {
+      "id": "84",
+      "count": 3,
+      "entries": [
+        {
+          "id": "84",
+          "locid": "84",
+          "name": "一橋大学入試答案実況中継&歴代の一橋入試",
+          "organizer": "KODAIRA祭実行委員会",
+          "line": 855
+        },
+        {
+          "id": "84",
+          "locid": "84",
+          "name": "一橋大学入試答案実況中継&歴代の一橋入試",
+          "organizer": "KODAIRA祭実行委員会",
+          "line": 856
+        },
+        {
+          "id": "84",
+          "locid": "86",
+          "name": "参考書フリーマーケット",
+          "organizer": "KODAIRA祭実行委員会",
+          "line": 865
+        }
+      ]
+    },
+    {
+      "id": "86",
+      "count": 4,
+      "entries": [
+        {
+          "id": "86",
+          "locid": "86",
+          "name": "KODA模試配布",
+          "organizer": "KODAIRA祭実行委員会",
+          "line": 873
+        },
+        {
+          "id": "86",
+          "locid": "86",
+          "name": "KODA模試配布",
+          "organizer": "KODAIRA祭実行委員会",
+          "line": 874
+        },
+        {
+          "id": "86",
+          "locid": "86",
+          "name": "受験生応援冊子「黄本配布」",
+          "organizer": "KODAIRA祭実行委員会",
+          "line": 883
+        },
+        {
+          "id": "86",
+          "locid": "89",
+          "name": "受験資料&参考書の展示",
+          "organizer": "KODAIRA祭実行委員会",
+          "line": 892
+        }
+      ]
+    },
+    {
+      "id": "89",
+      "count": 2,
+      "entries": [
+        {
+          "id": "89",
+          "locid": "89",
+          "name": "一橋大学入試徹底解剖LIVE",
+          "organizer": "KODAIRA祭実行委員会",
+          "line": 900
+        },
+        {
+          "id": "89",
+          "locid": "90",
+          "name": "一橋大学入試徹底解剖LIVE",
+          "organizer": "KODAIRA祭実行委員会",
+          "line": 901
+        }
+      ]
+    },
+    {
+      "id": "90",
+      "count": 2,
+      "entries": [
+        {
+          "id": "90",
+          "locid": "90",
+          "name": "企画本館4F男女トイレ",
+          "organizer": "",
+          "line": 909
+        },
+        {
+          "id": "90",
+          "locid": "91",
+          "name": "企画本館4F男女トイレ",
+          "organizer": "",
+          "line": 910
+        }
+      ]
+    },
+    {
+      "id": "91",
+      "count": 2,
+      "entries": [
+        {
+          "id": "91",
+          "locid": "91",
+          "name": "ひとつなびLounge",
+          "organizer": "KODAIRA祭実行委員会",
+          "line": 919
+        },
+        {
+          "id": "91",
+          "locid": "92",
+          "name": "ひとつなびLounge",
+          "organizer": "KODAIRA祭実行委員会",
+          "line": 920
+        }
+      ]
+    },
+    {
+      "id": "92",
+      "count": 2,
+      "entries": [
+        {
+          "id": "92",
+          "locid": "92",
+          "name": "企画別館多目的トイレ",
+          "organizer": "",
+          "line": 928
+        },
+        {
+          "id": "92",
+          "locid": "93",
+          "name": "企画別館多目的トイレ",
+          "organizer": "",
+          "line": 929
+        }
+      ]
+    },
+    {
+      "id": "93",
+      "count": 2,
+      "entries": [
+        {
+          "id": "93",
+          "locid": "93",
+          "name": "企画別館男女トイレ",
+          "organizer": "",
+          "line": 937
+        },
+        {
+          "id": "93",
+          "locid": "94",
+          "name": "企画別館男女トイレ",
+          "organizer": "",
+          "line": 938
+        }
+      ]
+    },
+    {
+      "id": "94",
+      "count": 2,
+      "entries": [
+        {
+          "id": "94",
+          "locid": "94",
+          "name": "",
+          "organizer": "一橋植樹会",
+          "line": 946
+        },
+        {
+          "id": "94",
+          "locid": "95",
+          "name": "",
+          "organizer": "一橋植樹会",
+          "line": 947
+        }
+      ]
+    },
+    {
+      "id": "95",
+      "count": 2,
+      "entries": [
+        {
+          "id": "95",
+          "locid": "95",
+          "name": "",
+          "organizer": "一橋大学管弦楽団",
+          "line": 955
+        },
+        {
+          "id": "95",
+          "locid": "96",
+          "name": "",
+          "organizer": "一橋大学管弦楽団",
+          "line": 956
+        }
+      ]
+    },
+    {
+      "id": "96",
+      "count": 2,
+      "entries": [
+        {
+          "id": "96",
+          "locid": "96",
+          "name": "",
+          "organizer": "一橋大学淡成書道会",
+          "line": 964
+        },
+        {
+          "id": "96",
+          "locid": "97",
+          "name": "",
+          "organizer": "一橋大学淡成書道会",
+          "line": 965
+        }
+      ]
+    },
+    {
+      "id": "97",
+      "count": 2,
+      "entries": [
+        {
+          "id": "97",
+          "locid": "97",
+          "name": "企画別館2F男女トイレ",
+          "organizer": "",
+          "line": 973
+        },
+        {
+          "id": "97",
+          "locid": "98",
+          "name": "企画別館2F男女トイレ",
+          "organizer": "",
+          "line": 974
+        }
+      ]
+    },
+    {
+      "id": "98",
+      "count": 2,
+      "entries": [
+        {
+          "id": "98",
+          "locid": "98",
+          "name": "",
+          "organizer": "一橋大学お笑いサークルIOK",
+          "line": 982
+        },
+        {
+          "id": "98",
+          "locid": "99",
+          "name": "",
+          "organizer": "一橋大学お笑いサークルIOK",
+          "line": 983
+        }
+      ]
+    },
+    {
+      "id": "99",
+      "count": 2,
+      "entries": [
+        {
+          "id": "99",
+          "locid": "99",
+          "name": "メインステージ前休憩所",
+          "organizer": "",
+          "line": 992
+        },
+        {
+          "id": "99",
+          "locid": "100",
+          "name": "メインステージ前休憩所",
+          "organizer": "",
+          "line": 993
+        }
+      ]
+    },
+    {
+      "id": "100",
+      "count": 2,
+      "entries": [
+        {
+          "id": "100",
+          "locid": "100",
+          "name": "オブジェ",
+          "organizer": "KODAIRA祭実行委員会",
+          "line": 1001
+        },
+        {
+          "id": "100",
+          "locid": "101",
+          "name": "オブジェ",
+          "organizer": "KODAIRA祭実行委員会",
+          "line": 1002
+        }
+      ]
+    },
+    {
+      "id": "101",
+      "count": 2,
+      "entries": [
+        {
+          "id": "101",
+          "locid": "101",
+          "name": "ゴミステーション",
+          "organizer": "",
+          "line": 1010
+        },
+        {
+          "id": "101",
+          "locid": null,
+          "name": "ゴミステーション",
+          "organizer": "",
+          "line": 1011
+        }
+      ]
+    },
+    {
+      "id": "m",
+      "count": 2,
+      "entries": [
+        {
+          "id": "m",
+          "locid": "m",
+          "name": "最寄りの男子トイレ",
+          "organizer": "",
+          "line": 6
+        },
+        {
+          "id": "m",
+          "locid": "f",
+          "name": "最寄りの男子トイレ",
+          "organizer": "",
+          "line": 7
+        }
+      ]
+    },
+    {
+      "id": "f",
+      "count": 2,
+      "entries": [
+        {
+          "id": "f",
+          "locid": "f",
+          "name": "最寄りの女子トイレ",
+          "organizer": "",
+          "line": 17
+        },
+        {
+          "id": "f",
+          "locid": "g",
+          "name": "最寄りの女子トイレ",
+          "organizer": "",
+          "line": 18
+        }
+      ]
+    },
+    {
+      "id": "g",
+      "count": 2,
+      "entries": [
+        {
+          "id": "g",
+          "locid": "g",
+          "name": "最寄りのゴミステーション",
+          "organizer": "",
+          "line": 28
+        },
+        {
+          "id": "g",
+          "locid": "r",
+          "name": "最寄りのゴミステーション",
+          "organizer": "",
+          "line": 29
+        }
+      ]
+    },
+    {
+      "id": "r",
+      "count": 2,
+      "entries": [
+        {
+          "id": "r",
+          "locid": "r",
+          "name": "最寄りの飲食スペース・休憩所",
+          "organizer": "",
+          "line": 38
+        },
+        {
+          "id": "r",
+          "locid": "1",
+          "name": "最寄りの飲食スペース・休憩所",
+          "organizer": "",
+          "line": 39
+        }
+      ]
+    }
+  ]
+}

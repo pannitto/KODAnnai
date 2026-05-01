@@ -1,0 +1,1234 @@
+[
+  {
+    "prev": 228,
+    "curr": 305,
+    "next": 306,
+    "prev_name": "企画別館に入る",
+    "curr_name": "建物に入って進む",
+    "next_name": ""
+  },
+  {
+    "prev": 306,
+    "curr": 305,
+    "next": 228,
+    "prev_name": "",
+    "curr_name": "出口に向かって進む",
+    "next_name": "建物の外に出る"
+  },
+  {
+    "prev": 305,
+    "curr": 306,
+    "next": 307,
+    "prev_name": "入口から進む",
+    "curr_name": "右折する",
+    "next_name": ""
+  },
+  {
+    "prev": 305,
+    "curr": 306,
+    "next": 308,
+    "prev_name": "入口から進む",
+    "curr_name": "そのまま進む",
+    "next_name": ""
+  },
+  {
+    "prev": 307,
+    "curr": 306,
+    "next": 305,
+    "prev_name": "",
+    "curr_name": "出口に向かって進む",
+    "next_name": "出口"
+  },
+  {
+    "prev": 307,
+    "curr": 306,
+    "next": 308,
+    "prev_name": "",
+    "curr_name": "右折する",
+    "next_name": ""
+  },
+  {
+    "prev": 308,
+    "curr": 306,
+    "next": 305,
+    "prev_name": "",
+    "curr_name": "出口に向かって進む",
+    "next_name": "出口"
+  },
+  {
+    "prev": 308,
+    "curr": 306,
+    "next": 307,
+    "prev_name": "",
+    "curr_name": "左折する",
+    "next_name": ""
+  },
+  {
+    "prev": 97,
+    "curr": 307,
+    "next": 306,
+    "prev_name": "ひとつなびLoungeを出る",
+    "curr_name": "ひとつなびLoungeを出てそのまま進む",
+    "next_name": ""
+  },
+  {
+    "prev": 306,
+    "curr": 307,
+    "next": 97,
+    "prev_name": "",
+    "curr_name": "正面のひとつなびLoungeが目的地",
+    "next_name": "ひとつなびLoungeが目的地"
+  },
+  {
+    "prev": 306,
+    "curr": 308,
+    "next": 309,
+    "prev_name": "",
+    "curr_name": "右折する",
+    "next_name": ""
+  },
+  {
+    "prev": 306,
+    "curr": 308,
+    "next": 310,
+    "prev_name": "",
+    "curr_name": "左折する",
+    "next_name": ""
+  },
+  {
+    "prev": 309,
+    "curr": 308,
+    "next": 306,
+    "prev_name": "",
+    "curr_name": "左折する",
+    "next_name": ""
+  },
+  {
+    "prev": 309,
+    "curr": 308,
+    "next": 310,
+    "prev_name": "",
+    "curr_name": "左折する",
+    "next_name": ""
+  },
+  {
+    "prev": 310,
+    "curr": 308,
+    "next": 306,
+    "prev_name": "",
+    "curr_name": "右折する",
+    "next_name": ""
+  },
+  {
+    "prev": 310,
+    "curr": 308,
+    "next": 309,
+    "prev_name": "",
+    "curr_name": "右折する",
+    "next_name": ""
+  },
+  {
+    "prev": 308,
+    "curr": 309,
+    "next": 314,
+    "prev_name": "",
+    "curr_name": "階段で2階に上がる",
+    "next_name": ""
+  },
+  {
+    "prev": 314,
+    "curr": 309,
+    "next": 308,
+    "prev_name": "階段で1階に降りる",
+    "curr_name": "階段を降りて進む",
+    "next_name": ""
+  },
+  {
+    "prev": 99,
+    "curr": 310,
+    "next": 308,
+    "prev_name": "トイレを出る",
+    "curr_name": "トイレを出てそのまま進む",
+    "next_name": ""
+  },
+  {
+    "prev": 99,
+    "curr": 310,
+    "next": 311,
+    "prev_name": "トイレを出る",
+    "curr_name": "トイレを出て左折する",
+    "next_name": ""
+  },
+  {
+    "prev": 99,
+    "curr": 310,
+    "next": 316,
+    "prev_name": "トイレを出る",
+    "curr_name": "エレベーターで2階に行く",
+    "next_name": ""
+  },
+  {
+    "prev": 99,
+    "curr": 310,
+    "next": 322,
+    "prev_name": "トイレを出る",
+    "curr_name": "エレベーターで3階に行く",
+    "next_name": ""
+  },
+  {
+    "prev": 308,
+    "curr": 310,
+    "next": 99,
+    "prev_name": "",
+    "curr_name": "正面のトイレが目的地",
+    "next_name": "トイレが目的地"
+  },
+  {
+    "prev": 308,
+    "curr": 310,
+    "next": 311,
+    "prev_name": "",
+    "curr_name": "そのまま進む",
+    "next_name": ""
+  },
+  {
+    "prev": 308,
+    "curr": 310,
+    "next": 316,
+    "prev_name": "",
+    "curr_name": "エレベーターで2階に行く",
+    "next_name": ""
+  },
+  {
+    "prev": 308,
+    "curr": 310,
+    "next": 322,
+    "prev_name": "",
+    "curr_name": "エレベーターで3階に行く",
+    "next_name": ""
+  },
+  {
+    "prev": 311,
+    "curr": 310,
+    "next": 99,
+    "prev_name": "",
+    "curr_name": "進んで右手のトイレが目的地",
+    "next_name": "トイレが目的地"
+  },
+  {
+    "prev": 311,
+    "curr": 310,
+    "next": 308,
+    "prev_name": "",
+    "curr_name": "そのまま進む",
+    "next_name": ""
+  },
+  {
+    "prev": 311,
+    "curr": 310,
+    "next": 316,
+    "prev_name": "",
+    "curr_name": "エレベーターで2階に行く",
+    "next_name": ""
+  },
+  {
+    "prev": 311,
+    "curr": 310,
+    "next": 322,
+    "prev_name": "",
+    "curr_name": "エレベーターで3階に行く",
+    "next_name": ""
+  },
+  {
+    "prev": 316,
+    "curr": 310,
+    "next": 99,
+    "prev_name": "エレベーターで1階に行く",
+    "curr_name": "エレベーターを降りて、トイレが目的地",
+    "next_name": "トイレが目的地"
+  },
+  {
+    "prev": 316,
+    "curr": 310,
+    "next": 308,
+    "prev_name": "エレベーターで1階に行く",
+    "curr_name": "エレベーターを降りて進む",
+    "next_name": ""
+  },
+  {
+    "prev": 316,
+    "curr": 310,
+    "next": 311,
+    "prev_name": "エレベーターで1階に行く",
+    "curr_name": "エレベーターを降りて進む",
+    "next_name": ""
+  },
+  {
+    "prev": 316,
+    "curr": 310,
+    "next": 322,
+    "prev_name": "エレベーターで1階に行く",
+    "curr_name": "エレベーターで3階に行く",
+    "next_name": ""
+  },
+  {
+    "prev": 322,
+    "curr": 310,
+    "next": 99,
+    "prev_name": "エレベーターで1階に行く",
+    "curr_name": "エレベーターを降りて、トイレが目的地",
+    "next_name": "トイレが目的地"
+  },
+  {
+    "prev": 322,
+    "curr": 310,
+    "next": 308,
+    "prev_name": "エレベーターで1階に行く",
+    "curr_name": "エレベーターを降りて進む",
+    "next_name": ""
+  },
+  {
+    "prev": 322,
+    "curr": 310,
+    "next": 311,
+    "prev_name": "エレベーターで1階に行く",
+    "curr_name": "エレベーターを降りて進む",
+    "next_name": ""
+  },
+  {
+    "prev": 322,
+    "curr": 310,
+    "next": 316,
+    "prev_name": "エレベーターで1階に行く",
+    "curr_name": "エレベーターで2階に行く",
+    "next_name": ""
+  },
+  {
+    "prev": 98,
+    "curr": 99,
+    "next": 310,
+    "prev_name": "多目的トイレを出る",
+    "curr_name": "多目的トイレを出てそのまま進む",
+    "next_name": ""
+  },
+  {
+    "prev": 98,
+    "curr": 99,
+    "next": 311,
+    "prev_name": "多目的トイレを出る",
+    "curr_name": "多目的トイレを出て左折する",
+    "next_name": ""
+  },
+  {
+    "prev": 310,
+    "curr": 99,
+    "next": 98,
+    "prev_name": "",
+    "curr_name": "正面の多目的トイレが目的地",
+    "next_name": "多目的トイレが目的地"
+  },
+  {
+    "prev": 310,
+    "curr": 99,
+    "next": 311,
+    "prev_name": "",
+    "curr_name": "右折する",
+    "next_name": ""
+  },
+  {
+    "prev": 311,
+    "curr": 99,
+    "next": 98,
+    "prev_name": "",
+    "curr_name": "進んで右手の多目的トイレが目的地",
+    "next_name": "多目的トイレが目的地"
+  },
+  {
+    "prev": 311,
+    "curr": 99,
+    "next": 310,
+    "prev_name": "",
+    "curr_name": "左折する",
+    "next_name": ""
+  },
+  {
+    "prev": 99,
+    "curr": 311,
+    "next": 310,
+    "prev_name": "トイレを出る",
+    "curr_name": "トイレを出て進む",
+    "next_name": ""
+  },
+  {
+    "prev": 99,
+    "curr": 311,
+    "next": 312,
+    "prev_name": "トイレを出る",
+    "curr_name": "トイレを出て右折する",
+    "next_name": ""
+  },
+  {
+    "prev": 310,
+    "curr": 311,
+    "next": 99,
+    "prev_name": "",
+    "curr_name": "トイレが目的地",
+    "next_name": "トイレが目的地"
+  },
+  {
+    "prev": 310,
+    "curr": 311,
+    "next": 312,
+    "prev_name": "",
+    "curr_name": "右折する",
+    "next_name": ""
+  },
+  {
+    "prev": 312,
+    "curr": 311,
+    "next": 99,
+    "prev_name": "",
+    "curr_name": "進んで左手のトイレが目的地",
+    "next_name": "トイレが目的地"
+  },
+  {
+    "prev": 312,
+    "curr": 311,
+    "next": 310,
+    "prev_name": "",
+    "curr_name": "左折する",
+    "next_name": ""
+  },
+  {
+    "prev": 311,
+    "curr": 312,
+    "next": 313,
+    "prev_name": "",
+    "curr_name": "左折する",
+    "next_name": ""
+  },
+  {
+    "prev": 313,
+    "curr": 312,
+    "next": 311,
+    "prev_name": "",
+    "curr_name": "右折する",
+    "next_name": ""
+  },
+  {
+    "prev": 312,
+    "curr": 313,
+    "next": 318,
+    "prev_name": "",
+    "curr_name": "階段で2階に上がる",
+    "next_name": ""
+  },
+  {
+    "prev": 318,
+    "curr": 313,
+    "next": 312,
+    "prev_name": "階段で1階に降りる",
+    "curr_name": "階段を降りて進む",
+    "next_name": ""
+  },
+  {
+    "prev": 309,
+    "curr": 314,
+    "next": 315,
+    "prev_name": "階段で2階に上がる",
+    "curr_name": "階段を上がって進む",
+    "next_name": ""
+  },
+  {
+    "prev": 309,
+    "curr": 314,
+    "next": 321,
+    "prev_name": "階段で2階に上がる",
+    "curr_name": "階段で3階に上がる",
+    "next_name": ""
+  },
+  {
+    "prev": 315,
+    "curr": 314,
+    "next": 309,
+    "prev_name": "",
+    "curr_name": "階段で1階に降りる",
+    "next_name": ""
+  },
+  {
+    "prev": 315,
+    "curr": 314,
+    "next": 321,
+    "prev_name": "",
+    "curr_name": "階段で3階に上がる",
+    "next_name": ""
+  },
+  {
+    "prev": 321,
+    "curr": 314,
+    "next": 309,
+    "prev_name": "階段で2階に降りる",
+    "curr_name": "階段で1階に降りる",
+    "next_name": ""
+  },
+  {
+    "prev": 321,
+    "curr": 314,
+    "next": 315,
+    "prev_name": "階段で2階に降りる",
+    "curr_name": "階段を降りて進む",
+    "next_name": ""
+  },
+  {
+    "prev": 314,
+    "curr": 315,
+    "next": 316,
+    "prev_name": "",
+    "curr_name": "そのまま進む",
+    "next_name": ""
+  },
+  {
+    "prev": 316,
+    "curr": 315,
+    "next": 314,
+    "prev_name": "",
+    "curr_name": "そのまま進む",
+    "next_name": ""
+  },
+  {
+    "prev": 310,
+    "curr": 316,
+    "next": 315,
+    "prev_name": "エレベーターで2階に行く",
+    "curr_name": "エレベーターを降りて進む",
+    "next_name": ""
+  },
+  {
+    "prev": 310,
+    "curr": 316,
+    "next": 317,
+    "prev_name": "エレベーターで2階に行く",
+    "curr_name": "エレベーターを降りて進む",
+    "next_name": ""
+  },
+  {
+    "prev": 310,
+    "curr": 316,
+    "next": 322,
+    "prev_name": "エレベーターで2階に行く",
+    "curr_name": "エレベーターで3階に行く",
+    "next_name": ""
+  },
+  {
+    "prev": 315,
+    "curr": 316,
+    "next": 310,
+    "prev_name": "",
+    "curr_name": "エレベーターで1階に行く",
+    "next_name": ""
+  },
+  {
+    "prev": 315,
+    "curr": 316,
+    "next": 317,
+    "prev_name": "",
+    "curr_name": "そのまま進む",
+    "next_name": ""
+  },
+  {
+    "prev": 315,
+    "curr": 316,
+    "next": 322,
+    "prev_name": "",
+    "curr_name": "エレベーターで3階に行く",
+    "next_name": ""
+  },
+  {
+    "prev": 317,
+    "curr": 316,
+    "next": 310,
+    "prev_name": "",
+    "curr_name": "エレベーターで1階に行く",
+    "next_name": ""
+  },
+  {
+    "prev": 317,
+    "curr": 316,
+    "next": 315,
+    "prev_name": "",
+    "curr_name": "そのまま進む",
+    "next_name": ""
+  },
+  {
+    "prev": 317,
+    "curr": 316,
+    "next": 322,
+    "prev_name": "",
+    "curr_name": "エレベーターで3階に行く",
+    "next_name": ""
+  },
+  {
+    "prev": 322,
+    "curr": 316,
+    "next": 310,
+    "prev_name": "エレベーターで2階に行く",
+    "curr_name": "エレベーターで1階に行く",
+    "next_name": ""
+  },
+  {
+    "prev": 322,
+    "curr": 316,
+    "next": 315,
+    "prev_name": "エレベーターで2階に行く",
+    "curr_name": "エレベーターを降りて進む",
+    "next_name": ""
+  },
+  {
+    "prev": 322,
+    "curr": 316,
+    "next": 317,
+    "prev_name": "エレベーターで2階に行く",
+    "curr_name": "エレベーターを降りて進む",
+    "next_name": ""
+  },
+  {
+    "prev": 102,
+    "curr": 317,
+    "next": 316,
+    "prev_name": "トイレを出る",
+    "curr_name": "トイレを出て左折する",
+    "next_name": ""
+  },
+  {
+    "prev": 102,
+    "curr": 317,
+    "next": 318,
+    "prev_name": "トイレを出る",
+    "curr_name": "トイレを出て右折する",
+    "next_name": ""
+  },
+  {
+    "prev": 316,
+    "curr": 317,
+    "next": 102,
+    "prev_name": "",
+    "curr_name": "進んで右手のトイレが目的地",
+    "next_name": "トイレが目的地"
+  },
+  {
+    "prev": 316,
+    "curr": 317,
+    "next": 318,
+    "prev_name": "",
+    "curr_name": "右折する",
+    "next_name": ""
+  },
+  {
+    "prev": 318,
+    "curr": 317,
+    "next": 102,
+    "prev_name": "",
+    "curr_name": "進んで左手のトイレが目的地",
+    "next_name": "トイレが目的地"
+  },
+  {
+    "prev": 318,
+    "curr": 317,
+    "next": 316,
+    "prev_name": "",
+    "curr_name": "左折する",
+    "next_name": ""
+  },
+  {
+    "prev": 100,
+    "curr": 318,
+    "next": 102,
+    "prev_name": "2203教室を出る",
+    "curr_name": "2203教室を出て、左手のトイレが目的地",
+    "next_name": "トイレが目的地"
+  },
+  {
+    "prev": 100,
+    "curr": 318,
+    "next": 313,
+    "prev_name": "2203教室を出る",
+    "curr_name": "階段で1階に降りる",
+    "next_name": ""
+  },
+  {
+    "prev": 100,
+    "curr": 318,
+    "next": 317,
+    "prev_name": "2203教室を出る",
+    "curr_name": "2203教室を出て左折する",
+    "next_name": ""
+  },
+  {
+    "prev": 100,
+    "curr": 318,
+    "next": 319,
+    "prev_name": "2203教室を出る",
+    "curr_name": "2203教室を出て進む",
+    "next_name": ""
+  },
+  {
+    "prev": 100,
+    "curr": 318,
+    "next": 325,
+    "prev_name": "2203教室を出る",
+    "curr_name": "階段で3階に上がる",
+    "next_name": ""
+  },
+  {
+    "prev": 102,
+    "curr": 318,
+    "next": 100,
+    "prev_name": "トイレを出る",
+    "curr_name": "トイレを出て、右手の2203教室が目的地",
+    "next_name": "2203教室が目的地"
+  },
+  {
+    "prev": 102,
+    "curr": 318,
+    "next": 313,
+    "prev_name": "トイレを出る",
+    "curr_name": "階段で1階に降りる",
+    "next_name": ""
+  },
+  {
+    "prev": 102,
+    "curr": 318,
+    "next": 317,
+    "prev_name": "トイレを出る",
+    "curr_name": "トイレを出て進む",
+    "next_name": ""
+  },
+  {
+    "prev": 102,
+    "curr": 318,
+    "next": 319,
+    "prev_name": "トイレを出る",
+    "curr_name": "トイレを出て右折する",
+    "next_name": ""
+  },
+  {
+    "prev": 102,
+    "curr": 318,
+    "next": 325,
+    "prev_name": "トイレを出る",
+    "curr_name": "階段で3階に上がる",
+    "next_name": ""
+  },
+  {
+    "prev": 313,
+    "curr": 318,
+    "next": 100,
+    "prev_name": "階段で2階に上がる",
+    "curr_name": "階段を上がって、2203教室が目的地",
+    "next_name": "2203教室が目的地"
+  },
+  {
+    "prev": 313,
+    "curr": 318,
+    "next": 102,
+    "prev_name": "階段で2階に上がる",
+    "curr_name": "階段を上がって、トイレが目的地",
+    "next_name": "トイレが目的地"
+  },
+  {
+    "prev": 313,
+    "curr": 318,
+    "next": 317,
+    "prev_name": "階段で2階に上がる",
+    "curr_name": "階段を上がって進む",
+    "next_name": ""
+  },
+  {
+    "prev": 313,
+    "curr": 318,
+    "next": 319,
+    "prev_name": "階段で2階に上がる",
+    "curr_name": "階段を上がって進む",
+    "next_name": ""
+  },
+  {
+    "prev": 313,
+    "curr": 318,
+    "next": 325,
+    "prev_name": "階段で2階に上がる",
+    "curr_name": "階段で3階に上がる",
+    "next_name": ""
+  },
+  {
+    "prev": 317,
+    "curr": 318,
+    "next": 100,
+    "prev_name": "",
+    "curr_name": "進んで右手の2203教室が目的地",
+    "next_name": "2203教室が目的地"
+  },
+  {
+    "prev": 317,
+    "curr": 318,
+    "next": 102,
+    "prev_name": "",
+    "curr_name": "トイレが目的地",
+    "next_name": "トイレが目的地"
+  },
+  {
+    "prev": 317,
+    "curr": 318,
+    "next": 313,
+    "prev_name": "",
+    "curr_name": "階段で1階に降りる",
+    "next_name": ""
+  },
+  {
+    "prev": 317,
+    "curr": 318,
+    "next": 319,
+    "prev_name": "",
+    "curr_name": "右折する",
+    "next_name": ""
+  },
+  {
+    "prev": 317,
+    "curr": 318,
+    "next": 325,
+    "prev_name": "",
+    "curr_name": "階段で3階に上がる",
+    "next_name": ""
+  },
+  {
+    "prev": 319,
+    "curr": 318,
+    "next": 100,
+    "prev_name": "",
+    "curr_name": "2203教室が目的地",
+    "next_name": "2203教室が目的地"
+  },
+  {
+    "prev": 319,
+    "curr": 318,
+    "next": 102,
+    "prev_name": "",
+    "curr_name": "進んで左手のトイレが目的地",
+    "next_name": "トイレが目的地"
+  },
+  {
+    "prev": 319,
+    "curr": 318,
+    "next": 313,
+    "prev_name": "",
+    "curr_name": "階段で1階に降りる",
+    "next_name": ""
+  },
+  {
+    "prev": 319,
+    "curr": 318,
+    "next": 317,
+    "prev_name": "",
+    "curr_name": "左折する",
+    "next_name": ""
+  },
+  {
+    "prev": 319,
+    "curr": 318,
+    "next": 325,
+    "prev_name": "",
+    "curr_name": "階段で3階に上がる",
+    "next_name": ""
+  },
+  {
+    "prev": 325,
+    "curr": 318,
+    "next": 100,
+    "prev_name": "階段で2階に降りる",
+    "curr_name": "階段を降りて、2203教室が目的地",
+    "next_name": "2203教室が目的地"
+  },
+  {
+    "prev": 325,
+    "curr": 318,
+    "next": 102,
+    "prev_name": "階段で2階に降りる",
+    "curr_name": "階段を降りて、トイレが目的地",
+    "next_name": "トイレが目的地"
+  },
+  {
+    "prev": 325,
+    "curr": 318,
+    "next": 313,
+    "prev_name": "階段で2階に降りる",
+    "curr_name": "階段で1階に降りる",
+    "next_name": ""
+  },
+  {
+    "prev": 325,
+    "curr": 318,
+    "next": 317,
+    "prev_name": "階段で2階に降りる",
+    "curr_name": "階段を降りて進む",
+    "next_name": ""
+  },
+  {
+    "prev": 325,
+    "curr": 318,
+    "next": 319,
+    "prev_name": "階段で2階に降りる",
+    "curr_name": "階段を降りて進む",
+    "next_name": ""
+  },
+  {
+    "prev": 318,
+    "curr": 319,
+    "next": 320,
+    "prev_name": "",
+    "curr_name": "そのまま進む",
+    "next_name": ""
+  },
+  {
+    "prev": 320,
+    "curr": 319,
+    "next": 318,
+    "prev_name": "",
+    "curr_name": "そのまま進む",
+    "next_name": ""
+  },
+  {
+    "prev": 101,
+    "curr": 320,
+    "next": 319,
+    "prev_name": "2205教室を出る",
+    "curr_name": "2205教室を出て左折する",
+    "next_name": ""
+  },
+  {
+    "prev": 319,
+    "curr": 320,
+    "next": 101,
+    "prev_name": "",
+    "curr_name": "進んで右手の2205教室が目的地",
+    "next_name": "2205教室が目的地"
+  },
+  {
+    "prev": 314,
+    "curr": 321,
+    "next": 322,
+    "prev_name": "階段で3階に上がる",
+    "curr_name": "階段を上がって進む",
+    "next_name": ""
+  },
+  {
+    "prev": 314,
+    "curr": 321,
+    "next": 326,
+    "prev_name": "階段で3階に上がる",
+    "curr_name": "進む",
+    "next_name": ""
+  },
+  {
+    "prev": 322,
+    "curr": 321,
+    "next": 314,
+    "prev_name": "",
+    "curr_name": "階段で2階に降りる",
+    "next_name": ""
+  },
+  {
+    "prev": 322,
+    "curr": 321,
+    "next": 326,
+    "prev_name": "",
+    "curr_name": "進む",
+    "next_name": ""
+  },
+  {
+    "prev": 326,
+    "curr": 321,
+    "next": 314,
+    "prev_name": "",
+    "curr_name": "階段で2階に降りる",
+    "next_name": ""
+  },
+  {
+    "prev": 326,
+    "curr": 321,
+    "next": 322,
+    "prev_name": "",
+    "curr_name": "そのまま進む",
+    "next_name": ""
+  },
+  {
+    "prev": 310,
+    "curr": 322,
+    "next": 316,
+    "prev_name": "エレベーターで3階に行く",
+    "curr_name": "エレベーターで2階に行く",
+    "next_name": ""
+  },
+  {
+    "prev": 310,
+    "curr": 322,
+    "next": 321,
+    "prev_name": "エレベーターで3階に行く",
+    "curr_name": "エレベーターを降りて進む",
+    "next_name": ""
+  },
+  {
+    "prev": 310,
+    "curr": 322,
+    "next": 323,
+    "prev_name": "エレベーターで3階に行く",
+    "curr_name": "エレベーターを降りて進む",
+    "next_name": ""
+  },
+  {
+    "prev": 316,
+    "curr": 322,
+    "next": 310,
+    "prev_name": "エレベーターで3階に行く",
+    "curr_name": "エレベーターで1階に行く",
+    "next_name": ""
+  },
+  {
+    "prev": 316,
+    "curr": 322,
+    "next": 321,
+    "prev_name": "エレベーターで3階に行く",
+    "curr_name": "エレベーターを降りて進む",
+    "next_name": ""
+  },
+  {
+    "prev": 316,
+    "curr": 322,
+    "next": 323,
+    "prev_name": "エレベーターで3階に行く",
+    "curr_name": "エレベーターを降りて進む",
+    "next_name": ""
+  },
+  {
+    "prev": 321,
+    "curr": 322,
+    "next": 310,
+    "prev_name": "",
+    "curr_name": "エレベーターで1階に行く",
+    "next_name": ""
+  },
+  {
+    "prev": 321,
+    "curr": 322,
+    "next": 316,
+    "prev_name": "",
+    "curr_name": "エレベーターで2階に行く",
+    "next_name": ""
+  },
+  {
+    "prev": 321,
+    "curr": 322,
+    "next": 323,
+    "prev_name": "",
+    "curr_name": "そのまま進む",
+    "next_name": ""
+  },
+  {
+    "prev": 323,
+    "curr": 322,
+    "next": 310,
+    "prev_name": "",
+    "curr_name": "エレベーターで1階に行く",
+    "next_name": ""
+  },
+  {
+    "prev": 323,
+    "curr": 322,
+    "next": 316,
+    "prev_name": "",
+    "curr_name": "エレベーターで2階に行く",
+    "next_name": ""
+  },
+  {
+    "prev": 323,
+    "curr": 322,
+    "next": 321,
+    "prev_name": "",
+    "curr_name": "そのまま進む",
+    "next_name": ""
+  },
+  {
+    "prev": 103,
+    "curr": 323,
+    "next": 104,
+    "prev_name": "2301教室を出る",
+    "curr_name": "2301教室を出て、右手のトイレが目的地",
+    "next_name": "トイレが目的地"
+  },
+  {
+    "prev": 103,
+    "curr": 323,
+    "next": 322,
+    "prev_name": "2301教室を出る",
+    "curr_name": "2301教室を出て進む",
+    "next_name": ""
+  },
+  {
+    "prev": 103,
+    "curr": 323,
+    "next": 324,
+    "prev_name": "2301教室を出る",
+    "curr_name": "2301教室を出て右折する",
+    "next_name": ""
+  },
+  {
+    "prev": 104,
+    "curr": 323,
+    "next": 103,
+    "prev_name": "トイレを出る",
+    "curr_name": "トイレを出て、左手の2301教室が目的地",
+    "next_name": "2301教室が目的地"
+  },
+  {
+    "prev": 104,
+    "curr": 323,
+    "next": 322,
+    "prev_name": "トイレを出る",
+    "curr_name": "トイレを出て左折する",
+    "next_name": ""
+  },
+  {
+    "prev": 104,
+    "curr": 323,
+    "next": 324,
+    "prev_name": "トイレを出る",
+    "curr_name": "トイレを出て進む",
+    "next_name": ""
+  },
+  {
+    "prev": 322,
+    "curr": 323,
+    "next": 103,
+    "prev_name": "",
+    "curr_name": "2301教室が目的地",
+    "next_name": "2301教室が目的地"
+  },
+  {
+    "prev": 322,
+    "curr": 323,
+    "next": 104,
+    "prev_name": "",
+    "curr_name": "進んで右手のトイレが目的地",
+    "next_name": "トイレが目的地"
+  },
+  {
+    "prev": 322,
+    "curr": 323,
+    "next": 324,
+    "prev_name": "",
+    "curr_name": "右折する",
+    "next_name": ""
+  },
+  {
+    "prev": 324,
+    "curr": 323,
+    "next": 103,
+    "prev_name": "",
+    "curr_name": "進んで左手の2301教室が目的地",
+    "next_name": "2301教室が目的地"
+  },
+  {
+    "prev": 324,
+    "curr": 323,
+    "next": 104,
+    "prev_name": "",
+    "curr_name": "トイレが目的地",
+    "next_name": "トイレが目的地"
+  },
+  {
+    "prev": 324,
+    "curr": 323,
+    "next": 322,
+    "prev_name": "",
+    "curr_name": "左折する",
+    "next_name": ""
+  },
+  {
+    "prev": 104,
+    "curr": 324,
+    "next": 323,
+    "prev_name": "トイレを出る",
+    "curr_name": "トイレを出て進む",
+    "next_name": ""
+  },
+  {
+    "prev": 104,
+    "curr": 324,
+    "next": 325,
+    "prev_name": "トイレを出る",
+    "curr_name": "トイレを出て左折する",
+    "next_name": ""
+  },
+  {
+    "prev": 323,
+    "curr": 324,
+    "next": 104,
+    "prev_name": "",
+    "curr_name": "トイレが目的地",
+    "next_name": "トイレが目的地"
+  },
+  {
+    "prev": 323,
+    "curr": 324,
+    "next": 325,
+    "prev_name": "",
+    "curr_name": "左折する",
+    "next_name": ""
+  },
+  {
+    "prev": 325,
+    "curr": 324,
+    "next": 104,
+    "prev_name": "",
+    "curr_name": "進んで右手のトイレが目的地",
+    "next_name": "トイレが目的地"
+  },
+  {
+    "prev": 325,
+    "curr": 324,
+    "next": 323,
+    "prev_name": "",
+    "curr_name": "右折する",
+    "next_name": ""
+  },
+  {
+    "prev": 318,
+    "curr": 325,
+    "next": 324,
+    "prev_name": "階段で3階に上がる",
+    "curr_name": "階段を上がって進む",
+    "next_name": ""
+  },
+  {
+    "prev": 324,
+    "curr": 325,
+    "next": 318,
+    "prev_name": "",
+    "curr_name": "階段で2階に降りる",
+    "next_name": ""
+  },
+  {
+    "prev": 103,
+    "curr": 326,
+    "next": 321,
+    "prev_name": "2301教室を出る",
+    "curr_name": "2301教室を出て進む",
+    "next_name": ""
+  },
+  {
+    "prev": 321,
+    "curr": 326,
+    "next": 103,
+    "prev_name": "",
+    "curr_name": "2301教室が目的地",
+    "next_name": "2301教室が目的地"
+  }
+]
