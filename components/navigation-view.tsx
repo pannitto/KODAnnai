@@ -163,10 +163,10 @@ export function NavigationView({
   };
 
   const getMapSrc = (nodeId: number): string => {
-    if (nodeId >= 251 && nodeId <= 259) return "/Chibikko_MAP_fornavigate.svg";
-    if (nodeId >= 305 && nodeId <= 326) return "/Bekkan_MAP_fornavigate.svg";
-    if (nodeId >= 260 && nodeId <= 304) return "/Main_building_MAP_fornavigate.svg";
-    return "/GRAND_MAP_fornavigate.svg";
+    if (nodeId >= 251 && nodeId <= 259) return "/Chibikko_MAP.svg";
+    if (nodeId >= 305 && nodeId <= 326) return "/Bekkan_MAP.svg";
+    if (nodeId >= 260 && nodeId <= 304) return "/Main_building_MAP.svg";
+    return "/GRAND_MAP.svg";
   };
 
   const goToPrevious = () => {
