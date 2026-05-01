@@ -2096,6 +2096,16 @@ export const TRANSIT_NODE_META: Record<string, TransitNodeMeta> = {
   "245": { name: "", position: "南サークル通り" },
   "246": { name: "", position: "南サークル通り" },
   "327": { name: "体育館出入り口", position: "体育館" },
+  "328": { name: "", position: "体育館" },
+  // ちびっこ館廊下ノード
+  "251": { name: "", position: "ちびっこ館" },
+  "253": { name: "", position: "ちびっこ館" },
+  "254": { name: "", position: "ちびっこ館" },
+  "255": { name: "", position: "ちびっこ館" },
+  "256": { name: "", position: "ちびっこ館" },
+  "257": { name: "", position: "ちびっこ館" },
+  "258": { name: "", position: "ちびっこ館" },
+  "259": { name: "", position: "ちびっこ館" },
   // 企画別館（東二号館）廊下ノード
   "305": { name: "", position: "企画別館 1F" },
   "306": { name: "", position: "企画別館 1F" },
