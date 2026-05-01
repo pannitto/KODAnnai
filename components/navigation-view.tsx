@@ -162,6 +162,13 @@ export function NavigationView({
     setZoomModalOpen(false);
   };
 
+  const getMapSrc = (nodeId: number): string => {
+    if (nodeId >= 251 && nodeId <= 259) return "/Chibikko_MAP_fornavigate.svg";
+    if (nodeId >= 305 && nodeId <= 326) return "/Bekkan_MAP_fornavigate.svg";
+    if (nodeId >= 260 && nodeId <= 304) return "/Main_building_MAP_fornavigate.svg";
+    return "/GRAND_MAP_fornavigate.svg";
+  };
+
   const goToPrevious = () => {
     setCurrentZoomIndex((prev) => Math.max(0, prev - 1));
   };
@@ -552,8 +559,8 @@ export function NavigationView({
               ) : (
                 <div className="flex items-center justify-center w-full h-full">
                   <Image
-                    src="/GRAND_MAP.svg"
-                    alt="学校全体図"
+                    src={getMapSrc(Number(currentStep.id))}
+                    alt="フロアマップ"
                     height="800"
                     width="600"
                   />
