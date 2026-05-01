@@ -1,5 +1,5 @@
 // route-finder.tsから直接計算
-import { findRoute } from '../lib/route-finder.js';
+import { findRoute } from "../lib/route-finder.js";
 
 const OUTDOOR_MARKERS = [
   { id: 1, label: "クラス模擬店ロータリー①" },
@@ -51,55 +51,59 @@ async function calculateNearestGarbage() {
   for (const { category, markers } of allMarkers) {
     console.log(`\n【${category}】`);
     console.log("-".repeat(80));
-    
+
     for (const marker of markers) {
       console.log(`\n出発点: ${marker.label} (ノード${marker.id})`);
-      
+
       const results = [];
-      
+
       for (const garbage of GARBAGE_STATIONS) {
         try {
           const routeData = await findRoute(
             marker.id,
             garbage.id,
             false, // rainyMode
-            false  // barrierFreeMode
+            false, // barrierFreeMode
           );
-          
+
           if (routeData && routeData.route && routeData.route.length > 0) {
             results.push({
               station: garbage.name,
               stationId: garbage.id,
               distance: routeData.distance || 0,
-              steps: routeData.route.length
+              steps: routeData.route.length,
             });
           }
         } catch (error) {
           // エラーは無視
         }
       }
-      
+
       results.sort((a, b) => a.distance - b.distance);
-      
+
       if (results.length > 0) {
         const nearest = results[0];
-        console.log(`  ✓ 最寄り: ${nearest.station} (ノード${nearest.stationId})`);
+        console.log(
+          `  ✓ 最寄り: ${nearest.station} (ノード${nearest.stationId})`,
+        );
         console.log(`    距離: ${nearest.distance}m, ${nearest.steps}ステップ`);
-        
+
         for (let i = 1; i < Math.min(3, results.length); i++) {
           const alt = results[i];
           const diff = alt.distance - nearest.distance;
-          console.log(`    次点: ${alt.station} (ノード${alt.stationId}) +${diff}m`);
+          console.log(
+            `    次点: ${alt.station} (ノード${alt.stationId}) +${diff}m`,
+          );
         }
       } else {
         console.log(`  ✗ ルートが見つかりませんでした`);
       }
     }
   }
-  
+
   console.log("\n" + "=".repeat(80));
 }
 
-calculateNearestGarbage().catch(err => {
+calculateNearestGarbage().catch((err) => {
   console.error("エラー:", err.message);
 });

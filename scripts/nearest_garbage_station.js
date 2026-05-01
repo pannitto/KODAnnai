@@ -36,8 +36,8 @@ const GARBAGE_STATIONS = [
 ];
 
 // route-finder.ts から必要な関数をインポート
-const fs = require('fs');
-const path = require('path');
+const fs = require("fs");
+const path = require("path");
 
 // route-finder.tsの内容を読み込んで評価（簡易的な方法）
 async function calculateNearestGarbage() {
@@ -55,51 +55,55 @@ async function calculateNearestGarbage() {
   for (const { category, markers } of allMarkers) {
     console.log(`\n【${category}】`);
     console.log("-".repeat(80));
-    
+
     for (const marker of markers) {
       console.log(`\n出発点: ${marker.label} (ノード${marker.id})`);
-      
+
       // 各ゴミステーションまでの距離を計算（APIを使用）
       const results = [];
-      
+
       for (const garbage of GARBAGE_STATIONS) {
         try {
           const response = await fetch(
-            `http://localhost:3000/api/route?from=${marker.id}&to=${garbage.id}`
+            `http://localhost:3000/api/route?from=${marker.id}&to=${garbage.id}`,
           );
-          
+
           if (response.ok) {
             const data = await response.json();
             results.push({
               station: garbage.name,
               stationId: garbage.id,
               distance: data.distance || 0,
-              steps: data.route?.length || 0
+              steps: data.route?.length || 0,
             });
           }
         } catch (error) {
           // エラーは無視
         }
       }
-      
+
       // 距離でソート
       results.sort((a, b) => a.distance - b.distance);
-      
+
       if (results.length > 0) {
         const nearest = results[0];
-        console.log(`  → 最寄り: ${nearest.station} (ノード${nearest.stationId}) - 距離: ${nearest.distance}m, ${nearest.steps}ステップ`);
-        
+        console.log(
+          `  → 最寄り: ${nearest.station} (ノード${nearest.stationId}) - 距離: ${nearest.distance}m, ${nearest.steps}ステップ`,
+        );
+
         // 2番目以降も表示
         for (let i = 1; i < Math.min(3, results.length); i++) {
           const alt = results[i];
-          console.log(`     次点: ${alt.station} (ノード${alt.stationId}) - 距離: ${alt.distance}m`);
+          console.log(
+            `     次点: ${alt.station} (ノード${alt.stationId}) - 距離: ${alt.distance}m`,
+          );
         }
       } else {
         console.log(`  → 計算できませんでした`);
       }
     }
   }
-  
+
   console.log("\n" + "=".repeat(80));
 }
 
@@ -107,7 +111,7 @@ async function calculateNearestGarbage() {
 console.log("計算中... (開発サーバーが起動している必要があります)");
 console.log("");
 
-calculateNearestGarbage().catch(err => {
+calculateNearestGarbage().catch((err) => {
   console.error("エラー:", err.message);
   console.error("\n開発サーバーが起動していることを確認してください:");
   console.error("  npm run dev");

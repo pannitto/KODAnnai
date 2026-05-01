@@ -1,5 +1,5 @@
 // 各出発点から最寄りのゴミステーションを計算
-import { findRoute } from '../lib/route-finder';
+import { findRoute } from "../lib/route-finder";
 
 const OUTDOOR_MARKERS = [
   { id: 1, label: "クラス模擬店ロータリー①" },
@@ -59,12 +59,12 @@ async function calculateNearestGarbage() {
   for (const { category, markers } of allMarkers) {
     console.log(`\n【${category}】`);
     console.log("-".repeat(80));
-    
+
     for (const marker of markers) {
       console.log(`\n出発点: ${marker.label} (ノード${marker.id})`);
-      
+
       const results = [];
-      
+
       for (const garbage of GARBAGE_STATIONS) {
         try {
           const routeData = await findRoute(
@@ -72,61 +72,67 @@ async function calculateNearestGarbage() {
             garbage.id,
             [],
             false,
-            false
+            false,
           );
-          
+
           if (routeData && routeData.route && routeData.route.length > 0) {
             results.push({
               station: garbage.name,
               stationId: garbage.id,
               cost: routeData.cost || 0,
-              steps: routeData.route.length
+              steps: routeData.route.length,
             });
           }
         } catch (error) {
           // エラーは無視
         }
       }
-      
+
       results.sort((a, b) => a.cost - b.cost);
-      
+
       if (results.length > 0) {
         const nearest = results[0];
-        console.log(`  ✓ 最寄り: ${nearest.station} (ノード${nearest.stationId})`);
+        console.log(
+          `  ✓ 最寄り: ${nearest.station} (ノード${nearest.stationId})`,
+        );
         console.log(`    コスト: ${nearest.cost}, ${nearest.steps}ステップ`);
-        
+
         // サマリーに追加
-        summaryByGarbage[nearest.stationId].push(`${marker.label} (${marker.id})`);
-        
+        summaryByGarbage[nearest.stationId].push(
+          `${marker.label} (${marker.id})`,
+        );
+
         for (let i = 1; i < Math.min(3, results.length); i++) {
           const alt = results[i];
           const diff = alt.cost - nearest.cost;
-          console.log(`    次点: ${alt.station} (ノード${alt.stationId}) +${diff.toFixed(0)}`);
+          console.log(
+            `    次点: ${alt.station} (ノード${alt.stationId}) +${diff.toFixed(0)}`,
+          );
         }
       } else {
         console.log(`  ✗ ルートが見つかりませんでした`);
       }
     }
   }
-  
+
   console.log("\n" + "=".repeat(80));
   console.log("ゴミステーション別の最寄り出発点一覧");
   console.log("=".repeat(80));
-  
+
   for (const garbage of GARBAGE_STATIONS) {
     const points = summaryByGarbage[garbage.id];
     console.log(`\n【${garbage.name} (ノード${garbage.id})】`);
     if (points.length > 0) {
-      points.forEach(point => console.log(`  • ${point}`));
+      points.forEach((point) => console.log(`  • ${point}`));
     } else {
       console.log(`  (該当なし)`);
     }
   }
-  
+
   console.log("\n" + "=".repeat(80));
 }
 
-calculateNearestGarbage().catch(err => {
+calculateNearestGarbage().catch((err) => {
   console.error("エラー:", err.message);
   console.error(err.stack);
 });

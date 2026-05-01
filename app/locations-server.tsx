@@ -2040,7 +2040,7 @@ export const LOCATIONS: Location[] = [
     category: "参加・体験",
     organizer: "KODAIRA祭実行委員会",
     position: "西キャンパス",
-    keywords: ["一橋大学見学","ひとつばしだいがくけんがく"],
+    keywords: ["一橋大学見学", "ひとつばしだいがくけんがく"],
   },
 ];
 
