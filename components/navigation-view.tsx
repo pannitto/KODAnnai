@@ -56,6 +56,7 @@ export function NavigationView({
   const [error, setError] = useState<string | null>(null);
 
   const [highlight, setHighlight] = useState(false);
+  const [imageErrors, setImageErrors] = useState<Set<number>>(new Set());
 
   const [mapMode, setMapMode] = useState(false);
 
@@ -400,7 +401,7 @@ export function NavigationView({
                             highlight ? "border-blue-500" : ""
                           }`
                         : "border-border/70"
-                    } flex gap-4 mb-2 px-4 h-24 items-center w-full text-left border-2 rounded-lg hover:border-primary/80 transition-colors focus:outline-none focus:ring-2 focus:ring-primary ${
+                    } flex gap-4 mb-2 px-4 h-24 items-center w-full text-left border-2 rounded-lg hover:border-primary/80 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-primary ${
                       index === 0 ? "bg-card" : "bg-card"
                     }`}
                     style={
@@ -506,15 +507,24 @@ export function NavigationView({
                   <>
                     {/* Large Image */}
                     <div className="flex items-center justify-center w-full h-full">
-                      <Image
-                        src={`/assembly/${
-                          currentStep.image || "/placeholder.svg"
-                        }`}
-                        width={540}
-                        height={960}
-                        alt={currentStep.title}
-                        className="max-w-full max-h-full object-contain rounded-md"
-                      />
+                      {imageErrors.has(currentZoomIndex) ? (
+                        <div className="flex items-center justify-center text-muted-foreground text-sm p-8 text-center">
+                          この区間の画像は用意されていません
+                        </div>
+                      ) : (
+                        <Image
+                          src={`/assembly/${
+                            currentStep.image || "placeholder.svg"
+                          }`}
+                          width={540}
+                          height={960}
+                          alt={currentStep.title}
+                          className="max-w-full max-h-full object-contain rounded-md"
+                          onError={() =>
+                            setImageErrors((prev) => new Set(prev).add(currentZoomIndex))
+                          }
+                        />
+                      )}
                     </div>
 
                     {/* Description and Notice */}
