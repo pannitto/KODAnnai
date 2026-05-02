@@ -7,6 +7,7 @@ export async function GET(request: NextRequest) {
     const departure = Number.parseInt(searchParams.get("departure") || "0")
     const destination = Number.parseInt(searchParams.get("destination") || "0")
     const rainyMode = searchParams.get("rainy") === "true"
+    const barrierFreeMode = searchParams.get("barrierFree") === "true"
 
     // Parse excluded edges if provided
     const excludedEdgesParam = searchParams.get("excludedEdges")
@@ -24,7 +25,7 @@ export async function GET(request: NextRequest) {
       return NextResponse.json({ error: "Missing departure or destination" }, { status: 400 })
     }
 
-    const route = await findRoute(departure, destination, excludedEdges, rainyMode)
+    const route = await findRoute(departure, destination, excludedEdges, rainyMode, barrierFreeMode)
 
     return NextResponse.json(route)
   } catch (error) {
