@@ -591,14 +591,14 @@ export const LOCATIONS: Location[] = [
       "いんしょく",
     ],
   },
-  // クラス模擬店通り（模擬店26〜31）
+  // クラス模擬店ロード（模擬店26〜31）
   {
     id: "33",
     locid: "33",
     name: "",
     category: "クラス模擬店",
     organizer: "26クラス",
-    position: "クラス模擬店通り",
+    position: "クラス模擬店ロード",
     keywords: [
       "もぎてん",
       "一年生",
@@ -615,7 +615,7 @@ export const LOCATIONS: Location[] = [
     name: "",
     category: "クラス模擬店",
     organizer: "27クラス",
-    position: "クラス模擬店通り",
+    position: "クラス模擬店ロード",
     keywords: [
       "もぎてん",
       "一年生",
@@ -632,7 +632,7 @@ export const LOCATIONS: Location[] = [
     name: "",
     category: "クラス模擬店",
     organizer: "28クラス",
-    position: "クラス模擬店通り",
+    position: "クラス模擬店ロード",
     keywords: [
       "もぎてん",
       "一年生",
@@ -649,7 +649,7 @@ export const LOCATIONS: Location[] = [
     name: "",
     category: "クラス模擬店",
     organizer: "29クラス",
-    position: "クラス模擬店通り",
+    position: "クラス模擬店ロード",
     keywords: [
       "もぎてん",
       "一年生",
@@ -666,7 +666,7 @@ export const LOCATIONS: Location[] = [
     name: "",
     category: "クラス模擬店",
     organizer: "30クラス",
-    position: "クラス模擬店通り",
+    position: "クラス模擬店ロード",
     keywords: [
       "もぎてん",
       "一年生",
@@ -683,7 +683,7 @@ export const LOCATIONS: Location[] = [
     name: "",
     category: "クラス模擬店",
     organizer: "31クラス",
-    position: "クラス模擬店通り",
+    position: "クラス模擬店ロード",
     keywords: [
       "もぎてん",
       "一年生",
@@ -1691,14 +1691,14 @@ export const LOCATIONS: Location[] = [
       "おてあらい",
     ],
   },
-  // 北サークル通り
+  // 北サークルロード
   {
     id: "105",
     locid: "105",
     name: "メインステージ前休憩所",
     category: "休憩所",
     organizer: "",
-    position: "北サークル通り",
+    position: "北サークルロード",
     keywords: [
       "食事",
       "飲食",
@@ -1715,7 +1715,7 @@ export const LOCATIONS: Location[] = [
     name: "ゴミステーション",
     category: "ゴミステーション",
     organizer: "",
-    position: "北サークル通り",
+    position: "北サークルロード",
     keywords: [
       "燃えるゴミ",
       "燃えないゴミ",
@@ -1737,7 +1737,7 @@ export const LOCATIONS: Location[] = [
     name: "似顔絵・陶器販売",
     category: "サークル模擬店",
     organizer: "美術部",
-    position: "北サークル通り",
+    position: "北サークルロード",
     keywords: ["絵", "アート", "え", "びじゅつぶ"],
   },
   {
@@ -1746,7 +1746,7 @@ export const LOCATIONS: Location[] = [
     name: "世界史経済同好会",
     category: "サークル模擬店",
     organizer: "世界史経済同好会",
-    position: "北サークル通り",
+    position: "北サークルロード",
     keywords: [
       "数学",
       "受験生",
@@ -1764,7 +1764,7 @@ export const LOCATIONS: Location[] = [
     name: "ゴミ集積所",
     category: "ゴミステーション",
     organizer: "",
-    position: "北サークル通り",
+    position: "北サークルロード",
     keywords: [
       "燃えるゴミ",
       "燃えないゴミ",
@@ -1786,7 +1786,7 @@ export const LOCATIONS: Location[] = [
     name: "飲料販売所",
     category: "その他",
     organizer: "",
-    position: "北サークル通り",
+    position: "北サークルロード",
     keywords: [
       "飲み物",
       "水",
@@ -1798,14 +1798,14 @@ export const LOCATIONS: Location[] = [
       "おちゃ",
     ],
   },
-  // 南サークル通り
+  // 南サークルロード
   {
     id: "111",
     locid: "111",
     name: "チュロングトーーーン",
     category: "サークル模擬店",
     organizer: "吹奏楽団",
-    position: "南サークル通り",
+    position: "南サークルロード",
     keywords: [
       "チュロングトーン",
       "チュロス",
@@ -1829,7 +1829,7 @@ export const LOCATIONS: Location[] = [
     name: "焼きそば番長",
     category: "サークル模擬店",
     organizer: "B級グルメ研究会",
-    position: "南サークル通り",
+    position: "南サークルロード",
     keywords: [
       "食べ物",
       "飲食",
@@ -1849,7 +1849,7 @@ export const LOCATIONS: Location[] = [
     name: "TEDxホットケーキ",
     category: "サークル模擬店",
     organizer: "TEDxHitotsubashiU",
-    position: "南サークル通り",
+    position: "南サークルロード",
     keywords: [
       "食べ物",
       "飲食",
@@ -1870,7 +1870,7 @@ export const LOCATIONS: Location[] = [
     name: "ナイスなナチョス",
     category: "サークル模擬店",
     organizer: "学生団体たまこまち",
-    position: "南サークル通り",
+    position: "南サークルロード",
     keywords: [
       "タコス",
       "食べ物",
@@ -1889,7 +1889,7 @@ export const LOCATIONS: Location[] = [
     name: "やほレン海鮮焼きそば",
     category: "サークル模擬店",
     organizer: "Pro-K",
-    position: "南サークル通り",
+    position: "南サークルロード",
     keywords: [
       "プロック",
       "プロケー",
@@ -1912,7 +1912,7 @@ export const LOCATIONS: Location[] = [
     name: "焼鳥C.T.C.",
     category: "サークル模擬店",
     organizer: "C.T.C.",
-    position: "南サークル通り",
+    position: "南サークルロード",
     keywords: [
       "焼き鳥",
       "やきとり",
@@ -1931,7 +1931,7 @@ export const LOCATIONS: Location[] = [
     name: "ひとつだブリドー",
     category: "サークル模擬店",
     organizer: "ひとつだプロダクション",
-    position: "南サークル通り",
+    position: "南サークルロード",
     keywords: [
       "ブリトー",
       "食べ物",
@@ -2084,17 +2084,17 @@ export const TRANSIT_NODE_META: Record<string, TransitNodeMeta> = {
   "233": { name: "", position: "ファミリーエリア" },
   "234": { name: "", position: "ファミリーエリア" },
   "235": { name: "", position: "企画本館" },
-  "236": { name: "", position: "南サークル通り" },
+  "236": { name: "", position: "南サークルロード" },
   "237": { name: "", position: "クラス模擬店ロータリー" },
   "238": { name: "", position: "体育館と繋ぐ道" },
   "239": { name: "", position: "体育館と繋ぐ道" },
-  "240": { name: "", position: "北サークル通り" },
-  "241": { name: "", position: "北サークル通り" },
-  "242": { name: "", position: "北サークル通り" },
-  "243": { name: "", position: "北サークル通り" },
-  "244": { name: "", position: "南サークル通り" },
-  "245": { name: "", position: "南サークル通り" },
-  "246": { name: "", position: "南サークル通り" },
+  "240": { name: "", position: "北サークルロード" },
+  "241": { name: "", position: "北サークルロード" },
+  "242": { name: "", position: "北サークルロード" },
+  "243": { name: "", position: "北サークルロード" },
+  "244": { name: "", position: "南サークルロード" },
+  "245": { name: "", position: "南サークルロード" },
+  "246": { name: "", position: "南サークルロード" },
   "327": { name: "体育館出入り口", position: "体育館" },
   "328": { name: "", position: "体育館" },
   // ちびっこ館廊下ノード
@@ -2283,14 +2283,14 @@ export const OUTDOOR_START_POINT_MARKERS: OutdoorStartPointMarker[] = [
     label: "クラス模擬店ロータリー",
     description: "クラス模擬店ロータリー",
   },
-  // クラス模擬店通り
+  // クラス模擬店ロード
   {
     id: "marker-223",
     nodeId: 223,
     cx: 181.86,
     cy: 307.93,
-    label: "クラス模擬店通り",
-    description: "クラス模擬店通り",
+    label: "クラス模擬店ロード",
+    description: "クラス模擬店ロード",
   },
   // ファミリーエリア
   {
@@ -2301,23 +2301,23 @@ export const OUTDOOR_START_POINT_MARKERS: OutdoorStartPointMarker[] = [
     label: "ファミリーエリア",
     description: "ファミリーエリア",
   },
-  // 南サークル通り
+  // 南サークルロード
   {
     id: "marker-236",
     nodeId: 236,
     cx: 177.38,
     cy: 235.47,
-    label: "南サークル通り",
-    description: "南サークル通り",
+    label: "南サークルロード",
+    description: "南サークルロード",
   },
-  // 北サークル通り
+  // 北サークルロード
   {
     id: "marker-240",
     nodeId: 240,
     cx: 109.56,
     cy: 232.74,
-    label: "北サークル通り",
-    description: "北サークル通り",
+    label: "北サークルロード",
+    description: "北サークルロード",
   },
   // 体育館近く
   {
