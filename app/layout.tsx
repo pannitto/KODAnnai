@@ -10,7 +10,7 @@ import Footer from "@/components/footer";
 export const metadata: Metadata = {
   metadataBase: new URL("https://kodannai.vercel.app"),
   title: "KODAnnai",
-  description: "KODAIRA祭 経路案内アプリ",
+  description: "KODAIRA祭 経路案内サイト",
   appleWebApp: {
     capable: true,
     statusBarStyle: "default",
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "KODAnnai",
-    description: "KODAIRA祭 経路案内アプリ",
+    description: "KODAIRA祭 経路案内サイト",
     url: "https://kodannai.vercel.app",
     siteName: "KODAnnai",
     images: [
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "KODAnnai",
-    description: "KODAIRA祭 経路案内アプリ",
+    description: "KODAIRA祭 経路案内サイト",
     images: ["/og-image.png"],
   },
 };

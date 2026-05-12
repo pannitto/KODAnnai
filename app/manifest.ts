@@ -4,7 +4,7 @@ export default function manifest(): MetadataRoute.Manifest {
   return {
     name: "KODAnnai",
     short_name: "KODAnnai",
-    description: "KODAIRA祭 経路案内アプリ",
+    description: "KODAIRA祭 経路案内サイト",
     start_url: "/",
     display: "standalone",
     background_color: "#0f172a",
