@@ -2124,8 +2124,6 @@ export const TRANSIT_NODE_META: Record<string, TransitNodeMeta> = {
   "309": { name: "", position: "企画別館 1F" },
   "310": { name: "", position: "企画別館 1F" },
   "311": { name: "", position: "企画別館 1F" },
-  "312": { name: "", position: "企画別館 1F" },
-  "313": { name: "", position: "企画別館 1F" },
   "314": { name: "", position: "企画別館 2F" },
   "315": { name: "", position: "企画別館 2F" },
   "316": { name: "", position: "企画別館 2F" },
@@ -2136,8 +2134,6 @@ export const TRANSIT_NODE_META: Record<string, TransitNodeMeta> = {
   "321": { name: "", position: "企画別館 3F" },
   "322": { name: "", position: "企画別館 3F" },
   "323": { name: "", position: "企画別館 3F" },
-  "324": { name: "", position: "企画別館 3F" },
-  "325": { name: "", position: "企画別館 3F" },
   "326": { name: "", position: "企画別館 3F" },
   // 企画本館（東一号館）廊下ノード
   "260": { name: "", position: "企画本館" },
