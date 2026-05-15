@@ -2,8 +2,8 @@
 // タイムテーブルデータ
 // ==========================================
 // 文化祭の開催日を設定してください（YYYY-MM-DD形式）
-export const FESTIVAL_DAY1 = "2026-05-02"; // 1日目の日付（テスト中：今日）
-export const FESTIVAL_DAY2 = "2026-05-03"; // 2日目の日付
+export const FESTIVAL_DAY1 = "2026-05-15"; // 1日目の日付（テスト中：今日）
+export const FESTIVAL_DAY2 = "2026-05-16"; // 2日目の日付
 
 // 形式: { start: "HH:MM", end: "HH:MM", act: "出演者名" }
 // ==========================================
@@ -34,7 +34,7 @@ export const TIMETABLE: StageSchedule[] = [
     day1: [
       // ↓ここに体育館ステージ1日目のタイムテーブルを入れてください
       // { start: "10:00", end: "10:30", act: "〇〇バンド" },
-      { start: "10:00", end: "11:50", act: "大学対抗クイズバトル" },
+      { start: "10:00", end: "11:30", act: "大学対抗クイズバトル" },
       { start: "12:10", end: "13:40", act: "格付けチェック" },
       { start: "13:55", end: "14:15", act: "HITters ヲタ芸ステージ" },
       { start: "14:40", end: "16:00", act: "FSCステージライブ" },
