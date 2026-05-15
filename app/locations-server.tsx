@@ -2489,10 +2489,10 @@ export const MAIN_BUILDING_START_POINT_MARKERS: OutdoorStartPointMarker[] = [
     description: "企画本館3F",
   },
   {
-    id: "main-300",
-    nodeId: 300,
+    id: "main-86",
+    nodeId: 86,
     cx: 188.7,
-    cy: 287.13,
+    cy: 271.48,
     label: "本館4F",
     description: "企画本館4F",
   },
