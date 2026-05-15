@@ -2,8 +2,8 @@
 // タイムテーブルデータ
 // ==========================================
 // 文化祭の開催日を設定してください（YYYY-MM-DD形式）
-export const FESTIVAL_DAY1 = "2026-05-15"; // 1日目の日付（テスト中：今日）
-export const FESTIVAL_DAY2 = "2026-05-16"; // 2日目の日付
+export const FESTIVAL_DAY1 = "2026-05-14"; // 1日目の日付（テスト中：今日）
+export const FESTIVAL_DAY2 = "2026-05-15"; // 2日目の日付
 
 // 形式: { start: "HH:MM", end: "HH:MM", act: "出演者名" }
 // ==========================================
@@ -42,6 +42,7 @@ export const TIMETABLE: StageSchedule[] = [
     day2: [
       // ↓ここに体育館ステージ2日目のタイムテーブルを入れてください
       // { start: "10:00", end: "10:30", act: "〇〇バンド" },
+      { start: "18:00", end: "20:30", act: "Skassys(テスト用)" },
       { start: "10:40", end: "11:30", act: "爆笑HIT-Uパレード" },
       { start: "11:40", end: "13:10", act: "クイズイントロドン" },
       { start: "13:25", end: "14:00", act: "ハルモニアライブ" },
@@ -63,6 +64,7 @@ export const TIMETABLE: StageSchedule[] = [
     ],
     day2: [
       // ↓ここにKODAステージ2日目のタイムテーブルを入れてください
+      { start: "19:30", end: "21:30", act: "KODAフレ(テスト用)" },
       { start: "10:10", end: "11:10", act: "CHIERISH PIRTY" },
       { start: "11:40", end: "13:20", act: "一橋の歌うま王決定戦!!" },
       { start: "13:35", end: "13:55", act: "Cepha Dance Stage" },
@@ -84,6 +86,7 @@ export const TIMETABLE: StageSchedule[] = [
     ],
     day2: [
       // ↓ここにフィールド2日目のタイムテーブルを入れてください
+      { start: "19:00", end: "21:00", act: "吉川の歌うま(テスト用)" },
       { start: "10:50", end: "11:20", act: "Papalinaフラステージ" },
       { start: "12:10", end: "12:40", act: "ジャグリングパフォーマンス" },
       { start: "13:00", end: "13:15", act: "少林寺拳法ステージ演武" },
