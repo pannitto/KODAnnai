@@ -1177,7 +1177,7 @@ export const LOCATIONS: Location[] = [
   {
     id: "61",
     locid: "60",
-    name: "企画本館1F男女トイレ①",
+    name: "企画本館1F男女トイレ(0円古本市付近)",
     category: "男女トイレ",
     organizer: "",
     position: "企画本館1F",
@@ -1247,7 +1247,7 @@ export const LOCATIONS: Location[] = [
   {
     id: "64",
     locid: "64",
-    name: "企画本館1F男女トイレ②",
+    name: "企画本館1F男女トイレ(EV付近)",
     category: "男女トイレ",
     organizer: "",
     position: "企画本館1F",
