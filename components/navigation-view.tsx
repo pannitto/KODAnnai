@@ -401,14 +401,14 @@ export function NavigationView({
                 >
                   {/* Step Card */}
                   <button
-                    onClick={() => openZoomModal(index)}
+                    onClick={index === 0 ? undefined : () => openZoomModal(index)}
                     className={` ${
                       index === 0
-                        ? `transition-all duration-300 text-white ${
+                        ? `transition-all duration-300 text-white cursor-default ${
                             highlight ? "border-blue-500" : ""
                           }`
-                        : "border-border/70"
-                    } flex gap-4 mb-2 px-4 h-24 items-center w-full text-left border-2 rounded-lg hover:border-primary/80 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-primary ${
+                        : "border-border/70 hover:border-primary/80 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+                    } flex gap-4 mb-2 px-4 h-24 items-center w-full text-left border-2 rounded-lg transition-colors ${
                       index === 0 ? "bg-card" : "bg-card"
                     }`}
                     style={
