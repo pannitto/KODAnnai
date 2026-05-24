@@ -404,7 +404,9 @@ export function NavigationView({
                     onClick={index === 0 ? undefined : () => openZoomModal(index)}
                     className={` ${
                       index === 0
-                        ? `transition-all duration-300 text-white cursor-default ${
+                        ? `transition-all duration-300 text-white cursor-default`
+                        : index === 1
+                        ? `border-border/70 hover:border-primary/80 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary ${
                             highlight ? "border-blue-500" : ""
                           }`
                         : "border-border/70 hover:border-primary/80 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary"
@@ -452,7 +454,7 @@ export function NavigationView({
                   </button>
 
                   {/* Overlay bubble */}
-                  {index === 0 && (
+                  {index === 1 && (
                     <div className="absolute -bottom-2 right-0 mt-0 z-10 bg-blue-500 text-white rounded-lg py-2 px-3 shadow-lg animate-fade-in-out">
                       タップすると拡大表示します
                       <div className="absolute top-0 left-4 w-2 h-2 bg-blue-500 rotate-45 -translate-y-1" />
