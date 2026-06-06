@@ -4,7 +4,7 @@ import Sparkle from "@/public/Sparkle.svg";
 
 export default function Footer() {
   return (
-    <footer className="flex items-center justify-center pt-6 pb-12">
+    <footer className="flex items-center justify-center pt-24 pb-12">
       {/* 
         The div wrapper helps prevent layout clipping
         and makes sure the SVG scales responsively.
