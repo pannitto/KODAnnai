@@ -649,6 +649,21 @@ export default function HomePageClient() {
           </div>
         </div>
       </div>
+      {/* 公式サイトバナー */}
+      <div className="w-full px-4 mt-6 mb-2 flex justify-center">
+        <a
+          href="https://kodairafes.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="block w-full max-w-lg"
+        >
+          <img
+            src="/KODAIRA祭公式サイトはこちら.svg"
+            alt="KODAIRA祭公式サイトはこちらから"
+            className="w-full h-auto"
+          />
+        </a>
+      </div>
       <Footer />
     </div>
   );
