@@ -277,7 +277,7 @@ export function LocationSelector({
                 </div>
                 {!departure && MAIN_EVENT_CATEGORIES.has(value.category) && (
                   <span
-                    className={`shrink-0 px-2 py-0.5 rounded-full text-xs font-medium ${getCategoryColor(value.category)}`}
+                    className={`shrink-0 px-2 py-0.5 rounded-full text-[13px] font-medium ${getCategoryColor(value.category)}`}
                   >
                     {value.category}
                   </span>
