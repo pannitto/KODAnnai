@@ -650,7 +650,7 @@ export default function HomePageClient() {
         </div>
       </div>
       {/* 公式サイトバナー */}
-      <div className="w-full px-4 mt-6 mb-2 flex justify-center">
+      <div className="w-full px-4 mt-6 mb-0 flex justify-center">
         <a
           href="https://kodairafes.com"
           target="_blank"
