@@ -658,7 +658,8 @@ export default function HomePageClient() {
           className="block w-full max-w-lg"
           aria-label="KODAIRA祭公式サイトはこちらから"
         >
-          <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" viewBox="0 0 1200 200" className="w-full h-auto">
+          {/* ライトモード用 */}
+          <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" viewBox="0 0 1200 200" className="w-full h-auto dark:hidden">
             <defs>
               <style>{`
                 .cls-1 { letter-spacing: .25em; }
@@ -675,7 +676,6 @@ export default function HomePageClient() {
                 .cls-8 { fill: #fc81bf; }
                 .cls-9 { letter-spacing: -.02em; }
                 .cls-10 { font-family: TsukuMinPr6N-L-90ms-RKSJ-H, 'FOT-TsukuMin Pr6N'; font-size: 54px; fill: #000; }
-                @media (prefers-color-scheme: dark) { .cls-10 { fill: #fff; } }
               `}</style>
               <linearGradient id="_名称未設定グラデーション_82" x1="-131.75" y1="41.64" x2="358.25" y2="41.64" gradientUnits="userSpaceOnUse">
                 <stop offset="0" stopColor="#fff"/><stop offset=".18" stopColor="#fbfefd"/><stop offset=".35" stopColor="#effcfa"/><stop offset=".52" stopColor="#dbf8f4"/><stop offset=".69" stopColor="#c0f3ec"/><stop offset=".86" stopColor="#9dece2"/><stop offset="1" stopColor="#7ae6d8"/>
@@ -704,6 +704,55 @@ export default function HomePageClient() {
             <polyline className="cls-8" points="0 110.01 162.06 117.92 68.87 -.92"/>
             <polyline className="cls-8" points="1138.53 87.22 976.47 79.32 1069.66 198.15"/>
             <polyline className="cls-7" points="1173.94 135.38 1049.12 129.29 1122.9 179.83"/>
+          </svg>
+          {/* ダークモード用 */}
+          <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" viewBox="0 0 1416.97 215.64" className="w-full h-auto hidden dark:block">
+            <defs>
+              <style>{`
+                .dk-cls-1 { letter-spacing: .25em; }
+                .dk-cls-2 { letter-spacing: -.05em; }
+                .dk-cls-3 { letter-spacing: -.02em; }
+                .dk-cls-4 { fill: #7aaad8; opacity: .5; }
+                .dk-cls-5 { letter-spacing: 0em; }
+                .dk-cls-6 { fill: #fff; font-family: NotoSerifJP-Light, 'Noto Serif JP'; font-size: 54px; font-variation-settings: 'wght' 300; font-weight: 300; }
+                .dk-cls-7 { stroke: url(#_dk_164); }
+                .dk-cls-7, .dk-cls-8, .dk-cls-9, .dk-cls-10 { fill: none; stroke-miterlimit: 10; }
+                .dk-cls-7, .dk-cls-9 { stroke-width: 6px; }
+                .dk-cls-11 { letter-spacing: -.03em; }
+                .dk-cls-12 { fill: #7ae6d8; }
+                .dk-cls-12, .dk-cls-13 { opacity: .7; }
+                .dk-cls-8 { stroke: url(#_dk_169); }
+                .dk-cls-8, .dk-cls-10 { stroke-width: 3px; }
+                .dk-cls-13 { fill: #fc81bf; }
+                .dk-cls-9 { stroke: url(#_dk_196); }
+                .dk-cls-10 { stroke: url(#_dk_182); }
+                .dk-cls-14 { letter-spacing: 0em; }
+              `}</style>
+              <linearGradient id="_dk_196" x1="0" y1="42.55" x2="490" y2="42.55" gradientUnits="userSpaceOnUse">
+                <stop offset="0" stopColor="#000"/><stop offset=".24" stopColor="#1a322f"/><stop offset=".78" stopColor="#5db0a5"/><stop offset="1" stopColor="#7ae6d8"/>
+              </linearGradient>
+              <linearGradient id="_dk_182" x1="34.44" y1="47.24" x2="566.72" y2="47.24" gradientUnits="userSpaceOnUse">
+                <stop offset=".06" stopColor="#000"/><stop offset=".32" stopColor="#532a3f"/><stop offset=".56" stopColor="#9b4f75"/><stop offset=".77" stopColor="#cf6a9d"/><stop offset=".92" stopColor="#ef7ab5"/><stop offset="1" stopColor="#fc81bf"/>
+              </linearGradient>
+              <linearGradient id="_dk_164" x1="676.49" y1="179.03" x2="1353.49" y2="179.03" gradientUnits="userSpaceOnUse">
+                <stop offset="0" stopColor="#7ae6d8"/><stop offset=".09" stopColor="#76ded1"/><stop offset=".23" stopColor="#6bcabd"/><stop offset=".4" stopColor="#59a89e"/><stop offset=".59" stopColor="#407972"/><stop offset=".8" stopColor="#213e3a"/><stop offset="1" stopColor="#000"/>
+              </linearGradient>
+              <linearGradient id="_dk_169" x1="739.97" y1="182.47" x2="1416.97" y2="182.47" gradientUnits="userSpaceOnUse">
+                <stop offset="0" stopColor="#fc81bf"/><stop offset=".12" stopColor="#f87fbc"/><stop offset=".23" stopColor="#ec79b3"/><stop offset=".35" stopColor="#d86fa4"/><stop offset=".46" stopColor="#bd608f"/><stop offset=".57" stopColor="#9a4e74"/><stop offset=".68" stopColor="#6e3853"/><stop offset=".8" stopColor="#3b1e2d"/><stop offset=".9" stopColor="#010001"/><stop offset=".91" stopColor="#000"/>
+              </linearGradient>
+            </defs>
+            <text className="dk-cls-6" transform="translate(409.26 106.94)"><tspan className="dk-cls-11" x="0" y="0">K</tspan><tspan className="dk-cls-3" x="37.69" y="0">O</tspan><tspan className="dk-cls-2" x="77.81" y="0">D</tspan><tspan className="dk-cls-5" x="116.64" y="0">A</tspan><tspan x="154.66" y="0">I</tspan><tspan className="dk-cls-14" x="176.25" y="0">R</tspan><tspan className="dk-cls-1" x="215.03" y="0">A</tspan><tspan x="266.97" y="0">祭公式サイトは</tspan><tspan x="187.49" y="52">こちらから</tspan></text>
+            <g>
+              <line className="dk-cls-9" y1="42.55" x2="490" y2="42.55"/>
+              <line className="dk-cls-10" x1="34.44" y1="47.24" x2="566.72" y2="47.24"/>
+            </g>
+            <line className="dk-cls-7" x1="676.49" y1="179.03" x2="1353.49" y2="179.03"/>
+            <line className="dk-cls-8" x1="739.97" y1="182.47" x2="1416.97" y2="182.47"/>
+            <polyline className="dk-cls-4" points="175.9 46.49 165.75 199.07 420.1 122.6"/>
+            <polyline className="dk-cls-4" points="1290.93 3.94 1301.08 156.53 1046.73 80.05"/>
+            <polyline className="dk-cls-13" points="131.75 110.93 293.81 118.84 200.62 0"/>
+            <polyline className="dk-cls-13" points="1270.28 88.14 1108.22 80.24 1201.41 199.07"/>
+            <polyline className="dk-cls-12" points="1305.69 136.3 1180.87 130.21 1254.65 180.75"/>
           </svg>
         </a>
       </div>
