@@ -656,12 +656,55 @@ export default function HomePageClient() {
           target="_blank"
           rel="noopener noreferrer"
           className="block w-full max-w-lg"
+          aria-label="KODAIRA祭公式サイトはこちらから"
         >
-          <img
-            src="/KODAIRA祭公式サイトはこちら.svg"
-            alt="KODAIRA祭公式サイトはこちらから"
-            className="w-full h-auto"
-          />
+          <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" viewBox="0 0 1200 200" className="w-full h-auto">
+            <defs>
+              <style>{`
+                .cls-1 { letter-spacing: .25em; }
+                .cls-2 { stroke: url(#_名称未設定グラデーション_122); }
+                .cls-2, .cls-3 { stroke-width: 6px; }
+                .cls-2, .cls-3, .cls-4, .cls-5 { fill: none; stroke-miterlimit: 10; }
+                .cls-6 { fill: #7aaad8; opacity: .5; }
+                .cls-3 { stroke: url(#_名称未設定グラデーション_82); }
+                .cls-4 { stroke: url(#_名称未設定グラデーション_138); }
+                .cls-4, .cls-5 { stroke-width: 3px; }
+                .cls-5 { stroke: url(#_名称未設定グラデーション_111); }
+                .cls-7 { fill: #7ae6d8; }
+                .cls-7, .cls-8 { opacity: .7; }
+                .cls-8 { fill: #fc81bf; }
+                .cls-9 { letter-spacing: -.02em; }
+                .cls-10 { font-family: TsukuMinPr6N-L-90ms-RKSJ-H, 'FOT-TsukuMin Pr6N'; font-size: 54px; fill: #000; }
+                @media (prefers-color-scheme: dark) { .cls-10 { fill: #fff; } }
+              `}</style>
+              <linearGradient id="_名称未設定グラデーション_82" x1="-131.75" y1="41.64" x2="358.25" y2="41.64" gradientUnits="userSpaceOnUse">
+                <stop offset="0" stopColor="#fff"/><stop offset=".18" stopColor="#fbfefd"/><stop offset=".35" stopColor="#effcfa"/><stop offset=".52" stopColor="#dbf8f4"/><stop offset=".69" stopColor="#c0f3ec"/><stop offset=".86" stopColor="#9dece2"/><stop offset="1" stopColor="#7ae6d8"/>
+              </linearGradient>
+              <linearGradient id="_名称未設定グラデーション_111" x1="-97.31" y1="46.32" x2="434.97" y2="46.32" gradientUnits="userSpaceOnUse">
+                <stop offset=".14" stopColor="#fff"/><stop offset="1" stopColor="#fc81bf"/>
+              </linearGradient>
+              <linearGradient id="_名称未設定グラデーション_122" x1="544.74" y1="178.11" x2="1221.74" y2="178.11" gradientUnits="userSpaceOnUse">
+                <stop offset="0" stopColor="#7ae6d8"/><stop offset="1" stopColor="#fff"/>
+              </linearGradient>
+              <linearGradient id="_名称未設定グラデーション_138" x1="608.22" y1="181.55" x2="1285.22" y2="181.55" gradientUnits="userSpaceOnUse">
+                <stop offset="0" stopColor="#fc81bf"/><stop offset=".81" stopColor="#fff"/>
+              </linearGradient>
+            </defs>
+            <text className="cls-10" transform="translate(279.89 106.02)"><tspan x="0" y="0">KO</tspan><tspan className="cls-9" x="77.38" y="0">D</tspan><tspan x="116.42" y="0">AIR</tspan><tspan className="cls-1" x="210.33" y="0">A</tspan><tspan x="262.22" y="0">祭公式サイトは</tspan><tspan x="185.11" y="52">こちらから</tspan></text>
+            <g>
+              <line className="cls-3" x1="-131.75" y1="41.64" x2="358.25" y2="41.64"/>
+              <line className="cls-5" x1="-97.31" y1="46.32" x2="434.97" y2="46.32"/>
+            </g>
+            <g>
+              <line className="cls-2" x1="544.74" y1="178.11" x2="1221.74" y2="178.11"/>
+              <line className="cls-4" x1="608.22" y1="181.55" x2="1285.22" y2="181.55"/>
+            </g>
+            <polyline className="cls-6" points="44.15 45.57 34 198.15 288.35 121.68"/>
+            <polyline className="cls-6" points="1159.18 3.02 1169.33 155.61 914.98 79.13"/>
+            <polyline className="cls-8" points="0 110.01 162.06 117.92 68.87 -.92"/>
+            <polyline className="cls-8" points="1138.53 87.22 976.47 79.32 1069.66 198.15"/>
+            <polyline className="cls-7" points="1173.94 135.38 1049.12 129.29 1122.9 179.83"/>
+          </svg>
         </a>
       </div>
       <Footer />
