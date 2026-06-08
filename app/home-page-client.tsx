@@ -659,51 +659,55 @@ export default function HomePageClient() {
           aria-label="KODAIRA祭公式サイトはこちらから"
         >
           {/* ライトモード用 */}
-          <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" viewBox="0 0 1200 200" className="w-full h-auto dark:hidden" style={{ aspectRatio: '1416.97 / 215.64' }}>
+          <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" viewBox="0 0 1416.98 215.63" className="w-full h-auto dark:hidden">
             <defs>
               <style>{`
-                .cls-1 { letter-spacing: .25em; }
-                .cls-2 { stroke: url(#_名称未設定グラデーション_122); }
-                .cls-2, .cls-3 { stroke-width: 6px; }
-                .cls-2, .cls-3, .cls-4, .cls-5 { fill: none; stroke-miterlimit: 10; }
-                .cls-6 { fill: #7aaad8; opacity: .5; }
-                .cls-3 { stroke: url(#_名称未設定グラデーション_82); }
-                .cls-4 { stroke: url(#_名称未設定グラデーション_138); }
-                .cls-4, .cls-5 { stroke-width: 3px; }
-                .cls-5 { stroke: url(#_名称未設定グラデーション_111); }
-                .cls-7 { fill: #7ae6d8; }
-                .cls-7, .cls-8 { opacity: .7; }
-                .cls-8 { fill: #fc81bf; }
-                .cls-9 { letter-spacing: -.02em; }
-                .cls-10 { font-family: TsukuMinPr6N-L-90ms-RKSJ-H, 'FOT-TsukuMin Pr6N'; font-size: 54px; fill: #000; }
+                .lt-st0, .lt-st1, .lt-st4 { font-family: TsukuARdGothicStd-R-83pv-RKSJ-H, 'FOT-TsukuARdGothic Std'; font-size: 54px; }
+                .lt-st1 { letter-spacing: -.02em; }
+                .lt-st7 { stroke: url(#lt_grad2); stroke-width: 3px; }
+                .lt-st7, .lt-st8, .lt-st9, .lt-st10 { fill: none; stroke-miterlimit: 10; }
+                .lt-st8 { stroke: url(#lt_grad4); stroke-width: 3px; }
+                .lt-st9 { stroke: url(#lt_grad3); stroke-width: 6px; }
+                .lt-st10 { stroke: url(#lt_grad); stroke-width: 6px; }
+                .lt-st3 { fill: #fc81bf; opacity: .7; }
+                .lt-st4 { letter-spacing: .25em; }
+                .lt-st5 { fill: #7ae6d8; opacity: .7; }
+                .lt-st6 { fill: #7aaad8; opacity: .5; }
               `}</style>
-              <linearGradient id="_名称未設定グラデーション_82" x1="-131.75" y1="41.64" x2="358.25" y2="41.64" gradientUnits="userSpaceOnUse">
+              <linearGradient id="lt_grad" x1=".51" y1="168.18" x2="490.51" y2="168.18" gradientTransform="translate(0 217.63) scale(1 -1)" gradientUnits="userSpaceOnUse">
                 <stop offset="0" stopColor="#fff"/><stop offset=".18" stopColor="#fbfefd"/><stop offset=".35" stopColor="#effcfa"/><stop offset=".52" stopColor="#dbf8f4"/><stop offset=".69" stopColor="#c0f3ec"/><stop offset=".86" stopColor="#9dece2"/><stop offset="1" stopColor="#7ae6d8"/>
               </linearGradient>
-              <linearGradient id="_名称未設定グラデーション_111" x1="-97.31" y1="46.32" x2="434.97" y2="46.32" gradientUnits="userSpaceOnUse">
+              <linearGradient id="lt_grad2" x1="34.95" y1="163.5" x2="567.23" y2="163.5" gradientTransform="translate(0 217.63) scale(1 -1)" gradientUnits="userSpaceOnUse">
                 <stop offset=".14" stopColor="#fff"/><stop offset="1" stopColor="#fc81bf"/>
               </linearGradient>
-              <linearGradient id="_名称未設定グラデーション_122" x1="544.74" y1="178.11" x2="1221.74" y2="178.11" gradientUnits="userSpaceOnUse">
+              <linearGradient id="lt_grad3" x1="677" y1="31.71" x2="1354" y2="31.71" gradientTransform="translate(0 217.63) scale(1 -1)" gradientUnits="userSpaceOnUse">
                 <stop offset="0" stopColor="#7ae6d8"/><stop offset="1" stopColor="#fff"/>
               </linearGradient>
-              <linearGradient id="_名称未設定グラデーション_138" x1="608.22" y1="181.55" x2="1285.22" y2="181.55" gradientUnits="userSpaceOnUse">
+              <linearGradient id="lt_grad4" x1="740.48" y1="28.27" x2="1417.48" y2="28.27" gradientTransform="translate(0 217.63) scale(1 -1)" gradientUnits="userSpaceOnUse">
                 <stop offset="0" stopColor="#fc81bf"/><stop offset=".81" stopColor="#fff"/>
               </linearGradient>
             </defs>
-            <text className="cls-10" transform="translate(279.89 106.02)"><tspan x="0" y="0">KO</tspan><tspan className="cls-9" x="77.38" y="0">D</tspan><tspan x="116.42" y="0">AIR</tspan><tspan className="cls-1" x="210.33" y="0">A</tspan><tspan x="262.22" y="0">祭公式サイトは</tspan><tspan x="185.11" y="52">こちらから</tspan></text>
             <g>
-              <line className="cls-3" x1="-131.75" y1="41.64" x2="358.25" y2="41.64"/>
-              <line className="cls-5" x1="-97.31" y1="46.32" x2="434.97" y2="46.32"/>
+              <text className="lt-st0" transform="translate(412.15 113.84)"><tspan x="0" y="0">KO</tspan></text>
+              <text className="lt-st1" transform="translate(489.53 113.84)"><tspan x="0" y="0">D</tspan></text>
+              <text className="lt-st0" transform="translate(528.57 113.84)"><tspan x="0" y="0">AIR</tspan></text>
+              <text className="lt-st4" transform="translate(622.48 113.84)"><tspan x="0" y="0">A</tspan></text>
+              <text className="lt-st0" transform="translate(674.37 113.84)"><tspan x="0" y="0">祭公式サイトは</tspan></text>
+              <text className="lt-st0" transform="translate(597.26 165.84)"><tspan x="0" y="0">こちらから</tspan></text>
             </g>
             <g>
-              <line className="cls-2" x1="544.74" y1="178.11" x2="1221.74" y2="178.11"/>
-              <line className="cls-4" x1="608.22" y1="181.55" x2="1285.22" y2="181.55"/>
+              <line className="lt-st10" x1=".51" y1="49.46" x2="490.51" y2="49.46"/>
+              <line className="lt-st7" x1="34.95" y1="54.14" x2="567.23" y2="54.14"/>
             </g>
-            <polyline className="cls-6" points="44.15 45.57 34 198.15 288.35 121.68"/>
-            <polyline className="cls-6" points="1159.18 3.02 1169.33 155.61 914.98 79.13"/>
-            <polyline className="cls-8" points="0 110.01 162.06 117.92 68.87 -.92"/>
-            <polyline className="cls-8" points="1138.53 87.22 976.47 79.32 1069.66 198.15"/>
-            <polyline className="cls-7" points="1173.94 135.38 1049.12 129.29 1122.9 179.83"/>
+            <g>
+              <line className="lt-st9" x1="677" y1="185.93" x2="1354" y2="185.93"/>
+              <line className="lt-st8" x1="740.48" y1="189.37" x2="1417.48" y2="189.37"/>
+            </g>
+            <polyline className="lt-st6" points="176.41 53.39 166.26 205.97 420.61 129.5"/>
+            <polyline className="lt-st6" points="1291.44 10.84 1301.59 163.43 1047.24 86.95"/>
+            <polyline className="lt-st3" points="132.26 117.83 294.32 125.74 201.13 6.9"/>
+            <polyline className="lt-st3" points="1270.79 95.04 1108.73 87.14 1201.92 205.97"/>
+            <polyline className="lt-st5" points="1306.2 143.2 1181.38 137.11 1255.16 187.65"/>
           </svg>
           {/* ダークモード用 */}
           <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" viewBox="0 0 1416.97 215.64" className="w-full h-auto hidden dark:block">
