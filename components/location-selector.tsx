@@ -91,6 +91,7 @@ export function LocationSelector({
     const term = kanaToHira(searchTerm.toLowerCase());
     const hasSearchTerm = term.trim().length > 0;
     const specialLocids = ["m", "f", "g", "r", "u"];
+    const departureExcludeIds = ["122", "123"];
 
     const filtered = LOCATIONS.filter((location) => {
       const isSpecial = specialLocids.includes(location.locid);
@@ -106,7 +107,7 @@ export function LocationSelector({
         );
 
       // 出発地: 特殊IDは選択不可（出発地点プリセットは候補に含める）
-      if (departure) return isMatch && !isSpecial;
+      if (departure) return isMatch && !isSpecial && !departureExcludeIds.includes(location.id);
 
       // 目的地: 未入力時のみ特殊IDを常に候補表示（かつ先頭固定）
       // 出発地点プリセットは目的地には出さない
