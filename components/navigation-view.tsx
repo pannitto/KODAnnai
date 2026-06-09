@@ -56,7 +56,6 @@ export function NavigationView({
   const [error, setError] = useState<string | null>(null);
 
   const [highlight, setHighlight] = useState(false);
-  const [imageErrors, setImageErrors] = useState<Set<number>>(new Set());
 
   const [mapMode, setMapMode] = useState(false);
 
@@ -160,13 +159,6 @@ export function NavigationView({
 
   const closeZoomModal = () => {
     setZoomModalOpen(false);
-  };
-
-  const getMapSrc = (nodeId: number): string => {
-    if (nodeId >= 251 && nodeId <= 259) return "/Chibikko_MAP.svg";
-    if (nodeId >= 305 && nodeId <= 326) return "/Bekkan_MAP.svg";
-    if (nodeId >= 260 && nodeId <= 304) return "/Main_building_MAP.svg";
-    return "/GRAND_MAP.svg";
   };
 
   const goToPrevious = () => {
@@ -401,16 +393,14 @@ export function NavigationView({
                 >
                   {/* Step Card */}
                   <button
-                    onClick={index === 0 ? undefined : () => openZoomModal(index)}
+                    onClick={() => openZoomModal(index)}
                     className={` ${
                       index === 0
-                        ? `transition-all duration-300 text-white cursor-default`
-                        : index === 1
-                        ? `border-border/70 hover:border-primary/80 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary ${
+                        ? `transition-all duration-300 text-white ${
                             highlight ? "border-blue-500" : ""
                           }`
-                        : "border-border/70 hover:border-primary/80 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary"
-                    } flex gap-4 mb-2 px-4 h-24 items-center w-full text-left border-2 rounded-lg transition-colors ${
+                        : "border-border/70"
+                    } flex gap-4 mb-2 px-4 h-24 items-center w-full text-left border-2 rounded-lg hover:border-primary/80 transition-colors focus:outline-none focus:ring-2 focus:ring-primary ${
                       index === 0 ? "bg-card" : "bg-card"
                     }`}
                     style={
@@ -454,7 +444,7 @@ export function NavigationView({
                   </button>
 
                   {/* Overlay bubble */}
-                  {index === 1 && (
+                  {index === 0 && (
                     <div className="absolute -bottom-2 right-0 mt-0 z-10 bg-blue-500 text-white rounded-lg py-2 px-3 shadow-lg animate-fade-in-out">
                       タップすると拡大表示します
                       <div className="absolute top-0 left-4 w-2 h-2 bg-blue-500 rotate-45 -translate-y-1" />
@@ -516,24 +506,15 @@ export function NavigationView({
                   <>
                     {/* Large Image */}
                     <div className="flex items-center justify-center w-full h-full">
-                      {imageErrors.has(currentZoomIndex) ? (
-                        <div className="flex items-center justify-center text-muted-foreground text-sm p-8 text-center">
-                          この区間の画像は用意されていません
-                        </div>
-                      ) : (
-                        <Image
-                          src={`/assembly/${
-                            currentStep.image || "placeholder.svg"
-                          }`}
-                          width={540}
-                          height={960}
-                          alt={currentStep.title}
-                          className="max-w-full max-h-full object-contain rounded-md"
-                          onError={() =>
-                            setImageErrors((prev) => new Set(prev).add(currentZoomIndex))
-                          }
-                        />
-                      )}
+                      <Image
+                        src={`/assembly/${
+                          currentStep.image || "/placeholder.svg"
+                        }`}
+                        width={540}
+                        height={960}
+                        alt={currentStep.title}
+                        className="max-w-full max-h-full object-contain rounded-md"
+                      />
                     </div>
 
                     {/* Description and Notice */}
@@ -561,8 +542,8 @@ export function NavigationView({
               ) : (
                 <div className="flex items-center justify-center w-full h-full">
                   <Image
-                    src={getMapSrc(Number(currentStep.id))}
-                    alt="フロアマップ"
+                    src="/GRAND_MAP.svg"
+                    alt="学校全体図"
                     height="800"
                     width="600"
                   />

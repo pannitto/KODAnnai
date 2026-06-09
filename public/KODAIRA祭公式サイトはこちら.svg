@@ -1,67 +1,72 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg id="_レイヤー_1" data-name="レイヤー 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1200 200">
+<svg id="_レイヤー_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 1416.98 215.63">
+  <!-- Generator: Adobe Illustrator 30.2.1, SVG Export Plug-In . SVG Version: 2.1.1 Build 1)  -->
   <defs>
     <style>
-      .cls-1 {
-        letter-spacing: .25em;
+      .st0, .st1, .st2, .st3, .st4, .st5, .st6 {
+        isolation: isolate;
       }
 
-      .cls-2 {
-        stroke: url(#_名称未設定グラデーション_122);
+      .st0, .st1, .st4 {
+        font-family: TsukuARdGothicStd-R-83pv-RKSJ-H, 'FOT-TsukuARdGothic Std';
+        font-size: 54px;
       }
 
-      .cls-2, .cls-3 {
-        stroke-width: 6px;
+      .st1 {
+        letter-spacing: -.02em;
       }
 
-      .cls-2, .cls-3, .cls-4, .cls-5 {
+      .st7 {
+        stroke: url(#_名称未設定グラデーション_2);
+      }
+
+      .st7, .st8 {
+        stroke-width: 3px;
+      }
+
+      .st7, .st8, .st9, .st10 {
         fill: none;
         stroke-miterlimit: 10;
       }
 
-      .cls-6 {
-        fill: #7aaad8;
-        opacity: .5;
+      .st8 {
+        stroke: url(#_名称未設定グラデーション_4);
       }
 
-      .cls-3 {
-        stroke: url(#_名称未設定グラデーション_82);
+      .st9 {
+        stroke: url(#_名称未設定グラデーション_3);
       }
 
-      .cls-4 {
-        stroke: url(#_名称未設定グラデーション_138);
+      .st9, .st10 {
+        stroke-width: 6px;
       }
 
-      .cls-4, .cls-5 {
-        stroke-width: 3px;
-      }
-
-      .cls-5 {
-        stroke: url(#_名称未設定グラデーション_111);
-      }
-
-      .cls-7 {
-        fill: #7ae6d8;
-      }
-
-      .cls-7, .cls-8 {
-        opacity: .7;
-      }
-
-      .cls-8 {
+      .st3 {
         fill: #fc81bf;
       }
 
-      .cls-9 {
-        letter-spacing: -.02em;
+      .st3, .st5 {
+        opacity: .7;
       }
 
-      .cls-10 {
-        font-family: TsukuMinPr6N-L-90ms-RKSJ-H, 'FOT-TsukuMin Pr6N';
-        font-size: 54px;
+      .st4 {
+        letter-spacing: .25em;
+      }
+
+      .st10 {
+        stroke: url(#_名称未設定グラデーション);
+      }
+
+      .st5 {
+        fill: #7ae6d8;
+      }
+
+      .st6 {
+        fill: #7aaad8;
+        opacity: .5;
       }
     </style>
-    <linearGradient id="_名称未設定グラデーション_82" data-name="名称未設定グラデーション 82" x1="-131.75" y1="41.64" x2="358.25" y2="41.64" gradientUnits="userSpaceOnUse">
+    <linearGradient id="_名称未設定グラデーション" data-name="名称未設定グラデーション" x1=".51" y1="168.18" x2="490.51" y2="168.18" gradientTransform="translate(0 217.63) scale(1 -1)" gradientUnits="userSpaceOnUse">
       <stop offset="0" stop-color="#fff"/>
       <stop offset=".18" stop-color="#fbfefd"/>
       <stop offset=".35" stop-color="#effcfa"/>
@@ -70,31 +75,38 @@
       <stop offset=".86" stop-color="#9dece2"/>
       <stop offset="1" stop-color="#7ae6d8"/>
     </linearGradient>
-    <linearGradient id="_名称未設定グラデーション_111" data-name="名称未設定グラデーション 111" x1="-97.31" y1="46.32" x2="434.97" y2="46.32" gradientUnits="userSpaceOnUse">
+    <linearGradient id="_名称未設定グラデーション_2" data-name="名称未設定グラデーション 2" x1="34.95" y1="163.5" x2="567.23" y2="163.5" gradientTransform="translate(0 217.63) scale(1 -1)" gradientUnits="userSpaceOnUse">
       <stop offset=".14" stop-color="#fff"/>
       <stop offset="1" stop-color="#fc81bf"/>
     </linearGradient>
-    <linearGradient id="_名称未設定グラデーション_122" data-name="名称未設定グラデーション 122" x1="544.74" y1="178.11" x2="1221.74" y2="178.11" gradientUnits="userSpaceOnUse">
+    <linearGradient id="_名称未設定グラデーション_3" data-name="名称未設定グラデーション 3" x1="677" y1="31.71" x2="1354" y2="31.71" gradientTransform="translate(0 217.63) scale(1 -1)" gradientUnits="userSpaceOnUse">
       <stop offset="0" stop-color="#7ae6d8"/>
       <stop offset="1" stop-color="#fff"/>
     </linearGradient>
-    <linearGradient id="_名称未設定グラデーション_138" data-name="名称未設定グラデーション 138" x1="608.22" y1="181.55" x2="1285.22" y2="181.55" gradientUnits="userSpaceOnUse">
+    <linearGradient id="_名称未設定グラデーション_4" data-name="名称未設定グラデーション 4" x1="740.48" y1="28.27" x2="1417.48" y2="28.27" gradientTransform="translate(0 217.63) scale(1 -1)" gradientUnits="userSpaceOnUse">
       <stop offset="0" stop-color="#fc81bf"/>
       <stop offset=".81" stop-color="#fff"/>
     </linearGradient>
   </defs>
-  <text class="cls-10" transform="translate(279.89 106.02)"><tspan x="0" y="0">KO</tspan><tspan class="cls-9" x="77.38" y="0">D</tspan><tspan x="116.42" y="0">AIR</tspan><tspan class="cls-1" x="210.33" y="0">A</tspan><tspan x="262.22" y="0">祭公式サイトは</tspan><tspan x="185.11" y="52">こちらから</tspan></text>
-  <g>
-    <line class="cls-3" x1="-131.75" y1="41.64" x2="358.25" y2="41.64"/>
-    <line class="cls-5" x1="-97.31" y1="46.32" x2="434.97" y2="46.32"/>
+  <g class="st2">
+    <text class="st0" transform="translate(412.15 113.84)"><tspan x="0" y="0">KO</tspan></text>
+    <text class="st1" transform="translate(489.53 113.84)"><tspan x="0" y="0">D</tspan></text>
+    <text class="st0" transform="translate(528.57 113.84)"><tspan x="0" y="0">AIR</tspan></text>
+    <text class="st4" transform="translate(622.48 113.84)"><tspan x="0" y="0">A</tspan></text>
+    <text class="st0" transform="translate(674.37 113.84)"><tspan x="0" y="0">祭公式サイトは</tspan></text>
+    <text class="st0" transform="translate(597.26 165.84)"><tspan x="0" y="0">こちらから</tspan></text>
   </g>
   <g>
-    <line class="cls-2" x1="544.74" y1="178.11" x2="1221.74" y2="178.11"/>
-    <line class="cls-4" x1="608.22" y1="181.55" x2="1285.22" y2="181.55"/>
+    <line class="st10" x1=".51" y1="49.46" x2="490.51" y2="49.46"/>
+    <line class="st7" x1="34.95" y1="54.14" x2="567.23" y2="54.14"/>
   </g>
-  <polyline class="cls-6" points="44.15 45.57 34 198.15 288.35 121.68"/>
-  <polyline class="cls-6" points="1159.18 3.02 1169.33 155.61 914.98 79.13"/>
-  <polyline class="cls-8" points="0 110.01 162.06 117.92 68.87 -.92"/>
-  <polyline class="cls-8" points="1138.53 87.22 976.47 79.32 1069.66 198.15"/>
-  <polyline class="cls-7" points="1173.94 135.38 1049.12 129.29 1122.9 179.83"/>
+  <g>
+    <line class="st9" x1="677" y1="185.93" x2="1354" y2="185.93"/>
+    <line class="st8" x1="740.48" y1="189.37" x2="1417.48" y2="189.37"/>
+  </g>
+  <polyline class="st6" points="176.41 53.39 166.26 205.97 420.61 129.5"/>
+  <polyline class="st6" points="1291.44 10.84 1301.59 163.43 1047.24 86.95"/>
+  <polyline class="st3" points="132.26 117.83 294.32 125.74 201.13 6.9"/>
+  <polyline class="st3" points="1270.79 95.04 1108.73 87.14 1201.92 205.97"/>
+  <polyline class="st5" points="1306.2 143.2 1181.38 137.11 1255.16 187.65"/>
 </svg>
