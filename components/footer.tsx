@@ -18,7 +18,7 @@ export default function Footer() {
           />
         </div>
         <span className="block text-center text-foreground text-xs mt-2">
-          © 2026 KODAIRA祭・Hideyuki Higashiyama Keigo Akazawa
+          © 2026 KODAIRA祭・Hideyuki Higashiyama & Keigo Akazawa
         </span>
       </div>
     </footer>
