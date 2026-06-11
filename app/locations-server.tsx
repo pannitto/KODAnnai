@@ -1633,7 +1633,7 @@ export const LOCATIONS: Location[] = [
     name: "データで見るライバル今",
     category: "展示",
     organizer: "KODAIRA祭実行委員会",
-    position: "企画本館4階廊下",
+    position: "企画本館4F廊下",
     keywords: ["受験生", "じゅけんせい", "ひかく", "比較"],
   },
   {
@@ -2290,8 +2290,8 @@ export const TRANSIT_NODE_META: Record<string, TransitNodeMeta> = {
   "323": { name: "", position: "企画別館 3F" },
   "326": { name: "", position: "企画別館 3F" },
   // 企画本館（東一号館）廊下ノード
-  "260": { name: "", position: "企画本館" },
-  "261": { name: "", position: "企画本館" },
+  "260": { name: "", position: "企画本館 1F" },
+  "261": { name: "", position: "企画本館 吹き抜け" },
   "262": { name: "", position: "企画本館 1F" },
   "263": { name: "", position: "企画本館 1F" },
   "265": { name: "", position: "企画本館 1F" },
