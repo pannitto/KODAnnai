@@ -48,6 +48,9 @@ export function NavigationView({
   rainyMode = false,
   barrierFreeMode = false,
 }: NavigationViewProps) {
+  const getAssemblyImageSrc = (image: string) =>
+    `/assembly/${image.replace(/\.png$/i, ".webp")}`;
+
   const [isScrolled, setIsScrolled] = useState(false);
   const [zoomModalOpen, setZoomModalOpen] = useState(false);
   const [currentZoomIndex, setCurrentZoomIndex] = useState(0);
@@ -413,7 +416,7 @@ export function NavigationView({
                     {index !== 0 && (
                       <div className="flex-shrink-0 w-20 h-20 bg-card border-2 border-primary rounded-lg flex items-center justify-center overflow-hidden hover:border-primary/80 transition-colors">
                         <Image
-                          src={`/assembly/${step.image || "/placeholder.svg"}`}
+                          src={getAssemblyImageSrc(step.image)}
                           alt={step.title}
                           width={270}
                           height={480}
@@ -507,9 +510,7 @@ export function NavigationView({
                     {/* Large Image */}
                     <div className="flex items-center justify-center w-full h-full">
                       <Image
-                        src={`/assembly/${
-                          currentStep.image || "/placeholder.svg"
-                        }`}
+                        src={getAssemblyImageSrc(currentStep.image)}
                         width={540}
                         height={960}
                         alt={currentStep.title}

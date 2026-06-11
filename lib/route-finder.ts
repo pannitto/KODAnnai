@@ -480,8 +480,6 @@ const GRAPH_EDGES = [
   { from: 309, to: 308, distance: 10.0 },
   { from: 308, to: 310, distance: 10.0 },
   { from: 310, to: 308, distance: 10.0 },
-  { from: 310, to: 311, distance: 20.0 },
-  { from: 311, to: 310, distance: 20.0 },
   { from: 314, to: 315, distance: 10.0 },
   { from: 315, to: 314, distance: 10.0 },
   { from: 315, to: 316, distance: 10.0 },
@@ -611,8 +609,6 @@ const GRAPH_EDGES = [
   { from: 97, to: 307, distance: 100.0 },
   { from: 310, to: 99, distance: 15.0 },
   { from: 99, to: 310, distance: 15.0 },
-  { from: 311, to: 99, distance: 15.0 },
-  { from: 99, to: 311, distance: 15.0 },
   { from: 99, to: 98, distance: 10.0 },
   { from: 98, to: 99, distance: 10.0 },
   { from: 317, to: 102, distance: 15.0 },
@@ -699,7 +695,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "キャンパスの方を向く",
     curr_name: "正門をくぐる",
     next_name: "",
-    image: "201_4_202.png",
+    image: "201_4_202.webp",
   },
   {
     previous: 202,
@@ -708,7 +704,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "正門の方を向く",
     curr_name: "正門をくぐる",
     next_name: "",
-    image: "202_4_201.png",
+    image: "202_4_201.webp",
   },
   {
     previous: 224,
@@ -717,7 +713,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "模擬店のない斜めの一本道へ進む",
     curr_name: "進んで左折する",
     next_name: "",
-    image: "224_4_201.png",
+    image: "224_4_201.webp",
   },
   {
     previous: 224,
@@ -726,7 +722,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "模擬店のない斜めの一本道へ進む",
     curr_name: "進んで右折する",
     next_name: "",
-    image: "224_4_202.png",
+    image: "224_4_202.webp",
   },
   {
     previous: 1,
@@ -735,7 +731,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "テントと反対を見て、左折する",
     next_name: "",
-    image: "1_201_4.png",
+    image: "1_201_4.webp",
   },
   {
     previous: 4,
@@ -744,7 +740,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "キャンパス外を向く",
     curr_name: "右折したところのテントが目的地",
     next_name: "",
-    image: "4_201_1.png",
+    image: "4_201_1.webp",
   },
   {
     previous: 4,
@@ -753,7 +749,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "キャンパス内側を向く",
     curr_name: "右手前のテントが目的地",
     next_name: "",
-    image: "4_202_5.png",
+    image: "4_202_5.webp",
   },
   {
     previous: 4,
@@ -762,7 +758,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "キャンパス内側を向く",
     curr_name: "そのまま進む",
     next_name: "",
-    image: "4_202_203.png",
+    image: "4_202_203.webp",
   },
   {
     previous: 5,
@@ -771,7 +767,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "通りの方を見て、左折する",
     next_name: "目的地に到着",
-    image: "5_202_4.png",
+    image: "5_202_4.webp",
   },
   {
     previous: 5,
@@ -780,7 +776,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "通りの方を見て、右折する",
     next_name: "",
-    image: "5_202_203.png",
+    image: "5_202_203.webp",
   },
   {
     previous: 203,
@@ -789,7 +785,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "正門の方を向く",
     curr_name: "そのまま進む",
     next_name: "目的地に到着",
-    image: "203_202_4.png",
+    image: "203_202_4.webp",
   },
   {
     previous: 203,
@@ -798,7 +794,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "左手一番奥のテントが目的地",
     next_name: "",
-    image: "203_202_5.png",
+    image: "203_202_5.webp",
   },
   {
     previous: 2,
@@ -807,7 +803,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "通りの方を見て向かいのテントが目的地",
     next_name: "",
-    image: "2_203_6.png",
+    image: "2_203_6.webp",
   },
   {
     previous: 2,
@@ -816,7 +812,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "通りの方を見て、右折する",
     next_name: "",
-    image: "2_203_202.png",
+    image: "2_203_202.webp",
   },
   {
     previous: 2,
@@ -825,7 +821,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "通りの方を見て、左折する",
     next_name: "",
-    image: "2_203_204.png",
+    image: "2_203_204.webp",
   },
   {
     previous: 6,
@@ -834,7 +830,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "通りの方を見て向かいのテントが目的地",
     next_name: "",
-    image: "6_203_2.png",
+    image: "6_203_2.webp",
   },
   {
     previous: 6,
@@ -843,7 +839,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "通りの方を見て、左折する",
     next_name: "",
-    image: "6_203_202.png",
+    image: "6_203_202.webp",
   },
   {
     previous: 6,
@@ -852,7 +848,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "通りの方を見て、右折する",
     next_name: "",
-    image: "6_203_204.png",
+    image: "6_203_204.webp",
   },
   {
     previous: 202,
@@ -861,7 +857,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "キャンパス内側を向く",
     curr_name: "左手のテントが目的地",
     next_name: "",
-    image: "202_203_2.png",
+    image: "202_203_2.webp",
   },
   {
     previous: 202,
@@ -870,7 +866,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "キャンパス内側を向く",
     curr_name: "右手にある正門からテントが目的地",
     next_name: "",
-    image: "202_203_6.png",
+    image: "202_203_6.webp",
   },
   {
     previous: 202,
@@ -879,7 +875,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "キャンパス内側を向く",
     curr_name: "そのまま進む",
     next_name: "",
-    image: "202_203_204.png",
+    image: "202_203_204.webp",
   },
   {
     previous: 204,
@@ -888,7 +884,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "正門の方を向く",
     curr_name: "右手のテントが目的地",
     next_name: "",
-    image: "204_203_2.png",
+    image: "204_203_2.webp",
   },
   {
     previous: 204,
@@ -897,7 +893,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "正門の方を向く",
     curr_name: "左手前のテントが目的地",
     next_name: "",
-    image: "204_203_6.png",
+    image: "204_203_6.webp",
   },
   {
     previous: 204,
@@ -906,7 +902,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "正門の方を向く",
     curr_name: "そのまま進む",
     next_name: "",
-    image: "204_203_202.png",
+    image: "204_203_202.webp",
   },
   {
     previous: 3,
@@ -915,7 +911,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "通りの方を見て、右折する",
     next_name: "",
-    image: "3_204_203.png",
+    image: "3_204_203.webp",
   },
   {
     previous: 3,
@@ -924,7 +920,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "通りの方を見て、左折する",
     next_name: "",
-    image: "3_204_205.png",
+    image: "3_204_205.webp",
   },
   {
     previous: 7,
@@ -933,7 +929,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "通りの方を見て向かいの看板が目的地",
     next_name: "",
-    image: "7_204_3.png",
+    image: "7_204_3.webp",
   },
   {
     previous: 7,
@@ -942,7 +938,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "通りの方を見て、左折する",
     next_name: "",
-    image: "7_204_203.png",
+    image: "7_204_203.webp",
   },
   {
     previous: 7,
@@ -951,7 +947,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "通りの方を見て、右折する",
     next_name: "",
-    image: "7_204_205.png",
+    image: "7_204_205.webp",
   },
   {
     previous: 203,
@@ -960,7 +956,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "池の方を向く",
     curr_name: "左手にある看板が目的地",
     next_name: "",
-    image: "203_204_3.png",
+    image: "203_204_3.webp",
   },
   {
     previous: 203,
@@ -969,7 +965,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "池の方を向く",
     curr_name: "そのまま進む",
     next_name: "",
-    image: "203_204_205.png",
+    image: "203_204_205.webp",
   },
   {
     previous: 205,
@@ -978,7 +974,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "正門の方を向く",
     curr_name: "右手にある看板が目的地",
     next_name: "",
-    image: "205_204_3.png",
+    image: "205_204_3.webp",
   },
   {
     previous: 205,
@@ -987,7 +983,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "正門の方を向く",
     curr_name: "そのまま進む",
     next_name: "",
-    image: "205_204_203.png",
+    image: "205_204_203.webp",
   },
   {
     previous: 204,
@@ -996,7 +992,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "池の方を向く",
     curr_name: "進んで右折した所にあるテントが目的地",
     next_name: "",
-    image: "204_205_7.png",
+    image: "204_205_7.webp",
   },
   {
     previous: 204,
@@ -1005,7 +1001,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "池の方を向く",
     curr_name: "左折する",
     next_name: "",
-    image: "204_205_207.png",
+    image: "204_205_207.webp",
   },
   {
     previous: 204,
@@ -1014,7 +1010,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "池の方を向く",
     curr_name: "池に沿うように右側を進む",
     next_name: "",
-    image: "204_205_220.png",
+    image: "204_205_220.webp",
   },
   {
     previous: 204,
@@ -1023,7 +1019,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "池の方を向く",
     curr_name: "池の内側へそのまま進む",
     next_name: "",
-    image: "204_205_221.png",
+    image: "204_205_221.webp",
   },
   {
     previous: 204,
@@ -1032,7 +1028,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "池の方を向く",
     curr_name: "右折してまっすぐな道へ進む",
     next_name: "",
-    image: "204_205_222.png",
+    image: "204_205_222.webp",
   },
   {
     previous: 207,
@@ -1041,7 +1037,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "正門の方を向く",
     curr_name: "そのまま進んで左手前のテントが目的地",
     next_name: "",
-    image: "207_205_7.png",
+    image: "207_205_7.webp",
   },
   {
     previous: 207,
@@ -1050,7 +1046,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "正門の方を向く",
     curr_name: "右折する",
     next_name: "",
-    image: "207_205_204.png",
+    image: "207_205_204.webp",
   },
   {
     previous: 207,
@@ -1059,7 +1055,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "正門の方を向く",
     curr_name: "池に沿うように左折する",
     next_name: "",
-    image: "207_205_220.png",
+    image: "207_205_220.webp",
   },
   {
     previous: 207,
@@ -1068,7 +1064,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "正門の方を向く",
     curr_name: "池の内側へ左折する",
     next_name: "",
-    image: "207_205_221.png",
+    image: "207_205_221.webp",
   },
   {
     previous: 207,
@@ -1077,7 +1073,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "正門の方を向く",
     curr_name: "左手奥のまっすぐな道へ進む",
     next_name: "",
-    image: "207_205_222.png",
+    image: "207_205_222.webp",
   },
   {
     previous: 220,
@@ -1086,7 +1082,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "正門の方を向く",
     curr_name: "進んで正門側へ左折する",
     next_name: "",
-    image: "220_205_204.png",
+    image: "220_205_204.webp",
   },
   {
     previous: 220,
@@ -1095,7 +1091,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "正門の方を向く",
     curr_name: "池に沿うように右折する",
     next_name: "",
-    image: "220_205_207.png",
+    image: "220_205_207.webp",
   },
   {
     previous: 220,
@@ -1104,7 +1100,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "正門の方を向く",
     curr_name: "池の内側へ右折する",
     next_name: "",
-    image: "220_205_221.png",
+    image: "220_205_221.webp",
   },
   {
     previous: 221,
@@ -1113,7 +1109,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "正門の方を向く(ステージと反対側を向く)",
     curr_name: "進んで右手手前のテントが目的地",
     next_name: "",
-    image: "221_205_7.png",
+    image: "221_205_7.webp",
   },
   {
     previous: 221,
@@ -1122,7 +1118,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "正門の方を向く(ステージと反対側を向く)",
     curr_name: "そのまま進む",
     next_name: "",
-    image: "221_205_204.png",
+    image: "221_205_204.webp",
   },
   {
     previous: 221,
@@ -1131,7 +1127,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "正門の方を向く(ステージと反対側を向く)",
     curr_name: "進んで右折する",
     next_name: "",
-    image: "221_205_207.png",
+    image: "221_205_207.webp",
   },
   {
     previous: 221,
@@ -1140,7 +1136,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "正門の方を向く(ステージと反対側を向く)",
     curr_name: "進んで池に沿うように左折する",
     next_name: "",
-    image: "221_205_220.png",
+    image: "221_205_220.webp",
   },
   {
     previous: 221,
@@ -1149,7 +1145,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "正門の方を向く(ステージと反対側を向く)",
     curr_name: "進んで左折してまっすぐな道へ進む",
     next_name: "",
-    image: "221_205_222.png",
+    image: "221_205_222.webp",
   },
   {
     previous: 222,
@@ -1158,7 +1154,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "池や正門に続く方を向く",
     curr_name: "進んで左折する",
     next_name: "",
-    image: "222_205_204.png",
+    image: "222_205_204.webp",
   },
   {
     previous: 222,
@@ -1167,7 +1163,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "池や正門に続く方を向く",
     curr_name: "進んで池に沿って右折する",
     next_name: "",
-    image: "222_205_207.png",
+    image: "222_205_207.webp",
   },
   {
     previous: 222,
@@ -1176,7 +1172,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "池や正門に続く方を向く",
     curr_name: "進んで池の内側へ右折する",
     next_name: "",
-    image: "222_205_221.png",
+    image: "222_205_221.webp",
   },
   {
     previous: 8,
@@ -1203,7 +1199,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "通路側を向いて、右折する",
     next_name: "",
-    image: "8_207_205.png",
+    image: "8_207_205.webp",
   },
   {
     previous: 8,
@@ -1212,7 +1208,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "通路側を向いて、左折する",
     next_name: "",
-    image: "8_207_208.png",
+    image: "8_207_208.webp",
   },
   {
     previous: 9,
@@ -1239,7 +1235,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "通路側を向いて、右折する",
     next_name: "",
-    image: "9_207_205.png",
+    image: "9_207_205.webp",
   },
   {
     previous: 9,
@@ -1248,7 +1244,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "通路側を向いて、左折する",
     next_name: "",
-    image: "9_207_208.png",
+    image: "9_207_208.webp",
   },
   {
     previous: 10,
@@ -1257,7 +1253,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "右手二つ隣のテントが目的地",
     next_name: "",
-    image: "10_207_8.png",
+    image: "",
   },
   {
     previous: 10,
@@ -1266,7 +1262,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "左隣のテントが目的地",
     next_name: "",
-    image: "10_207_9.png",
+    image: "",
   },
   {
     previous: 10,
@@ -1275,7 +1271,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "通路側を向いて、右折する",
     next_name: "",
-    image: "10_207_205.png",
+    image: "",
   },
   {
     previous: 10,
@@ -1284,7 +1280,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "通路側を向いて、左折する",
     next_name: "",
-    image: "10_207_208.png",
+    image: "10_207_208.webp",
   },
   {
     previous: 205,
@@ -1293,7 +1289,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "池に向かって左の道へ向く",
     curr_name: "左手前のテントが目的地",
     next_name: "",
-    image: "205_207_8.png",
+    image: "205_207_8.webp",
   },
   {
     previous: 205,
@@ -1302,7 +1298,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "池に向かって左の道へ向く",
     curr_name: "左手前から二番目のテントが目的地",
     next_name: "",
-    image: "205_207_9.png",
+    image: "205_207_9.webp",
   },
   {
     previous: 205,
@@ -1311,7 +1307,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "池に向かって左の道へ向く",
     curr_name: "左手前から三番目のテントが目的地",
     next_name: "",
-    image: "205_207_10.png",
+    image: "205_207_10.webp",
   },
   {
     previous: 205,
@@ -1320,7 +1316,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "池に向かって左の道へ向く",
     curr_name: "そのまま進む",
     next_name: "",
-    image: "205_207_208.png",
+    image: "205_207_208.webp",
   },
   {
     previous: 208,
@@ -1329,7 +1325,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "正門側を向く",
     curr_name: "右手一番奥のテントが目的地",
     next_name: "",
-    image: "208_207_8.png",
+    image: "208_207_8.webp",
   },
   {
     previous: 208,
@@ -1338,7 +1334,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "正門側を向く",
     curr_name: "右手奥から二番目のテントが目的地",
     next_name: "",
-    image: "208_207_9.png",
+    image: "208_207_9.webp",
   },
   {
     previous: 208,
@@ -1347,7 +1343,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "正門側を向く",
     curr_name: "右手奥から三番目のテントが目的地",
     next_name: "",
-    image: "208_207_10.png",
+    image: "208_207_10.webp",
   },
   {
     previous: 208,
@@ -1356,7 +1352,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "正門側を向く",
     curr_name: "そのまま進む",
     next_name: "",
-    image: "208_207_205.png",
+    image: "208_207_205.webp",
   },
   {
     previous: 11,
@@ -1401,7 +1397,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "通路側を向いて、左折する",
     next_name: "",
-    image: "11_208_209.png",
+    image: "11_208_209.webp",
   },
   {
     previous: 12,
@@ -1437,7 +1433,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "通路側を向いて、右折する",
     next_name: "",
-    image: "12_208_207.png",
+    image: "12_208_207.webp",
   },
   {
     previous: 12,
@@ -1446,7 +1442,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "通路側を向いて、左折する",
     next_name: "",
-    image: "12_208_209.png",
+    image: "12_208_209.webp",
   },
   {
     previous: 13,
@@ -1482,7 +1478,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "通路側を向いて、右折する",
     next_name: "",
-    image: "13_208_207.png",
+    image: "13_208_207.webp",
   },
   {
     previous: 13,
@@ -1491,7 +1487,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "通路側を向いて、左折する",
     next_name: "",
-    image: "13_208_209.png",
+    image: "13_208_209.webp",
   },
   {
     previous: 14,
@@ -1527,7 +1523,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "通路側を向いて、右折する",
     next_name: "",
-    image: "14_208_207.png",
+    image: "14_208_207.webp",
   },
   {
     previous: 14,
@@ -1536,7 +1532,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "通路側を向いて、左折する",
     next_name: "",
-    image: "14_208_209.png",
+    image: "14_208_209.webp",
   },
   {
     previous: 207,
@@ -1545,7 +1541,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "正門と逆側を向く",
     curr_name: "左手奥から四番目のテントが目的地",
     next_name: "",
-    image: "207_208_11.png",
+    image: "207_208_11.webp",
   },
   {
     previous: 207,
@@ -1554,7 +1550,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "正門と逆側を向く",
     curr_name: "左手奥から三番目のテントが目的地",
     next_name: "",
-    image: "207_208_12.png",
+    image: "207_208_12.webp",
   },
   {
     previous: 207,
@@ -1563,7 +1559,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "正門と逆側を向く",
     curr_name: "左手奥から二番目のテントが目的地",
     next_name: "",
-    image: "207_208_13.png",
+    image: "207_208_13.webp",
   },
   {
     previous: 207,
@@ -1572,7 +1568,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "正門と逆側を向く",
     curr_name: "左手一番奥のテントが目的地",
     next_name: "",
-    image: "207_208_14.png",
+    image: "207_208_14.webp",
   },
   {
     previous: 207,
@@ -1581,7 +1577,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "正門と逆側を向く",
     curr_name: "そのまま進む",
     next_name: "",
-    image: "207_208_209.png",
+    image: "207_208_209.webp",
   },
   {
     previous: 209,
@@ -1590,7 +1586,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "正門側を向く",
     curr_name: "右手前から四番目のテントが目的地",
     next_name: "",
-    image: "209_208_11.png",
+    image: "209_208_11.webp",
   },
   {
     previous: 209,
@@ -1599,7 +1595,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "正門側を向く",
     curr_name: "右手前から三番目のテントが目的地",
     next_name: "",
-    image: "209_208_12.png",
+    image: "209_208_12.webp",
   },
   {
     previous: 209,
@@ -1608,7 +1604,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "正門側を向く",
     curr_name: "右手前から二番目のテントが目的地",
     next_name: "",
-    image: "209_208_13.png",
+    image: "209_208_13.webp",
   },
   {
     previous: 209,
@@ -1617,7 +1613,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "正門側を向く",
     curr_name: "右手前のテントが目的地",
     next_name: "",
-    image: "209_208_14.png",
+    image: "209_208_14.webp",
   },
   {
     previous: 209,
@@ -1626,7 +1622,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "正門側を向く",
     curr_name: "そのまま進む",
     next_name: "",
-    image: "209_208_207.png",
+    image: "209_208_207.webp",
   },
   {
     previous: 208,
@@ -1635,7 +1631,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "正門と逆側を向く",
     curr_name: "池を沿うようにそのまま進む",
     next_name: "",
-    image: "208_209_210.png",
+    image: "208_209_210.webp",
   },
   {
     previous: 208,
@@ -1644,7 +1640,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "正門と逆側を向く",
     curr_name: "池の内側へ右折する",
     next_name: "",
-    image: "208_209_221.png",
+    image: "208_209_221.webp",
   },
   {
     previous: 210,
@@ -1653,7 +1649,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "正門の方を向く(ステージと反対側を向く)",
     curr_name: "池を沿うようにそのまま進む",
     next_name: "",
-    image: "210_209_208.png",
+    image: "210_209_208.webp",
   },
   {
     previous: 210,
@@ -1662,7 +1658,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "正門の方を向く(ステージと反対側を向く)",
     curr_name: "池の内側へ左折する",
     next_name: "",
-    image: "210_209_221.png",
+    image: "210_209_221.webp",
   },
   {
     previous: 221,
@@ -1671,7 +1667,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "東本館(立ち入り禁止の建物)の方を向く",
     curr_name: "進んで池に沿うように左折する",
     next_name: "",
-    image: "221_209_208.png",
+    image: "221_209_208.webp",
   },
   {
     previous: 221,
@@ -1680,7 +1676,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "東本館(立ち入り禁止の建物)の方を向く",
     curr_name: "進んで池に沿うように右折する",
     next_name: "",
-    image: "221_209_210.png",
+    image: "221_209_210.webp",
   },
   {
     previous: 15,
@@ -1707,7 +1703,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "通路側を向いて、右折する",
     next_name: "",
-    image: "15_210_209.png",
+    image: "15_210_209.webp",
   },
   {
     previous: 15,
@@ -1716,7 +1712,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "通路側を向いて、左折する",
     next_name: "",
-    image: "15_210_211.png",
+    image: "15_210_211.webp",
   },
   {
     previous: 16,
@@ -1743,7 +1739,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "通路側を向いて、右折する",
     next_name: "",
-    image: "16_210_209.png",
+    image: "16_210_209.webp",
   },
   {
     previous: 16,
@@ -1752,7 +1748,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "通路側を向いて、左折する",
     next_name: "",
-    image: "16_210_211.png",
+    image: "16_210_211.webp",
   },
   {
     previous: 17,
@@ -1779,7 +1775,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "通路側を向いて、右折する",
     next_name: "",
-    image: "17_210_209.png",
+    image: "17_210_209.webp",
   },
   {
     previous: 17,
@@ -1788,7 +1784,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "通路側を向いて、左折する",
     next_name: "",
-    image: "17_210_211.png",
+    image: "17_210_211.webp",
   },
   {
     previous: 209,
@@ -1797,7 +1793,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "ステージの方を向く",
     curr_name: "東本館(立ち入り禁止の建物)を超えて左手前のテントが目的地",
     next_name: "",
-    image: "209_210_15.png",
+    image: "209_210_15.webp",
   },
   {
     previous: 209,
@@ -1807,7 +1803,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     curr_name:
       "東本館(立ち入り禁止の建物)を超えて左手前から二番目のテントが目的地",
     next_name: "",
-    image: "209_210_16.png",
+    image: "209_210_16.webp",
   },
   {
     previous: 209,
@@ -1817,7 +1813,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     curr_name:
       "東本館(立ち入り禁止の建物)を超えて左手前から三番目のテントが目的地",
     next_name: "",
-    image: "209_210_17.png",
+    image: "209_210_17.webp",
   },
   {
     previous: 209,
@@ -1826,7 +1822,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "ステージの方を向く",
     curr_name: "そのまま進む",
     next_name: "",
-    image: "209_210_211.png",
+    image: "209_210_211.webp",
   },
   {
     previous: 211,
@@ -1835,7 +1831,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "東本館(立ち入り禁止の建物)の方を向く",
     curr_name: "右手一番奥のテントが目的地",
     next_name: "",
-    image: "211_210_15.png",
+    image: "211_210_15.webp",
   },
   {
     previous: 211,
@@ -1844,7 +1840,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "東本館(立ち入り禁止の建物)の方を向く",
     curr_name: "右手奥から二番目のテントが目的地",
     next_name: "",
-    image: "211_210_16.png",
+    image: "211_210_16.webp",
   },
   {
     previous: 211,
@@ -1853,7 +1849,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "東本館(立ち入り禁止の建物)の方を向く",
     curr_name: "右手奥から三番目のテントが目的地",
     next_name: "",
-    image: "211_210_17.png",
+    image: "211_210_17.webp",
   },
   {
     previous: 211,
@@ -1862,7 +1858,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "東本館(立ち入り禁止の建物)の方を向く",
     curr_name: "そのまま進む",
     next_name: "",
-    image: "211_210_209.png",
+    image: "211_210_209.webp",
   },
   {
     previous: 18,
@@ -1889,7 +1885,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "通路側を向いて、右折する",
     next_name: "",
-    image: "18_211_210.png",
+    image: "18_211_210.webp",
   },
   {
     previous: 18,
@@ -1898,7 +1894,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "通路側を向いて、左折する",
     next_name: "",
-    image: "18_211_212.png",
+    image: "18_211_212.webp",
   },
   {
     previous: 19,
@@ -1925,7 +1921,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "通路側を向いて、右折する",
     next_name: "",
-    image: "19_211_210.png",
+    image: "19_211_210.webp",
   },
   {
     previous: 19,
@@ -1934,7 +1930,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "通路側を向いて、左折する",
     next_name: "",
-    image: "19_211_212.png",
+    image: "19_211_212.webp",
   },
   {
     previous: 20,
@@ -1970,7 +1966,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "通路側を向いて、左折する",
     next_name: "",
-    image: "20_211_212.png",
+    image: "20_211_212.webp",
   },
   {
     previous: 210,
@@ -1979,7 +1975,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "ステージの方を向く",
     curr_name: "左手奥から三番目のテントが目的地",
     next_name: "",
-    image: "210_211_18.png",
+    image: "210_211_18.webp",
   },
   {
     previous: 210,
@@ -1988,7 +1984,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "ステージの方を向く",
     curr_name: "左手奥から二番目のテントが目的地",
     next_name: "",
-    image: "210_211_19.png",
+    image: "210_211_19.webp",
   },
   {
     previous: 210,
@@ -1997,7 +1993,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "ステージの方を向く",
     curr_name: "左手一番奥のテントが目的地",
     next_name: "",
-    image: "210_211_20.png",
+    image: "210_211_20.webp",
   },
   {
     previous: 210,
@@ -2006,7 +2002,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "ステージの方を向く",
     curr_name: "そのまま進む",
     next_name: "",
-    image: "210_211_212.png",
+    image: "210_211_212.webp",
   },
   {
     previous: 212,
@@ -2015,7 +2011,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "東本館(立ち入り禁止の建物)の方を向く",
     curr_name: "右手前から三番目のテントが目的地",
     next_name: "",
-    image: "212_211_18.png",
+    image: "212_211_18.webp",
   },
   {
     previous: 212,
@@ -2024,7 +2020,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "東本館(立ち入り禁止の建物)の方を向く",
     curr_name: "右手前から二番目のテントが目的地",
     next_name: "",
-    image: "212_211_19.png",
+    image: "212_211_19.webp",
   },
   {
     previous: 212,
@@ -2033,7 +2029,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "東本館(立ち入り禁止の建物)の方を向く",
     curr_name: "右手前のテントが目的地",
     next_name: "",
-    image: "212_211_20.png",
+    image: "212_211_20.webp",
   },
   {
     previous: 212,
@@ -2042,7 +2038,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "東本館(立ち入り禁止の建物)の方を向く",
     curr_name: "そのまま進む",
     next_name: "",
-    image: "212_211_210.png",
+    image: "212_211_210.webp",
   },
   {
     previous: 211,
@@ -2051,7 +2047,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "ステージの方を向く",
     curr_name: "右折する",
     next_name: "",
-    image: "211_212_213.png",
+    image: "211_212_213.webp",
   },
   {
     previous: 211,
@@ -2060,7 +2056,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "ステージの方を向く",
     curr_name: "そのまま進む",
     next_name: "",
-    image: "211_212_226.png",
+    image: "211_212_226.webp",
   },
   {
     previous: 213,
@@ -2069,7 +2065,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "池に向かって右を向く",
     curr_name: "そのまま池に沿うように左折する",
     next_name: "",
-    image: "213_212_211.png",
+    image: "213_212_211.webp",
   },
   {
     previous: 213,
@@ -2078,7 +2074,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "池に向かって右を向く",
     curr_name: "進んで右折する",
     next_name: "",
-    image: "213_212_226.png",
+    image: "213_212_226.webp",
   },
   {
     previous: 226,
@@ -2087,7 +2083,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "東本館(立ち入り禁止の建物)の方を向く",
     curr_name: "そのまま進む",
     next_name: "",
-    image: "226_212_211.png",
+    image: "226_212_211.webp",
   },
   {
     previous: 226,
@@ -2096,7 +2092,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "東本館(立ち入り禁止の建物)の方を向く",
     curr_name: "左折する",
     next_name: "",
-    image: "226_212_213.png",
+    image: "226_212_213.webp",
   },
   {
     previous: 212,
@@ -2105,7 +2101,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "ステージに向かって右側を向く",
     curr_name: "左手奥の道に向かって進む",
     next_name: "",
-    image: "212_213_214.png",
+    image: "212_213_214.webp",
   },
   {
     previous: 212,
@@ -2114,7 +2110,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "ステージに向かって右側を向く",
     curr_name: "奥の左側の模擬店を目指すように進む",
     next_name: "",
-    image: "212_213_215.png",
+    image: "212_213_215.webp",
   },
   {
     previous: 212,
@@ -2123,7 +2119,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "ステージに向かって右側を向く",
     curr_name: "池に沿うように右折する",
     next_name: "",
-    image: "212_213_216.png",
+    image: "212_213_216.webp",
   },
   {
     previous: 212,
@@ -2132,16 +2128,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "ステージに向かって右側を向く",
     curr_name: "池の内側へ右折する",
     next_name: "",
-    image: "212_213_221.png",
-  },
-  {
-    previous: 212,
-    current: 213,
-    next: 228,
-    prev_name: "ステージに向かって右側を向く",
-    curr_name: "ステージ左側の通路に向かうよう左折する",
-    next_name: "",
-    image: "212_213_228.png",
+    image: "212_213_221.webp",
   },
   {
     previous: 212,
@@ -2150,7 +2137,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "ステージに向かって右側を向く",
     curr_name: "進んで左折する",
     next_name: "",
-    image: "212_213_229.png",
+    image: "212_213_229.webp",
   },
   {
     previous: 214,
@@ -2159,7 +2146,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "池の方を向く",
     curr_name: "池の右手奥に進むように池に沿って進む",
     next_name: "",
-    image: "214_213_212.png",
+    image: "214_213_212.webp",
   },
   {
     previous: 214,
@@ -2168,7 +2155,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "池の方を向く",
     curr_name: "池の内側へ左折する",
     next_name: "",
-    image: "214_213_221.png",
+    image: "214_213_221.webp",
   },
   {
     previous: 215,
@@ -2177,7 +2164,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "模擬店と反対側を向く",
     curr_name: "池の右手奥に進むように池に沿って進む",
     next_name: "",
-    image: "215_213_212.png",
+    image: "215_213_212.webp",
   },
   {
     previous: 215,
@@ -2186,7 +2173,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "模擬店と反対側を向く",
     curr_name: "池の内側へ左折する",
     next_name: "",
-    image: "215_213_221.png",
+    image: "215_213_221.webp",
   },
   {
     previous: 215,
@@ -2195,7 +2182,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "模擬店と反対側を向く",
     curr_name: "進んで右手奥へ右折する",
     next_name: "",
-    image: "215_213_228.png",
+    image: "215_213_228.webp",
   },
   {
     previous: 215,
@@ -2204,7 +2191,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "模擬店と反対側を向く",
     curr_name: "進んで右折する",
     next_name: "",
-    image: "215_213_229.png",
+    image: "215_213_229.webp",
   },
   {
     previous: 216,
@@ -2213,7 +2200,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "池に向かって右側を向く",
     curr_name: "池に沿うように左折する",
     next_name: "",
-    image: "216_213_212.png",
+    image: "216_213_212.webp",
   },
   {
     previous: 216,
@@ -2222,7 +2209,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "池に向かって右側を向く",
     curr_name: "池の内側へ左折する",
     next_name: "",
-    image: "216_213_221.png",
+    image: "216_213_221.webp",
   },
   {
     previous: 216,
@@ -2231,7 +2218,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "池に向かって右側を向く",
     curr_name: "進んで右手奥へ右折する",
     next_name: "",
-    image: "216_213_228.png",
+    image: "216_213_228.webp",
   },
   {
     previous: 216,
@@ -2240,7 +2227,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "池に向かって右側を向く",
     curr_name: "進んで右折する",
     next_name: "",
-    image: "216_213_229.png",
+    image: "216_213_229.webp",
   },
   {
     previous: 221,
@@ -2249,7 +2236,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "ステージの方を向く",
     curr_name: "進んで池に沿うように左折する",
     next_name: "",
-    image: "221_213_212.png",
+    image: "221_213_212.webp",
   },
   {
     previous: 221,
@@ -2258,7 +2245,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "ステージの方を向く",
     curr_name: "進んで右手奥の道に向かって進む",
     next_name: "",
-    image: "221_213_214.png",
+    image: "221_213_214.webp",
   },
   {
     previous: 221,
@@ -2267,7 +2254,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "ステージの方を向く",
     curr_name: "進んで右手奥の模擬店を目指すように進む",
     next_name: "",
-    image: "221_213_215.png",
+    image: "221_213_215.webp",
   },
   {
     previous: 221,
@@ -2276,7 +2263,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "ステージの方を向く",
     curr_name: "進んで池に沿うように右折する",
     next_name: "",
-    image: "221_213_216.png",
+    image: "221_213_216.webp",
   },
   {
     previous: 221,
@@ -2285,7 +2272,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "ステージの方を向く",
     curr_name: "進んでステージ左側の通路に向かうように左折する",
     next_name: "",
-    image: "221_213_228.png",
+    image: "221_213_228.webp",
   },
   {
     previous: 221,
@@ -2294,25 +2281,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "ステージの方を向く",
     curr_name: "そのまま進む",
     next_name: "",
-    image: "221_213_229.png",
-  },
-  {
-    previous: 228,
-    current: 213,
-    next: 212,
-    prev_name: "池の方を向く",
-    curr_name: "池に沿うように右折する",
-    next_name: "",
-    image: "228_213_212.png",
-  },
-  {
-    previous: 228,
-    current: 213,
-    next: 214,
-    prev_name: "池の方を向く",
-    curr_name: "左手奥の通路に向かって左折する",
-    next_name: "",
-    image: "228_213_214.png",
+    image: "221_213_229.webp",
   },
   {
     previous: 228,
@@ -2321,7 +2290,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "池の方を向く",
     curr_name: "左手手前側の模擬店を目指すように左折する",
     next_name: "",
-    image: "228_213_215.png",
+    image: "228_213_215.webp",
   },
   {
     previous: 228,
@@ -2330,7 +2299,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "池の方を向く",
     curr_name: "池に沿うように左側を進む",
     next_name: "",
-    image: "228_213_216.png",
+    image: "228_213_216.webp",
   },
   {
     previous: 228,
@@ -2339,7 +2308,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "池の方を向く",
     curr_name: "池の内側へ右折する",
     next_name: "",
-    image: "228_213_221.png",
+    image: "228_213_221.webp",
   },
   {
     previous: 229,
@@ -2348,7 +2317,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "池の方を向く",
     curr_name: "進んで池に沿うように右側を進む",
     next_name: "",
-    image: "229_213_212.png",
+    image: "229_213_212.webp",
   },
   {
     previous: 229,
@@ -2357,7 +2326,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "池の方を向く",
     curr_name: "進んで池に沿うように左側を進む",
     next_name: "",
-    image: "229_213_216.png",
+    image: "229_213_216.webp",
   },
   {
     previous: 229,
@@ -2366,7 +2335,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "池の方を向く",
     curr_name: "池の内側へそのまま進む",
     next_name: "",
-    image: "229_213_221.png",
+    image: "229_213_221.webp",
   },
   {
     previous: 213,
@@ -2375,7 +2344,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "ステージ右手奥の通りを向く",
     curr_name: "そのまま進む",
     next_name: "",
-    image: "213_214_236.png",
+    image: "213_214_236.webp",
   },
   {
     previous: 215,
@@ -2384,7 +2353,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "ステージの方を向く",
     curr_name: "ステージ前へそのまま進む",
     next_name: "",
-    image: "215_214_229.png",
+    image: "215_214_229.webp",
   },
   {
     previous: 229,
@@ -2393,7 +2362,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "ステージ右手側の模擬店の方を向く",
     curr_name: "向かって左寄りの模擬店を目指すように進む",
     next_name: "",
-    image: "229_214_215.png",
+    image: "229_214_215.webp",
   },
   {
     previous: 229,
@@ -2402,7 +2371,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "ステージ右手奥の通りを向く",
     curr_name: "左手奥の通りに向かってそのまま進む",
     next_name: "",
-    image: "229_214_236.png",
+    image: "229_214_236.webp",
   },
   {
     previous: 236,
@@ -2411,7 +2380,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "池の方を向く",
     curr_name: "そのまま進む",
     next_name: "",
-    image: "236_214_213.png",
+    image: "236_214_213.webp",
   },
   {
     previous: 236,
@@ -2420,7 +2389,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "ステージの方を向く",
     curr_name: "ステージ前へそのまま進む",
     next_name: "",
-    image: "236_214_229.png",
+    image: "236_214_229.webp",
   },
   {
     previous: 21,
@@ -2447,7 +2416,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "模擬店と反対を向いて、池の出入り口前に向かって進む",
     next_name: "",
-    image: "21_215_213.png",
+    image: "21_215_213.webp",
   },
   {
     previous: 21,
@@ -2456,7 +2425,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "模擬店と反対を向いて、そのまま進む",
     curr_name: "",
     next_name: "",
-    image: "21_215_214.png",
+    image: "21_215_214.webp",
   },
   {
     previous: 21,
@@ -2465,7 +2434,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "模擬店と反対を向いて、左折する",
     next_name: "",
-    image: "21_215_216.png",
+    image: "21_215_216.webp",
   },
   {
     previous: 21,
@@ -2474,7 +2443,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "模擬店と反対を向いて右折する",
     curr_name: "",
     next_name: "",
-    image: "21_215_236.png",
+    image: "21_215_236.webp",
   },
   {
     previous: 22,
@@ -2501,7 +2470,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "模擬店と反対を向いて、池の出入り口前に向かって進む",
     next_name: "",
-    image: "22_215_213.png",
+    image: "22_215_213.webp",
   },
   {
     previous: 22,
@@ -2510,7 +2479,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "模擬店と反対を向いて、そのまま進む",
     next_name: "",
-    image: "22_215_214.png",
+    image: "22_215_214.webp",
   },
   {
     previous: 22,
@@ -2519,7 +2488,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "模擬店と反対を向いて、左折する",
     next_name: "",
-    image: "22_215_216.png",
+    image: "22_215_216.webp",
   },
   {
     previous: 22,
@@ -2528,7 +2497,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "模擬店と反対を向いて右折する",
     next_name: "",
-    image: "22_215_236.png",
+    image: "22_215_236.webp",
   },
   {
     previous: 23,
@@ -2555,7 +2524,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "模擬店と反対を向いて、池の出入り口前に向かって進む",
     next_name: "",
-    image: "23_215_213.png",
+    image: "23_215_213.webp",
   },
   {
     previous: 23,
@@ -2564,7 +2533,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "模擬店と反対を向いて、ステージの方向にそのまま進む",
     next_name: "",
-    image: "23_215_214.png",
+    image: "23_215_214.webp",
   },
   {
     previous: 23,
@@ -2573,7 +2542,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "模擬店と反対を向いて、左折する",
     next_name: "",
-    image: "23_215_216.png",
+    image: "23_215_216.webp",
   },
   {
     previous: 23,
@@ -2582,7 +2551,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "模擬店と反対を向いて右折する",
     next_name: "",
-    image: "23_215_236.png",
+    image: "23_215_236.webp",
   },
   {
     previous: 213,
@@ -2591,7 +2560,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "ステージ右手の模擬店の方を向く",
     curr_name: "一番左のテントが目的地",
     next_name: "",
-    image: "213_215_21.png",
+    image: "213_215_21.webp",
   },
   {
     previous: 213,
@@ -2600,7 +2569,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "ステージ右手の模擬店の方を向く",
     curr_name: "左から二番目のテントが目的地",
     next_name: "",
-    image: "213_215_22.png",
+    image: "213_215_22.webp",
   },
   {
     previous: 213,
@@ -2609,7 +2578,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "ステージ右手の模擬店の方を向く",
     curr_name: "",
     next_name: "",
-    image: "213_215_23.png",
+    image: "213_215_23.webp",
   },
   {
     previous: 214,
@@ -2618,7 +2587,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "企画本館前のクラス模擬店の方を向く",
     curr_name: "左手前のテントが目的地",
     next_name: "",
-    image: "214_215_21.png",
+    image: "214_215_21.webp",
   },
   {
     previous: 214,
@@ -2627,7 +2596,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "企画本館前のクラス模擬店の方を向く",
     curr_name: "左手前から二番目のテントが目的地",
     next_name: "",
-    image: "214_215_22.png",
+    image: "214_215_22.webp",
   },
   {
     previous: 214,
@@ -2636,7 +2605,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "企画本館前のクラス模擬店の方を向く",
     curr_name: "左手前から三番目のテントが目的地",
     next_name: "",
-    image: "214_215_23.png",
+    image: "214_215_23.webp",
   },
   {
     previous: 214,
@@ -2645,7 +2614,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "企画本館入り口の方を向く(ステージが背になるように向く)",
     curr_name: "そのまま進む",
     next_name: "",
-    image: "214_215_216.png",
+    image: "214_215_216.webp",
   },
   {
     previous: 216,
@@ -2654,7 +2623,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "企画本館入り口と反対側を向く",
     curr_name: "右手一番奥のテントが目的地",
     next_name: "",
-    image: "216_215_21.png",
+    image: "216_215_21.webp",
   },
   {
     previous: 216,
@@ -2663,7 +2632,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "企画本館入り口と反対側を向く",
     curr_name: "右手奥から二番目のテントが目的地",
     next_name: "",
-    image: "216_215_22.png",
+    image: "216_215_22.webp",
   },
   {
     previous: 216,
@@ -2672,7 +2641,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "企画本館入り口と反対側を向く",
     curr_name: "右手奥から三番目のテントが目的地",
     next_name: "",
-    image: "216_215_23.png",
+    image: "216_215_23.webp",
   },
   {
     previous: 216,
@@ -2681,7 +2650,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "企画本館入り口と反対側を向く",
     curr_name: "左折する",
     next_name: "",
-    image: "216_215_214.png",
+    image: "216_215_214.webp",
   },
   {
     previous: 216,
@@ -2690,7 +2659,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "企画本館入り口と反対側を向く",
     curr_name: "そのまま進む",
     next_name: "",
-    image: "216_215_236.png",
+    image: "216_215_236.webp",
   },
   {
     previous: 236,
@@ -2699,7 +2668,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "企画本館入り口の方を向く",
     curr_name: "左手前のテントが目的地",
     next_name: "",
-    image: "236_215_21.png",
+    image: "236_215_21.webp",
   },
   {
     previous: 236,
@@ -2708,7 +2677,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "企画本館入り口の方を向く",
     curr_name: "左手前から二番目のテントが目的地",
     next_name: "",
-    image: "236_215_22.png",
+    image: "236_215_22.webp",
   },
   {
     previous: 236,
@@ -2717,7 +2686,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "企画本館入り口の方を向く",
     curr_name: "左手前から三番目のテントが目的地",
     next_name: "",
-    image: "236_215_23.png",
+    image: "236_215_23.webp",
   },
   {
     previous: 236,
@@ -2726,7 +2695,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "企画本館入り口の方を向く",
     curr_name: "そのまま進む",
     next_name: "",
-    image: "236_215_216.png",
+    image: "236_215_216.webp",
   },
   {
     previous: 24,
@@ -2753,7 +2722,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "通路側を向いて、池に沿うように右側を進む",
     next_name: "",
-    image: "24_216_213.png",
+    image: "24_216_213.webp",
   },
   {
     previous: 24,
@@ -2762,7 +2731,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "通路側を向いて、右折する",
     next_name: "",
-    image: "24_216_215.png",
+    image: "24_216_215.webp",
   },
   {
     previous: 24,
@@ -2771,7 +2740,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "通路側を向いて、左折する",
     next_name: "",
-    image: "24_216_217.png",
+    image: "24_216_217.webp",
   },
   {
     previous: 25,
@@ -2798,7 +2767,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "通路側を向いて、池に沿うように右側を進む",
     next_name: "",
-    image: "25_216_213.png",
+    image: "25_216_213.webp",
   },
   {
     previous: 25,
@@ -2807,7 +2776,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "通路側を向いて、右折する",
     next_name: "",
-    image: "25_216_215.png",
+    image: "25_216_215.webp",
   },
   {
     previous: 25,
@@ -2816,7 +2785,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "通路側を向いて、左折する",
     next_name: "",
-    image: "25_216_217.png",
+    image: "25_216_217.webp",
   },
   {
     previous: 26,
@@ -2843,7 +2812,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "通路側を向いて、池に沿うように右側を進む",
     next_name: "",
-    image: "26_216_213.png",
+    image: "26_216_213.webp",
   },
   {
     previous: 26,
@@ -2852,7 +2821,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "通路側を向いて、右折する",
     next_name: "",
-    image: "26_216_215.png",
+    image: "26_216_215.webp",
   },
   {
     previous: 26,
@@ -2861,7 +2830,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "通路側を向いて、左折する",
     next_name: "",
-    image: "26_216_217.png",
+    image: "26_216_217.webp",
   },
   {
     previous: 213,
@@ -2870,7 +2839,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "ステージ右手の模擬店の方を向く",
     curr_name: "左から四番目のテントが目的地",
     next_name: "",
-    image: "213_216_24.png",
+    image: "213_216_24.webp",
   },
   {
     previous: 213,
@@ -2879,7 +2848,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "ステージ右手の模擬店の方を向く",
     curr_name: "左から五番目のテントが目的地",
     next_name: "",
-    image: "213_216_25.png",
+    image: "213_216_25.webp",
   },
   {
     previous: 213,
@@ -2888,7 +2857,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "ステージ右手の模擬店の方を向く",
     curr_name: "左から六番目のテントが目的地",
     next_name: "",
-    image: "213_216_26.png",
+    image: "213_216_26.webp",
   },
   {
     previous: 213,
@@ -2897,7 +2866,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "ステージ右手の模擬店の方を向く",
     curr_name: "池に沿うように右折する",
     next_name: "",
-    image: "213_216_217.png",
+    image: "213_216_217.webp",
   },
   {
     previous: 215,
@@ -2906,7 +2875,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "企画本館入り口の方を向く",
     curr_name: "左手奥から三番目のテントが目的地",
     next_name: "",
-    image: "215_216_24.png",
+    image: "215_216_24.webp",
   },
   {
     previous: 215,
@@ -2915,7 +2884,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "企画本館入り口の方を向く",
     curr_name: "左手奥から二番目のテントが目的地",
     next_name: "",
-    image: "215_216_25.png",
+    image: "215_216_25.webp",
   },
   {
     previous: 215,
@@ -2924,7 +2893,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "企画本館入り口の方を向く",
     curr_name: "左手奥から一番目のテントが目的地",
     next_name: "",
-    image: "215_216_26.png",
+    image: "215_216_26.webp",
   },
   {
     previous: 215,
@@ -2933,7 +2902,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "企画本館入り口の方を向く",
     curr_name: "そのまま進む",
     next_name: "",
-    image: "215_216_217.png",
+    image: "215_216_217.webp",
   },
   {
     previous: 217,
@@ -2942,7 +2911,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "企画本館入り口向かって左手側を向く",
     curr_name: "右手前から三番目のテントが目的地",
     next_name: "",
-    image: "217_216_24.png",
+    image: "217_216_24.webp",
   },
   {
     previous: 217,
@@ -2951,7 +2920,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "企画本館入り口向かって左手側を向く",
     curr_name: "右手前から二番目のテントが目的地",
     next_name: "",
-    image: "217_216_25.png",
+    image: "217_216_25.webp",
   },
   {
     previous: 217,
@@ -2960,7 +2929,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "企画本館入り口向かって左手側を向く",
     curr_name: "右手前のテントが目的地",
     next_name: "",
-    image: "217_216_26.png",
+    image: "217_216_26.webp",
   },
   {
     previous: 217,
@@ -2969,7 +2938,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "企画本館入り口向かって左手側を向く",
     curr_name: "池に沿うように左折する",
     next_name: "",
-    image: "217_216_213.png",
+    image: "217_216_213.webp",
   },
   {
     previous: 217,
@@ -2978,7 +2947,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "企画本館入り口向かって左手側を向く",
     curr_name: "そのまま進む",
     next_name: "",
-    image: "217_216_215.png",
+    image: "217_216_215.webp",
   },
   {
     previous: 216,
@@ -2987,7 +2956,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "正門側を向く(ステージが背になるように向く)",
     curr_name: "そのまま進む",
     next_name: "",
-    image: "216_217_218.png",
+    image: "216_217_218.webp",
   },
   {
     previous: 216,
@@ -2996,7 +2965,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "正門側を向く(ステージが背になるように向く)",
     curr_name: "左折する",
     next_name: "",
-    image: "216_217_237.png",
+    image: "216_217_237.webp",
   },
   {
     previous: 218,
@@ -3005,7 +2974,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "ステージ側を向く(正門が背になるように向く)",
     curr_name: "そのまま進む",
     next_name: "",
-    image: "218_217_216.png",
+    image: "218_217_216.webp",
   },
   {
     previous: 218,
@@ -3014,7 +2983,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "ステージ側を向く(正門が背になるように向く)",
     curr_name: "右折する",
     next_name: "",
-    image: "218_217_237.png",
+    image: "218_217_237.webp",
   },
   {
     previous: 237,
@@ -3023,7 +2992,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "池の方を向く",
     curr_name: "進んで右折する",
     next_name: "",
-    image: "237_217_216.png",
+    image: "237_217_216.webp",
   },
   {
     previous: 237,
@@ -3032,7 +3001,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "池の方を向く",
     curr_name: "進んで左折する",
     next_name: "",
-    image: "237_217_218.png",
+    image: "237_217_218.webp",
   },
   {
     previous: 27,
@@ -3059,7 +3028,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "通路側を向いて、右折する",
     next_name: "",
-    image: "27_218_217.png",
+    image: "27_218_217.webp",
   },
   {
     previous: 27,
@@ -3068,7 +3037,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "通路側を向いて、左折する",
     next_name: "",
-    image: "27_218_219.png",
+    image: "27_218_219.webp",
   },
   {
     previous: 27,
@@ -3077,7 +3046,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "通路側を向いて池の内側へ進む",
     next_name: "",
-    image: "27_218_221.png",
+    image: "27_218_221.webp",
   },
   {
     previous: 28,
@@ -3104,7 +3073,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "通路側を向いて、右折する",
     next_name: "",
-    image: "28_218_217.png",
+    image: "28_218_217.webp",
   },
   {
     previous: 28,
@@ -3113,7 +3082,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "通路側を向いて、左折する",
     next_name: "",
-    image: "28_218_219.png",
+    image: "28_218_219.webp",
   },
   {
     previous: 28,
@@ -3122,7 +3091,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "通路側を向いて池の内側へ進む",
     next_name: "",
-    image: "28_218_221.png",
+    image: "28_218_221.webp",
   },
   {
     previous: 29,
@@ -3149,7 +3118,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "通路側を向いて、右折する",
     next_name: "",
-    image: "29_218_217.png",
+    image: "29_218_217.webp",
   },
   {
     previous: 29,
@@ -3158,7 +3127,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "通路側を向いて、左折する",
     next_name: "",
-    image: "29_218_219.png",
+    image: "29_218_219.webp",
   },
   {
     previous: 29,
@@ -3167,7 +3136,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "通路側を向いて池の内側へ進む",
     next_name: "",
-    image: "29_218_221.png",
+    image: "29_218_221.webp",
   },
   {
     previous: 217,
@@ -3176,7 +3145,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "正門側を向く",
     curr_name: "左手前のテントが目的地",
     next_name: "",
-    image: "217_218_27.png",
+    image: "217_218_27.webp",
   },
   {
     previous: 217,
@@ -3185,7 +3154,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "正門側を向く",
     curr_name: "左手前から二番目のテントが目的地",
     next_name: "",
-    image: "217_218_28.png",
+    image: "217_218_28.webp",
   },
   {
     previous: 217,
@@ -3194,7 +3163,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "正門側を向く",
     curr_name: "左手前から三番目のテントが目的地",
     next_name: "",
-    image: "217_218_29.png",
+    image: "217_218_29.webp",
   },
   {
     previous: 217,
@@ -3203,7 +3172,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "正門側を向く",
     curr_name: "そのまま進む",
     next_name: "",
-    image: "217_218_219.png",
+    image: "217_218_219.webp",
   },
   {
     previous: 217,
@@ -3212,7 +3181,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "正門側を向く",
     curr_name: "池の内側へ右折する",
     next_name: "",
-    image: "217_218_221.png",
+    image: "217_218_221.webp",
   },
   {
     previous: 219,
@@ -3221,7 +3190,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "企画本館入り口の方を向く(正門が背になるように向く)",
     curr_name: "右手一番奥のテントが目的地",
     next_name: "",
-    image: "219_218_27.png",
+    image: "219_218_27.webp",
   },
   {
     previous: 219,
@@ -3230,7 +3199,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "企画本館入り口の方を向く(正門が背になるように向く)",
     curr_name: "右手奥から二番目のテントが目的地",
     next_name: "",
-    image: "219_218_28.png",
+    image: "219_218_28.webp",
   },
   {
     previous: 219,
@@ -3239,7 +3208,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "企画本館入り口の方を向く(正門が背になるように向く)",
     curr_name: "右手奥から三番目のテントが目的地",
     next_name: "",
-    image: "219_218_29.png",
+    image: "219_218_29.webp",
   },
   {
     previous: 219,
@@ -3248,7 +3217,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "企画本館入り口の方を向く(正門が背になるように向く)",
     curr_name: "そのまま進む",
     next_name: "",
-    image: "219_218_217.png",
+    image: "219_218_217.webp",
   },
   {
     previous: 219,
@@ -3257,7 +3226,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "池の内側へ左折する",
     next_name: "",
-    image: "219_218_221.png",
+    image: "219_218_221.webp",
   },
   {
     previous: 221,
@@ -3266,7 +3235,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "企画本館の方を向く",
     curr_name: "進んだら、入り口右側一番左のテントが目的地",
     next_name: "",
-    image: "221_218_27.png",
+    image: "221_218_27.webp",
   },
   {
     previous: 221,
@@ -3275,7 +3244,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "企画本館の方を向く",
     curr_name: "進んだら、入り口右側左から二番目のテントが目的地",
     next_name: "",
-    image: "221_218_28.png",
+    image: "221_218_28.webp",
   },
   {
     previous: 221,
@@ -3284,7 +3253,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "企画本館の方を向く",
     curr_name: "進んだら、入り口右側左から三番目のテントが目的地",
     next_name: "",
-    image: "221_218_29.png",
+    image: "221_218_29.webp",
   },
   {
     previous: 221,
@@ -3293,7 +3262,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "企画本館の方を向く",
     curr_name: "進んで左折する",
     next_name: "",
-    image: "221_218_217.png",
+    image: "221_218_217.webp",
   },
   {
     previous: 221,
@@ -3302,7 +3271,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "企画本館の方を向く",
     curr_name: "進んで右折する",
     next_name: "",
-    image: "221_218_219.png",
+    image: "221_218_219.webp",
   },
   {
     previous: 30,
@@ -3329,7 +3298,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "通りの方を見て、右折する",
     next_name: "",
-    image: "30_219_218.png",
+    image: "30_219_218.webp",
   },
   {
     previous: 30,
@@ -3338,7 +3307,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "通りの方を見て、左折する",
     next_name: "",
-    image: "30_219_220.png",
+    image: "30_219_220.webp",
   },
   {
     previous: 31,
@@ -3365,7 +3334,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "通りの方を見て、右折する",
     next_name: "",
-    image: "31_219_218.png",
+    image: "31_219_218.webp",
   },
   {
     previous: 31,
@@ -3374,7 +3343,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "通りの方を見て、左折する",
     next_name: "",
-    image: "31_219_220.png",
+    image: "31_219_220.webp",
   },
   {
     previous: 32,
@@ -3401,7 +3370,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "通りの方を見て、右折する",
     next_name: "",
-    image: "32_219_218.png",
+    image: "32_219_218.webp",
   },
   {
     previous: 32,
@@ -3410,7 +3379,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "通りの方を見て、左折する",
     next_name: "",
-    image: "32_219_220.png",
+    image: "32_219_220.webp",
   },
   {
     previous: 218,
@@ -3419,7 +3388,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "正門の方を向く",
     curr_name: "左手奥から三番目のテントが目的地",
     next_name: "",
-    image: "218_219_30.png",
+    image: "218_219_30.webp",
   },
   {
     previous: 218,
@@ -3428,7 +3397,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "正門の方を向く",
     curr_name: "左手奥から二番目のテントが目的地",
     next_name: "",
-    image: "218_219_31.png",
+    image: "218_219_31.webp",
   },
   {
     previous: 218,
@@ -3437,7 +3406,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "正門の方を向く",
     curr_name: "左手一番奥のテントが目的地",
     next_name: "",
-    image: "218_219_32.png",
+    image: "218_219_32.webp",
   },
   {
     previous: 218,
@@ -3446,7 +3415,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "正門の方を向く",
     curr_name: "そのまま進む",
     next_name: "",
-    image: "218_219_220.png",
+    image: "218_219_220.webp",
   },
   {
     previous: 220,
@@ -3455,7 +3424,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "企画本館入り口の方を向く(正門が背になるように向く)",
     curr_name: "右手前から三番目のテントが目的地",
     next_name: "",
-    image: "220_219_30.png",
+    image: "220_219_30.webp",
   },
   {
     previous: 220,
@@ -3464,7 +3433,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "企画本館入り口の方を向く(正門が背になるように向く)",
     curr_name: "右手前から二番目のテントが目的地",
     next_name: "",
-    image: "220_219_31.png",
+    image: "220_219_31.webp",
   },
   {
     previous: 220,
@@ -3473,7 +3442,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "企画本館入り口の方を向く(正門が背になるように向く)",
     curr_name: "右手前のテントが目的地",
     next_name: "",
-    image: "220_219_32.png",
+    image: "220_219_32.webp",
   },
   {
     previous: 220,
@@ -3482,7 +3451,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "企画本館入り口の方を向く(正門が背になるように向く)",
     curr_name: "そのまま進む",
     next_name: "",
-    image: "220_219_218.png",
+    image: "220_219_218.webp",
   },
   {
     previous: 205,
@@ -3491,7 +3460,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "池と向き合った時の右手側に向く",
     curr_name: "池に沿うように進む",
     next_name: "",
-    image: "205_220_219.png",
+    image: "205_220_219.webp",
   },
   {
     previous: 219,
@@ -3500,7 +3469,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "正門の方を向く",
     curr_name: "そのまま池に沿うように進む",
     next_name: "",
-    image: "219_220_205.png",
+    image: "219_220_205.webp",
   },
   {
     previous: 219,
@@ -3509,7 +3478,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "正門の方を向く",
     curr_name: "左斜め前に左折する",
     next_name: "",
-    image: "219_220_222.png",
+    image: "219_220_222.webp",
   },
   {
     previous: 222,
@@ -3518,7 +3487,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "池の方を向く",
     curr_name: "池の右側を進む",
     next_name: "",
-    image: "222_220_219.png",
+    image: "222_220_219.webp",
   },
   {
     previous: 205,
@@ -3527,7 +3496,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "池の内側へ進む",
     curr_name: "左側の池の出入り口へ左折する",
     next_name: "",
-    image: "205_221_209.png",
+    image: "205_221_209.webp",
   },
   {
     previous: 205,
@@ -3536,7 +3505,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "池の内側へ進む",
     curr_name: "そのまま奥の池の出入り口へ進む",
     next_name: "",
-    image: "205_221_213.png",
+    image: "205_221_213.webp",
   },
   {
     previous: 205,
@@ -3545,7 +3514,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "池の内側へ進む",
     curr_name: "右側の池の出入り口へ右折する",
     next_name: "",
-    image: "205_221_218.png",
+    image: "205_221_218.webp",
   },
   {
     previous: 209,
@@ -3554,7 +3523,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "池の内側へ進む",
     curr_name: "右側の池の出入り口へ右折する",
     next_name: "",
-    image: "209_221_205.png",
+    image: "209_221_205.webp",
   },
   {
     previous: 209,
@@ -3563,7 +3532,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "池の内側へ進む",
     curr_name: "左側の池の出入り口へ左折する",
     next_name: "",
-    image: "209_221_213.png",
+    image: "209_221_213.webp",
   },
   {
     previous: 209,
@@ -3572,7 +3541,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "池の内側へ進む",
     curr_name: "そのまま奥の池の出入り口へ進む",
     next_name: "",
-    image: "209_221_218.png",
+    image: "209_221_218.webp",
   },
   {
     previous: 213,
@@ -3581,7 +3550,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "池の内側へ進む",
     curr_name: "そのまま奥の池の出入り口へ進む",
     next_name: "",
-    image: "213_221_205.png",
+    image: "213_221_205.webp",
   },
   {
     previous: 213,
@@ -3590,7 +3559,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "池の内側へ進む",
     curr_name: "右側の池の出入り口へ右折する",
     next_name: "",
-    image: "213_221_209.png",
+    image: "213_221_209.webp",
   },
   {
     previous: 213,
@@ -3599,7 +3568,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "池の内側へ進む",
     curr_name: "左側の池の出入り口へ左折する",
     next_name: "",
-    image: "213_221_218.png",
+    image: "213_221_218.webp",
   },
   {
     previous: 218,
@@ -3608,7 +3577,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "池の内側へ進む",
     curr_name: "左側の池の出入り口へ左折する",
     next_name: "",
-    image: "218_221_205.png",
+    image: "218_221_205.webp",
   },
   {
     previous: 218,
@@ -3617,7 +3586,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "池の内側へ進む",
     curr_name: "そのまま奥の池の出入り口へ進む",
     next_name: "",
-    image: "218_221_209.png",
+    image: "218_221_209.webp",
   },
   {
     previous: 218,
@@ -3626,7 +3595,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "池の内側へ進む",
     curr_name: "右側の池の出入り口へ右折する",
     next_name: "",
-    image: "218_221_213.png",
+    image: "218_221_213.webp",
   },
   {
     previous: 205,
@@ -3635,7 +3604,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "池に向かって右手のまっすぐな道を向く",
     curr_name: "そのまま進む",
     next_name: "",
-    image: "205_222_223.png",
+    image: "205_222_223.webp",
   },
   {
     previous: 220,
@@ -3644,7 +3613,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: null,
     curr_name: "進んだ先奥のテントが目的地",
     next_name: null,
-    image: "220_222_7.png",
+    image: "220_222_7.webp",
   },
   {
     previous: 220,
@@ -3653,7 +3622,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "正門の方を向いて左折する",
     curr_name: "左折してまっすぐな道を進む",
     next_name: "",
-    image: "220_222_223.png",
+    image: "220_222_223.webp",
   },
   {
     previous: 223,
@@ -3662,7 +3631,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "池にづづく方向を向く",
     curr_name: "進んで左手のテントが目的地",
     next_name: "",
-    image: "223_222_7.png",
+    image: "223_222_7.webp",
   },
   {
     previous: 223,
@@ -3671,7 +3640,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "池にづづく方向を向く",
     curr_name: "そのまま進む",
     next_name: "",
-    image: "223_222_205.png",
+    image: "223_222_205.webp",
   },
   {
     previous: 223,
@@ -3680,7 +3649,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "池につづく方向を向く",
     curr_name: "右折して池に沿うように進む",
     next_name: "",
-    image: "223_222_220.png",
+    image: "223_222_220.webp",
   },
   {
     previous: 33,
@@ -3707,7 +3676,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "池の方を向いて進む",
     next_name: "",
-    image: "33_223_222.png",
+    image: "33_223_222.webp",
   },
   {
     previous: 33,
@@ -3716,7 +3685,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "池と反対に進む",
     next_name: "",
-    image: "33_223_224.png",
+    image: "33_223_224.webp",
   },
   {
     previous: 34,
@@ -3725,7 +3694,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "左隣のテントが目的地",
     next_name: "",
-    image: "34_223_33.png",
+    image: "",
   },
   {
     previous: 34,
@@ -3734,7 +3703,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "右隣のテントが目的地",
     next_name: "",
-    image: "34_223_35.png",
+    image: "",
   },
   {
     previous: 34,
@@ -3743,7 +3712,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "池の方を向いて進む",
     next_name: "",
-    image: "34_223_222.png",
+    image: "34_223_222.webp",
   },
   {
     previous: 34,
@@ -3752,7 +3721,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "池と反対に進む",
     next_name: "",
-    image: "34_223_224.png",
+    image: "34_223_224.webp",
   },
   {
     previous: 35,
@@ -3779,7 +3748,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "池の方を向いて進む",
     next_name: "",
-    image: "35_223_222.png",
+    image: "35_223_222.webp",
   },
   {
     previous: 35,
@@ -3788,7 +3757,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "池と反対に進む",
     next_name: "",
-    image: "35_223_224.png",
+    image: "35_223_224.webp",
   },
   {
     previous: 222,
@@ -3797,7 +3766,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "建物右側の通りの方を向く",
     curr_name: "左手前のテントが目的地",
     next_name: "",
-    image: "222_223_33.png",
+    image: "222_223_33.webp",
   },
   {
     previous: 222,
@@ -3806,7 +3775,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "建物右側の通りの方を向く",
     curr_name: "左手前から二番目のテントが目的地",
     next_name: "",
-    image: "222_223_34.png",
+    image: "222_223_34.webp",
   },
   {
     previous: 222,
@@ -3815,7 +3784,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "建物右側の通りの方を向く",
     curr_name: "左手前から三番目のテントが目的地",
     next_name: "",
-    image: "222_223_35.png",
+    image: "222_223_35.webp",
   },
   {
     previous: 222,
@@ -3824,7 +3793,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "建物右側の通りの方を向く",
     curr_name: "そのまま進む",
     next_name: "",
-    image: "222_223_224.png",
+    image: "222_223_224.webp",
   },
   {
     previous: 224,
@@ -3833,7 +3802,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "模擬店向かって左手を向く",
     curr_name: "右手一番奥のテントが目的地",
     next_name: "",
-    image: "224_223_33.png",
+    image: "224_223_33.webp",
   },
   {
     previous: 224,
@@ -3842,7 +3811,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "模擬店向かって左手を向く",
     curr_name: "右手二番目のテントが目的地",
     next_name: "",
-    image: "224_223_34.png",
+    image: "224_223_34.webp",
   },
   {
     previous: 224,
@@ -3851,7 +3820,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "模擬店向かって左手を向く",
     curr_name: "右手三番目のテントが目的地",
     next_name: "",
-    image: "224_223_35.png",
+    image: "224_223_35.webp",
   },
   {
     previous: 224,
@@ -3860,7 +3829,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "模擬店向かって左手を向く",
     curr_name: "そのまま進む",
     next_name: "",
-    image: "224_223_222.png",
+    image: "224_223_222.webp",
   },
   {
     previous: 223,
@@ -3869,7 +3838,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "模擬店向かって右手を向く",
     curr_name: "正門につながる右手の細長い道へ右折する",
     next_name: "",
-    image: "223_224_4.png",
+    image: "223_224_4.webp",
   },
   {
     previous: 223,
@@ -3878,7 +3847,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "模擬店向かって右手を向く",
     curr_name: "そのまま進む",
     next_name: "",
-    image: "223_224_225.png",
+    image: "223_224_225.webp",
   },
   {
     previous: 225,
@@ -3887,7 +3856,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "模擬店向かって左手を向く",
     curr_name: "左手の細長い道へ左折する",
     next_name: "",
-    image: "225_224_4.png",
+    image: "225_224_4.webp",
   },
   {
     previous: 225,
@@ -3896,7 +3865,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "模擬店向かって左手を向く",
     curr_name: "そのまま進む",
     next_name: "",
-    image: "225_224_223.png",
+    image: "225_224_223.webp",
   },
   {
     previous: 36,
@@ -3923,7 +3892,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "池の方を向いて進む",
     next_name: "",
-    image: "36_225_224.png",
+    image: "36_225_224.webp",
   },
   {
     previous: 36,
@@ -3932,7 +3901,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "建物が左手になるように進む",
     next_name: "",
-    image: "36_225_230.png",
+    image: "36_225_230.webp",
   },
   {
     previous: 37,
@@ -3959,7 +3928,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "池の方を向いて進む",
     next_name: "",
-    image: "37_225_224.png",
+    image: "37_225_224.webp",
   },
   {
     previous: 37,
@@ -3968,7 +3937,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "建物の方を向いて進む",
     next_name: "",
-    image: "37_225_230.png",
+    image: "37_225_230.webp",
   },
   {
     previous: 38,
@@ -3995,7 +3964,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "池の方を向いて進む",
     next_name: "",
-    image: "38_225_224.png",
+    image: "38_225_224.webp",
   },
   {
     previous: 38,
@@ -4004,7 +3973,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "建物の方を向いて進む",
     next_name: "",
-    image: "38_225_230.png",
+    image: "38_225_230.webp",
   },
   {
     previous: 224,
@@ -4013,7 +3982,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "模擬店向かって右手を向く",
     curr_name: "左手奥から三番目のテントが目的地",
     next_name: "",
-    image: "224_225_36.png",
+    image: "224_225_36.webp",
   },
   {
     previous: 224,
@@ -4022,7 +3991,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "模擬店向かって右手を向く",
     curr_name: "左手奥から二番目のテントが目的地",
     next_name: "",
-    image: "224_225_37.png",
+    image: "224_225_37.webp",
   },
   {
     previous: 224,
@@ -4031,7 +4000,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "模擬店向かって右手を向く",
     curr_name: "左手一番奥のテントが目的地",
     next_name: "",
-    image: "224_225_38.png",
+    image: "224_225_38.webp",
   },
   {
     previous: 224,
@@ -4040,7 +4009,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "模擬店向かって右手を向く",
     curr_name: "そのまま進む",
     next_name: "",
-    image: "224_225_230.png",
+    image: "224_225_230.webp",
   },
   {
     previous: 230,
@@ -4049,7 +4018,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "模擬店のある通りの方を向く",
     curr_name: "右手前から三番目のテントが目的地",
     next_name: "",
-    image: "230_225_36.png",
+    image: "230_225_36.webp",
   },
   {
     previous: 230,
@@ -4058,7 +4027,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "模擬店のある通りの方を向く",
     curr_name: "右手前から二番目のテントが目的地",
     next_name: "",
-    image: "230_225_37.png",
+    image: "230_225_37.webp",
   },
   {
     previous: 230,
@@ -4067,7 +4036,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "模擬店のある通りの方を向く",
     next_name: "右手前のテントが目的地",
-    image: "230_225_38.png",
+    image: "230_225_38.webp",
   },
   {
     previous: 230,
@@ -4076,7 +4045,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "模擬店のある通りの方を向く",
     curr_name: "そのまま進む",
     next_name: "",
-    image: "230_225_224.png",
+    image: "230_225_224.webp",
   },
   {
     previous: 105,
@@ -4085,7 +4054,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "ステージの方を向く",
     curr_name: "右折する",
     next_name: "",
-    image: "105_226_212.png",
+    image: "105_226_212.webp",
   },
   {
     previous: 105,
@@ -4094,7 +4063,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "ステージの方を向く",
     curr_name: "ステージ左横の企画別館の入り口通路へ左折する",
     next_name: "",
-    image: "105_226_228.png",
+    image: "105_226_228.webp",
   },
   {
     previous: 212,
@@ -4103,7 +4072,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "植え込み左手の道を進む",
     curr_name: "植え込み奥左手のテントが目的地",
     next_name: "",
-    image: "212_226_105.png",
+    image: "212_226_105.webp",
   },
   {
     previous: 212,
@@ -4112,7 +4081,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "植え込み左手の道を進む",
     curr_name: "そのまま進む",
     next_name: "",
-    image: "212_226_227.png",
+    image: "212_226_227.webp",
   },
   {
     previous: 212,
@@ -4121,7 +4090,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "植え込み左手の道を進む",
     curr_name: "ステージ左横の企画別館の入り口通路へ右折する",
     next_name: "",
-    image: "212_226_228.png",
+    image: "212_226_228.webp",
   },
   {
     previous: 227,
@@ -4130,7 +4099,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "植え込み右側の小道を向く",
     curr_name: "そのまま進む",
     next_name: "",
-    image: "227_226_212.png",
+    image: "227_226_212.webp",
   },
   {
     previous: 228,
@@ -4139,7 +4108,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "企画別館を背にして向く",
     curr_name: "正面手前のテントが目的地",
     next_name: "",
-    image: "228_226_105.png",
+    image: "228_226_105.webp",
   },
   {
     previous: 228,
@@ -4148,7 +4117,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "企画別館を背にして、植え込み右側の小道へ進む",
     curr_name: "植え込み奥へ進む",
     next_name: "",
-    image: "228_226_212.png",
+    image: "228_226_212.webp",
   },
   {
     previous: 226,
@@ -4157,7 +4126,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "北サークル通りが左手になるように向く",
     curr_name: "そのまま奥まで進む",
     next_name: "",
-    image: "226_227_238.png",
+    image: "226_227_238.webp",
   },
   {
     previous: 226,
@@ -4166,7 +4135,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "北サークル通りが左手になるように向く",
     curr_name: "左折する",
     next_name: "",
-    image: "226_227_240.png",
+    image: "226_227_240.webp",
   },
   {
     previous: 228,
@@ -4175,7 +4144,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "北サークル通りの方を向く",
     curr_name: "右折する",
     next_name: "",
-    image: "228_227_238.png",
+    image: "228_227_238.webp",
   },
   {
     previous: 228,
@@ -4184,7 +4153,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "北サークル通りの方を向く",
     curr_name: "そのまま進む",
     next_name: "",
-    image: "228_227_240.png",
+    image: "228_227_240.webp",
   },
   {
     previous: 238,
@@ -4193,7 +4162,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "池につづく方向を向く",
     curr_name: "そのまま進む",
     next_name: "",
-    image: "238_227_226.png",
+    image: "238_227_226.webp",
   },
   {
     previous: 238,
@@ -4202,7 +4171,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "池につづく方向を向く",
     curr_name: "道を抜けたら左折する",
     next_name: "",
-    image: "238_227_228.png",
+    image: "238_227_228.webp",
   },
   {
     previous: 238,
@@ -4211,7 +4180,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "池につづく方向を向く",
     curr_name: "道を向けたら右折する",
     next_name: "",
-    image: "238_227_240.png",
+    image: "238_227_240.webp",
   },
   {
     previous: 240,
@@ -4220,7 +4189,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "ステージの方向に向く(通りを背にする方向に向く)",
     curr_name: "右折する",
     next_name: "",
-    image: "240_227_226.png",
+    image: "240_227_226.webp",
   },
   {
     previous: 240,
@@ -4229,7 +4198,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "ステージの方向に向く(通りを背にする方向に向く)",
     curr_name: "そのまま進む",
     next_name: "",
-    image: "240_227_228.png",
+    image: "240_227_228.webp",
   },
   {
     previous: 240,
@@ -4238,7 +4207,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "ステージの方向に向く(通りを背にする方向に向く)",
     curr_name: "左折する",
     next_name: "",
-    image: "240_227_238.png",
+    image: "240_227_238.webp",
   },
   {
     previous: 213,
@@ -4247,7 +4216,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "ステージ左の通路の方を向く",
     curr_name: "左折する",
     next_name: "",
-    image: "213_228_227.png",
+    image: "213_228_227.webp",
   },
   {
     previous: 213,
@@ -4256,7 +4225,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "ステージ左の通路の方へ進む",
     curr_name: "企画別館内へ右折する",
     next_name: "",
-    image: "213_228_305.png",
+    image: "213_228_305.webp",
   },
   {
     previous: 226,
@@ -4265,7 +4234,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "企画別館の方を向く",
     curr_name: "右折する",
     next_name: "",
-    image: "226_228_229.png",
+    image: "226_228_229.webp",
   },
   {
     previous: 226,
@@ -4274,7 +4243,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "ステージ左の通路の方を向く",
     curr_name: "企画別館内へ進む",
     next_name: "",
-    image: "226_228_305.png",
+    image: "226_228_305.webp",
   },
   {
     previous: 227,
@@ -4283,7 +4252,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "ステージの方を向く",
     curr_name: "池の出入り口の方に右折する",
     next_name: "",
-    image: "227_228_213.png",
+    image: "227_228_213.webp",
   },
   {
     previous: 227,
@@ -4292,7 +4261,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "ステージの方を向く",
     curr_name: "そのまま進む",
     next_name: "",
-    image: "227_228_229.png",
+    image: "227_228_229.webp",
   },
   {
     previous: 227,
@@ -4301,7 +4270,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "ステージの方を向く",
     curr_name: "企画別館内へ左折する",
     next_name: "",
-    image: "227_228_305.png",
+    image: "227_228_305.webp",
   },
   {
     previous: 229,
@@ -4310,7 +4279,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "ステージ向かって左手に伸びている通りの方を向く",
     curr_name: "植え込み奥へ左折する",
     next_name: "",
-    image: "229_228_226.png",
+    image: "229_228_226.webp",
   },
   {
     previous: 229,
@@ -4319,7 +4288,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "ステージ向かって左手に伸びている通りの方を向く",
     curr_name: "そのまま進む",
     next_name: "",
-    image: "229_228_227.png",
+    image: "229_228_227.webp",
   },
   {
     previous: 229,
@@ -4328,7 +4297,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "ステージ向かって左の方を向く",
     curr_name: "企画別館内へ右折する",
     next_name: "",
-    image: "229_228_305.png",
+    image: "229_228_305.webp",
   },
   {
     previous: 305,
@@ -4337,7 +4306,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "企画別館から出るように進む",
     curr_name: "左手の池の出入り口の方へ左折する",
     next_name: "",
-    image: "305_228_213.png",
+    image: "305_228_213.webp",
   },
   {
     previous: 305,
@@ -4346,7 +4315,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "企画別館から出るように進む",
     curr_name: "植え込み右側の小道の方へ進む",
     next_name: "",
-    image: "305_228_226.png",
+    image: "305_228_226.webp",
   },
   {
     previous: 305,
@@ -4355,7 +4324,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "企画別館から出るように進む",
     curr_name: "右折する",
     next_name: "",
-    image: "305_228_227.png",
+    image: "305_228_227.webp",
   },
   {
     previous: 305,
@@ -4364,7 +4333,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "企画別館から出るように進む",
     curr_name: "ステージ前へ左折する",
     next_name: "",
-    image: "305_228_229.png",
+    image: "305_228_229.webp",
   },
   {
     previous: 40,
@@ -4373,7 +4342,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "ステージと反対を向いて、そのまま進む",
     next_name: "",
-    image: "40_229_213.png",
+    image: "40_229_213.webp",
   },
   {
     previous: 40,
@@ -4382,7 +4351,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "ステージと反対を向いて、左折する",
     next_name: "",
-    image: "40_229_214.png",
+    image: "40_229_214.webp",
   },
   {
     previous: 40,
@@ -4391,7 +4360,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "ステージと反対を向いて、右折する",
     next_name: "",
-    image: "40_229_228.png",
+    image: "40_229_228.webp",
   },
   {
     previous: 213,
@@ -4400,7 +4369,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "ステージが右手になるように向く",
     curr_name: "そのまま進むと目的地",
     next_name: "",
-    image: "213_229_40.png",
+    image: "213_229_40.webp",
   },
   {
     previous: 214,
@@ -4409,16 +4378,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "ステージが右手になるように向く",
     curr_name: "右手のステージが目的地",
     next_name: "",
-    image: "214_229_40.png",
-  },
-  {
-    previous: 214,
-    current: 229,
-    next: 213,
-    prev_name: "ステージが右手になるように向く",
-    curr_name: "池の出入り口の方へ左折する",
-    next_name: "",
-    image: "214_229_213.png",
+    image: "214_229_40.webp",
   },
   {
     previous: 214,
@@ -4427,7 +4387,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "ステージが右手になるように向く",
     curr_name: "そのまま進む",
     next_name: "",
-    image: "214_229_228.png",
+    image: "214_229_228.webp",
   },
   {
     previous: 228,
@@ -4436,16 +4396,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "ステージが右手になるように向く",
     curr_name: "右手のステージが目的地",
     next_name: "",
-    image: "228_229_40.png",
-  },
-  {
-    previous: 228,
-    current: 229,
-    next: 213,
-    prev_name: "ステージが左手になるように向く",
-    curr_name: "池の出入り口の方へ右折する",
-    next_name: "",
-    image: "228_229_213.png",
+    image: "228_229_40.webp",
   },
   {
     previous: 228,
@@ -4454,7 +4405,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "ステージが左手になるように向く",
     curr_name: "そのまま進む",
     next_name: "",
-    image: "228_229_214.png",
+    image: "228_229_214.webp",
   },
   {
     previous: 43,
@@ -4463,7 +4414,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "企画本館出入り口を向く",
     curr_name: "左折する",
     next_name: "",
-    image: "43_230_225.png",
+    image: "43_230_225.webp",
   },
 
   {
@@ -4473,7 +4424,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "企画本館出入り口を向く",
     curr_name: "建物へそのまま進む",
     next_name: "",
-    image: "43_230_235.png",
+    image: "43_230_235.webp",
   },
   {
     previous: 225,
@@ -4482,7 +4433,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "模擬店が左手になるように向く",
     curr_name: "斜め前へ右折する",
     next_name: "右折した先長椅子のあるエリアが目的地",
-    image: "225_230_43.png",
+    image: "225_230_43.webp",
   },
   {
     previous: 225,
@@ -4491,7 +4442,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "模擬店が左手になるように向く",
     curr_name: "そのまま進む",
     next_name: "",
-    image: "225_230_231.png",
+    image: "225_230_231.webp",
   },
   {
     previous: 225,
@@ -4500,7 +4451,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "模擬店が左手になるように向く",
     curr_name: "企画本館内へ左折する",
     next_name: "",
-    image: "225_230_235.png",
+    image: "225_230_235.webp",
   },
   {
     previous: 231,
@@ -4509,7 +4460,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "建物が右手になるように向く",
     curr_name: "そのまま進む",
     next_name: "",
-    image: "231_230_225.png",
+    image: "231_230_225.webp",
   },
   {
     previous: 231,
@@ -4518,7 +4469,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "建物が右手になるように向く",
     curr_name: "企画本館内へ右折する",
     next_name: "",
-    image: "231_230_235.png",
+    image: "231_230_235.webp",
   },
   {
     previous: 235,
@@ -4527,7 +4478,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "外の方を向く",
     curr_name: "進んで左前に左折する",
     next_name: "左折した先長椅子のあるエリアが目的地",
-    image: "235_230_43.png",
+    image: "235_230_43.webp",
   },
   {
     previous: 235,
@@ -4536,7 +4487,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "外の方を向く",
     curr_name: "進んで右折する",
     next_name: "",
-    image: "235_230_225.png",
+    image: "235_230_225.webp",
   },
   {
     previous: 235,
@@ -4545,7 +4496,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "外の方を向く",
     curr_name: "進んで左折する",
     next_name: "",
-    image: "235_230_231.png",
+    image: "235_230_231.webp",
   },
   {
     previous: 41,
@@ -4554,7 +4505,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "フィールドを背にして、建物の出入り口へ進む",
     next_name: "",
-    image: "41_43_230.png",
+    image: "41_43_230.webp",
   },
   {
     previous: 41,
@@ -4563,7 +4514,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: null,
     curr_name: "フィールドを背にして正面のパネルへ進む",
     next_name: null,
-    image: "41_43_231.png",
+    image: "41_43_231.webp",
   },
   {
     previous: 41,
@@ -4572,7 +4523,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "フィールドを背にして、右前のテントへ進む",
     next_name: "",
-    image: "41_43_232.png",
+    image: "41_43_232.webp",
   },
   {
     previous: 41,
@@ -4581,7 +4532,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "フィールドを背にして、右側の建物の奥の出入り口に右折する",
     next_name: "",
-    image: "41_43_233.png",
+    image: "41_43_233.webp",
   },
   {
     previous: 41,
@@ -4590,7 +4541,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "フィールドを背にして右側の建物の手前の入り口に右折する",
     next_name: "",
-    image: "41_43_234.png",
+    image: "41_43_234.webp",
   },
   {
     previous: 230,
@@ -4599,7 +4550,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "建物を背にする方向に向く",
     curr_name: "正面の大きな看板前が目的地",
     next_name: "",
-    image: "230_43_41.png",
+    image: "230_43_41.webp",
   },
   {
     previous: 230,
@@ -4608,7 +4559,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "建物を背にする方向に向く",
     curr_name: "左手の建物の奥の入り口に左折する",
     next_name: "",
-    image: "230_43_234.png",
+    image: "230_43_234.webp",
   },
   {
     previous: 231,
@@ -4617,7 +4568,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "建物を背にする方向に向く",
     curr_name: "正面の大きな看板前が目的地",
     next_name: "",
-    image: "231_43_41.png",
+    image: "231_43_41.webp",
   },
   {
     previous: 231,
@@ -4626,7 +4577,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "建物を背にする方向に向く",
     curr_name: "左手の建物の奥の入り口に左折する",
     next_name: "",
-    image: "231_43_234.png",
+    image: "231_43_234.webp",
   },
   {
     previous: 232,
@@ -4635,7 +4586,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: null,
     curr_name: "進んだ先の正面の大きな看板前が目的地",
     next_name: null,
-    image: "232_43_41.png",
+    image: "232_43_41.webp",
   },
   {
     previous: 233,
@@ -4644,7 +4595,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "外の方を向く",
     curr_name: "左手大きな看板の前が目的地",
     next_name: "",
-    image: "233_43_41.png",
+    image: "233_43_41.webp",
   },
   {
     previous: 234,
@@ -4653,7 +4604,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "外の方を向く",
     curr_name: "正面の大きな看板前が目的地",
     next_name: "",
-    image: "234_43_41.png",
+    image: "234_43_41.webp",
   },
   {
     previous: 234,
@@ -4662,7 +4613,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "外の方を向く",
     curr_name: "右手の建物の出入り口に向かって進む",
     next_name: "",
-    image: "234_43_230.png",
+    image: "234_43_230.webp",
   },
   {
     previous: 234,
@@ -4671,7 +4622,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "外の方を向く",
     curr_name: "右手の建物の出入り口手前にある看板に向かって右折する",
     next_name: "",
-    image: "234_43_231.png",
+    image: "234_43_231.webp",
   },
   {
     previous: 43,
@@ -4680,7 +4631,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "企画本館の方を向く",
     curr_name: "正面の看板が目的地",
     next_name: "",
-    image: "43_231_44.png",
+    image: "43_231_44.webp",
   },
   {
     previous: 44,
@@ -4689,7 +4640,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "建物を背にして、そのまま進む",
     next_name: "正面の長椅子のあるエリアが目的地",
-    image: "44_231_43.png",
+    image: "44_231_43.webp",
   },
   {
     previous: 44,
@@ -4698,7 +4649,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "建物を背にして、右折する",
     next_name: "",
-    image: "44_231_230.png",
+    image: "44_231_230.webp",
   },
   {
     previous: 44,
@@ -4707,7 +4658,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "建物を背にして、左折する",
     next_name: "",
-    image: "44_231_232.png",
+    image: "44_231_232.webp",
   },
   {
     previous: 230,
@@ -4716,7 +4667,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "建物が左手になるように向く",
     curr_name: "左手にある看板が目的地",
     next_name: "",
-    image: "230_231_44.png",
+    image: "230_231_44.webp",
   },
   {
     previous: 230,
@@ -4725,7 +4676,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "建物が左手になるように向く",
     curr_name: "そのまま進む",
     next_name: "",
-    image: "230_231_232.png",
+    image: "230_231_232.webp",
   },
   {
     previous: 232,
@@ -4734,7 +4685,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "建物が右手になるように向く",
     curr_name: "右手にある看板が目的地",
     next_name: "",
-    image: "232_231_44.png",
+    image: "232_231_44.webp",
   },
   {
     previous: 232,
@@ -4743,7 +4694,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "建物が右手になるように向く",
     curr_name: "そのまま進む",
     next_name: "",
-    image: "232_231_230.png",
+    image: "232_231_230.webp",
   },
   {
     previous: 43,
@@ -4752,7 +4703,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "フィールド(大きな看板)を背にするように向く",
     curr_name: "正面のテントが目的地",
     next_name: "",
-    image: "43_232_45.png",
+    image: "43_232_45.webp",
   },
   {
     previous: 45,
@@ -4761,7 +4712,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "テントを背にして、そのまま進む",
     next_name: "正面の長椅子のあるエリアが目的地",
-    image: "45_232_43.png",
+    image: "45_232_43.webp",
   },
   {
     previous: 45,
@@ -4770,7 +4721,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "テントを背にして、右折する",
     next_name: "",
-    image: "45_232_231.png",
+    image: "45_232_231.webp",
   },
   {
     previous: 45,
@@ -4779,7 +4730,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "テントを背にして、左折する",
     next_name: "",
-    image: "45_232_233.png",
+    image: "45_232_233.webp",
   },
   {
     previous: 231,
@@ -4788,7 +4739,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "建物が左手になるように向く",
     curr_name: "左手のテントが目的地",
     next_name: "",
-    image: "231_232_45.png",
+    image: "231_232_45.webp",
   },
   {
     previous: 231,
@@ -4797,7 +4748,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "建物が左手になるように向く",
     curr_name: "そのまま進む",
     next_name: "",
-    image: "231_232_233.png",
+    image: "231_232_233.webp",
   },
   {
     previous: 233,
@@ -4806,7 +4757,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "外の方を向く",
     curr_name: "右手のテントが目的地",
     next_name: "",
-    image: "233_232_45.png",
+    image: "233_232_45.webp",
   },
   {
     previous: 233,
@@ -4815,7 +4766,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "外の方を向いて進む",
     curr_name: "そのまま進む",
     next_name: "",
-    image: "233_232_231.png",
+    image: "233_232_231.webp",
   },
   {
     previous: 43,
@@ -4824,7 +4775,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "フィールド(大きな看板)向かって左手の建物の手前の出入り口を向く",
     curr_name: "進んでちびっこ館内へ右折する",
     next_name: "",
-    image: "43_233_251.png",
+    image: "43_233_251.webp",
   },
   {
     previous: 232,
@@ -4833,7 +4784,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "テントが左手になるように向く",
     curr_name: "右折する",
     next_name: "",
-    image: "232_233_234.png",
+    image: "232_233_234.webp",
   },
   {
     previous: 232,
@@ -4842,7 +4793,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "テントが左手になるように向く",
     curr_name: "そのままちびっこ館内へ進む",
     next_name: "",
-    image: "232_233_251.png",
+    image: "232_233_251.webp",
   },
   {
     previous: 234,
@@ -4851,7 +4802,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "フィールド(大きな看板)が左手に来るように向く",
     curr_name: "進んで左折する",
     next_name: "",
-    image: "234_233_232.png",
+    image: "234_233_232.webp",
   },
   {
     previous: 234,
@@ -4860,7 +4811,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "フィールド(大きな看板)が左手に来るように向く",
     curr_name: "進んでちびっこ館内へ右折する",
     next_name: "",
-    image: "234_233_251.png",
+    image: "234_233_251.webp",
   },
   {
     previous: 251,
@@ -4869,7 +4820,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "外を向く",
     curr_name: "外に出て、左前方に進む",
     next_name: "左前方の長椅子のあるエリアが目的地",
-    image: "251_233_43.png",
+    image: "251_233_43.webp",
   },
   {
     previous: 251,
@@ -4878,7 +4829,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "外を向く",
     curr_name: "外に出てそのまま進む",
     next_name: "",
-    image: "251_233_232.png",
+    image: "251_233_232.webp",
   },
   {
     previous: 251,
@@ -4887,7 +4838,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "外を向く",
     curr_name: "外に出て左折する",
     next_name: "",
-    image: "251_233_234.png",
+    image: "251_233_234.webp",
   },
   {
     previous: 43,
@@ -4896,7 +4847,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "フィールド(大きな看板)向かって左手の建物の奥の入り口を向く",
     curr_name: "そのままちびっこ館内へ進む",
     next_name: "",
-    image: "43_234_259.png",
+    image: "43_234_259.webp",
   },
   {
     previous: 233,
@@ -4905,7 +4856,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "建物向かって右を向く",
     curr_name: "",
     next_name: "",
-    image: "233_234_259.png",
+    image: "233_234_259.webp",
   },
   {
     previous: 42,
@@ -4914,7 +4865,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "外の方を向いて、進む",
     next_name: "",
-    image: "42_235_230.png",
+    image: "42_235_230.webp",
   },
   {
     previous: 42,
@@ -4923,7 +4874,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "企画本館の方を向いて、そのまま中へ進む",
     next_name: "",
-    image: "42_235_266.png",
+    image: "42_235_266.webp",
   },
   {
     previous: 230,
@@ -4932,7 +4883,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "建物の方を向く",
     curr_name: "進んで左手のテントが目的地",
     next_name: "",
-    image: "230_235_42.png",
+    image: "230_235_42.webp",
   },
   {
     previous: 230,
@@ -4941,7 +4892,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "建物の方を向く",
     curr_name: "そのまま企画本館内へ進む",
     next_name: "",
-    image: "230_235_266.png",
+    image: "230_235_266.webp",
   },
   {
     previous: 266,
@@ -4950,7 +4901,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "外の方を向く",
     curr_name: "右手のテントが目的地",
     next_name: "",
-    image: "266_235_42.png",
+    image: "266_235_42.webp",
   },
   {
     previous: 266,
@@ -4959,7 +4910,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "外の方を向く",
     curr_name: "そのまま進む",
     next_name: "",
-    image: "266_235_230.png",
+    image: "266_235_230.webp",
   },
   {
     previous: 214,
@@ -4968,7 +4919,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "通りの方を向く",
     curr_name: "通りをそのまま進む",
     next_name: "",
-    image: "214_236_244.png",
+    image: "214_236_244.webp",
   },
   {
     previous: 215,
@@ -4977,7 +4928,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "奥の通りの方を向く",
     curr_name: "通りへ右折する",
     next_name: "",
-    image: "215_236_244.png",
+    image: "215_236_244.webp",
   },
   {
     previous: 244,
@@ -4986,7 +4937,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "ステージの方を向く",
     curr_name: "そのまま進む",
     next_name: "",
-    image: "244_236_214.png",
+    image: "244_236_214.webp",
   },
   {
     previous: 244,
@@ -4995,7 +4946,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "ステージの方を向く",
     curr_name: "通りを抜けたら、左折する",
     next_name: "",
-    image: "244_236_215.png",
+    image: "244_236_215.webp",
   },
   {
     previous: 39,
@@ -5004,7 +4955,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "建物を背にして、そのまま進む",
     next_name: "",
-    image: "39_237_217.png",
+    image: "39_237_217.webp",
   },
   {
     previous: 39,
@@ -5013,7 +4964,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "建物を向いて、そのまま進む",
     next_name: "",
-    image: "39_237_260.png",
+    image: "39_237_260.webp",
   },
   {
     previous: 217,
@@ -5022,7 +4973,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "建物を向く",
     curr_name: "進んで左手のテントが目的地",
     next_name: "",
-    image: "217_237_39.png",
+    image: "217_237_39.webp",
   },
   {
     previous: 217,
@@ -5031,7 +4982,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "建物を向く",
     curr_name: "そのまま進む",
     next_name: "",
-    image: "217_237_260.png",
+    image: "217_237_260.webp",
   },
   {
     previous: 260,
@@ -5040,7 +4991,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "池の方を向く",
     curr_name: "進んで右手のテントが目的地",
     next_name: "",
-    image: "260_237_39.png",
+    image: "260_237_39.webp",
   },
   {
     previous: 260,
@@ -5049,7 +5000,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "池の方を向く",
     curr_name: "そのまま進む",
     next_name: "",
-    image: "260_237_217.png",
+    image: "260_237_217.webp",
   },
   {
     previous: 227,
@@ -5058,7 +5009,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "ステージが右手になるように向く",
     curr_name: "そのまま進んで突き当たりを左折する",
     next_name: "",
-    image: "227_238_239.png",
+    image: "227_238_239.webp",
   },
   {
     previous: 239,
@@ -5067,7 +5018,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "体育館入り口が左手に来るように向く",
     curr_name: "進んで右折する",
     next_name: "",
-    image: "239_238_227.png",
+    image: "239_238_227.webp",
   },
   {
     previous: 238,
@@ -5076,7 +5027,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "テニスコートが背になるように向く",
     curr_name: "右折する",
     next_name: "",
-    image: "238_239_327.png",
+    image: "238_239_327.webp",
   },
   {
     previous: 327,
@@ -5085,7 +5036,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "体育館が背になるように向く",
     curr_name: "左折する",
     next_name: "",
-    image: "327_239_238.png",
+    image: "327_239_238.webp",
   },
   {
     previous: 105,
@@ -5094,7 +5045,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "ステージが右手になるように向いて、右折する",
     next_name: "",
-    image: "105_240_227.png",
+    image: "105_240_227.webp",
   },
   {
     previous: 105,
@@ -5103,7 +5054,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "ステージが右手になるように向いて、左折する",
     next_name: "",
-    image: "105_240_241.png",
+    image: "105_240_241.webp",
   },
   {
     previous: 227,
@@ -5112,7 +5063,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "ステージを背にするように向く",
     curr_name: "左手前のテントが目的地",
     next_name: "",
-    image: "227_240_105.png",
+    image: "227_240_105.webp",
   },
   {
     previous: 227,
@@ -5121,7 +5072,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "ステージを背にするように向く",
     curr_name: "そのまま進む",
     next_name: "",
-    image: "227_240_241.png",
+    image: "227_240_241.webp",
   },
   {
     previous: 241,
@@ -5130,7 +5081,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "ステージの方向を向く",
     curr_name: "右手一番奥のテントが目的地",
     next_name: "",
-    image: "241_240_105.png",
+    image: "241_240_105.webp",
   },
   {
     previous: 241,
@@ -5139,7 +5090,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "ステージの方向を向く",
     curr_name: "そのまま進む",
     next_name: "",
-    image: "241_240_227.png",
+    image: "241_240_227.webp",
   },
   {
     previous: 106,
@@ -5148,7 +5099,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "通りの方を向いて、向かいのテントが目的地",
     next_name: "",
-    image: "106_241_110.png",
+    image: "106_241_110.webp",
   },
   {
     previous: 106,
@@ -5157,7 +5108,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "ステージの方向に進む",
     next_name: "",
-    image: "106_241_240.png",
+    image: "106_241_240.webp",
   },
   {
     previous: 106,
@@ -5166,7 +5117,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "ステージと反対に進む",
     next_name: "",
-    image: "106_241_242.png",
+    image: "106_241_242.webp",
   },
   {
     previous: 110,
@@ -5175,7 +5126,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "通りの方を向いて、向かいのテントが目的地",
     next_name: "",
-    image: "110_241_106.png",
+    image: "110_241_106.webp",
   },
   {
     previous: 110,
@@ -5184,7 +5135,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "ステージの方向に進む",
     next_name: "",
-    image: "110_241_240.png",
+    image: "110_241_240.webp",
   },
   {
     previous: 110,
@@ -5193,7 +5144,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "ステージの方向と反対に進む",
     next_name: "",
-    image: "110_241_242.png",
+    image: "110_241_242.webp",
   },
   {
     previous: 240,
@@ -5202,7 +5153,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "通りの方を向く",
     curr_name: "左手前から二番目のテントが目的地",
     next_name: "",
-    image: "240_241_106.png",
+    image: "240_241_106.webp",
   },
   {
     previous: 240,
@@ -5211,7 +5162,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "通りの方を向く",
     curr_name: "右手のテントが目的地",
     next_name: "",
-    image: "240_241_110.png",
+    image: "240_241_110.webp",
   },
   {
     previous: 240,
@@ -5220,7 +5171,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "通りの方を向く",
     curr_name: "そのまま進む",
     next_name: "",
-    image: "240_241_242.png",
+    image: "240_241_242.webp",
   },
   {
     previous: 242,
@@ -5229,7 +5180,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "ステージの方を向く",
     curr_name: "右手のテントが目的地",
     next_name: "",
-    image: "242_241_106.png",
+    image: "242_241_106.webp",
   },
   {
     previous: 242,
@@ -5238,7 +5189,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "ステージの方を向く",
     curr_name: "左手のテントが目的地",
     next_name: "",
-    image: "242_241_110.png",
+    image: "242_241_110.webp",
   },
   {
     previous: 242,
@@ -5247,7 +5198,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "ステージの方を向く",
     curr_name: "そのまま進む",
     next_name: "",
-    image: "242_241_240.png",
+    image: "242_241_240.webp",
   },
   {
     previous: 107,
@@ -5265,7 +5216,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "ステージの方向に進む",
     next_name: "",
-    image: "107_242_241.png",
+    image: "107_242_241.webp",
   },
   {
     previous: 107,
@@ -5274,7 +5225,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "ステージの方向と反対に進む",
     next_name: "",
-    image: "107_242_243.png",
+    image: "107_242_243.webp",
   },
   {
     previous: 108,
@@ -5292,7 +5243,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "ステージの方向に進む",
     next_name: "",
-    image: "108_242_241.png",
+    image: "108_242_241.webp",
   },
   {
     previous: 108,
@@ -5301,7 +5252,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "ステージと反対に進む",
     next_name: "",
-    image: "108_242_243.png",
+    image: "108_242_243.webp",
   },
   {
     previous: 241,
@@ -5310,7 +5261,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "ステージを背にするように向く",
     curr_name: "左手前から三番目のテントが目的地",
     next_name: "",
-    image: "241_242_107.png",
+    image: "241_242_107.webp",
   },
   {
     previous: 241,
@@ -5319,7 +5270,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "ステージを背にするように向く",
     curr_name: "左手奥から二番目のテントが目的地",
     next_name: "",
-    image: "241_242_108.png",
+    image: "241_242_108.webp",
   },
   {
     previous: 241,
@@ -5328,7 +5279,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "ステージを背にするように向く",
     curr_name: "そのまま進む",
     next_name: "",
-    image: "241_242_243.png",
+    image: "241_242_243.webp",
   },
   {
     previous: 243,
@@ -5337,7 +5288,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "ステージの方を向く",
     curr_name: "右手奥から三番目のテントが目的地",
     next_name: "",
-    image: "243_242_107.png",
+    image: "243_242_107.webp",
   },
   {
     previous: 243,
@@ -5346,7 +5297,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "ステージの方を向く",
     curr_name: "右手手前から二番目のテントが目的地",
     next_name: "",
-    image: "243_242_108.png",
+    image: "243_242_108.webp",
   },
   {
     previous: 243,
@@ -5355,7 +5306,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "ステージの方を向く",
     curr_name: "そのまま進む",
     next_name: "",
-    image: "243_242_241.png",
+    image: "243_242_241.webp",
   },
   {
     previous: 109,
@@ -5364,7 +5315,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "ステージの方向に進む",
     next_name: "",
-    image: "109_243_242.png",
+    image: "109_243_242.webp",
   },
   {
     previous: 242,
@@ -5373,7 +5324,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "ステージを背にするように向く",
     curr_name: "左手一番奥のテントが目的地",
     next_name: "",
-    image: "242_243_109.png",
+    image: "242_243_109.webp",
   },
   {
     previous: 111,
@@ -5400,7 +5351,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "ステージの方向に進む",
     next_name: "",
-    image: "111_244_236.png",
+    image: "111_244_236.webp",
   },
   {
     previous: 111,
@@ -5409,7 +5360,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "ステージの方向と反対に進む",
     next_name: "",
-    image: "111_244_245.png",
+    image: "111_244_245.webp",
   },
   {
     previous: 112,
@@ -5436,7 +5387,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "ステージの方向に進む",
     next_name: "",
-    image: "112_244_236.png",
+    image: "112_244_236.webp",
   },
   {
     previous: 112,
@@ -5445,7 +5396,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "ステージの方向と反対に進む",
     next_name: "",
-    image: "112_244_245.png",
+    image: "112_244_245.webp",
   },
   {
     previous: 113,
@@ -5472,7 +5423,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "ステージの方向に進む",
     next_name: "",
-    image: "113_244_236.png",
+    image: "113_244_236.webp",
   },
   {
     previous: 113,
@@ -5481,7 +5432,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "ステージの方向と反対に進む",
     next_name: "",
-    image: "113_244_245.png",
+    image: "113_244_245.webp",
   },
   {
     previous: 236,
@@ -5490,7 +5441,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "通りの方を向く",
     curr_name: "右手前のテントが目的地",
     next_name: "",
-    image: "236_244_111.png",
+    image: "236_244_111.webp",
   },
   {
     previous: 236,
@@ -5499,7 +5450,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "通りの方を向く",
     curr_name: "右手手前から二番目のテントが目的地",
     next_name: "",
-    image: "236_244_112.png",
+    image: "236_244_112.webp",
   },
   {
     previous: 236,
@@ -5508,7 +5459,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "通りの方を向く",
     curr_name: "右手手前から三番目のテントが目的地",
     next_name: "",
-    image: "236_244_113.png",
+    image: "236_244_113.webp",
   },
   {
     previous: 236,
@@ -5517,7 +5468,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "通りの方を向く",
     curr_name: "そのまま進む",
     next_name: "",
-    image: "236_244_245.png",
+    image: "236_244_245.webp",
   },
   {
     previous: 245,
@@ -5526,7 +5477,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "ステージの方を向く",
     curr_name: "左手一番奥のテントが目的地",
     next_name: "",
-    image: "245_244_111.png",
+    image: "245_244_111.webp",
   },
   {
     previous: 245,
@@ -5535,7 +5486,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "ステージの方を向く",
     curr_name: "左手奥から二番目のテントが目的地",
     next_name: "",
-    image: "245_244_112.png",
+    image: "245_244_112.webp",
   },
   {
     previous: 245,
@@ -5544,7 +5495,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "ステージの方を向く",
     curr_name: "左手奥から三番目のテントが目的地",
     next_name: "",
-    image: "245_244_113.png",
+    image: "245_244_113.webp",
   },
   {
     previous: 245,
@@ -5553,7 +5504,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "ステージの方を向く",
     curr_name: "そのまま進む",
     next_name: "",
-    image: "245_244_236.png",
+    image: "245_244_236.webp",
   },
   {
     previous: 114,
@@ -5580,7 +5531,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "ステージの方向に進む",
     next_name: "",
-    image: "114_245_244.png",
+    image: "114_245_244.webp",
   },
   {
     previous: 114,
@@ -5589,7 +5540,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "ステージの方向と反対に進む",
     next_name: "",
-    image: "114_245_246.png",
+    image: "114_245_246.webp",
   },
   {
     previous: 115,
@@ -5616,7 +5567,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "ステージの方向に進む",
     next_name: "",
-    image: "115_245_244.png",
+    image: "115_245_244.webp",
   },
   {
     previous: 115,
@@ -5625,7 +5576,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "ステージの方向と反対に進む",
     next_name: "",
-    image: "115_245_246.png",
+    image: "115_245_246.webp",
   },
   {
     previous: 116,
@@ -5652,7 +5603,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "ステージの方向に進む",
     next_name: "",
-    image: "116_245_244.png",
+    image: "116_245_244.webp",
   },
   {
     previous: 116,
@@ -5661,7 +5612,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "ステージの方向と反対に進む",
     next_name: "",
-    image: "116_245_246.png",
+    image: "116_245_246.webp",
   },
   {
     previous: 244,
@@ -5670,7 +5621,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "ステージが背になるように向く",
     curr_name: "右手手前から四番目のテントが目的地",
     next_name: "",
-    image: "244_245_114.png",
+    image: "244_245_114.webp",
   },
   {
     previous: 244,
@@ -5679,7 +5630,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "ステージが背になるように向く",
     curr_name: "右手奥から四番目のテントが目的地",
     next_name: "",
-    image: "244_245_115.png",
+    image: "244_245_115.webp",
   },
   {
     previous: 244,
@@ -5688,7 +5639,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "ステージが背になるように向く",
     curr_name: "右手奥から三番目のテントが目的地",
     next_name: "",
-    image: "244_245_116.png",
+    image: "244_245_116.webp",
   },
   {
     previous: 244,
@@ -5697,7 +5648,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "ステージが背になるように向く",
     curr_name: "右手奥から二番目のテントが目的地",
     next_name: "",
-    image: "244_245_246.png",
+    image: "244_245_246.webp",
   },
   {
     previous: 246,
@@ -5706,7 +5657,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "ステージの方向を向く",
     curr_name: "左手奥から四番目のテントが目的地",
     next_name: "",
-    image: "246_245_114.png",
+    image: "246_245_114.webp",
   },
   {
     previous: 246,
@@ -5715,7 +5666,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "ステージの方向を向く",
     curr_name: "左手手前から四番目のテントが目的地",
     next_name: "",
-    image: "246_245_115.png",
+    image: "246_245_115.webp",
   },
   {
     previous: 246,
@@ -5724,7 +5675,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "ステージの方向を向く",
     curr_name: "左手手前から三番目のテントが目的地",
     next_name: "",
-    image: "246_245_116.png",
+    image: "246_245_116.webp",
   },
   {
     previous: 246,
@@ -5733,7 +5684,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "ステージの方向を向く",
     curr_name: "そのまま進む",
     next_name: "",
-    image: "246_245_244.png",
+    image: "246_245_244.webp",
   },
   {
     previous: 117,
@@ -5742,7 +5693,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "ステージの方向に進む",
     next_name: "",
-    image: "117_246_245.png",
+    image: "117_246_245.webp",
   },
   {
     previous: 245,
@@ -5751,7 +5702,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "ステージを背にするように向く",
     curr_name: "右手奥から二番目のテントが目的地",
     next_name: "",
-    image: "245_246_117.png",
+    image: "245_246_117.webp",
   },
   {
     previous: 46,
@@ -5760,7 +5711,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "トイレを出て右折する",
     next_name: "",
-    image: "46_251_233.png",
+    image: "46_251_233.webp",
   },
   {
     previous: 46,
@@ -5769,7 +5720,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "トイレを出て左折する",
     next_name: "",
-    image: "46_251_253.png",
+    image: "46_251_253.webp",
   },
   {
     previous: 233,
@@ -5778,7 +5729,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "建物の方を向く",
     curr_name: "ちびっこ館内入ってすぐ左手が目的地",
     next_name: "",
-    image: "233_251_46.png",
+    image: "233_251_46.webp",
   },
   {
     previous: 233,
@@ -5787,7 +5738,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "建物の方を向く",
     curr_name: "ちびっこ館内入ってそのまま進む",
     next_name: "",
-    image: "233_251_253.png",
+    image: "233_251_253.webp",
   },
   {
     previous: 253,
@@ -5796,7 +5747,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "出入り口の方を向く",
     curr_name: "進んで右手が目的地",
     next_name: "",
-    image: "253_251_46.png",
+    image: "253_251_46.webp",
   },
   {
     previous: 253,
@@ -5805,7 +5756,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "出入り口の方を向く",
     curr_name: "そのまま進んで外に出る",
     next_name: "",
-    image: "253_251_233.png",
+    image: "253_251_233.webp",
   },
   {
     previous: 47,
@@ -5814,7 +5765,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "出入り口の方に進む",
     next_name: "",
-    image: "47_253_251.png",
+    image: "47_253_251.webp",
   },
   {
     previous: 47,
@@ -5823,7 +5774,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "出入り口と反対に進む",
     next_name: "",
-    image: "47_253_254.png",
+    image: "47_253_254.webp",
   },
   {
     previous: 251,
@@ -5832,7 +5783,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "出入り口を背にするように向く",
     curr_name: "右手が目的地",
     next_name: "",
-    image: "251_253_47.png",
+    image: "251_253_47.webp",
   },
   {
     previous: 251,
@@ -5841,7 +5792,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "出入り口を背にするように向く",
     curr_name: "そのまま進む",
     next_name: "",
-    image: "251_253_254.png",
+    image: "251_253_254.webp",
   },
   {
     previous: 254,
@@ -5850,7 +5801,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "出入り口の方を向く",
     curr_name: "進んで左手が目的地",
     next_name: "",
-    image: "254_253_47.png",
+    image: "254_253_47.webp",
   },
   {
     previous: 254,
@@ -5859,7 +5810,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "出入り口の方を向く",
     curr_name: "そのまま進む",
     next_name: "",
-    image: "254_253_251.png",
+    image: "254_253_251.webp",
   },
   {
     previous: 253,
@@ -5868,7 +5819,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "出入り口を背にするように向く",
     curr_name: "そのまま進む",
     next_name: "",
-    image: "253_254_255.png",
+    image: "253_254_255.webp",
   },
   {
     previous: 255,
@@ -5877,7 +5828,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "出入り口の方を向く",
     curr_name: "そのまま進む",
     next_name: "",
-    image: "255_254_253.png",
+    image: "255_254_253.webp",
   },
   {
     previous: 258,
@@ -5886,7 +5837,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "階段を下る",
     curr_name: "階段を下ったら右折する",
     next_name: "",
-    image: "258_254_253.png",
+    image: "258_254_253.webp",
   },
   {
     previous: 258,
@@ -5895,7 +5846,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "階段を下る",
     curr_name: "階段を下ったら左折する",
     next_name: "",
-    image: "258_254_255.png",
+    image: "258_254_255.webp",
   },
   {
     previous: 254,
@@ -5904,7 +5855,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "出入り口を背にするように向く",
     curr_name: "進んで左折する",
     next_name: "",
-    image: "254_255_256.png",
+    image: "254_255_256.webp",
   },
   {
     previous: 254,
@@ -5913,7 +5864,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "出入り口を背にするように向く",
     curr_name: "進んで右折する",
     next_name: "",
-    image: "254_255_257.png",
+    image: "254_255_257.webp",
   },
   {
     previous: 256,
@@ -5922,7 +5873,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "開けた方を向く",
     curr_name: "進んで右折する",
     next_name: "",
-    image: "256_255_254.png",
+    image: "256_255_254.webp",
   },
   {
     previous: 256,
@@ -5931,7 +5882,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "開けた方を向く",
     curr_name: "そのまま奥まで進む",
     next_name: "",
-    image: "256_255_257.png",
+    image: "256_255_257.webp",
   },
   {
     previous: 257,
@@ -5940,7 +5891,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "開けた方を向く",
     curr_name: "進んで左折する",
     next_name: "",
-    image: "257_255_254.png",
+    image: "257_255_254.webp",
   },
   {
     previous: 257,
@@ -5949,7 +5900,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "開けた方を向く",
     curr_name: "そのまま奥まで進む",
     next_name: "",
-    image: "257_255_256.png",
+    image: "257_255_256.webp",
   },
   {
     previous: 48,
@@ -5958,7 +5909,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "部屋を出たら、左折する",
     next_name: "",
-    image: "48_256_255.png",
+    image: "48_256_255.webp",
   },
   {
     previous: 255,
@@ -5967,7 +5918,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "出入り口を向いた時の右手側を向く",
     curr_name: "進んで右手の部屋が目的地",
     next_name: "",
-    image: "255_256_48.png",
+    image: "255_256_48.webp",
   },
   {
     previous: 49,
@@ -5976,7 +5927,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "部屋を出て向かいの部屋が目的地",
     next_name: "",
-    image: "49_257_50.png",
+    image: "49_257_50.webp",
   },
   {
     previous: 49,
@@ -5985,7 +5936,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "部屋を出たら、右折する",
     next_name: "",
-    image: "49_257_255.png",
+    image: "49_257_255.webp",
   },
   {
     previous: 50,
@@ -5994,7 +5945,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "部屋を出て向かいの部屋が目的地",
     next_name: "",
-    image: "50_257_49.png",
+    image: "50_257_49.webp",
   },
   {
     previous: 50,
@@ -6003,7 +5954,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "部屋を出たら、左折する",
     next_name: "",
-    image: "50_257_255.png",
+    image: "50_257_255.webp",
   },
   {
     previous: 255,
@@ -6012,7 +5963,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "出入り口を向いた時の左手側を向く",
     curr_name: "進んで左手の部屋が目的地",
     next_name: "",
-    image: "255_257_49.png",
+    image: "255_257_49.webp",
   },
   {
     previous: 255,
@@ -6021,7 +5972,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "出入り口を向いた時の左手側を向く",
     curr_name: "進んで右手の部屋が目的地",
     next_name: "",
-    image: "255_257_50.png",
+    image: "255_257_50.webp",
   },
   {
     previous: 234,
@@ -6030,7 +5981,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "建物の方を向く",
     curr_name: "階段を登った先でちびっこ企画を受付",
     next_name: "",
-    image: "234_259_51.png",
+    image: "234_259_51.webp",
   },
   {
     previous: 51,
@@ -6039,7 +5990,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "出口用の階段へ進んで下る",
     next_name: "",
-    image: "51_258_254.png",
+    image: "51_258_254.webp",
   },
   {
     previous: 237,
@@ -6048,7 +5999,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "建物の方を向く",
     curr_name: "そのまま進んで吹き抜けに出る",
     next_name: "",
-    image: "237_260_261.png",
+    image: "237_260_261.webp",
   },
   {
     previous: 237,
@@ -6057,7 +6008,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "建物の方を向く",
     curr_name: "進んで左折する",
     next_name: "",
-    image: "237_260_262.png",
+    image: "237_260_262.webp",
   },
   {
     previous: 237,
@@ -6066,7 +6017,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "建物の方を向く",
     curr_name: "進んで右折する",
     next_name: "",
-    image: "237_260_263.png",
+    image: "237_260_263.webp",
   },
   {
     previous: 261,
@@ -6075,7 +6026,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "軒下の方を向く",
     curr_name: "そのまま直進",
     next_name: null,
-    image: "261_260_237.png",
+    image: "261_260_237.webp",
   },
   {
     previous: 261,
@@ -6084,7 +6035,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "軒下の方を向く",
     curr_name: "右手のドアを進む",
     next_name: null,
-    image: "261_260_262.png",
+    image: "261_260_262.webp",
   },
   {
     previous: 261,
@@ -6093,7 +6044,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "軒下の方を向く",
     curr_name: "左手のドアを進む",
     next_name: null,
-    image: "261_260_263.png",
+    image: "261_260_263.webp",
   },
   {
     previous: 262,
@@ -6102,7 +6053,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "ドアの方を向く",
     curr_name: "進んで右折する",
     next_name: "",
-    image: "262_260_237.png",
+    image: "262_260_237.webp",
   },
   {
     previous: 262,
@@ -6111,7 +6062,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "ドアの方を向く",
     curr_name: "進んで左折して吹き抜けに出る",
     next_name: "",
-    image: "262_260_261.png",
+    image: "262_260_261.webp",
   },
   {
     previous: 262,
@@ -6120,7 +6071,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "ドアの方を向く",
     curr_name: "そのまま進む",
     next_name: "",
-    image: "262_260_263.png",
+    image: "262_260_263.webp",
   },
   {
     previous: 263,
@@ -6129,7 +6080,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "ドアの方を向く",
     curr_name: "進んで左折する",
     next_name: "",
-    image: "263_260_237.png",
+    image: "263_260_237.webp",
   },
   {
     previous: 263,
@@ -6138,7 +6089,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "ドアの方を向く",
     curr_name: "進んで右折して吹き抜けに出る",
     next_name: "",
-    image: "263_260_261.png",
+    image: "263_260_261.webp",
   },
   {
     previous: 263,
@@ -6147,7 +6098,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "ドアの方を向く",
     curr_name: "そのまま進む",
     next_name: "",
-    image: "263_260_262.png",
+    image: "263_260_262.webp",
   },
   {
     previous: 56,
@@ -6156,7 +6107,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "看板左手のテントが目的地",
     next_name: "",
-    image: "56_261_57.png",
+    image: "56_261_57.webp",
   },
   {
     previous: 56,
@@ -6165,7 +6116,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "看板と向かい側にあるテントが目的地",
     next_name: "",
-    image: "56_261_58.png",
+    image: "56_261_58.webp",
   },
   {
     previous: 56,
@@ -6174,7 +6125,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "看板を背にして右手が目的地",
     next_name: "",
-    image: "56_261_59.png",
+    image: "56_261_59.webp",
   },
   {
     previous: 56,
@@ -6183,7 +6134,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "看板を背にして左手に進む",
     next_name: "",
-    image: "56_261_260.png",
+    image: "56_261_260.webp",
   },
   {
     previous: 57,
@@ -6192,7 +6143,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "テント右二つ隣の看板が目的地",
     next_name: "",
-    image: "57_261_56.png",
+    image: "57_261_56.webp",
   },
   {
     previous: 57,
@@ -6201,7 +6152,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "軒下の方に進む",
     next_name: "",
-    image: "57_261_260.png",
+    image: "57_261_260.webp",
   },
   {
     previous: 58,
@@ -6210,7 +6161,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "テントと向かい側にある奥側の看板が目的地",
     next_name: "",
-    image: "58_261_56.png",
+    image: "58_261_56.webp",
   },
   {
     previous: 58,
@@ -6218,7 +6169,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     next: 260,
     prev_name: "",
     curr_name: "軒下の方に進む",
-    next_name: "58_261_260.png",
+    next_name: "58_261_260.webp",
     image: "",
   },
   {
@@ -6228,7 +6179,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "テントを出て左手奥の看板が目的地",
     next_name: "",
-    image: "59_261_56.png",
+    image: "59_261_56.webp",
   },
   {
     previous: 59,
@@ -6237,7 +6188,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "テントを出て軒下の方に進む",
     next_name: "",
-    image: "59_261_260.png",
+    image: "59_261_260.webp",
   },
   {
     previous: 260,
@@ -6246,7 +6197,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "吹き抜けの方を向く",
     curr_name: "右手にある手前の看板が目的地",
     next_name: "",
-    image: "260_261_56.png",
+    image: "260_261_56.webp",
   },
   {
     previous: 260,
@@ -6255,7 +6206,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "吹き抜けの方を向く",
     curr_name: "右手奥のテントが目的地",
     next_name: "",
-    image: "260_261_57.png",
+    image: "260_261_57.webp",
   },
   {
     previous: 260,
@@ -6264,7 +6215,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "吹き抜けの方を向く",
     curr_name: "",
     next_name: "",
-    image: "260_261_58.png",
+    image: "260_261_58.webp",
   },
   {
     previous: 260,
@@ -6273,7 +6224,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "吹き抜けの方を向く",
     curr_name: "そのまま奥のテントが目的地",
     next_name: "",
-    image: "260_261_59.png",
+    image: "260_261_59.webp",
   },
   {
     previous: 57,
@@ -6282,7 +6233,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "向かいのテントが目的地",
     next_name: "",
-    image: "57_59_58.png",
+    image: "57_59_58.webp",
   },
   {
     previous: 58,
@@ -6291,7 +6242,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "向かいのテントが目的地",
     next_name: "",
-    image: "58_59_57.png",
+    image: "58_59_57.webp",
   },
   {
     previous: 60,
@@ -6300,7 +6251,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "トイレを出て、右手のロビーが目的地",
     next_name: "",
-    image: "60_262_62.png",
+    image: "60_262_62.webp",
   },
   {
     previous: 60,
@@ -6309,7 +6260,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "トイレを出て、右手をそのまま進む",
     curr_name: "",
     next_name: "",
-    image: "60_262_260.png",
+    image: "60_262_260.webp",
   },
   {
     previous: 60,
@@ -6318,7 +6269,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "トイレを出て、正面の階段を上る",
     next_name: "",
-    image: "60_262_267.png",
+    image: "60_262_267.webp",
   },
   {
     previous: 62,
@@ -6327,7 +6278,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "ロビーを出て、左手トイレが目的地",
     next_name: "",
-    image: "62_262_60.png",
+    image: "62_262_60.webp",
   },
   {
     previous: 62,
@@ -6336,7 +6287,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "ロビーを出て、右手に進む",
     next_name: "",
-    image: "62_262_260.png",
+    image: "62_262_260.webp",
   },
   {
     previous: 62,
@@ -6345,7 +6296,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "ロビーを出て、階段を上る",
     next_name: "",
-    image: "62_262_267.png",
+    image: "62_262_267.webp",
   },
   {
     previous: 260,
@@ -6354,7 +6305,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "吹き抜け左手のドアを通る",
     curr_name: "進んで右奥トイレが目的地",
     next_name: "",
-    image: "260_262_60.png",
+    image: "260_262_60.webp",
   },
   {
     previous: 260,
@@ -6363,7 +6314,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "吹き抜け左手のドアを通る",
     curr_name: "左手にあるロビーが目的地",
     next_name: "",
-    image: "260_262_62.png",
+    image: "260_262_62.webp",
   },
   {
     previous: 260,
@@ -6372,7 +6323,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "吹き抜け左手のドアを通る",
     curr_name: "右手の階段を上る",
     next_name: "",
-    image: "260_262_267.png",
+    image: "260_262_267.webp",
   },
   {
     previous: 267,
@@ -6381,7 +6332,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "階段を下る",
     curr_name: "階段を下って、右手トイレが目的地",
     next_name: "",
-    image: "267_262_60.png",
+    image: "267_262_60.webp",
   },
   {
     previous: 267,
@@ -6390,7 +6341,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "階段を下る",
     curr_name: "階段を下って、正面ロビーが目的地",
     next_name: "",
-    image: "267_262_62.png",
+    image: "267_262_62.webp",
   },
   {
     previous: 267,
@@ -6399,7 +6350,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "階段を下る",
     curr_name: "階段を下って、左手に進む",
     next_name: "",
-    image: "267_262_260.png",
+    image: "267_262_260.webp",
   },
   {
     previous: 63,
@@ -6408,7 +6359,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "教室を出て、左手に進む",
     next_name: "",
-    image: "63_263_260.png",
+    image: "63_263_260.webp",
   },
   {
     previous: 63,
@@ -6417,7 +6368,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "教室を出て、エレベーター右に伸びる道を進む",
     next_name: "",
-    image: "63_263_265.png",
+    image: "63_263_265.webp",
   },
   {
     previous: 63,
@@ -6426,7 +6377,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "教室を出て、エレベーターで２階に行く",
     next_name: "",
-    image: "63_263_269.png",
+    image: "63_263_269.webp",
   },
   {
     previous: 63,
@@ -6435,7 +6386,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "教室を出て、エレベーターで３階に行く",
     next_name: "",
-    image: "63_263_284.png",
+    image: "63_263_284.webp",
   },
   {
     previous: 63,
@@ -6444,7 +6395,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "教室を出て、エレベーターで４階に行く",
     next_name: "",
-    image: "63_263_300.png",
+    image: "63_263_300.webp",
   },
   {
     previous: 260,
@@ -6453,7 +6404,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "吹き抜け右手のドアを通る",
     curr_name: "右手1101教室が目的地",
     next_name: "",
-    image: "260_263_63.png",
+    image: "260_263_63.webp",
   },
   {
     previous: 260,
@@ -6462,7 +6413,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "吹き抜け右手のドアを通る",
     curr_name: "エレベーター奥へ左折する",
     next_name: "",
-    image: "260_263_265.png",
+    image: "260_263_265.webp",
   },
   {
     previous: 260,
@@ -6471,7 +6422,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "吹き抜け右手のドアを通る",
     curr_name: "左手のエレベーターで2階に行く",
     next_name: "",
-    image: "260_263_269.png",
+    image: "260_263_269.webp",
   },
   {
     previous: 260,
@@ -6480,7 +6431,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "吹き抜け右手のドアを通る",
     curr_name: "左手のエレベーターで3階に行く",
     next_name: "",
-    image: "260_263_284.png",
+    image: "260_263_284.webp",
   },
   {
     previous: 260,
@@ -6489,7 +6440,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "吹き抜け右手のドアを通る",
     curr_name: "左手のエレベーターで4階に行く",
     next_name: "",
-    image: "260_263_300.png",
+    image: "260_263_300.webp",
   },
   {
     previous: 265,
@@ -6498,7 +6449,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "トイレ向かって右手の方を向く",
     curr_name: "進んだ先の正面1101教室が目的地",
     next_name: "",
-    image: "265_263_63.png",
+    image: "265_263_63.webp",
   },
   {
     previous: 265,
@@ -6507,7 +6458,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "トイレ向かって右手の方を向く",
     curr_name: "右折して進む",
     next_name: "",
-    image: "265_263_260.png",
+    image: "265_263_260.webp",
   },
   {
     previous: 265,
@@ -6516,7 +6467,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "トイレ向かって右手の方を向く",
     curr_name: "進んで右手エレベーターで2階に行く",
     next_name: "",
-    image: "265_263_269.png",
+    image: "265_263_269.webp",
   },
   {
     previous: 265,
@@ -6525,7 +6476,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "トイレ向かって右手の方を向く",
     curr_name: "進んで右手エレベーターで3階に行く",
     next_name: "",
-    image: "265_263_284.png",
+    image: "265_263_284.webp",
   },
   {
     previous: 265,
@@ -6534,7 +6485,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "トイレ向かって右手の方を向く",
     curr_name: "進んで右手エレベーターで4階に行く",
     next_name: "",
-    image: "265_263_300.png",
+    image: "265_263_300.webp",
   },
   {
     previous: 269,
@@ -6543,7 +6494,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "エレベーターで1階に行く",
     curr_name: "エレベーターを降りて、正面1101教室が目的地",
     next_name: "",
-    image: "269_263_63.png",
+    image: "269_263_63.webp",
   },
   {
     previous: 269,
@@ -6552,7 +6503,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "エレベーターで1階に行く",
     curr_name: "エレベーターを降りて、右折する",
     next_name: "",
-    image: "269_263_260.png",
+    image: "269_263_260.webp",
   },
   {
     previous: 269,
@@ -6561,7 +6512,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "エレベーターで1階に行く",
     curr_name: "エレベーターを降りて、左を向いてさらに左折する",
     next_name: "",
-    image: "269_263_265.png",
+    image: "269_263_265.webp",
   },
   {
     previous: 284,
@@ -6570,7 +6521,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "エレベーターで1階に行く",
     curr_name: "エレベーターを降りて、正面1101教室が目的地",
     next_name: "",
-    image: "284_263_63.png",
+    image: "284_263_63.webp",
   },
   {
     previous: 284,
@@ -6579,7 +6530,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "エレベーターで1階に行く",
     curr_name: "エレベーターを降りて、右折する",
     next_name: "",
-    image: "284_263_260.png",
+    image: "284_263_260.webp",
   },
   {
     previous: 284,
@@ -6588,7 +6539,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "エレベーターで1階に行く",
     curr_name: "エレベーターを降りて、左を向いてさらに左折する",
     next_name: "",
-    image: "284_263_265.png",
+    image: "284_263_265.webp",
   },
   {
     previous: 300,
@@ -6597,7 +6548,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "エレベーターで1階に行く",
     curr_name: "エレベーターを降りて、正面1101教室が目的地",
     next_name: "",
-    image: "300_263_63.png",
+    image: "300_263_63.webp",
   },
   {
     previous: 300,
@@ -6606,7 +6557,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "エレベーターで1階に行く",
     curr_name: "エレベーターを降りて、右折する",
     next_name: "",
-    image: "300_263_260.png",
+    image: "300_263_260.webp",
   },
   {
     previous: 300,
@@ -6615,7 +6566,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "エレベーターで1階に行く",
     curr_name: "エレベーターを降りて、左を向いてさらに左折する",
     next_name: "",
-    image: "300_263_265.png",
+    image: "300_263_265.webp",
   },
   {
     previous: 64,
@@ -6624,7 +6575,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "トイレを出て、左折する",
     next_name: "",
-    image: "64_265_263.png",
+    image: "64_265_263.webp",
   },
   {
     previous: 64,
@@ -6633,7 +6584,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "トイレを出て、右折する",
     next_name: "",
-    image: "64_265_266.png",
+    image: "64_265_266.webp",
   },
   {
     previous: 64,
@@ -6642,7 +6593,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "トイレを出て、正面の階段を上る",
     next_name: "",
-    image: "64_265_271.png",
+    image: "64_265_271.webp",
   },
   {
     previous: 263,
@@ -6651,7 +6602,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "エレベーターを向いて右手に伸びる道を向く",
     curr_name: "右手トイレが目的地",
     next_name: "",
-    image: "263_265_64.png",
+    image: "263_265_64.webp",
   },
   {
     previous: 263,
@@ -6660,7 +6611,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "エレベーターを向いて右手に伸びる道を向く",
     curr_name: "そのまま進む",
     next_name: "",
-    image: "263_265_266.png",
+    image: "263_265_266.webp",
   },
   {
     previous: 263,
@@ -6669,7 +6620,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "エレベーターを向いて右手に伸びる道を向く",
     curr_name: "進んで左手の階段を上る",
     next_name: "",
-    image: "263_265_271.png",
+    image: "263_265_271.webp",
   },
   {
     previous: 266,
@@ -6678,7 +6629,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "出入り口が左手になるように向く",
     curr_name: "左手トイレが目的地",
     next_name: "",
-    image: "266_265_64.png",
+    image: "266_265_64.webp",
   },
   {
     previous: 266,
@@ -6687,7 +6638,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "トイレのある方を向く",
     curr_name: "そのまま進む",
     next_name: "",
-    image: "266_265_263.png",
+    image: "266_265_263.webp",
   },
   {
     previous: 266,
@@ -6696,7 +6647,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "トイレのある方を向く",
     curr_name: "進んで右手の階段を上る",
     next_name: "",
-    image: "266_265_271.png",
+    image: "266_265_271.webp",
   },
   {
     previous: 271,
@@ -6705,7 +6656,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "階段を下る",
     curr_name: "階段を下って、正面が目的地",
     next_name: "",
-    image: "271_265_64.png",
+    image: "271_265_64.webp",
   },
   {
     previous: 271,
@@ -6714,7 +6665,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "階段を下る",
     curr_name: "階段を下って、左手に少し出て右折する",
     next_name: "",
-    image: "271_265_263.png",
+    image: "271_265_263.webp",
   },
   {
     previous: 271,
@@ -6723,7 +6674,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "階段を下る",
     curr_name: "階段を下って、左手に少し出て左折する",
     next_name: "",
-    image: "271_265_266.png",
+    image: "271_265_266.webp",
   },
   {
     previous: 235,
@@ -6732,7 +6683,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "建物の中にはいる",
     curr_name: "左折する",
     next_name: "",
-    image: "235_266_265.png",
+    image: "235_266_265.webp",
   },
   {
     previous: 265,
@@ -6741,7 +6692,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "トイレが右手に来るように向く",
     curr_name: "右折する",
     next_name: "",
-    image: "265_266_235.png",
+    image: "265_266_235.webp",
   },
   {
     previous: 65,
@@ -6750,7 +6701,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "教室を出て、階段を下る",
     next_name: "",
-    image: "65_267_262.png",
+    image: "65_267_262.webp",
   },
   {
     previous: 65,
@@ -6759,7 +6710,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "教室を出て、右折する",
     curr_name: "",
     next_name: "",
-    image: "65_267_268.png",
+    image: "65_267_268.webp",
   },
   {
     previous: 65,
@@ -6768,7 +6719,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "教室を出て、そのまま進む",
     next_name: "",
-    image: "65_267_279.png",
+    image: "65_267_279.webp",
   },
   {
     previous: 65,
@@ -6777,7 +6728,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "教室を出て、階段を上る",
     next_name: "",
-    image: "65_267_281.png",
+    image: "65_267_281.webp",
   },
   {
     previous: 262,
@@ -6786,7 +6737,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "階段を上る",
     curr_name: "階段を上って、左手1201教室が目的地",
     next_name: "",
-    image: "262_267_65.png",
+    image: "262_267_65.webp",
   },
   {
     previous: 262,
@@ -6795,7 +6746,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "階段を上る",
     curr_name: "階段を上って、左手に進み左折する",
     next_name: "",
-    image: "262_267_268.png",
+    image: "262_267_268.webp",
   },
   {
     previous: 262,
@@ -6804,7 +6755,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "階段を上る",
     curr_name: "階段を上って、右折する",
     next_name: "",
-    image: "262_267_279.png",
+    image: "262_267_279.webp",
   },
   {
     previous: 262,
@@ -6813,16 +6764,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "階段を上る",
     curr_name: "そのまま3階へ階段を上る",
     next_name: "",
-    image: "262_267_281.png",
-  },
-  {
-    previous: 268,
-    current: 267,
-    next: 65,
-    prev_name: "窓の方が右手になるように向く",
-    curr_name: "進んで左手1201教室が目的地",
-    next_name: "",
-    image: "268_267_65.png",
+    image: "262_267_281.webp",
   },
   {
     previous: 268,
@@ -6831,7 +6773,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "窓の方が右手になるように向く",
     curr_name: "進んで右手の階段を下る",
     next_name: "",
-    image: "268_267_262.png",
+    image: "268_267_262.webp",
   },
   {
     previous: 268,
@@ -6840,7 +6782,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "窓の方が右手になるように向く",
     curr_name: "進んで右折する",
     next_name: "",
-    image: "268_267_279.png",
+    image: "268_267_279.webp",
   },
   {
     previous: 268,
@@ -6849,7 +6791,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "窓の方が右手になるように向く",
     curr_name: "進んで右手の階段を上る",
     next_name: "",
-    image: "268_267_281.png",
+    image: "268_267_281.webp",
   },
   {
     previous: 279,
@@ -6858,7 +6800,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "教室が右手に来るように向く",
     curr_name: "進んで突き当たり1201教室が目的地",
     next_name: "",
-    image: "279_267_65.png",
+    image: "279_267_65.webp",
   },
   {
     previous: 279,
@@ -6867,7 +6809,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "教室が右手に来るように向く",
     curr_name: "進んで左手の階段を下る",
     next_name: "",
-    image: "279_267_262.png",
+    image: "279_267_262.webp",
   },
   {
     previous: 279,
@@ -6876,7 +6818,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "教室が右手に来るように向く",
     curr_name: "進んで左折する",
     next_name: "",
-    image: "279_267_268.png",
+    image: "279_267_268.webp",
   },
   {
     previous: 279,
@@ -6885,7 +6827,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "教室が右手に来るように向く",
     curr_name: "進んで左手の階段を上る",
     next_name: "",
-    image: "279_267_281.png",
+    image: "279_267_281.webp",
   },
   {
     previous: 281,
@@ -6894,7 +6836,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "階段を下る",
     curr_name: "階段を下って、左手1201教室が目的地",
     next_name: "",
-    image: "281_267_65.png",
+    image: "281_267_65.webp",
   },
   {
     previous: 281,
@@ -6903,7 +6845,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "階段を下る",
     curr_name: "そのまま一階へ階段を下る",
     next_name: "",
-    image: "281_267_262.png",
+    image: "281_267_262.webp",
   },
   {
     previous: 281,
@@ -6912,7 +6854,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "階段を下る",
     curr_name: "階段を下って、左手に進み左折する",
     next_name: "",
-    image: "281_267_268.png",
+    image: "281_267_268.webp",
   },
   {
     previous: 281,
@@ -6921,7 +6863,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "階段を下る",
     curr_name: "階段を下って、右折する",
     next_name: "",
-    image: "281_267_279.png",
+    image: "281_267_279.webp",
   },
   {
     previous: 65,
@@ -6930,25 +6872,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "教室を出て、右手1202教室が目的地",
     next_name: "",
-    image: "65_268_66.png",
-  },
-  {
-    previous: 65,
-    current: 268,
-    next: 267,
-    prev_name: "",
-    curr_name: "教室を出て、左折する",
-    next_name: "",
-    image: "65_268_267.png",
-  },
-  {
-    previous: 65,
-    current: 268,
-    next: 269,
-    prev_name: "",
-    curr_name: "教室を出て、右折する",
-    next_name: "",
-    image: "65_268_269.png",
+    image: "65_268_66.webp",
   },
   {
     previous: 66,
@@ -6957,7 +6881,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "教室を出て、左手1201教室が目的地",
     next_name: "",
-    image: "66_268_65.png",
+    image: "66_268_65.webp",
   },
   {
     previous: 66,
@@ -6966,7 +6890,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "教室を出て、左折する",
     next_name: "",
-    image: "66_268_267.png",
+    image: "66_268_267.webp",
   },
   {
     previous: 66,
@@ -6975,16 +6899,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "教室を出て、右折する",
     next_name: "",
-    image: "66_268_269.png",
-  },
-  {
-    previous: 267,
-    current: 268,
-    next: 65,
-    prev_name: "窓の方が左手になるように向く",
-    curr_name: "進んで右手1201教室が目的地",
-    next_name: "",
-    image: "267_268_65.png",
+    image: "66_268_269.webp",
   },
   {
     previous: 267,
@@ -6993,7 +6908,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "窓の方が左手になるように向く",
     curr_name: "進んで右手1202教室が目的地",
     next_name: "",
-    image: "267_268_66.png",
+    image: "267_268_66.webp",
   },
   {
     previous: 267,
@@ -7002,7 +6917,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "窓の方が左手になるように向く",
     curr_name: "そのまま進む",
     next_name: "",
-    image: "267_268_269.png",
+    image: "267_268_269.webp",
   },
   {
     previous: 269,
@@ -7011,16 +6926,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "窓の方が右手になるように向く",
     curr_name: "進んで左手1201教室が目的地",
     next_name: "",
-    image: "269_268_65.png",
-  },
-  {
-    previous: 269,
-    current: 268,
-    next: 66,
-    prev_name: "窓の方が右手になるように向く",
-    curr_name: "進んで右手1202教室が目的地",
-    next_name: "",
-    image: "269_268_66.png",
+    image: "269_268_65.webp",
   },
   {
     previous: 269,
@@ -7029,7 +6935,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "窓の方が右手になるように向く",
     curr_name: "そのまま進む",
     next_name: "",
-    image: "269_268_267.png",
+    image: "269_268_267.webp",
   },
   {
     previous: 66,
@@ -7038,16 +6944,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "教室を出て、エレベーターで1階に行く",
     next_name: "",
-    image: "66_269_263.png",
-  },
-  {
-    previous: 66,
-    current: 269,
-    next: 268,
-    prev_name: "",
-    curr_name: "教室を出て、左折する",
-    next_name: "",
-    image: "66_269_268.png",
+    image: "66_269_263.webp",
   },
   {
     previous: 66,
@@ -7056,7 +6953,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "教室を出て、エレベーター右に伸びる道へ進む",
     next_name: "",
-    image: "66_269_271.png",
+    image: "66_269_271.webp",
   },
   {
     previous: 66,
@@ -7065,7 +6962,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "教室を出て、エレベーターで3階に行く",
     next_name: "",
-    image: "66_269_284.png",
+    image: "66_269_284.webp",
   },
   {
     previous: 66,
@@ -7074,7 +6971,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "教室を出て、エレベーターで4階に行く",
     next_name: "",
-    image: "66_269_300.png",
+    image: "66_269_300.webp",
   },
   {
     previous: 263,
@@ -7083,7 +6980,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "エレベーターで2階に行く",
     curr_name: "エレベーターを降りて、正面1202教室が目的地",
     next_name: "",
-    image: "263_269_66.png",
+    image: "263_269_66.webp",
   },
   {
     previous: 263,
@@ -7092,7 +6989,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "エレベーターで2階に行く",
     curr_name: "エレベーターを降りて、右折する",
     next_name: "",
-    image: "263_269_268.png",
+    image: "263_269_268.webp",
   },
   {
     previous: 263,
@@ -7101,16 +6998,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "エレベーターで2階に行く",
     curr_name: "エレベーターを降りて、左を向いてさらに左折する",
     next_name: "",
-    image: "263_269_271.png",
-  },
-  {
-    previous: 268,
-    current: 269,
-    next: 66,
-    prev_name: "窓の方が左手になるように向く",
-    curr_name: "進んで右手1202教室が目的地",
-    next_name: "",
-    image: "268_269_66.png",
+    image: "263_269_271.webp",
   },
   {
     previous: 268,
@@ -7119,7 +7007,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "窓の方が左手になるように向く",
     curr_name: "進んで左手のエレベーターで1階に行く",
     next_name: "",
-    image: "268_269_263.png",
+    image: "268_269_263.webp",
   },
   {
     previous: 268,
@@ -7128,7 +7016,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "窓の方が左手になるように向く",
     curr_name: "進んで左折する",
     next_name: "",
-    image: "268_269_271.png",
+    image: "268_269_271.webp",
   },
   {
     previous: 268,
@@ -7137,7 +7025,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "窓の方が左手になるように向く",
     curr_name: "進んで左手のエレベーターで3階に行く",
     next_name: "",
-    image: "268_269_284.png",
+    image: "268_269_284.webp",
   },
   {
     previous: 268,
@@ -7146,7 +7034,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "窓の方が左手になるように向く",
     curr_name: "進んで左手のエレベーターで4階に行く",
     next_name: "",
-    image: "268_269_300.png",
+    image: "268_269_300.webp",
   },
   {
     previous: 271,
@@ -7155,7 +7043,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "トイレが左手になるように向く",
     curr_name: "進んで正面1202教室が目的地",
     next_name: "",
-    image: "271_269_66.png",
+    image: "271_269_66.webp",
   },
   {
     previous: 271,
@@ -7164,7 +7052,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "トイレが左手になるように向く",
     curr_name: "進んで右手のエレベーターで1階に行く",
     next_name: "",
-    image: "271_269_263.png",
+    image: "271_269_263.webp",
   },
   {
     previous: 271,
@@ -7173,7 +7061,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "トイレが左手になるように向く",
     curr_name: "右折する",
     next_name: "",
-    image: "271_269_268.png",
+    image: "271_269_268.webp",
   },
   {
     previous: 271,
@@ -7182,7 +7070,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "トイレが左手になるように向く",
     curr_name: "進んで右手のエレベーターで3階に行く",
     next_name: "",
-    image: "271_269_284.png",
+    image: "271_269_284.webp",
   },
   {
     previous: 271,
@@ -7191,7 +7079,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "トイレが左手になるように向く",
     curr_name: "進んで右手のエレベーターで4階に行く",
     next_name: "",
-    image: "271_269_300.png",
+    image: "271_269_300.webp",
   },
   {
     previous: 284,
@@ -7200,7 +7088,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "エレベーターで2階に行く",
     curr_name: "エレベーターを降りて、正面1202教室が目的地",
     next_name: "",
-    image: "284_269_66.png",
+    image: "284_269_66.webp",
   },
   {
     previous: 284,
@@ -7209,7 +7097,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "エレベーターで2階に行く",
     curr_name: "エレベーターを降りて、右折する",
     next_name: "",
-    image: "284_269_268.png",
+    image: "284_269_268.webp",
   },
   {
     previous: 284,
@@ -7218,7 +7106,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "エレベーターで2階に行く",
     curr_name: "エレベーターを降りて、左を向いてさらに左折する",
     next_name: "",
-    image: "284_269_271.png",
+    image: "284_269_271.webp",
   },
   {
     previous: 300,
@@ -7227,7 +7115,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "エレベーターで2階に行く",
     curr_name: "エレベーターを降りて、正面1202教室が目的地",
     next_name: "",
-    image: "300_269_66.png",
+    image: "300_269_66.webp",
   },
   {
     previous: 300,
@@ -7236,7 +7124,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "エレベーターで2階に行く",
     curr_name: "エレベーターを降りて、右折する",
     next_name: "",
-    image: "300_269_268.png",
+    image: "300_269_268.webp",
   },
   {
     previous: 300,
@@ -7245,7 +7133,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "エレベーターで2階に行く",
     curr_name: "エレベーターを降りて、左を向いてさらに左折する",
     next_name: "",
-    image: "300_269_271.png",
+    image: "300_269_271.webp",
   },
   {
     previous: 73,
@@ -7254,7 +7142,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "トイレを出て、正面の階段を下る",
     next_name: "",
-    image: "73_271_265.png",
+    image: "73_271_265.webp",
   },
   {
     previous: 73,
@@ -7263,7 +7151,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "トイレを出て、左折する",
     next_name: "",
-    image: "73_271_269.png",
+    image: "73_271_269.webp",
   },
   {
     previous: 73,
@@ -7272,7 +7160,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "トイレを出て、右折する",
     next_name: "",
-    image: "73_271_272.png",
+    image: "73_271_272.webp",
   },
   {
     previous: 73,
@@ -7281,7 +7169,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "トイレを出て、正面の階段を上る",
     next_name: "",
-    image: "73_271_286.png",
+    image: "73_271_286.webp",
   },
   {
     previous: 265,
@@ -7290,7 +7178,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "階段を上る",
     curr_name: "階段を上って、正面トイレが目的地",
     next_name: "",
-    image: "265_271_73.png",
+    image: "265_271_73.webp",
   },
   {
     previous: 265,
@@ -7299,7 +7187,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "階段を上る",
     curr_name: "階段を上って、右折する",
     next_name: "",
-    image: "265_271_269.png",
+    image: "265_271_269.webp",
   },
   {
     previous: 265,
@@ -7308,7 +7196,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "階段を上る",
     curr_name: "階段を上って、左折する",
     next_name: "",
-    image: "265_271_272.png",
+    image: "265_271_272.webp",
   },
   {
     previous: 265,
@@ -7317,7 +7205,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "階段を上る",
     curr_name: "3階へ階段を上る",
     next_name: "",
-    image: "265_271_286.png",
+    image: "265_271_286.webp",
   },
   {
     previous: 269,
@@ -7326,7 +7214,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "エレベーターを向いて右手に伸びる道を向く",
     curr_name: "右手トイレが目的地",
     next_name: "",
-    image: "269_271_73.png",
+    image: "269_271_73.webp",
   },
   {
     previous: 269,
@@ -7335,7 +7223,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "エレベーターを向いて右手に伸びる道を向く",
     curr_name: "左手の階段を下る",
     next_name: "",
-    image: "269_271_265.png",
+    image: "269_271_265.webp",
   },
   {
     previous: 269,
@@ -7344,7 +7232,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "エレベーターを向いて右手に伸びる道を向く",
     curr_name: "そのまま進む",
     next_name: "",
-    image: "269_271_272.png",
+    image: "269_271_272.webp",
   },
   {
     previous: 269,
@@ -7353,7 +7241,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "エレベーターを向いて右手に伸びる道を向く",
     curr_name: "進んで左手の階段を上る",
     next_name: "",
-    image: "269_271_286.png",
+    image: "269_271_286.webp",
   },
   {
     previous: 272,
@@ -7362,7 +7250,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "教室が左手に来るように向く",
     curr_name: "進んで左手トイレが目的地",
     next_name: "",
-    image: "272_271_73.png",
+    image: "272_271_73.webp",
   },
   {
     previous: 272,
@@ -7371,7 +7259,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "教室が左手に来るように向く",
     curr_name: "進んで右手の階段を下る",
     next_name: "",
-    image: "272_271_265.png",
+    image: "272_271_265.webp",
   },
   {
     previous: 272,
@@ -7380,7 +7268,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "教室が左手に来るように向く",
     curr_name: "そのまま進む",
     next_name: "",
-    image: "272_271_269.png",
+    image: "272_271_269.webp",
   },
   {
     previous: 272,
@@ -7389,7 +7277,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "教室が左手に来るように向く",
     curr_name: "進んで右手の階段を上る",
     next_name: "",
-    image: "272_271_286.png",
+    image: "272_271_286.webp",
   },
   {
     previous: 286,
@@ -7398,7 +7286,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "階段を下る",
     curr_name: "階段を下って、正面トイレが目的地",
     next_name: "",
-    image: "286_271_73.png",
+    image: "286_271_73.webp",
   },
   {
     previous: 286,
@@ -7407,7 +7295,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "階段を下る",
     curr_name: "そのまま一階へ階段を下る",
     next_name: "",
-    image: "286_271_265.png",
+    image: "286_271_265.webp",
   },
   {
     previous: 286,
@@ -7416,7 +7304,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "階段を下る",
     curr_name: "階段を下って、左手に少し出て右折する",
     next_name: "",
-    image: "286_271_269.png",
+    image: "286_271_269.webp",
   },
   {
     previous: 286,
@@ -7425,7 +7313,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "階段を下る",
     curr_name: "階段を下って、左手に少し出て左折する",
     next_name: "",
-    image: "286_271_272.png",
+    image: "286_271_272.webp",
   },
   {
     previous: 67,
@@ -7434,7 +7322,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "教室を出て、左折する",
     next_name: "",
-    image: "67_272_271.png",
+    image: "67_272_271.webp",
   },
   {
     previous: 67,
@@ -7443,7 +7331,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "教室を出て、右折する",
     next_name: "",
-    image: "67_272_273.png",
+    image: "67_272_273.webp",
   },
   {
     previous: 271,
@@ -7452,7 +7340,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "トイレが右手になるように向く",
     curr_name: "進んで左手1203教室が目的地",
     next_name: "",
-    image: "271_272_67.png",
+    image: "271_272_67.webp",
   },
   {
     previous: 271,
@@ -7461,7 +7349,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "トイレが右手になるように向く",
     curr_name: "そのまま進む",
     next_name: "",
-    image: "271_272_273.png",
+    image: "271_272_273.webp",
   },
   {
     previous: 273,
@@ -7470,7 +7358,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "教室が左手になるように向く",
     curr_name: "進んで左手1203教室が目的地",
     next_name: "",
-    image: "273_272_67.png",
+    image: "273_272_67.webp",
   },
   {
     previous: 273,
@@ -7479,7 +7367,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "教室が左手になるように向く",
     curr_name: "そのまま進む",
     next_name: "",
-    image: "273_272_271.png",
+    image: "273_272_271.webp",
   },
   {
     previous: 68,
@@ -7488,7 +7376,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "教室を出て、左折する",
     next_name: "",
-    image: "68_273_272.png",
+    image: "68_273_272.webp",
   },
   {
     previous: 68,
@@ -7497,7 +7385,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "教室を出て、右折する",
     next_name: "",
-    image: "68_273_274.png",
+    image: "68_273_274.webp",
   },
   {
     previous: 272,
@@ -7506,7 +7394,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "教室が右手になるように向く",
     curr_name: "進んで右手1204教室が目的地",
     next_name: "",
-    image: "272_273_68.png",
+    image: "272_273_68.webp",
   },
   {
     previous: 272,
@@ -7515,7 +7403,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "教室が右手になるように向く",
     curr_name: "そのまま進む",
     next_name: "",
-    image: "272_273_274.png",
+    image: "272_273_274.webp",
   },
   {
     previous: 274,
@@ -7524,7 +7412,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "吹き抜けが左前になるように向く",
     curr_name: "進んで左手1204教室が目的地",
     next_name: "",
-    image: "274_273_68.png",
+    image: "274_273_68.webp",
   },
   {
     previous: 274,
@@ -7533,7 +7421,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "吹き抜けが左前になるように向く",
     curr_name: "そのまま進む",
     next_name: "",
-    image: "274_273_272.png",
+    image: "274_273_272.webp",
   },
   {
     previous: 69,
@@ -7542,7 +7430,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "教室を出て、そのまま進む",
     next_name: "",
-    image: "69_274_273.png",
+    image: "69_274_273.webp",
   },
   {
     previous: 69,
@@ -7551,7 +7439,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "教室を出て、右折する",
     next_name: "",
-    image: "69_274_276.png",
+    image: "69_274_276.webp",
   },
   {
     previous: 273,
@@ -7560,7 +7448,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "教室が右手になるように向く",
     curr_name: "進んで突き当たり1207教室が目的地",
     next_name: "",
-    image: "273_274_69.png",
+    image: "273_274_69.webp",
   },
   {
     previous: 273,
@@ -7569,7 +7457,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "教室が右手になるように向く",
     curr_name: "左折する",
     next_name: "",
-    image: "273_274_276.png",
+    image: "273_274_276.webp",
   },
   {
     previous: 276,
@@ -7578,7 +7466,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "教室が左手になるように向く",
     curr_name: "進んで左手1207教室が目的地",
     next_name: "",
-    image: "276_274_69.png",
+    image: "276_274_69.webp",
   },
   {
     previous: 276,
@@ -7587,7 +7475,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "教室が左手になるように向く",
     curr_name: "右折する",
     next_name: "",
-    image: "276_274_273.png",
+    image: "276_274_273.webp",
   },
   {
     previous: 70,
@@ -7596,16 +7484,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "教室を出て、左折する",
     next_name: "",
-    image: "70_276_274.png",
-  },
-  {
-    previous: 70,
-    current: 276,
-    next: 277,
-    prev_name: "",
-    curr_name: "教室を出て、右折する",
-    next_name: "",
-    image: "70_276_277.png",
+    image: "70_276_274.webp",
   },
   {
     previous: 274,
@@ -7614,7 +7493,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "吹き抜けが左前になるように向く",
     curr_name: "進んで右手1208教室が目的地",
     next_name: "",
-    image: "274_276_70.png",
+    image: "274_276_70.webp",
   },
   {
     previous: 274,
@@ -7623,16 +7502,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "吹き抜けが左前になるように向く",
     curr_name: "そのまま進む",
     next_name: "",
-    image: "274_276_277.png",
-  },
-  {
-    previous: 277,
-    current: 276,
-    next: 70,
-    prev_name: "教室が左手になるように向く",
-    curr_name: "進んで左手1208教室が目的地",
-    next_name: "",
-    image: "277_276_70.png",
+    image: "274_276_277.webp",
   },
   {
     previous: 277,
@@ -7641,7 +7511,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "教室が左手になるように向く",
     curr_name: "そのまま進む",
     next_name: "",
-    image: "277_276_274.png",
+    image: "277_276_274.webp",
   },
   {
     previous: 70,
@@ -7650,16 +7520,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "教室を出て、右手1209教室が目的地",
     next_name: "",
-    image: "70_277_71.png",
-  },
-  {
-    previous: 70,
-    current: 277,
-    next: 276,
-    prev_name: "",
-    curr_name: "教室を出て、左折する",
-    next_name: "",
-    image: "70_277_276.png",
+    image: "70_277_71.webp",
   },
   {
     previous: 70,
@@ -7668,7 +7529,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "教室を出て、右折する",
     next_name: "",
-    image: "70_277_278.png",
+    image: "70_277_278.webp",
   },
   {
     previous: 71,
@@ -7677,7 +7538,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "教室を出て、左手1208教室が目的地",
     next_name: "",
-    image: "71_277_70.png",
+    image: "71_277_70.webp",
   },
   {
     previous: 71,
@@ -7686,25 +7547,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "教室を出て、左折する",
     next_name: "",
-    image: "71_277_276.png",
-  },
-  {
-    previous: 71,
-    current: 277,
-    next: 278,
-    prev_name: "",
-    curr_name: "教室を出て、右折する",
-    next_name: "",
-    image: "71_277_278.png",
-  },
-  {
-    previous: 276,
-    current: 277,
-    next: 70,
-    prev_name: "教室が右手になるように向く",
-    curr_name: "進んで右手1208教室が目的地",
-    next_name: "",
-    image: "276_277_70.png",
+    image: "71_277_276.webp",
   },
   {
     previous: 276,
@@ -7713,7 +7556,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "教室が右手になるように向く",
     curr_name: "進んで右手1209教室が目的地",
     next_name: "",
-    image: "276_277_71.png",
+    image: "276_277_71.webp",
   },
   {
     previous: 276,
@@ -7722,7 +7565,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "教室が右手になるように向く",
     curr_name: "そのまま進む",
     next_name: "",
-    image: "276_277_278.png",
+    image: "276_277_278.webp",
   },
   {
     previous: 278,
@@ -7731,16 +7574,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "吹き抜けが右前になるように向く",
     curr_name: "進んで左手1208教室が目的地",
     next_name: "",
-    image: "278_277_70.png",
-  },
-  {
-    previous: 278,
-    current: 277,
-    next: 71,
-    prev_name: "吹き抜けが右前になるように向く",
-    curr_name: "進んで左手1209教室が目的地",
-    next_name: "",
-    image: "278_277_71.png",
+    image: "278_277_70.webp",
   },
   {
     previous: 278,
@@ -7749,16 +7583,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "吹き抜けが右前になるように向く",
     curr_name: "そのまま進む",
     next_name: "",
-    image: "278_277_276.png",
-  },
-  {
-    previous: 71,
-    current: 278,
-    next: 277,
-    prev_name: "",
-    curr_name: "教室を出て、左折する",
-    next_name: "",
-    image: "71_278_277.png",
+    image: "278_277_276.webp",
   },
   {
     previous: 71,
@@ -7767,16 +7592,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "教室を出て、そのまま進む",
     next_name: "",
-    image: "71_278_279.png",
-  },
-  {
-    previous: 277,
-    current: 278,
-    next: 71,
-    prev_name: "教室が右手になるように向く",
-    curr_name: "進んで右手1209教室が目的地",
-    next_name: "",
-    image: "277_278_71.png",
+    image: "71_278_279.webp",
   },
   {
     previous: 277,
@@ -7785,7 +7601,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "教室が右手になるように向く",
     curr_name: "左折する",
     next_name: "",
-    image: "277_278_279.png",
+    image: "277_278_279.webp",
   },
   {
     previous: 279,
@@ -7794,7 +7610,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "教室が左手になるように向く",
     curr_name: "進んで突き当たり1209教室が目的地",
     next_name: "",
-    image: "279_278_71.png",
+    image: "279_278_71.webp",
   },
   {
     previous: 279,
@@ -7803,7 +7619,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "教室が左手になるように向く",
     curr_name: "進んで右折する",
     next_name: "",
-    image: "279_278_277.png",
+    image: "279_278_277.webp",
   },
   {
     previous: 72,
@@ -7812,7 +7628,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "教室を出て、右折する",
     next_name: "",
-    image: "72_279_267.png",
+    image: "72_279_267.webp",
   },
   {
     previous: 72,
@@ -7821,7 +7637,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "教室を出て、左折する",
     next_name: "",
-    image: "72_279_278.png",
+    image: "72_279_278.webp",
   },
   {
     previous: 267,
@@ -7830,7 +7646,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "階段向かって左手に伸びる道を向く",
     curr_name: "進んで左手1210教室が目的地",
     next_name: "",
-    image: "267_279_72.png",
+    image: "267_279_72.webp",
   },
   {
     previous: 267,
@@ -7839,7 +7655,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "階段向かって左手に伸びる道を向く",
     curr_name: "そのまま進む",
     next_name: "",
-    image: "267_279_278.png",
+    image: "267_279_278.webp",
   },
   {
     previous: 278,
@@ -7848,7 +7664,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "吹き抜けが左前になるように向く",
     curr_name: "進んで右手1210教室が目的地",
     next_name: "",
-    image: "278_279_72.png",
+    image: "278_279_72.webp",
   },
   {
     previous: 278,
@@ -7857,7 +7673,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "吹き抜けが左前になるように向く",
     curr_name: "そのまま進む",
     next_name: "",
-    image: "278_279_267.png",
+    image: "278_279_267.webp",
   },
   {
     previous: 74,
@@ -7866,7 +7682,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "教室を出て、階段を下る",
     next_name: "",
-    image: "74_281_267.png",
+    image: "74_281_267.webp",
   },
   {
     previous: 74,
@@ -7875,7 +7691,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "教室を出て、右折する",
     next_name: "",
-    image: "74_281_282.png",
+    image: "74_281_282.webp",
   },
   {
     previous: 74,
@@ -7884,7 +7700,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "教室を出て、そのまま進む",
     next_name: "",
-    image: "74_281_296.png",
+    image: "74_281_296.webp",
   },
   {
     previous: 74,
@@ -7893,7 +7709,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "教室を出て、階段を上る",
     next_name: "",
-    image: "74_281_298.png",
+    image: "74_281_298.webp",
   },
   {
     previous: 267,
@@ -7902,7 +7718,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "階段を上る",
     curr_name: "階段を上って、左手1301教室が目的地",
     next_name: "",
-    image: "267_281_74.png",
+    image: "267_281_74.webp",
   },
   {
     previous: 267,
@@ -7911,7 +7727,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "階段を上る",
     curr_name: "階段を上って、左手に進み左折する",
     next_name: "",
-    image: "267_281_282.png",
+    image: "267_281_282.webp",
   },
   {
     previous: 267,
@@ -7920,7 +7736,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "階段を上る",
     curr_name: "階段を上って、右折する",
     next_name: "",
-    image: "267_281_296.png",
+    image: "267_281_296.webp",
   },
   {
     previous: 267,
@@ -7929,7 +7745,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "階段を上る",
     curr_name: "そのまま4階へ階段を上る",
     next_name: "",
-    image: "267_281_298.png",
+    image: "267_281_298.webp",
   },
   {
     previous: 282,
@@ -7938,7 +7754,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "窓の方が右手になるように向く",
     curr_name: "進んで左手1301教室が目的地",
     next_name: "",
-    image: "282_281_74.png",
+    image: "282_281_74.webp",
   },
   {
     previous: 282,
@@ -7947,7 +7763,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "窓の方が右手になるように向く",
     curr_name: "進んで右手の階段を下る",
     next_name: "",
-    image: "282_281_267.png",
+    image: "282_281_267.webp",
   },
   {
     previous: 282,
@@ -7956,7 +7772,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "窓の方が右手になるように向く",
     curr_name: "進んで右折する",
     next_name: "",
-    image: "282_281_296.png",
+    image: "282_281_296.webp",
   },
   {
     previous: 282,
@@ -7965,7 +7781,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "窓の方が右手になるように向く",
     next_name: "進んで右手の階段を上る",
-    image: "282_281_298.png",
+    image: "282_281_298.webp",
   },
   {
     previous: 296,
@@ -7974,7 +7790,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "教室が右手になるように向く",
     curr_name: "そのまま進んで突き当たり1301教室が目的地",
     next_name: "",
-    image: "296_281_74.png",
+    image: "296_281_74.webp",
   },
   {
     previous: 296,
@@ -7983,7 +7799,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "教室が右手になるように向く",
     curr_name: "進んで左手の階段を下る",
     next_name: "",
-    image: "296_281_267.png",
+    image: "296_281_267.webp",
   },
   {
     previous: 296,
@@ -7992,7 +7808,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "教室が右手になるように向く",
     curr_name: "進んで左折する",
     next_name: "",
-    image: "296_281_282.png",
+    image: "296_281_282.webp",
   },
   {
     previous: 296,
@@ -8001,7 +7817,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "教室が右手になるように向く",
     curr_name: "進んで左手の階段を上る",
     next_name: "",
-    image: "296_281_298.png",
+    image: "296_281_298.webp",
   },
   {
     previous: 298,
@@ -8010,7 +7826,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "階段を下る",
     curr_name: "階段を下って、左手1301教室が目的地",
     next_name: "",
-    image: "298_281_74.png",
+    image: "298_281_74.webp",
   },
   {
     previous: 298,
@@ -8019,7 +7835,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "",
     next_name: "",
-    image: "298_281_267.png",
+    image: "298_281_267.webp",
   },
   {
     previous: 298,
@@ -8028,7 +7844,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "階段を下る",
     curr_name: "階段を下って、左手に進み左折する",
     next_name: "",
-    image: "298_281_282.png",
+    image: "298_281_282.webp",
   },
   {
     previous: 298,
@@ -8037,7 +7853,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "階段を下る",
     curr_name: "階段を下って、右折する",
     next_name: "",
-    image: "298_281_296.png",
+    image: "298_281_296.webp",
   },
   {
     previous: 75,
@@ -8046,7 +7862,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "教室を出て、左折する",
     next_name: "",
-    image: "75_282_281.png",
+    image: "75_282_281.webp",
   },
   {
     previous: 75,
@@ -8055,7 +7871,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "教室を出て、右折する",
     next_name: "",
-    image: "75_282_283.png",
+    image: "75_282_283.webp",
   },
   {
     previous: 281,
@@ -8064,7 +7880,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "窓の方が左手になるように向く",
     curr_name: "進んで右手1302教室が目的地",
     next_name: "",
-    image: "281_282_75.png",
+    image: "281_282_75.webp",
   },
   {
     previous: 281,
@@ -8073,7 +7889,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "窓の方が左手になるように向く",
     curr_name: "そのまま進む",
     next_name: "",
-    image: "281_282_283.png",
+    image: "281_282_283.webp",
   },
   {
     previous: 283,
@@ -8082,7 +7898,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "窓の方が右手になるように向く",
     curr_name: "進んで左手1302教室が目的地",
     next_name: "",
-    image: "283_282_75.png",
+    image: "283_282_75.webp",
   },
   {
     previous: 283,
@@ -8091,7 +7907,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "窓の方が右手になるように向く",
     curr_name: "そのまま進む",
     next_name: "",
-    image: "283_282_281.png",
+    image: "283_282_281.webp",
   },
   {
     previous: 76,
@@ -8100,7 +7916,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "教室を出て、左折する",
     next_name: "",
-    image: "76_283_282.png",
+    image: "76_283_282.webp",
   },
   {
     previous: 76,
@@ -8109,7 +7925,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "教室を出て、右折する",
     next_name: "",
-    image: "76_283_284.png",
+    image: "76_283_284.webp",
   },
   {
     previous: 282,
@@ -8118,7 +7934,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "窓の方が左手になるように向く",
     curr_name: "進んで右手1303教室が目的地",
     next_name: "",
-    image: "282_283_76.png",
+    image: "282_283_76.webp",
   },
   {
     previous: 282,
@@ -8127,7 +7943,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "窓の方が左手になるように向く",
     curr_name: "そのまま進む",
     next_name: "",
-    image: "282_283_284.png",
+    image: "282_283_284.webp",
   },
   {
     previous: 284,
@@ -8136,7 +7952,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "窓の方が右手になるように向く",
     curr_name: "進んで左手1303教室が目的地",
     next_name: "",
-    image: "284_283_76.png",
+    image: "284_283_76.webp",
   },
   {
     previous: 284,
@@ -8145,7 +7961,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "窓の方が右手になるように向く",
     curr_name: "そのまま進む",
     next_name: "",
-    image: "284_283_282.png",
+    image: "284_283_282.webp",
   },
   {
     previous: 76,
@@ -8154,7 +7970,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "教室を出て、右手1304教室が目的地",
     next_name: "",
-    image: "76_284_77.png",
+    image: "76_284_77.webp",
   },
   {
     previous: 76,
@@ -8163,7 +7979,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "教室を出て、エレベーターで1階に行く",
     next_name: "",
-    image: "76_284_263.png",
+    image: "76_284_263.webp",
   },
   {
     previous: 76,
@@ -8172,7 +7988,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "教室を出て、エレベーターで2階に行く",
     next_name: "",
-    image: "76_284_269.png",
+    image: "76_284_269.webp",
   },
   {
     previous: 76,
@@ -8181,7 +7997,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "教室を出て、左折する",
     next_name: "",
-    image: "76_284_283.png",
+    image: "76_284_283.webp",
   },
   {
     previous: 76,
@@ -8190,7 +8006,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "教室を出て、エレベーター右に伸びる道を進む",
     next_name: "",
-    image: "76_284_286.png",
+    image: "76_284_286.webp",
   },
   {
     previous: 76,
@@ -8199,7 +8015,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "教室を出て、エレベーターで4階に行く",
     next_name: "",
-    image: "76_284_300.png",
+    image: "76_284_300.webp",
   },
   {
     previous: 77,
@@ -8208,7 +8024,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "教室を出て、左手1303教室が目的地",
     next_name: "",
-    image: "77_284_76.png",
+    image: "77_284_76.webp",
   },
   {
     previous: 77,
@@ -8217,7 +8033,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "教室を出て、エレベーターで1階に行く",
     next_name: "",
-    image: "77_284_263.png",
+    image: "77_284_263.webp",
   },
   {
     previous: 77,
@@ -8226,7 +8042,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "教室を出て、エレベーターで2階に行く",
     next_name: "",
-    image: "77_284_269.png",
+    image: "77_284_269.webp",
   },
   {
     previous: 77,
@@ -8235,7 +8051,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "教室を出て、左折する",
     next_name: "",
-    image: "77_284_283.png",
+    image: "77_284_283.webp",
   },
   {
     previous: 77,
@@ -8244,7 +8060,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "教室を出て、エレベーター右に伸びる道を進む",
     next_name: "",
-    image: "77_284_286.png",
+    image: "77_284_286.webp",
   },
   {
     previous: 77,
@@ -8253,7 +8069,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "教室を出て、エレベーターで4階に行く",
     next_name: "",
-    image: "77_284_300.png",
+    image: "77_284_300.webp",
   },
   {
     previous: 263,
@@ -8262,7 +8078,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "エレベーターで3階に行く",
     curr_name: "エレベーターを降りて、正面1303教室が目的地",
     next_name: "",
-    image: "263_284_76.png",
+    image: "263_284_76.webp",
   },
   {
     previous: 263,
@@ -8271,7 +8087,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "エレベーターで3階に行く",
     curr_name: "エレベーターを降りて、正面1304教室が目的地",
     next_name: "",
-    image: "263_284_77.png",
+    image: "263_284_77.webp",
   },
   {
     previous: 263,
@@ -8280,7 +8096,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "エレベーターで3階に行く",
     curr_name: "エレベーターを降りて、右折する",
     next_name: "",
-    image: "263_284_283.png",
+    image: "263_284_283.webp",
   },
   {
     previous: 263,
@@ -8289,7 +8105,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "エレベーターで3階に行く",
     curr_name: "エレベーターを降りて、左を向いてさらに左折する",
     next_name: "",
-    image: "263_284_286.png",
+    image: "263_284_286.webp",
   },
   {
     previous: 269,
@@ -8298,7 +8114,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "エレベーターで3階に行く",
     curr_name: "エレベーターを降りて、正面1303教室が目的地",
     next_name: "",
-    image: "269_284_76.png",
+    image: "269_284_76.webp",
   },
   {
     previous: 269,
@@ -8307,7 +8123,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "エレベーターで3階に行く",
     curr_name: "エレベーターを降りて、正面1304教室が目的地",
     next_name: "",
-    image: "269_284_77.png",
+    image: "269_284_77.webp",
   },
   {
     previous: 269,
@@ -8316,7 +8132,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "エレベーターで3階に行く",
     curr_name: "エレベーターを降りて、右折する",
     next_name: "",
-    image: "269_284_283.png",
+    image: "269_284_283.webp",
   },
   {
     previous: 269,
@@ -8325,7 +8141,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "エレベーターで3階に行く",
     curr_name: "エレベーターを降りて、左を向いてさらに左折する",
     next_name: "",
-    image: "269_284_286.png",
+    image: "269_284_286.webp",
   },
   {
     previous: 283,
@@ -8334,7 +8150,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "窓の方が左手になるように向く",
     curr_name: "進んで右手1303教室が目的地",
     next_name: "",
-    image: "283_284_76.png",
+    image: "283_284_76.webp",
   },
   {
     previous: 283,
@@ -8343,7 +8159,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "窓の方が左手になるように向く",
     curr_name: "進んで右手1304教室が目的地",
     next_name: "",
-    image: "283_284_77.png",
+    image: "283_284_77.webp",
   },
   {
     previous: 283,
@@ -8352,7 +8168,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "窓の方が左手になるように向く",
     curr_name: "進んで左手のエレベーターで1階に行く",
     next_name: "",
-    image: "283_284_263.png",
+    image: "283_284_263.webp",
   },
   {
     previous: 283,
@@ -8361,7 +8177,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "窓の方が左手になるように向く",
     curr_name: "進んで左手のエレベーターで2階に行く",
     next_name: "",
-    image: "283_284_269.png",
+    image: "283_284_269.webp",
   },
   {
     previous: 283,
@@ -8370,7 +8186,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "窓の方が左手になるように向く",
     curr_name: "進んで左折する",
     next_name: "",
-    image: "283_284_286.png",
+    image: "283_284_286.webp",
   },
   {
     previous: 283,
@@ -8379,7 +8195,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "窓の方が左手になるように向く",
     curr_name: "進んで左手のエレベーターで4階に行く",
     next_name: "",
-    image: "283_284_300.png",
+    image: "283_284_300.webp",
   },
   {
     previous: 286,
@@ -8388,7 +8204,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "トイレが左手になるように向く",
     curr_name: "進んで突き当たり1303教室が目的地",
     next_name: "",
-    image: "286_284_76.png",
+    image: "286_284_76.webp",
   },
   {
     previous: 286,
@@ -8397,7 +8213,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "トイレが左手になるように向く",
     curr_name: "進んで突き当たり1304教室が目的地",
     next_name: "",
-    image: "286_284_77.png",
+    image: "286_284_77.webp",
   },
   {
     previous: 286,
@@ -8406,7 +8222,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "トイレが左手になるように向く",
     curr_name: "進んで右手のエレベーターで1階に行く",
     next_name: "",
-    image: "286_284_263.png",
+    image: "286_284_263.webp",
   },
   {
     previous: 286,
@@ -8415,7 +8231,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "トイレが左手になるように向く",
     curr_name: "進んで右手のエレベーターで2階に行く",
     next_name: "",
-    image: "286_284_269.png",
+    image: "286_284_269.webp",
   },
   {
     previous: 286,
@@ -8424,7 +8240,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "トイレが左手になるように向く",
     curr_name: "右折する",
     next_name: "",
-    image: "286_284_283.png",
+    image: "286_284_283.webp",
   },
   {
     previous: 286,
@@ -8433,7 +8249,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "トイレが左手になるように向く",
     curr_name: "進んで右手のエレベーターで4階に行く",
     next_name: "",
-    image: "286_284_300.png",
+    image: "286_284_300.webp",
   },
   {
     previous: 300,
@@ -8442,7 +8258,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "エレベーターで3階に行く",
     curr_name: "エレベーターを降りて、正面1303教室が目的地",
     next_name: "",
-    image: "300_284_76.png",
+    image: "300_284_76.webp",
   },
   {
     previous: 300,
@@ -8451,7 +8267,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "エレベーターで3階に行く",
     curr_name: "エレベーターを降りて、正面1304教室が目的地",
     next_name: "",
-    image: "300_284_77.png",
+    image: "300_284_77.webp",
   },
   {
     previous: 300,
@@ -8460,7 +8276,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "エレベーターで3階に行く",
     curr_name: "エレベーターを降りて、右折する",
     next_name: "",
-    image: "300_284_283.png",
+    image: "300_284_283.webp",
   },
   {
     previous: 300,
@@ -8469,7 +8285,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "エレベーターで3階に行く",
     curr_name: "エレベーターを降りて、左を向いてさらに左折する",
     next_name: "",
-    image: "300_284_286.png",
+    image: "300_284_286.webp",
   },
   {
     previous: 84,
@@ -8478,7 +8294,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "トイレを出て、正面の階段を下る",
     next_name: "",
-    image: "84_286_271.png",
+    image: "84_286_271.webp",
   },
   {
     previous: 84,
@@ -8487,7 +8303,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "トイレを出て、左折する",
     next_name: "",
-    image: "84_286_284.png",
+    image: "84_286_284.webp",
   },
   {
     previous: 84,
@@ -8496,7 +8312,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "トイレを出て、右折する",
     next_name: "",
-    image: "84_286_287.png",
+    image: "84_286_287.webp",
   },
   {
     previous: 84,
@@ -8505,7 +8321,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "トイレを出て、正面の階段を上る",
     next_name: "",
-    image: "84_286_302.png",
+    image: "84_286_302.webp",
   },
   {
     previous: 271,
@@ -8514,7 +8330,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "階段を上る",
     curr_name: "階段を上って、正面トイレが目的地",
     next_name: "",
-    image: "271_286_84.png",
+    image: "271_286_84.webp",
   },
   {
     previous: 271,
@@ -8523,7 +8339,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "階段を上る",
     curr_name: "階段を上って、右折する",
     next_name: "",
-    image: "271_286_284.png",
+    image: "271_286_284.webp",
   },
   {
     previous: 271,
@@ -8532,7 +8348,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "階段を上る",
     curr_name: "階段を上って、左折する",
     next_name: "",
-    image: "271_286_287.png",
+    image: "271_286_287.webp",
   },
   {
     previous: 271,
@@ -8541,7 +8357,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "階段を上る",
     curr_name: "そのまま4階へ階段を上る",
     next_name: "",
-    image: "271_286_302.png",
+    image: "271_286_302.webp",
   },
   {
     previous: 284,
@@ -8550,7 +8366,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "エレベーターを向いて右手に伸びる道を向く",
     curr_name: "右手トイレが目的地",
     next_name: "",
-    image: "284_286_84.png",
+    image: "284_286_84.webp",
   },
   {
     previous: 284,
@@ -8559,7 +8375,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "エレベーターを向いて右手に伸びる道を向く",
     curr_name: "進んで左手の階段を下る",
     next_name: "",
-    image: "284_286_271.png",
+    image: "284_286_271.webp",
   },
   {
     previous: 284,
@@ -8568,7 +8384,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "エレベーターを向いて右手に伸びる道を向く",
     curr_name: "そのまま進む",
     next_name: "",
-    image: "284_286_287.png",
+    image: "284_286_287.webp",
   },
   {
     previous: 284,
@@ -8577,7 +8393,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "エレベーターを向いて右手に伸びる道を向く",
     curr_name: "進んで左手の階段を上る",
     next_name: "",
-    image: "284_286_302.png",
+    image: "284_286_302.webp",
   },
   {
     previous: 287,
@@ -8586,7 +8402,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "教室が左手になるように向く",
     curr_name: "進んで左手トイレが目的地",
     next_name: "",
-    image: "287_286_84.png",
+    image: "287_286_84.webp",
   },
   {
     previous: 287,
@@ -8595,7 +8411,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "教室が左手になるように向く",
     curr_name: "進んで右手の階段を下る",
     next_name: "",
-    image: "287_286_271.png",
+    image: "287_286_271.webp",
   },
   {
     previous: 287,
@@ -8604,7 +8420,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "教室が左手になるように向く",
     curr_name: "そのまま進む",
     next_name: "",
-    image: "287_286_284.png",
+    image: "287_286_284.webp",
   },
   {
     previous: 287,
@@ -8613,7 +8429,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "教室が左手になるように向く",
     curr_name: "進んで右手の階段を上る",
     next_name: "",
-    image: "287_286_302.png",
+    image: "287_286_302.webp",
   },
   {
     previous: 302,
@@ -8622,7 +8438,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "階段を下る",
     curr_name: "階段を下って、正面トイレが目的地",
     next_name: "",
-    image: "302_286_84.png",
+    image: "302_286_84.webp",
   },
   {
     previous: 302,
@@ -8631,7 +8447,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "階段を下る",
     curr_name: "そのまま2階へ階段を下る",
     next_name: "",
-    image: "302_286_271.png",
+    image: "302_286_271.webp",
   },
   {
     previous: 302,
@@ -8640,7 +8456,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "階段を下る",
     curr_name: "右折する",
     next_name: "",
-    image: "302_286_284.png",
+    image: "302_286_284.webp",
   },
   {
     previous: 302,
@@ -8649,7 +8465,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "階段を下る",
     curr_name: "左折する",
     next_name: "",
-    image: "302_286_287.png",
+    image: "302_286_287.webp",
   },
   {
     previous: 78,
@@ -8658,7 +8474,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "教室を出て、左折する",
     next_name: "",
-    image: "78_287_286.png",
+    image: "78_287_286.webp",
   },
   {
     previous: 78,
@@ -8667,7 +8483,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "教室を出て、右折する",
     next_name: "",
-    image: "78_287_288.png",
+    image: "78_287_288.webp",
   },
   {
     previous: 286,
@@ -8676,7 +8492,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "トイレが右手になるように向く",
     curr_name: "進んで右手1305教室が目的地",
     next_name: "",
-    image: "286_287_78.png",
+    image: "286_287_78.webp",
   },
   {
     previous: 286,
@@ -8685,7 +8501,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "トイレが右手になるように向く",
     curr_name: "そのまま進む",
     next_name: "",
-    image: "286_287_288.png",
+    image: "286_287_288.webp",
   },
   {
     previous: 288,
@@ -8694,7 +8510,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "教室が左手になるように向く",
     curr_name: "進んで左手1305教室が目的地",
     next_name: "",
-    image: "288_287_78.png",
+    image: "288_287_78.webp",
   },
   {
     previous: 288,
@@ -8703,7 +8519,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "教室が左手になるように向く",
     curr_name: "そのまま進む",
     next_name: "",
-    image: "288_287_286.png",
+    image: "288_287_286.webp",
   },
   {
     previous: 79,
@@ -8712,7 +8528,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "教室を出て、左折する",
     next_name: "",
-    image: "79_288_287.png",
+    image: "79_288_287.webp",
   },
   {
     previous: 79,
@@ -8721,7 +8537,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "教室を出て、右折する",
     next_name: "",
-    image: "79_288_289.png",
+    image: "79_288_289.webp",
   },
   {
     previous: 287,
@@ -8730,7 +8546,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "教室が右手になるように向く",
     curr_name: "進んで右手1306教室が目的地",
     next_name: "",
-    image: "287_288_79.png",
+    image: "287_288_79.webp",
   },
   {
     previous: 287,
@@ -8739,7 +8555,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "教室が右手になるように向く",
     curr_name: "そのまま進む",
     next_name: "",
-    image: "287_288_289.png",
+    image: "287_288_289.webp",
   },
   {
     previous: 289,
@@ -8748,7 +8564,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "吹き抜けが右前になるように向く",
     curr_name: "進んで左手1306教室が目的地",
     next_name: "",
-    image: "289_288_79.png",
+    image: "289_288_79.webp",
   },
   {
     previous: 289,
@@ -8757,7 +8573,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "吹き抜けが右前になるように向く",
     curr_name: "そのまま進む",
     next_name: "",
-    image: "289_288_287.png",
+    image: "289_288_287.webp",
   },
   {
     previous: 288,
@@ -8766,7 +8582,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "教室が右手になるように向く",
     curr_name: "左折する",
     next_name: "",
-    image: "288_289_291.png",
+    image: "288_289_291.webp",
   },
   {
     previous: 291,
@@ -8775,7 +8591,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "教室が左手になるように向く",
     curr_name: "右折する",
     next_name: "",
-    image: "291_289_288.png",
+    image: "291_289_288.webp",
   },
   {
     previous: 80,
@@ -8784,7 +8600,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "教室を出て、左折する",
     next_name: "",
-    image: "80_291_289.png",
+    image: "80_291_289.webp",
   },
   {
     previous: 80,
@@ -8793,7 +8609,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "教室を出て、右折する",
     next_name: "",
-    image: "80_291_292.png",
+    image: "80_291_292.webp",
   },
   {
     previous: 289,
@@ -8802,7 +8618,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "吹き抜けが左前になるように向く",
     curr_name: "進んで右手1310教室が目的地",
     next_name: "",
-    image: "289_291_80.png",
+    image: "289_291_80.webp",
   },
   {
     previous: 289,
@@ -8811,7 +8627,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "吹き抜けが左前になるように向く",
     next_name: "",
-    image: "289_291_292.png",
+    image: "289_291_292.webp",
   },
   {
     previous: 292,
@@ -8820,7 +8636,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "教室が左手になるように向く",
     curr_name: "左手1310教室が目的地",
     next_name: "",
-    image: "292_291_80.png",
+    image: "292_291_80.webp",
   },
   {
     previous: 292,
@@ -8829,7 +8645,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "教室が左手になるように向く",
     curr_name: "そのまま進む",
     next_name: "",
-    image: "292_291_289.png",
+    image: "292_291_289.webp",
   },
   {
     previous: 81,
@@ -8838,7 +8654,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "教室を出て、左折する",
     next_name: "",
-    image: "81_292_291.png",
+    image: "81_292_291.webp",
   },
   {
     previous: 81,
@@ -8847,7 +8663,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "教室を出て、右折する",
     next_name: "",
-    image: "81_292_294.png",
+    image: "81_292_294.webp",
   },
   {
     previous: 291,
@@ -8856,7 +8672,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "教室が右手になるように向く",
     curr_name: "右手1311教室が目的地",
     next_name: "",
-    image: "291_292_81.png",
+    image: "291_292_81.webp",
   },
   {
     previous: 291,
@@ -8865,7 +8681,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "教室が右手になるように向く",
     curr_name: "そのまま進む",
     next_name: "",
-    image: "291_292_294.png",
+    image: "291_292_294.webp",
   },
   {
     previous: 294,
@@ -8874,7 +8690,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "吹き抜けが右前になるように向く",
     curr_name: "進んで左手1311教室が目的地",
     next_name: "",
-    image: "294_292_81.png",
+    image: "294_292_81.webp",
   },
   {
     previous: 294,
@@ -8883,7 +8699,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "吹き抜けが右前になるように向く",
     curr_name: "そのまま進む",
     next_name: "",
-    image: "294_292_291.png",
+    image: "294_292_291.webp",
   },
   {
     previous: 292,
@@ -8892,7 +8708,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "教室が右手になるように向く",
     curr_name: "左折する",
     next_name: "",
-    image: "292_294_295.png",
+    image: "292_294_295.webp",
   },
   {
     previous: 295,
@@ -8901,7 +8717,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "教室が左手になるように向く",
     curr_name: "右折する",
     next_name: "",
-    image: "295_294_292.png",
+    image: "295_294_292.webp",
   },
   {
     previous: 82,
@@ -8910,7 +8726,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "",
     next_name: "教室を出て、左折する",
-    image: "82_295_294.png",
+    image: "82_295_294.webp",
   },
   {
     previous: 82,
@@ -8919,7 +8735,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "教室を出て、右折する",
     next_name: "",
-    image: "82_295_296.png",
+    image: "82_295_296.webp",
   },
   {
     previous: 294,
@@ -8928,7 +8744,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "吹き抜けが左前になるように向く",
     curr_name: "右手1317教室が目的地",
     next_name: "",
-    image: "294_295_82.png",
+    image: "294_295_82.webp",
   },
   {
     previous: 294,
@@ -8937,7 +8753,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "吹き抜けが左前になるように向く",
     curr_name: "そのまま進む",
     next_name: "",
-    image: "294_295_296.png",
+    image: "294_295_296.webp",
   },
   {
     previous: 296,
@@ -8946,7 +8762,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "教室が左手になるように向く",
     curr_name: "進んで左手1317教室が目的地",
     next_name: "",
-    image: "296_295_82.png",
+    image: "296_295_82.webp",
   },
   {
     previous: 296,
@@ -8955,7 +8771,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "教室が左手になるように向く",
     curr_name: "そのまま進む",
     next_name: "",
-    image: "296_295_294.png",
+    image: "296_295_294.webp",
   },
   {
     previous: 83,
@@ -8964,7 +8780,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "教室を出て、右折する",
     next_name: "",
-    image: "83_296_281.png",
+    image: "83_296_281.webp",
   },
   {
     previous: 83,
@@ -8973,7 +8789,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "教室を出て、左折する",
     next_name: "",
-    image: "83_296_295.png",
+    image: "83_296_295.webp",
   },
   {
     previous: 281,
@@ -8982,7 +8798,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "階段向かって左手に伸びる道を向く",
     curr_name: "進んで左手1318教室が目的地",
     next_name: "",
-    image: "281_296_83.png",
+    image: "281_296_83.webp",
   },
   {
     previous: 281,
@@ -8991,7 +8807,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "階段向かって左手に伸びる道を向く",
     curr_name: "そのまま進む",
     next_name: "",
-    image: "281_296_295.png",
+    image: "281_296_295.webp",
   },
   {
     previous: 295,
@@ -9000,7 +8816,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "教室が右手になるように向く",
     curr_name: "進んで右手1318教室が目的地",
     next_name: "",
-    image: "295_296_83.png",
+    image: "295_296_83.webp",
   },
   {
     previous: 295,
@@ -9009,7 +8825,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "教室が右手になるように向く",
     curr_name: "そのまま進む",
     next_name: "",
-    image: "295_296_281.png",
+    image: "295_296_281.webp",
   },
   {
     previous: 86,
@@ -9018,7 +8834,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "窓の方が右手になるように向く",
     curr_name: "進んで右手の階段を下る",
     next_name: "",
-    image: "86_298_281.png",
+    image: "86_298_281.webp",
   },
   {
     previous: 86,
@@ -9027,7 +8843,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "窓の方が右手になるように向く",
     curr_name: "そのまま進む",
     next_name: "",
-    image: "86_298_304.png",
+    image: "86_298_304.webp",
   },
   {
     previous: 281,
@@ -9036,7 +8852,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "階段を上る",
     curr_name: "階段を上って、左折する",
     next_name: "左折した先左手が目的地",
-    image: "281_298_86.png",
+    image: "281_298_86.webp",
   },
   {
     previous: 281,
@@ -9045,7 +8861,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "階段を上る",
     curr_name: "階段を上って、右折する",
     next_name: "",
-    image: "281_298_304.png",
+    image: "281_298_304.webp",
   },
   {
     previous: 304,
@@ -9054,7 +8870,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "廊下の長い方を向く",
     curr_name: "そのまま進む",
     next_name: "進んだ先左手が目的地",
-    image: "304_298_86.png",
+    image: "304_298_86.webp",
   },
   {
     previous: 304,
@@ -9063,7 +8879,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "廊下の長い方を向く",
     curr_name: "進んで左手の階段を下る",
     next_name: "",
-    image: "304_298_281.png",
+    image: "304_298_281.webp",
   },
   {
     previous: 87,
@@ -9072,7 +8888,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "教室を出て、左折する",
     next_name: "",
-    image: "87_86_298.png",
+    image: "87_86_298.webp",
   },
   {
     previous: 87,
@@ -9081,7 +8897,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "教室を出て、右折する",
     next_name: "",
-    image: "87_86_300.png",
+    image: "87_86_300.webp",
   },
   {
     previous: 298,
@@ -9090,7 +8906,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "窓の方が左手になるように向く",
     curr_name: "進んで右手1403教室が目的地",
     next_name: "",
-    image: "298_86_87.png",
+    image: "298_86_87.webp",
   },
   {
     previous: 298,
@@ -9099,7 +8915,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "窓の方が左手になるように向く",
     curr_name: "そのまま進む",
     next_name: "",
-    image: "298_86_300.png",
+    image: "298_86_300.webp",
   },
   {
     previous: 300,
@@ -9108,7 +8924,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "窓の方が右手になるように向く",
     curr_name: "進んで左手1403教室が目的地",
     next_name: "",
-    image: "300_86_87.png",
+    image: "300_86_87.webp",
   },
   {
     previous: 300,
@@ -9117,7 +8933,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "窓の方が右手になるように向く",
     curr_name: "そのまま進む",
     next_name: "",
-    image: "300_86_298.png",
+    image: "300_86_298.webp",
   },
   {
     previous: 86,
@@ -9126,7 +8942,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "窓の方が左手になるように向く",
     curr_name: "進んで右手1404教室が目的地",
     next_name: "",
-    image: "86_300_88.png",
+    image: "86_300_88.webp",
   },
   {
     previous: 86,
@@ -9135,7 +8951,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "窓の方が左手になるように向く",
     curr_name: "進んで右手1405教室が目的地",
     next_name: "",
-    image: "86_300_90.png",
+    image: "86_300_90.webp",
   },
   {
     previous: 86,
@@ -9144,7 +8960,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "窓の方が左手になるように向く",
     curr_name: "進んで左手のエレベーターで1階に行く",
     next_name: "",
-    image: "86_300_263.png",
+    image: "86_300_263.webp",
   },
   {
     previous: 86,
@@ -9153,7 +8969,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "窓の方が左手になるように向く",
     curr_name: "進んで左手のエレベーターで2階に行く",
     next_name: "",
-    image: "86_300_269.png",
+    image: "86_300_269.webp",
   },
   {
     previous: 86,
@@ -9162,7 +8978,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "窓の方が左手になるように向く",
     curr_name: "進んで左手のエレベーターで3階に行く",
     next_name: "",
-    image: "86_300_284.png",
+    image: "86_300_284.webp",
   },
   {
     previous: 86,
@@ -9171,7 +8987,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "窓の方が左手になるように向く",
     curr_name: "進んで左折する",
     next_name: "",
-    image: "86_300_302.png",
+    image: "86_300_302.webp",
   },
   {
     previous: 88,
@@ -9180,7 +8996,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "教室を出て、左折する",
     next_name: "左折した先右手が目的地",
-    image: "88_300_86.png",
+    image: "88_300_86.webp",
   },
   {
     previous: 88,
@@ -9189,7 +9005,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "教室を出て、右手1405教室が目的地",
     next_name: "",
-    image: "88_300_90.png",
+    image: "88_300_90.webp",
   },
   {
     previous: 88,
@@ -9198,7 +9014,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "教室を出て、正面のエレベーターで1階に行く",
     next_name: "",
-    image: "88_300_263.png",
+    image: "88_300_263.webp",
   },
   {
     previous: 88,
@@ -9207,7 +9023,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "教室を出て、正面のエレベーターで2階に行く",
     next_name: "",
-    image: "88_300_269.png",
+    image: "88_300_269.webp",
   },
   {
     previous: 88,
@@ -9216,7 +9032,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "教室を出て、正面のエレベーターで3階に行く",
     next_name: "",
-    image: "88_300_284.png",
+    image: "88_300_284.webp",
   },
   {
     previous: 88,
@@ -9225,7 +9041,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "教室を出て、エレベーター右に伸びる道を進む",
     next_name: "",
-    image: "88_300_302.png",
+    image: "88_300_302.webp",
   },
   {
     previous: 90,
@@ -9234,7 +9050,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "教室を出て、左折する",
     next_name: "左折した先右手が目的地",
-    image: "90_300_86.png",
+    image: "90_300_86.webp",
   },
   {
     previous: 90,
@@ -9243,7 +9059,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "教室を出て、右手1404教室が目的地",
     next_name: "",
-    image: "90_300_88.png",
+    image: "90_300_88.webp",
   },
   {
     previous: 90,
@@ -9252,7 +9068,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "教室を出て、正面のエレベーターで1階に行く",
     next_name: "",
-    image: "90_300_263.png",
+    image: "90_300_263.webp",
   },
   {
     previous: 90,
@@ -9261,7 +9077,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "教室を出て、正面のエレベーターで2階に行く",
     next_name: "",
-    image: "90_300_269.png",
+    image: "90_300_269.webp",
   },
   {
     previous: 90,
@@ -9270,7 +9086,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "教室を出て、正面のエレベーターで3階に行く",
     next_name: "",
-    image: "90_300_284.png",
+    image: "90_300_284.webp",
   },
   {
     previous: 90,
@@ -9279,7 +9095,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "教室を出て、エレベーター右に伸びる道を進む",
     next_name: "",
-    image: "90_300_302.png",
+    image: "90_300_302.webp",
   },
   {
     previous: 263,
@@ -9288,7 +9104,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "エレベーターで4階に行く",
     curr_name: "エレベーターを降りて、右折する",
     next_name: "右折した先右手が目的地",
-    image: "263_300_86.png",
+    image: "263_300_86.webp",
   },
   {
     previous: 263,
@@ -9297,7 +9113,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "エレベーターで4階に行く",
     curr_name: "エレベーターを降りて、正面1404教室が目的地",
     next_name: "",
-    image: "263_300_88.png",
+    image: "263_300_88.webp",
   },
   {
     previous: 263,
@@ -9306,7 +9122,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "エレベーターで4階に行く",
     curr_name: "エレベーターを降りて、正面1405教室が目的地",
     next_name: "",
-    image: "263_300_90.png",
+    image: "263_300_90.webp",
   },
   {
     previous: 263,
@@ -9315,7 +9131,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "エレベーターで4階に行く",
     curr_name: "エレベーターを降りて、左を向いてさらに左折する",
     next_name: "",
-    image: "263_300_302.png",
+    image: "263_300_302.webp",
   },
   {
     previous: 269,
@@ -9324,7 +9140,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "エレベーターで4階に行く",
     curr_name: "エレベーターを降りて、右折する",
     next_name: "右折した先右手が目的地",
-    image: "269_300_86.png",
+    image: "269_300_86.webp",
   },
   {
     previous: 269,
@@ -9333,7 +9149,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "エレベーターで4階に行く",
     curr_name: "エレベーターを降りて、正面1404教室が目的地",
     next_name: "",
-    image: "269_300_88.png",
+    image: "269_300_88.webp",
   },
   {
     previous: 269,
@@ -9342,7 +9158,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "エレベーターで4階に行く",
     curr_name: "エレベーターを降りて、正面1405教室が目的地",
     next_name: "",
-    image: "269_300_90.png",
+    image: "269_300_90.webp",
   },
   {
     previous: 269,
@@ -9351,7 +9167,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "エレベーターで4階に行く",
     curr_name: "エレベーターを降りて、左を向いてさらに左折する",
     next_name: "",
-    image: "269_300_302.png",
+    image: "269_300_302.webp",
   },
   {
     previous: 284,
@@ -9360,7 +9176,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "エレベーターで4階に行く",
     curr_name: "エレベーターを降りて、右折する",
     next_name: "右折した先右手が目的地",
-    image: "284_300_86.png",
+    image: "284_300_86.webp",
   },
   {
     previous: 284,
@@ -9369,7 +9185,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "エレベーターで4階に行く",
     curr_name: "エレベーターを降りて、正面1404教室が目的地",
     next_name: "",
-    image: "284_300_88.png",
+    image: "284_300_88.webp",
   },
   {
     previous: 284,
@@ -9378,7 +9194,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "エレベーターで4階に行く",
     curr_name: "エレベーターを降りて、正面1405教室が目的地",
     next_name: "",
-    image: "284_300_90.png",
+    image: "284_300_90.webp",
   },
   {
     previous: 284,
@@ -9387,7 +9203,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "エレベーターで4階に行く",
     curr_name: "エレベーターを降りて、左を向いてさらに左折する",
     next_name: "",
-    image: "284_300_302.png",
+    image: "284_300_302.webp",
   },
   {
     previous: 302,
@@ -9396,7 +9212,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "トイレが左手になるように向く",
     curr_name: "右折する",
     next_name: "右折した先右手が目的地",
-    image: "302_300_86.png",
+    image: "302_300_86.webp",
   },
   {
     previous: 302,
@@ -9405,7 +9221,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "トイレが左手になるように向く",
     curr_name: "進んで突き当たり1404教室が目的地",
     next_name: "",
-    image: "302_300_88.png",
+    image: "302_300_88.webp",
   },
   {
     previous: 302,
@@ -9414,7 +9230,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "トイレが左手になるように向く",
     curr_name: "進んで突き当たり1405教室が目的地",
     next_name: "",
-    image: "302_300_90.png",
+    image: "302_300_90.webp",
   },
   {
     previous: 302,
@@ -9423,7 +9239,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "トイレが左手になるように向く",
     curr_name: "進んで右手のエレベーターで1階に行く",
     next_name: "",
-    image: "302_300_263.png",
+    image: "302_300_263.webp",
   },
   {
     previous: 302,
@@ -9432,7 +9248,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "トイレが左手になるように向く",
     curr_name: "進んで右手のエレベーターで2階に行く",
     next_name: "",
-    image: "302_300_269.png",
+    image: "302_300_269.webp",
   },
   {
     previous: 302,
@@ -9441,7 +9257,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "トイレが左手になるように向く",
     curr_name: "進んで右手のエレベーターで3階に行く",
     next_name: "",
-    image: "302_300_284.png",
+    image: "302_300_284.webp",
   },
   {
     previous: 94,
@@ -9450,7 +9266,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "トイレを出て、正面の階段を下る",
     next_name: "",
-    image: "94_302_286.png",
+    image: "94_302_286.webp",
   },
   {
     previous: 94,
@@ -9459,7 +9275,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "トイレを出て、左折する",
     next_name: "",
-    image: "94_302_300.png",
+    image: "94_302_300.webp",
   },
   {
     previous: 94,
@@ -9468,7 +9284,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "トイレを出て、右折する",
     next_name: "",
-    image: "94_302_303.png",
+    image: "94_302_303.webp",
   },
   {
     previous: 286,
@@ -9477,7 +9293,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "階段を上る",
     curr_name: "階段を上って、正面トイレが目的地",
     next_name: "",
-    image: "286_302_94.png",
+    image: "286_302_94.webp",
   },
   {
     previous: 286,
@@ -9486,7 +9302,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "階段を上る",
     curr_name: "階段を上って、右折する",
     next_name: "",
-    image: "286_302_300.png",
+    image: "286_302_300.webp",
   },
   {
     previous: 286,
@@ -9495,7 +9311,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "階段を上る",
     curr_name: "階段を上って、左折する",
     next_name: "",
-    image: "286_302_303.png",
+    image: "286_302_303.webp",
   },
   {
     previous: 300,
@@ -9504,7 +9320,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "エレベーターを向いて右手に伸びる道を向く",
     curr_name: "右手トイレが目的地",
     next_name: "",
-    image: "300_302_94.png",
+    image: "300_302_94.webp",
   },
   {
     previous: 300,
@@ -9513,7 +9329,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "エレベーターを向いて右手に伸びる道を向く",
     curr_name: "進んで左手の階段を下る",
     next_name: "",
-    image: "300_302_286.png",
+    image: "300_302_286.webp",
   },
   {
     previous: 300,
@@ -9522,7 +9338,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "エレベーターを向いて右手に伸びる道を向く",
     curr_name: "そのまま進む",
     next_name: "",
-    image: "300_302_303.png",
+    image: "300_302_303.webp",
   },
   {
     previous: 303,
@@ -9531,7 +9347,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "教室が左手になるように向く",
     curr_name: "進んで左手トイレが目的地",
     next_name: "",
-    image: "303_302_94.png",
+    image: "303_302_94.webp",
   },
   {
     previous: 303,
@@ -9540,7 +9356,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "教室が左手になるように向く",
     curr_name: "進んで右手の階段を下る",
     next_name: "",
-    image: "303_302_286.png",
+    image: "303_302_286.webp",
   },
   {
     previous: 303,
@@ -9549,7 +9365,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "教室が左手になるように向く",
     curr_name: "そのまま進む",
     next_name: "",
-    image: "303_302_300.png",
+    image: "303_302_300.webp",
   },
   {
     previous: 93,
@@ -9558,7 +9374,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "教室を出て、左折する",
     next_name: "",
-    image: "93_303_302.png",
+    image: "93_303_302.webp",
   },
   {
     previous: 302,
@@ -9567,7 +9383,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "トイレが右手になるように向く",
     curr_name: "進んで右手1406教室が目的地",
     next_name: "",
-    image: "302_303_93.png",
+    image: "302_303_93.webp",
   },
   {
     previous: 85,
@@ -9576,7 +9392,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "教室を出て、右折する",
     next_name: "",
-    image: "85_304_298.png",
+    image: "85_304_298.webp",
   },
   {
     previous: 298,
@@ -9585,7 +9401,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "廊下の長い方が背になるように向く",
     curr_name: "進んで左手1401教室が目的地",
     next_name: "",
-    image: "298_304_85.png",
+    image: "298_304_85.webp",
   },
   {
     previous: 228,
@@ -9594,7 +9410,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "建物の方を向く",
     curr_name: "ドアを通って企画別館内に入る",
     next_name: "",
-    image: "228_305_306.png",
+    image: "228_305_306.webp",
   },
   {
     previous: 306,
@@ -9603,7 +9419,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "ドアの方を向く",
     curr_name: "企画別館を出て、そのまま進む",
     next_name: "",
-    image: "306_305_228.png",
+    image: "306_305_228.webp",
   },
   {
     previous: 305,
@@ -9612,7 +9428,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "ドアを背にするように向く",
     curr_name: "右折する",
     next_name: "",
-    image: "305_306_307.png",
+    image: "305_306_307.webp",
   },
   {
     previous: 305,
@@ -9621,7 +9437,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "出入り口を背にするように向く",
     curr_name: "そのまま進む",
     next_name: "",
-    image: "305_306_308.png",
+    image: "305_306_308.webp",
   },
   {
     previous: 307,
@@ -9630,7 +9446,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "出入り口が左手になるように向く",
     curr_name: "左折する",
     next_name: "",
-    image: "307_306_305.png",
+    image: "307_306_305.webp",
   },
   {
     previous: 307,
@@ -9639,7 +9455,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "出入り口が左手になるように向く",
     curr_name: "右折する",
     next_name: "",
-    image: "307_306_308.png",
+    image: "307_306_308.webp",
   },
   {
     previous: 308,
@@ -9648,7 +9464,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "出入り口の方を向く",
     curr_name: "そのまま進む",
     next_name: "",
-    image: "308_306_305.png",
+    image: "308_306_305.webp",
   },
   {
     previous: 308,
@@ -9657,7 +9473,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "出入り口の方を向く",
     curr_name: "進んで左折する",
     next_name: "",
-    image: "308_306_307.png",
+    image: "308_306_307.webp",
   },
   {
     previous: 97,
@@ -9666,7 +9482,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "ロビーを出て、そのまま進む",
     next_name: "",
-    image: "97_307_306.png",
+    image: "97_307_306.webp",
   },
   {
     previous: 97,
@@ -9675,7 +9491,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "ロビーを出て、右折する",
     next_name: "",
-    image: "97_307_309.png",
+    image: "97_307_309.webp",
   },
   {
     previous: 306,
@@ -9684,7 +9500,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "出入り口が右手になるように向く",
     curr_name: "進ん駄先正面ロビーが目的地",
     next_name: "",
-    image: "306_307_97.png",
+    image: "306_307_97.webp",
   },
   {
     previous: 309,
@@ -9693,7 +9509,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "階段を背にするように向く",
     curr_name: "進んで左手ロビーが目的地",
     next_name: "",
-    image: "309_307_97.png",
+    image: "309_307_97.webp",
   },
   {
     previous: 306,
@@ -9702,7 +9518,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "出入り口が背になるように向く",
     curr_name: "進んで右折する",
     next_name: "",
-    image: "306_308_309.png",
+    image: "306_308_309.webp",
   },
   {
     previous: 306,
@@ -9711,7 +9527,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "出入り口が背になるように向く",
     curr_name: "進んで左折する",
     next_name: "",
-    image: "306_308_310.png",
+    image: "306_308_310.webp",
   },
   {
     previous: 309,
@@ -9720,7 +9536,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "階段が右手になるように向く",
     curr_name: "左折する",
     next_name: "",
-    image: "309_308_306.png",
+    image: "309_308_306.webp",
   },
   {
     previous: 309,
@@ -9729,7 +9545,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "階段が右手になるように向く",
     curr_name: "そのまま進む",
     next_name: "",
-    image: "309_308_310.png",
+    image: "309_308_310.webp",
   },
   {
     previous: 310,
@@ -9738,7 +9554,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "エレベーターが左になるように向く",
     curr_name: "右折する",
     next_name: "",
-    image: "310_308_306.png",
+    image: "310_308_306.webp",
   },
   {
     previous: 310,
@@ -9747,7 +9563,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "エレベーターが左になるように向く",
     curr_name: "そのまま進む",
     next_name: "",
-    image: "310_308_309.png",
+    image: "310_308_309.webp",
   },
   {
     previous: 307,
@@ -9756,7 +9572,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "階段の方を向く",
     curr_name: "進んで階段を上る",
     next_name: "",
-    image: "307_309_314.png",
+    image: "307_309_314.webp",
   },
   {
     previous: 308,
@@ -9765,7 +9581,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "出入り口が右手になるように向く",
     curr_name: "進んで左手の階段を上る",
     next_name: "",
-    image: "308_309_314.png",
+    image: "308_309_314.webp",
   },
   {
     previous: 314,
@@ -9774,7 +9590,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "階段を下る",
     curr_name: "階段を下って、そのまま進む",
     next_name: "",
-    image: "314_309_307.png",
+    image: "314_309_307.webp",
   },
   {
     previous: 314,
@@ -9783,7 +9599,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "階段を下る",
     curr_name: "階段を下って、右折する",
     next_name: "",
-    image: "314_309_308.png",
+    image: "314_309_308.webp",
   },
   {
     previous: 99,
@@ -9792,7 +9608,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "トイレを出て、男子トイレなら左手、女子トイレなら右手を向く",
     curr_name: "そのまま進む",
     next_name: "",
-    image: "99_310_308.png",
+    image: "99_310_308.webp",
   },
   {
     previous: 99,
@@ -9801,7 +9617,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "トイレを出て、男子トイレなら左手、女子トイレなら右手を向く",
     curr_name: "進んで左手にあるエレベーターで2階に行く",
     next_name: "",
-    image: "99_310_316.png",
+    image: "99_310_316.webp",
   },
   {
     previous: 99,
@@ -9810,7 +9626,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "トイレを出て、男子トイレなら左手、女子トイレなら右手を向く",
     curr_name: "進んで左手にあるエレベーターで3階に行く",
     next_name: "",
-    image: "99_310_322.png",
+    image: "99_310_322.webp",
   },
   {
     previous: 308,
@@ -9819,16 +9635,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "出入り口向かって右手を向く",
     curr_name: "進んだ先左右のトイレが目的地",
     next_name: "",
-    image: "308_310_99.png",
-  },
-  {
-    previous: 308,
-    current: 310,
-    next: 311,
-    prev_name: "出入り口向かって右手を向く",
-    curr_name: "そのまま進む",
-    next_name: "",
-    image: "308_310_311.png",
+    image: "308_310_99.webp",
   },
   {
     previous: 308,
@@ -9837,7 +9644,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "出入り口向かって右手を向く",
     curr_name: "右手にあるエレベーターで2階に行く",
     next_name: "",
-    image: "308_310_316.png",
+    image: "308_310_316.webp",
   },
   {
     previous: 308,
@@ -9846,34 +9653,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "出入り口向かって右手を向く",
     curr_name: "右手にあるエレベーターで3階に行く",
     next_name: "",
-    image: "308_310_322.png",
-  },
-  {
-    previous: 311,
-    current: 310,
-    next: 308,
-    prev_name: "広い方につながる廊下を向く",
-    curr_name: "そのまま進む",
-    next_name: "",
-    image: "311_310_308.png",
-  },
-  {
-    previous: 311,
-    current: 310,
-    next: 316,
-    prev_name: "広い方につながる廊下を向く",
-    curr_name: "進んで左手にあるエレベーターで2階に行く",
-    next_name: "",
-    image: "311_310_316.png",
-  },
-  {
-    previous: 311,
-    current: 310,
-    next: 322,
-    prev_name: "広い方につながる廊下を向く",
-    curr_name: "進んで左手にあるエレベーターで3階に行く",
-    next_name: "",
-    image: "311_310_322.png",
+    image: "308_310_322.webp",
   },
   {
     previous: 316,
@@ -9882,7 +9662,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "エレベーターで1階に行く",
     curr_name: "エレベーターを降りて、右折した先左右のトイレが目的地",
     next_name: "",
-    image: "316_310_99.png",
+    image: "316_310_99.webp",
   },
   {
     previous: 316,
@@ -9891,16 +9671,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "エレベーターで1階に行く",
     curr_name: "エレベーターを降りて、左折する",
     next_name: "",
-    image: "316_310_308.png",
-  },
-  {
-    previous: 316,
-    current: 310,
-    next: 311,
-    prev_name: "エレベーターで1階に行く",
-    curr_name: "エレベーターを降りて、右折する",
-    next_name: "",
-    image: "316_310_311.png",
+    image: "316_310_308.webp",
   },
   {
     previous: 322,
@@ -9909,7 +9680,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "エレベーターで1階に行く",
     curr_name: "エレベーターを降りて、右折した先左右のトイレが目的地",
     next_name: "",
-    image: "322_310_99.png",
+    image: "322_310_99.webp",
   },
   {
     previous: 322,
@@ -9918,16 +9689,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "エレベーターで1階に行く",
     curr_name: "エレベーターを降りて、左折する",
     next_name: "",
-    image: "322_310_308.png",
-  },
-  {
-    previous: 322,
-    current: 310,
-    next: 311,
-    prev_name: "エレベーターで1階に行く",
-    curr_name: "エレベーターを降りて、右折する",
-    next_name: "",
-    image: "322_310_311.png",
+    image: "322_310_308.webp",
   },
   {
     previous: 98,
@@ -9936,16 +9698,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "トイレを出て、右手に進み、右折する",
     next_name: "",
-    image: "98_99_310.png",
-  },
-  {
-    previous: 98,
-    current: 99,
-    next: 311,
-    prev_name: "",
-    curr_name: "トイレを出て、右手に進み、左折する",
-    next_name: "",
-    image: "98_99_311.png",
+    image: "98_99_310.webp",
   },
   {
     previous: 310,
@@ -9954,16 +9707,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "エレベーターが右手になるように向く",
     curr_name: "進んだ先左手トイレが目的地",
     next_name: "",
-    image: "310_99_98.png",
-  },
-  {
-    previous: 311,
-    current: 99,
-    next: 98,
-    prev_name: "広い方につながる廊下を向く",
-    curr_name: "進んで右手トイレが目的地",
-    next_name: "",
-    image: "311_99_98.png",
+    image: "310_99_98.webp",
   },
   {
     previous: 309,
@@ -9972,7 +9716,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "階段を上る",
     curr_name: "階段を上って、右折する",
     next_name: "",
-    image: "309_314_315.png",
+    image: "309_314_315.webp",
   },
   {
     previous: 309,
@@ -9981,7 +9725,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "階段を上る",
     curr_name: "そのまま3階へ階段を上る",
     next_name: "",
-    image: "309_314_321.png",
+    image: "309_314_321.webp",
   },
   {
     previous: 315,
@@ -9990,7 +9734,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "壁が右手になるように向く",
     curr_name: "左手の階段を下る",
     next_name: "",
-    image: "315_314_309.png",
+    image: "315_314_309.webp",
   },
   {
     previous: 315,
@@ -9999,7 +9743,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "壁が右手になるように向く",
     curr_name: "左手の階段を上る",
     next_name: "",
-    image: "315_314_321.png",
+    image: "315_314_321.webp",
   },
   {
     previous: 319,
@@ -10008,7 +9752,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "壁が背中になるように向く",
     curr_name: "進んで左折する",
     next_name: "",
-    image: "319_315_314.png",
+    image: "319_315_314.webp",
   },
   {
     previous: 319,
@@ -10017,7 +9761,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "壁が背中になるように向く",
     curr_name: "進んで右折する",
     next_name: "",
-    image: "319_315_316.png",
+    image: "319_315_316.webp",
   },
   {
     previous: 321,
@@ -10026,7 +9770,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "階段を下る",
     curr_name: "そのまま1階へ階段を下る",
     next_name: "",
-    image: "321_314_309.png",
+    image: "321_314_309.webp",
   },
   {
     previous: 321,
@@ -10035,7 +9779,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "階段を下る",
     curr_name: "階段を下って、右折する",
     next_name: "",
-    image: "321_314_315.png",
+    image: "321_314_315.webp",
   },
   {
     previous: 314,
@@ -10044,7 +9788,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "階段が右手になるように向く",
     curr_name: "そのまま進む",
     next_name: "",
-    image: "314_315_316.png",
+    image: "314_315_316.webp",
   },
   {
     previous: 314,
@@ -10053,7 +9797,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "階段が右手になるように向く",
     curr_name: "右折する",
     next_name: "",
-    image: "314_315_319.png",
+    image: "314_315_319.webp",
   },
   {
     previous: 316,
@@ -10062,7 +9806,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "エレベーターが左手になるように向く",
     curr_name: "そのまま進む",
     next_name: "",
-    image: "316_315_314.png",
+    image: "316_315_314.webp",
   },
   {
     previous: 316,
@@ -10071,7 +9815,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "エレベーターが左手になるように向く",
     curr_name: "右折する",
     next_name: "",
-    image: "316_315_319.png",
+    image: "316_315_319.webp",
   },
   {
     previous: 310,
@@ -10080,7 +9824,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "エレベーターで2階に行く",
     curr_name: "エレベーターを降りて、左折する",
     next_name: "",
-    image: "310_316_315.png",
+    image: "310_316_315.webp",
   },
   {
     previous: 310,
@@ -10089,7 +9833,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "エレベーターで2階に行く",
     curr_name: "エレベーターを降りて、右折する",
     next_name: "",
-    image: "310_316_317.png",
+    image: "310_316_317.webp",
   },
   {
     previous: 315,
@@ -10098,7 +9842,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "壁が左手になるように向く",
     curr_name: "右手のエレベーターで1階に行く",
     next_name: "",
-    image: "315_316_310.png",
+    image: "315_316_310.webp",
   },
   {
     previous: 315,
@@ -10107,7 +9851,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "壁が左手になるように向く",
     curr_name: "そのまま進む",
     next_name: "",
-    image: "315_316_317.png",
+    image: "315_316_317.webp",
   },
   {
     previous: 315,
@@ -10116,7 +9860,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "壁が左手になるように向く",
     curr_name: "右手のエレベーターで3階に行く",
     next_name: "",
-    image: "315_316_322.png",
+    image: "315_316_322.webp",
   },
   {
     previous: 317,
@@ -10125,7 +9869,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "進んで左手のエレベーターで1階に行く",
     next_name: "",
-    image: "317_316_310.png",
+    image: "317_316_310.webp",
   },
   {
     previous: 317,
@@ -10134,7 +9878,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "そのまま進む",
     next_name: "",
-    image: "317_316_315.png",
+    image: "317_316_315.webp",
   },
   {
     previous: 317,
@@ -10143,7 +9887,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "進んで左手のエレベーターで3階に行く",
     next_name: "",
-    image: "317_316_322.png",
+    image: "317_316_322.webp",
   },
   {
     previous: 322,
@@ -10152,7 +9896,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "エレベーターで2階に行く",
     curr_name: "エレベーターを降りて、左折する",
     next_name: "",
-    image: "322_316_315.png",
+    image: "322_316_315.webp",
   },
   {
     previous: 322,
@@ -10161,7 +9905,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "エレベーターで2階に行く",
     curr_name: "エレベーターを降りて、右折する",
     next_name: "",
-    image: "322_316_317.png",
+    image: "322_316_317.webp",
   },
   {
     previous: 102,
@@ -10170,7 +9914,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "トイレを出て、左手に進む",
     curr_name: "進んだ先で左折する",
     next_name: "",
-    image: "102_317_316.png",
+    image: "102_317_316.webp",
   },
   {
     previous: 316,
@@ -10179,7 +9923,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "エレベーターが右手になるように向く",
     curr_name: "進んで右折した先のトイレが目的地",
     next_name: "",
-    image: "316_317_102.png",
+    image: "316_317_102.webp",
   },
   {
     previous: 316,
@@ -10188,7 +9932,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "エレベーターが右手になるように向く",
     curr_name: "進んで右折する",
     next_name: "",
-    image: "316_317_318.png",
+    image: "316_317_318.webp",
   },
   {
     previous: 318,
@@ -10197,7 +9941,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "トイレのある廊下を向く",
     curr_name: "進んで左折する",
     next_name: "",
-    image: "318_317_316.png",
+    image: "318_317_316.webp",
   },
   {
     previous: 100,
@@ -10206,7 +9950,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "教室を出て、階段左に伸びる道にあるトイレが目的地",
     next_name: "",
-    image: "100_318_102.png",
+    image: "100_318_102.webp",
   },
   {
     previous: 100,
@@ -10215,7 +9959,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "教室を出て、階段左に伸びる道を進む",
     next_name: "",
-    image: "100_318_317.png",
+    image: "100_318_317.webp",
   },
   {
     previous: 100,
@@ -10224,7 +9968,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "教室を出て、左折する",
     next_name: "",
-    image: "100_318_319.png",
+    image: "100_318_319.webp",
   },
   {
     previous: 102,
@@ -10233,7 +9977,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "トイレを出て、右手に進む",
     curr_name: "進んだ先正面の2203教室が目的地",
     next_name: "",
-    image: "102_318_100.png",
+    image: "102_318_100.webp",
   },
   {
     previous: 102,
@@ -10242,7 +9986,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "トイレを出て、右手に進む",
     curr_name: "右折する",
     next_name: "",
-    image: "102_318_319.png",
+    image: "102_318_319.webp",
   },
   {
     previous: 317,
@@ -10251,7 +9995,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "トイレのある廊下を向く",
     curr_name: "そのまま進んで突き当たり2203教室が目的地",
     next_name: "",
-    image: "317_318_100.png",
+    image: "317_318_100.webp",
   },
   {
     previous: 317,
@@ -10260,7 +10004,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "トイレのある廊下を向く",
     curr_name: "そのまま進んで右折する",
     next_name: "",
-    image: "317_318_319.png",
+    image: "317_318_319.webp",
   },
   {
     previous: 319,
@@ -10269,7 +10013,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "壁が右手になるように向く",
     curr_name: "進んで右手2203教室が目的地",
     next_name: "",
-    image: "319_318_100.png",
+    image: "319_318_100.webp",
   },
   {
     previous: 319,
@@ -10278,7 +10022,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "壁が右手になるように向く",
     curr_name: "進んで左折した先のトイレが目的地",
     next_name: "",
-    image: "319_318_102.png",
+    image: "319_318_102.webp",
   },
   {
     previous: 319,
@@ -10287,7 +10031,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "壁が右手になるように向く",
     curr_name: "進んで左折する",
     next_name: "",
-    image: "319_318_317.png",
+    image: "319_318_317.webp",
   },
   {
     previous: 315,
@@ -10296,7 +10040,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "壁が背中になるように向く",
     curr_name: "進んで左折する",
     next_name: "",
-    image: "315_319_318.png",
+    image: "315_319_318.webp",
   },
   {
     previous: 315,
@@ -10305,7 +10049,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "壁が背中になるように向く",
     curr_name: "進んで右折する",
     next_name: "",
-    image: "315_319_320.png",
+    image: "315_319_320.webp",
   },
   {
     previous: 318,
@@ -10314,7 +10058,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "廊下の長い方を向く",
     curr_name: "右折する",
     next_name: "",
-    image: "318_319_315.png",
+    image: "318_319_315.webp",
   },
   {
     previous: 318,
@@ -10323,7 +10067,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "教室が左手になるように向く",
     curr_name: "そのまま進む",
     next_name: "",
-    image: "318_319_320.png",
+    image: "318_319_320.webp",
   },
   {
     previous: 320,
@@ -10332,7 +10076,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "廊下の長い方を向く",
     curr_name: "左折する",
     next_name: "",
-    image: "320_319_315.png",
+    image: "320_319_315.webp",
   },
   {
     previous: 320,
@@ -10341,7 +10085,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "廊下の長い方を向く",
     curr_name: "そのまま進む",
     next_name: "",
-    image: "320_319_318.png",
+    image: "320_319_318.webp",
   },
   {
     previous: 101,
@@ -10350,7 +10094,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "教室を出て、左折する",
     next_name: "",
-    image: "101_320_319.png",
+    image: "101_320_319.webp",
   },
   {
     previous: 319,
@@ -10359,7 +10103,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "壁が左手になるように向く",
     curr_name: "進んで右手2205教室が目的地",
     next_name: "",
-    image: "319_320_101.png",
+    image: "319_320_101.webp",
   },
   {
     previous: 314,
@@ -10368,7 +10112,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "階段を上る",
     curr_name: "階段を上って、右折する",
     next_name: "",
-    image: "314_321_322.png",
+    image: "314_321_322.webp",
   },
   {
     previous: 314,
@@ -10377,7 +10121,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "階段を上る",
     curr_name: "階段を上って、左折する",
     next_name: "",
-    image: "314_321_326.png",
+    image: "314_321_326.webp",
   },
   {
     previous: 322,
@@ -10386,7 +10130,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "エレベーターが左手になるように向く",
     curr_name: "進んで左手の階段を下る",
     next_name: "",
-    image: "322_321_314.png",
+    image: "322_321_314.webp",
   },
   {
     previous: 322,
@@ -10395,7 +10139,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "エレベーターが左手になるように向く",
     curr_name: "そのまま進む",
     next_name: "",
-    image: "322_321_326.png",
+    image: "322_321_326.webp",
   },
   {
     previous: 326,
@@ -10404,7 +10148,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "教室が左手になるように向く",
     curr_name: "進んで右手の階段を下る",
     next_name: "",
-    image: "326_321_314.png",
+    image: "326_321_314.webp",
   },
   {
     previous: 326,
@@ -10413,7 +10157,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "教室が左手になるように向く",
     curr_name: "そのまま進む",
     next_name: "",
-    image: "326_321_322.png",
+    image: "326_321_322.webp",
   },
   {
     previous: 310,
@@ -10422,7 +10166,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "エレベーターで3階に行く",
     curr_name: "エレベーターを降りて、左折する",
     next_name: "",
-    image: "310_322_321.png",
+    image: "310_322_321.webp",
   },
   {
     previous: 310,
@@ -10431,7 +10175,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "エレベーターで3階に行く",
     curr_name: "エレベーターを降りて、右折する",
     next_name: "",
-    image: "310_322_323.png",
+    image: "310_322_323.webp",
   },
   {
     previous: 316,
@@ -10440,7 +10184,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "エレベーターで3階に行く",
     curr_name: "エレベーターを降りて、左折する",
     next_name: "",
-    image: "316_322_321.png",
+    image: "316_322_321.webp",
   },
   {
     previous: 316,
@@ -10449,7 +10193,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "エレベーターで3階に行く",
     curr_name: "エレベーターを降りて、右折する",
     next_name: "",
-    image: "316_322_323.png",
+    image: "316_322_323.webp",
   },
   {
     previous: 321,
@@ -10458,7 +10202,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "階段が右手になるように向く",
     curr_name: "進んで右手のエレベーターで1階に行く",
     next_name: "",
-    image: "321_322_310.png",
+    image: "321_322_310.webp",
   },
   {
     previous: 321,
@@ -10467,7 +10211,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "階段が右手になるように向く",
     curr_name: "進んで右手のエレベーターで2階に行く",
     next_name: "",
-    image: "321_322_316.png",
+    image: "321_322_316.webp",
   },
   {
     previous: 321,
@@ -10476,7 +10220,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "階段が右手になるように向く",
     curr_name: "そのまま進む",
     next_name: "",
-    image: "321_322_323.png",
+    image: "321_322_323.webp",
   },
   {
     previous: 323,
@@ -10485,7 +10229,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "トイレのある廊下が左手になるように向く",
     curr_name: "進んで左手のエレベーターで1階に行く",
     next_name: "",
-    image: "323_322_310.png",
+    image: "323_322_310.webp",
   },
   {
     previous: 323,
@@ -10494,7 +10238,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "トイレのある廊下が左手になるように向く",
     curr_name: "進んで左手のエレベーターで2階に行く",
     next_name: "",
-    image: "323_322_316.png",
+    image: "323_322_316.webp",
   },
   {
     previous: 323,
@@ -10503,7 +10247,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "トイレのある廊下が左手になるように向く",
     curr_name: "そのまま進む",
     next_name: "",
-    image: "323_322_321.png",
+    image: "323_322_321.webp",
   },
   {
     previous: 103,
@@ -10512,7 +10256,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "左手の扉へ進む",
     curr_name: "教室を出て、進んで右手のトイレが目的地",
     next_name: "",
-    image: "103_323_104.png",
+    image: "103_323_104.webp",
   },
   {
     previous: 103,
@@ -10521,7 +10265,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "左手の扉へ進む",
     curr_name: "教室を出て、右折する",
     next_name: "",
-    image: "103_323_322.png",
+    image: "103_323_322.webp",
   },
   {
     previous: 104,
@@ -10530,7 +10274,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "トイレを出て、左折した先突き当たり2301教室が目的地",
     next_name: "",
-    image: "104_323_103.png",
+    image: "104_323_103.webp",
   },
   {
     previous: 104,
@@ -10539,7 +10283,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "トイレを出て左手に進む",
     curr_name: "進んだ先で左折する",
     next_name: "",
-    image: "104_323_322.png",
+    image: "104_323_322.webp",
   },
   {
     previous: 322,
@@ -10548,7 +10292,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "エレベーターが右手になるように向く",
     curr_name: "進んで左手2301教室が目的地",
     next_name: "",
-    image: "322_323_103.png",
+    image: "322_323_103.webp",
   },
   {
     previous: 322,
@@ -10557,7 +10301,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "エレベーターが右手になるように向く",
     curr_name: "進んで右折した先のトイレが目的地",
     next_name: "",
-    image: "322_323_104.png",
+    image: "322_323_104.webp",
   },
   {
     previous: 103,
@@ -10566,7 +10310,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "右手の扉へ進む",
     curr_name: "教室を出て、左折する",
     next_name: "",
-    image: "103_326_321.png",
+    image: "103_326_321.webp",
   },
   {
     previous: 321,
@@ -10575,7 +10319,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "階段が左手になるように向く",
     curr_name: "進んで右手2301教室が目的地",
     next_name: "",
-    image: "321_326_103.png",
+    image: "321_326_103.webp",
   },
   {
     previous: 239,
@@ -10584,7 +10328,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "体育館の入り口を向く",
     curr_name: "そのまま進む",
     next_name: "",
-    image: "239_327_328.png",
+    image: "239_327_328.webp",
   },
   {
     previous: 328,
@@ -10593,7 +10337,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "出入り口の方を向く",
     curr_name: "そのまま進む",
     next_name: "",
-    image: "328_327_239.png",
+    image: "328_327_239.webp",
   },
   {
     previous: 119,
@@ -10602,7 +10346,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "トイレを出て右手が目的地",
     next_name: "",
-    image: "119_328_121.png",
+    image: "119_328_121.webp",
   },
   {
     previous: 119,
@@ -10611,7 +10355,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "トイレを出て、そのまま進む",
     next_name: "",
-    image: "119_328_327.png",
+    image: "119_328_327.webp",
   },
   {
     previous: 120,
@@ -10620,7 +10364,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "トイレを出て、正面突き当たりが目的地",
     next_name: "",
-    image: "120_328_121.png",
+    image: "120_328_121.webp",
   },
   {
     previous: 120,
@@ -10629,7 +10373,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "トイレを出て、左折して進む",
     next_name: "",
-    image: "120_328_327.png",
+    image: "120_328_327.webp",
   },
   {
     previous: 121,
@@ -10638,7 +10382,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "ステージを背にして、そのまま進んで左手のトイレが目的地",
     next_name: null,
-    image: "121_328_119.png",
+    image: "121_328_119.webp",
   },
   {
     previous: 121,
@@ -10647,7 +10391,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "ステージを背にして、そのまま進んで正面突き当たりが目的地",
     next_name: null,
-    image: "121_328_120.png",
+    image: "121_328_120.webp",
   },
   {
     previous: 121,
@@ -10656,7 +10400,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: "",
     curr_name: "ステージを背にして、そのまま進んで右折する",
     next_name: null,
-    image: "121_328_327.png",
+    image: "121_328_327.webp",
   },
   {
     previous: 327,
@@ -10665,7 +10409,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: null,
     curr_name: "そのまま進んで正面突き当たりが目的地",
     next_name: null,
-    image: "327_328_119.png",
+    image: "327_328_119.webp",
   },
   {
     previous: 327,
@@ -10674,7 +10418,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: null,
     curr_name: "進んで右手が目的地",
     next_name: null,
-    image: "327_328_120.png",
+    image: "327_328_120.webp",
   },
   {
     previous: 327,
@@ -10683,7 +10427,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     prev_name: null,
     curr_name: "進んで左折した先が目的地",
     next_name: null,
-    image: "327_328_121.png",
+    image: "327_328_121.webp",
   },
 ];
 
