@@ -126,7 +126,7 @@ for (const c of currentNodes) {
         prev_name: "",
         curr_name: "",
         next_name: "",
-        image: `${p}-${c}-${n}.png`,
+        image: `${p}-${c}-${n}.webp`,
       });
     }
   }

@@ -6706,15 +6706,6 @@ const NODE_TRIPLETS: NodeTriplet[] = [
   {
     previous: 65,
     current: 267,
-    next: 268,
-    prev_name: "教室を出て、右折する",
-    curr_name: "",
-    next_name: "",
-    image: "65_267_268.webp",
-  },
-  {
-    previous: 65,
-    current: 267,
     next: 279,
     prev_name: "",
     curr_name: "教室を出て、そのまま進む",
@@ -6891,15 +6882,6 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     curr_name: "教室を出て、左折する",
     next_name: "",
     image: "66_268_267.webp",
-  },
-  {
-    previous: 66,
-    current: 268,
-    next: 269,
-    prev_name: "",
-    curr_name: "教室を出て、右折する",
-    next_name: "",
-    image: "66_268_269.webp",
   },
   {
     previous: 267,

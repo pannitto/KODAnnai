@@ -1,6 +1,6 @@
 # KODAnnai 作業履歴・引き継ぎ資料
 
-> **最終更新**: 2026年5月1日  
+> **最終更新**: 2026年6月12日  
 > **プロジェクト**: KODAnnai — KODAIRA祭キャンパスナビゲーションアプリ  
 > **技術スタック**: Next.js 14 / React 18 / TypeScript / Tailwind CSS v4 / next-themes / Vercel
 
@@ -227,6 +227,16 @@ const handleChibikkoTap = () => {
   4. 全PDFに対応するPNGの存在を検証
   5. 元PDFファイル39個を削除
 - 変換後の `public/assembly/` 内PNG数: **512枚**
+
+### 12. assembly画像のWebP移行・PNG廃止（2026-06-12）
+
+**対象ファイル**: `public/assembly/`, `lib/route-finder.ts`, `components/navigation-view.tsx`, `scripts/generate_triplets.js`
+
+- `public/assembly/` の画像を WebP 化し、`route-finder.ts` の `NODE_TRIPLETS[].image` 参照を `.webp` に統一
+- `navigation-view.tsx` で `step.image` を WebP 前提で読み込むよう調整
+- 将来の再生成で拡張子が戻らないよう、`scripts/generate_triplets.js` の出力拡張子を `.webp` に変更
+- 欠損していた `65_267_268.webp` / `66_268_269.webp` を補完し、参照欠けを解消
+- 最終的に `public/assembly/` の `.png` を全削除（1022枚）し、WebPのみ運用に移行
 
 ---
 
