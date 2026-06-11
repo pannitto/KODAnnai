@@ -61,6 +61,7 @@ export function NavigationView({
   const [highlight, setHighlight] = useState(false);
 
   const [mapMode, setMapMode] = useState(false);
+  const [navTransitioning, setNavTransitioning] = useState(false);
 
   useEffect(() => {
     if (zoomModalOpen) setMapMode(false);
@@ -144,12 +145,12 @@ export function NavigationView({
 
   useEffect(() => {
     if (
-      zoomModalOpen &&
+      !zoomModalOpen &&
       currentZoomIndex != null &&
       stepRefs.current[currentZoomIndex]
     ) {
       stepRefs.current[currentZoomIndex].scrollIntoView({
-        behavior: "smooth",
+        behavior: "auto",
         block: "center",
       });
     }
@@ -165,11 +166,17 @@ export function NavigationView({
   };
 
   const goToPrevious = () => {
+    if (navTransitioning) return;
+    setNavTransitioning(true);
     setCurrentZoomIndex((prev) => Math.max(0, prev - 1));
+    setTimeout(() => setNavTransitioning(false), 150);
   };
 
   const goToNext = () => {
+    if (navTransitioning) return;
+    setNavTransitioning(true);
     setCurrentZoomIndex((prev) => Math.min(routeSteps.length - 1, prev + 1));
+    setTimeout(() => setNavTransitioning(false), 150);
   };
 
   const getNoticeColor = (color: string) => {
@@ -585,7 +592,8 @@ export function NavigationView({
                   {currentZoomIndex > 0 ? (
                     <button
                       onClick={goToPrevious}
-                      className="flex items-center gap-2 px-4 py-2 bg-accent text-secondary-foreground rounded-lg hover:bg-secondary/80 transition-colors"
+                      disabled={navTransitioning}
+                      className="flex items-center gap-2 px-4 py-2 bg-accent text-secondary-foreground rounded-lg hover:bg-secondary/80 transition-colors disabled:opacity-50"
                     >
                       <ChevronLeft className="h-4 w-4" />
                       前へ
@@ -601,7 +609,8 @@ export function NavigationView({
                   {currentZoomIndex < routeSteps.length - 2 ? (
                     <button
                       onClick={goToNext}
-                      className="flex items-center gap-2 px-4 py-2 bg-accent text-secondary-foreground rounded-lg hover:bg-secondary/80 transition-colors"
+                      disabled={navTransitioning}
+                      className="flex items-center gap-2 px-4 py-2 bg-accent text-secondary-foreground rounded-lg hover:bg-secondary/80 transition-colors disabled:opacity-50"
                     >
                       次へ
                       <ChevronRight className="h-4 w-4" />
