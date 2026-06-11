@@ -51,6 +51,19 @@ export function NavigationView({
   const getAssemblyImageSrc = (image: string) =>
     `/assembly/${image.replace(/\.png$/i, ".webp")}`;
 
+  // ノードIDからフロアマップSVGを返す
+  const getMapSrcForNode = (nodeId: number): string => {
+    // 企画本館: ノード86(4F)および260-304
+    if (nodeId === 86 || (nodeId >= 260 && nodeId <= 304))
+      return "/Main_building_MAP_fornavigate.svg";
+    // 企画別館: ノード305-328
+    if (nodeId >= 305 && nodeId <= 328) return "/Bekkan_MAP_fornavigate.svg";
+    // ちびっこ館: ノード46-60および251-259
+    if ((nodeId >= 46 && nodeId <= 60) || (nodeId >= 251 && nodeId <= 259))
+      return "/Chibikko_MAP_fornavigate.svg";
+    return "/GRAND_MAP.svg";
+  };
+
   const [isScrolled, setIsScrolled] = useState(false);
   const [zoomModalOpen, setZoomModalOpen] = useState(false);
   const [currentZoomIndex, setCurrentZoomIndex] = useState(0);
@@ -550,8 +563,8 @@ export function NavigationView({
               ) : (
                 <div className="flex items-center justify-center w-full h-full">
                   <Image
-                    src="/GRAND_MAP.svg"
-                    alt="学校全体図"
+                    src={getMapSrcForNode(parseInt(currentStep.id))}
+                    alt="地図"
                     height="800"
                     width="600"
                   />
