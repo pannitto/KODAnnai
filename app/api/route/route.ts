@@ -1,5 +1,6 @@
 import { type NextRequest, NextResponse } from "next/server"
 import { findRoute } from "@/lib/route-finder"
+import { getNodeDisplayInfoByLocid } from "@/app/locations-server"
 
 export async function GET(request: NextRequest) {
   try {
@@ -26,6 +27,10 @@ export async function GET(request: NextRequest) {
     }
 
     const route = await findRoute(departure, destination, excludedEdges, rainyMode, barrierFreeMode)
+
+    const fromName = getNodeDisplayInfoByLocid(String(departure))?.name ?? String(departure)
+    const toName = getNodeDisplayInfoByLocid(String(destination))?.name ?? String(destination)
+    console.log(`[route] from="${fromName}" to="${toName}" rainy=${rainyMode} barrierFree=${barrierFreeMode} steps=${route.route?.length ?? 0}`)
 
     return NextResponse.json(route)
   } catch (error) {
