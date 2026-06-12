@@ -19,6 +19,7 @@ import {
 import type { Location } from "@/app/page";
 import Footer from "@/components/footer";
 import Image from "next/image";
+import { track } from "@vercel/analytics";
 
 interface RouteStep {
   id: string;
@@ -119,6 +120,13 @@ export function NavigationView({
 
         const data = await response.json();
         setRouteSteps(data.route);
+        track("route_searched", {
+          from: from.name,
+          to: to.name,
+          rainy: rainyMode,
+          barrierFree: barrierFreeMode,
+          steps: data.route?.length ?? 0,
+        });
       } catch (err) {
         console.error("Route fetch error:", err);
         setError(
