@@ -51,8 +51,8 @@ export function OutdoorNavigationMap({
   }, []);
   const mapImageUrl =
     resolvedTheme === "dark"
-      ? "/GRAND_MAP_fornavigate_dark.svg"
-      : "/GRAND_MAP_fornavigate.svg";
+      ? "/GRAND_MAP_fornavigate_dark.svg?v=20261031-1"
+      : "/GRAND_MAP_fornavigate.svg?v=20261031-1";
 
   const handleMarkerClick = (
     marker: (typeof OUTDOOR_START_POINT_MARKERS)[0],

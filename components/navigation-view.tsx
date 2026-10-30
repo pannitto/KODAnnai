@@ -64,7 +64,7 @@ export function NavigationView({
     // ちびっこ館: ノード46-60および251-259
     if ((nodeId >= 46 && nodeId <= 60) || (nodeId >= 251 && nodeId <= 259))
       return "/Chibikko_MAP_fornavigate.svg";
-    return "/GRAND_MAP_kikaku.svg"; // GRAND_MAP.svg は文字がフォント指定のままで端末により大きさが変わる
+    return "/GRAND_MAP_kikaku.svg?v=20261031-1"; // GRAND_MAP.svg は文字がフォント指定のままで端末により大きさが変わる
   };
 
   const [isScrolled, setIsScrolled] = useState(false);

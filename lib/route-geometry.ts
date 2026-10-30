@@ -107,7 +107,7 @@ export function getMapIdForNode(nodeId: number): MapId {
 }
 
 export const NAV_MAP_SRC: Record<MapId, string> = {
-  outdoor: "/GRAND_MAP_kikaku.svg", // GRAND_MAP.svg は端末によって文字の大きさが変わるため使わない
+  outdoor: "/GRAND_MAP_kikaku.svg?v=20261031-1", // GRAND_MAP.svg は端末によって文字の大きさが変わるため使わない
   main: "/Main_building_MAP_fornavigate.svg",
   bekkan: "/Bekkan_MAP_fornavigate.svg",
   chibikko: "/Chibikko_MAP_fornavigate.svg",

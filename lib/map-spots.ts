@@ -20,8 +20,9 @@ export const MAPS: {
   image: string;
 }[] = [
   // 屋外は GRAND_MAP_fornavigate.svg から「オレンジの丸」と「操作説明」を除いたもの。
+  // 画像を差し替えたら ?v= の日付も変える（ブラウザが古い画像を使い続けないように）
   // GRAND_MAP.svg は文字がフォント指定のままで、端末によって文字の大きさが変わるため使わない。
-  { id: "outdoor", label: "屋外", image: "/GRAND_MAP_kikaku.svg" },
+  { id: "outdoor", label: "屋外", image: "/GRAND_MAP_kikaku.svg?v=20261031-1" },
   { id: "main", label: "企画本館", image: "/Main_building_MAP.svg" },
   { id: "bekkan", label: "企画別館", image: "/Bekkan_MAP.svg" },
   { id: "chibikko", label: "ちびっこ館", image: "/Chibikko_MAP.svg" },
