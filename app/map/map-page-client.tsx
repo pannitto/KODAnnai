@@ -6,6 +6,7 @@ import Logo from "@/components/logo";
 import Footer from "@/components/footer";
 import { SiteNav } from "@/components/festival/site-nav";
 import { KikakuSheet, type SheetState } from "@/components/festival/kikaku-sheet";
+import { StageNowLabels } from "@/components/festival/stage-now-labels";
 import { useNow, useQueryParam, useLive } from "@/components/festival/hooks";
 import { getLocationById } from "@/app/locations-server";
 import {
@@ -421,6 +422,19 @@ export default function MapPageClient() {
                   }}
                 />
               ))}
+
+              {/* ステージの「公演中／次の公演」ラベル（KODAnnai の「地図から検索」と共通）。タップで会場の詳細 */}
+              {mapId === "outdoor" && (
+                <StageNowLabels
+                  now={now}
+                  k={k}
+                  onSelect={(stage) => {
+                    if (suppressClick.current) return;
+                    const id = stage.locationIds?.[0];
+                    if (id) setSheet({ mode: "detail", id });
+                  }}
+                />
+              )}
 
               {editMode && editPoint && (
                 <g pointerEvents="none">

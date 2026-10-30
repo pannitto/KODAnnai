@@ -10,7 +10,7 @@ import {
   CHIBIKKO_START_POINT_MARKERS,
 } from "@/app/locations-server";
 import { getNodeDisplayInfoByLocid } from "@/app/locations-server";
-import { TIMETABLE, getCurrentOrNextAct } from "@/lib/timetable";
+import { StageNowLabels } from "@/components/festival/stage-now-labels";
 
 interface OutdoorNavigationMapProps {
   onStartPointSelected: (
@@ -49,10 +49,12 @@ export function OutdoorNavigationMap({
     const interval = setInterval(() => setCurrentTime(new Date()), 30000);
     return () => clearInterval(interval);
   }, []);
+  // 屋外MAPは企画マップと同じ画像。オレンジの丸はこの画面で上から描く
+  // （画像を差し替えたら ?v= の日付も変える）
   const mapImageUrl =
     resolvedTheme === "dark"
-      ? "/GRAND_MAP_fornavigate_dark.svg?v=20261031-1"
-      : "/GRAND_MAP_fornavigate.svg?v=20261031-1";
+      ? "/GRAND_MAP_kikaku_dark.svg?v=20261031-1"
+      : "/GRAND_MAP_kikaku.svg?v=20261031-1";
 
   const handleMarkerClick = (
     marker: (typeof OUTDOOR_START_POINT_MARKERS)[0],
@@ -475,6 +477,9 @@ export function OutdoorNavigationMap({
         <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-2">
           地図から現在地を選択してください
         </h3>
+        <p className="text-xs text-muted-foreground">
+          今いる場所に一番近いオレンジの丸をタップすると、そこから経路案内します。建物の中にいる方は、建物をタップして建物の地図から選んでください。
+        </p>
       </div>
 
       {/* 確認ダイアログ */}
@@ -621,6 +626,9 @@ export function OutdoorNavigationMap({
                     />
                   )}
 
+                  {/* オレンジの丸（以前は地図画像に描いてあったものを、ここで描く） */}
+                  <circle cx={marker.cx} cy={marker.cy} r="5" fill="#f39800" pointerEvents="none" />
+
                   {/* 透明なクリック領域 */}
                   <circle
                     cx={marker.cx}
@@ -674,77 +682,8 @@ export function OutdoorNavigationMap({
               );
             })()}
 
-            {/* ステージ タイムテーブルラベル */}
-            {TIMETABLE.map((stage) => {
-              // 屋外MAPにラベル位置が設定されている会場だけ表示
-              if (stage.mapX == null || stage.mapY == null) return null;
-              const mapX = stage.mapX;
-              const mapY = stage.mapY;
-              const info = getCurrentOrNextAct(stage, currentTime);
-              if (!info) return null;
-
-              const truncate = (str: string, n: number) =>
-                str.length > n ? str.slice(0, n) + "…" : str;
-
-              const timeLine =
-                info.type === "current"
-                  ? `▶ 公演中 ${info.start}-${info.end}`
-                  : `次: ${info.start}〜`;
-              const actLine = truncate(info.act, 16);
-
-              const bgColor =
-                info.type === "current"
-                  ? "rgba(22,163,74,0.88)"
-                  : "rgba(202,138,4,0.88)";
-
-              return (
-                <g key={stage.stageId} pointerEvents="none">
-                  <rect
-                    x={mapX - 34}
-                    y={mapY}
-                    width={68}
-                    height={20}
-                    rx={2}
-                    fill={bgColor}
-                  />
-                  {/* ステージ名 */}
-                  <text
-                    x={mapX}
-                    y={mapY + 5.5}
-                    textAnchor="middle"
-                    fontSize={4.2}
-                    fill="white"
-                    fontFamily="sans-serif"
-                  >
-                    {stage.stageName}
-                  </text>
-                  {/* 時間行 */}
-                  <text
-                    x={mapX}
-                    y={mapY + 11.5}
-                    textAnchor="middle"
-                    fontSize={4.8}
-                    fill="white"
-                    fontFamily="sans-serif"
-                    fontWeight="bold"
-                  >
-                    {timeLine}
-                  </text>
-                  {/* 企画名 */}
-                  <text
-                    x={mapX}
-                    y={mapY + 17.5}
-                    textAnchor="middle"
-                    fontSize={4.8}
-                    fill="white"
-                    fontFamily="sans-serif"
-                    fontWeight="bold"
-                  >
-                    {actLine}
-                  </text>
-                </g>
-              );
-            })}
+            {/* ステージの「公演中／次の公演」ラベル（企画マップと共通の部品） */}
+            <StageNowLabels now={currentTime} />
           </svg>
         </div>
       </div>

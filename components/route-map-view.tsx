@@ -41,7 +41,7 @@ export function RouteMapView({ nodes, stairsEdges, currentNodeId }: Props) {
   const start = points[nodes[0]]?.[mapId];
 
   let src = NAV_MAP_SRC[mapId];
-  if (resolvedTheme === "dark" && mapId !== "outdoor") src = src.replace(".svg", "_dark.svg");
+  if (resolvedTheme === "dark") src = src.replace(".svg", "_dark.svg");
 
   return (
     <div
