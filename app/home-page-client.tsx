@@ -32,6 +32,7 @@ import {
 } from "@/app/locations-server";
 import Logo from "@/components/logo";
 import Footer from "@/components/footer";
+import { SiteNav } from "@/components/festival/site-nav";
 
 export type Location = {
   id: string;
@@ -459,6 +460,7 @@ export default function HomePageClient() {
   return (
     <div className="min-h-screen bg-background p-4 pt-5">
       <Logo />
+      <SiteNav />
       <div className="mx-auto max-w-md space-y-8 pt-1">
         {/* <Kagayaki width={80} height={80} /> */}
         <div className="relative space-y-4">

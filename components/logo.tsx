@@ -1,22 +1,24 @@
 // app/components/logo.tsx
+// サイト全体の見出し（KODAIRA祭公式サイト）
+// 画像は public/site-logo.svg。文字はアウトライン化（図形に変換）したものを置くこと。
+// フォント指定のままだと、そのフォントがない端末では別の字体で表示される。
 import React from "react";
+import Link from "next/link";
 import Image from "next/image";
 
 export default function Logo() {
   return (
     <div className="flex items-center justify-center pt-6">
-      <div className="w-full h-auto flex justify-center">
-        <div className="w-64">
-          <Image
-            src="/kodannai.svg"
-            alt="KODAnnai"
-            width={800}
-            height={200}
-            className="w-full h-auto brightness-0 dark:invert"
-            priority
-          />
-        </div>
-      </div>
+      <Link href="/" className="block w-72 max-w-full" aria-label="KODAIRA祭公式サイト トップへ">
+        <Image
+          src="/site-logo.svg"
+          alt="KODAIRA祭公式サイト"
+          width={800}
+          height={143}
+          className="h-auto w-full brightness-0 dark:invert"
+          priority
+        />
+      </Link>
     </div>
   );
 }

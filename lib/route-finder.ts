@@ -10663,9 +10663,12 @@ export async function findRoute(
 
   return {
     nodes: path,
-    edges: path
-      .slice(0, -1)
-      .map((node, i) => ({ from: node, to: path[i + 1] })),
+    edges: path.slice(0, -1).map((node, i) => ({
+      from: node,
+      to: path[i + 1],
+      // 経路の線表示で、階段の区間を点線にするために使う
+      hasStairs: !!getEdgeInfo(node, path[i + 1])?.hasStairs,
+    })),
     route,
     cost,
   };

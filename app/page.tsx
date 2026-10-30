@@ -21,18 +21,18 @@ export async function generateMetadata({
   const nav = searchParams.nav;
   const depName = LOCATIONS.find((loc) => loc.id === depId)?.name;
   const destName = LOCATIONS.find((loc) => loc.id === destId)?.name;
-  let title = "KODAnnai | KODAIRA祭経路ナビ";
+  let title = "KODAnnai（経路案内） | KODAIRA祭公式サイト";
   let description = "KODAnnaiでKODAIRA祭を楽しもう！";
   if (depName && destName) {
     title = nav
-      ? `${depName} から ${destName} | KODAnnai`
-      : "KODAnnai | KODAIRA祭経路ナビ";
+      ? `${depName} から ${destName} | KODAIRA祭公式サイト`
+      : "KODAnnai（経路案内） | KODAIRA祭公式サイト";
     description = `「${depName}」から「${destName}」へ、KODAnnaiでKODAIRA祭を楽しもう！`;
   } else if (depName) {
-    title = nav ? `${depName} から | KODAnnai` : "KODAnnai | KODAIRA祭経路ナビ";
+    title = nav ? `${depName} から | KODAIRA祭公式サイト` : "KODAnnai（経路案内） | KODAIRA祭公式サイト";
     description = `「${depName}」からどこへでも、KODAnnaiでKODAIRA祭を楽しもう！`;
   } else if (destName) {
-    title = nav ? `${destName} へ | KODAnnai` : "KODAnnai | KODAIRA祭経路ナビ";
+    title = nav ? `${destName} へ | KODAIRA祭公式サイト` : "KODAnnai（経路案内） | KODAIRA祭公式サイト";
     description = `どこからでも「${destName}」へ、KODAnnaiでKODAIRA祭を楽しもう！`;
   }
   return {

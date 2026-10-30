@@ -9,24 +9,24 @@ import Footer from "@/components/footer";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://kodannai.vercel.app"),
-  title: "KODAnnai",
-  description: "KODAIRA祭 経路案内サイト",
+  title: "KODAIRA祭公式サイト",
+  description: "KODAIRA祭の企画マップ・団体紹介・タイムテーブル・経路案内（KODAnnai）",
   appleWebApp: {
     capable: true,
     statusBarStyle: "default",
-    title: "KODAnnai",
+    title: "KODAIRA祭",
   },
   openGraph: {
-    title: "KODAnnai",
-    description: "KODAIRA祭 経路案内サイト",
+    title: "KODAIRA祭公式サイト",
+    description: "KODAIRA祭の企画マップ・団体紹介・タイムテーブル・経路案内（KODAnnai）",
     url: "https://kodannai.vercel.app",
-    siteName: "KODAnnai",
+    siteName: "KODAIRA祭公式サイト",
     images: [
       {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "KODAnnai",
+        alt: "KODAIRA祭公式サイト",
       },
     ],
     locale: "ja_JP",
@@ -34,8 +34,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "KODAnnai",
-    description: "KODAIRA祭 経路案内サイト",
+    title: "KODAIRA祭公式サイト",
+    description: "KODAIRA祭の企画マップ・団体紹介・タイムテーブル・経路案内（KODAnnai）",
     images: ["/og-image.png"],
   },
 };
@@ -48,7 +48,7 @@ export default function RootLayout({
   return (
     <html lang="ja" suppressHydrationWarning>
       <head>
-        <meta name="apple-mobile-web-app-title" content="KODAnnai" />
+        <meta name="apple-mobile-web-app-title" content="KODAIRA祭" />
         <meta name="theme-color" content="#0f172a" />
       </head>
       <body className={`font-sans ${GeistSans.variable} ${GeistMono.variable}`}>

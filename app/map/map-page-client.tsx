@@ -1,0 +1,626 @@
+"use client";
+
+import { useEffect, useMemo, useRef, useState } from "react";
+import { Plus, Minus, RotateCcw } from "lucide-react";
+import Logo from "@/components/logo";
+import Footer from "@/components/footer";
+import { SiteNav } from "@/components/festival/site-nav";
+import { KikakuSheet, type SheetState } from "@/components/festival/kikaku-sheet";
+import { useNow, useQueryParam, useLive } from "@/components/festival/hooks";
+import { getLocationById } from "@/app/locations-server";
+import {
+  MAPS,
+  MAP_SPOTS,
+  MAP_VIEWBOX,
+  OUTDOOR_BUILDINGS,
+  findSpotByLocationId,
+  type MapId,
+  type MapSpot,
+} from "@/lib/map-spots";
+import {
+  GENRES,
+  GENRE_COLORS,
+  getGenre,
+  isCommitteeKikaku,
+  getDays,
+  isOpenOn,
+} from "@/lib/kikaku";
+import {
+  FESTIVAL_DAY1,
+  FESTIVAL_DAY2,
+  getActStatusForLocation,
+  getFestivalDay,
+  type ActOverride,
+  type FestivalDay,
+} from "@/lib/timetable";
+import {
+  WAIT_LEVELS,
+  WAIT_LEVEL_INFO,
+  getFreshWait,
+  type WaitLevel,
+  type WaitMap,
+} from "@/lib/wait-times";
+
+const MIN_SCALE = 1;
+const MAX_SCALE = 4;
+
+// 地図に出ている企画のジャンルだけを凡例に出す
+const LEGEND_GENRES = GENRES.filter((g) =>
+  MAP_SPOTS.some((s) =>
+    s.locationIds.some((id) => {
+      const loc = getLocationById(id);
+      return loc && getGenre(loc) === g;
+    }),
+  ),
+);
+
+/** スポット内の企画で一番混んでいる待ち時間 */
+function spotWait(spot: MapSpot, waits: WaitMap, now: Date | null): WaitLevel | null {
+  if (!now) return null;
+  let worst: WaitLevel | null = null;
+  for (const id of spot.locationIds) {
+    const loc = getLocationById(id);
+    if (!loc || !isCommitteeKikaku(loc)) continue;
+    const w = getFreshWait(waits, id, now);
+    if (w && (!worst || WAIT_LEVELS.indexOf(w.level) > WAIT_LEVELS.indexOf(worst))) worst = w.level;
+  }
+  return worst;
+}
+
+function spotColor(spot: MapSpot): string {
+  const genres = new Set(
+    spot.locationIds.map((id) => {
+      const loc = getLocationById(id);
+      return loc ? getGenre(loc) : "その他";
+    }),
+  );
+  return genres.size === 1 ? GENRE_COLORS[[...genres][0]] : "#475569";
+}
+
+function spotIsPerforming(
+  spot: MapSpot,
+  now: Date | null,
+  acts: Record<string, ActOverride>,
+): boolean {
+  if (!now) return false;
+  return spot.locationIds.some((id) =>
+    getActStatusForLocation(id, now, acts).some((a) => a.current),
+  );
+}
+
+export default function MapPageClient() {
+  const now = useNow();
+  const { live } = useLive();
+  const idParam = useQueryParam("id");
+  const editParam = useQueryParam("edit");
+  const editMode = editParam === "1";
+
+  const [mapId, setMapId] = useState<MapId>("outdoor");
+  const [sheet, setSheet] = useState<SheetState>(null);
+  const [selectedSpot, setSelectedSpot] = useState<string | null>(null);
+  const [view, setView] = useState({ scale: 1, x: 0, y: 0 });
+  const [editPoint, setEditPoint] = useState<{ x: number; y: number } | null>(null);
+
+  const containerRef = useRef<HTMLDivElement>(null);
+  const svgRef = useRef<SVGSVGElement>(null);
+  const pointers = useRef(new Map<number, { x: number; y: number }>());
+  const gesture = useRef<{
+    startDist: number;
+    startScale: number;
+    lastX: number;
+    lastY: number;
+    moved: number;
+  } | null>(null);
+  const suppressClick = useRef(false);
+
+  const map = MAPS.find((m) => m.id === mapId)!;
+  // 表示する日（開催日はその日、それ以外の日は両日分）。日によって同じ教室の団体が変わる
+  const [day, setDay] = useState<FestivalDay | null>(null);
+  const today = now ? getFestivalDay(now) : null;
+  const dayInitialized = useRef(false);
+  useEffect(() => {
+    if (!now || dayInitialized.current) return;
+    dayInitialized.current = true;
+    if (today) setDay(today);
+  }, [now, today]);
+
+  // その日に開いている企画だけを残したスポット
+  const spots = useMemo(
+    () =>
+      MAP_SPOTS.filter((s) => s.map === mapId)
+        .map((s) => ({
+          ...s,
+          locationIds: s.locationIds.filter((id) => {
+            const loc = getLocationById(id);
+            return !loc || isOpenOn(loc, day);
+          }),
+        }))
+        .filter((s) => s.locationIds.length > 0),
+    [mapId, day],
+  );
+
+  // ?id=XX で開いたとき：その企画のある地図に切り替えて詳細を開く
+  useEffect(() => {
+    if (!idParam) return;
+    const spot = findSpotByLocationId(idParam);
+    if (spot) {
+      setMapId(spot.map);
+      setSelectedSpot(spot.id);
+    }
+    const loc = getLocationById(idParam);
+    if (loc) {
+      // 片方の日だけの企画なら、その日の表示に切り替える
+      const d = getDays(loc);
+      if (d !== "両日") {
+        dayInitialized.current = true;
+        setDay(d === "1日目" ? "day1" : "day2");
+      }
+      setSheet({ mode: "detail", id: idParam });
+    }
+  }, [idParam]);
+
+  const resetView = () => setView({ scale: 1, x: 0, y: 0 });
+
+  const clampView = (v: { scale: number; x: number; y: number }) => {
+    const el = containerRef.current;
+    const scale = Math.min(MAX_SCALE, Math.max(MIN_SCALE, v.scale));
+    if (!el) return { ...v, scale };
+    const w = el.clientWidth;
+    const h = el.clientHeight;
+    const minX = w - w * scale;
+    const minY = h - h * scale;
+    return {
+      scale,
+      x: Math.min(0, Math.max(minX, v.x)),
+      y: Math.min(0, Math.max(minY, v.y)),
+    };
+  };
+
+  const zoomAt = (factor: number, cx?: number, cy?: number) => {
+    const el = containerRef.current;
+    if (!el) return;
+    const px = cx ?? el.clientWidth / 2;
+    const py = cy ?? el.clientHeight / 2;
+    setView((v) => {
+      const scale = Math.min(MAX_SCALE, Math.max(MIN_SCALE, v.scale * factor));
+      const k = scale / v.scale;
+      return clampView({ scale, x: px - (px - v.x) * k, y: py - (py - v.y) * k });
+    });
+  };
+
+  const onPointerDown = (e: React.PointerEvent) => {
+    const rect = containerRef.current!.getBoundingClientRect();
+    pointers.current.set(e.pointerId, { x: e.clientX - rect.left, y: e.clientY - rect.top });
+    const pts = [...pointers.current.values()];
+    gesture.current = {
+      startDist: pts.length >= 2 ? Math.hypot(pts[0].x - pts[1].x, pts[0].y - pts[1].y) : 0,
+      startScale: view.scale,
+      lastX: pts.reduce((a, p) => a + p.x, 0) / pts.length,
+      lastY: pts.reduce((a, p) => a + p.y, 0) / pts.length,
+      moved: 0,
+    };
+    suppressClick.current = false;
+  };
+
+  const onPointerMove = (e: React.PointerEvent) => {
+    if (!pointers.current.has(e.pointerId) || !gesture.current) return;
+    const rect = containerRef.current!.getBoundingClientRect();
+    pointers.current.set(e.pointerId, { x: e.clientX - rect.left, y: e.clientY - rect.top });
+    const pts = [...pointers.current.values()];
+    const cx = pts.reduce((a, p) => a + p.x, 0) / pts.length;
+    const cy = pts.reduce((a, p) => a + p.y, 0) / pts.length;
+    const g = gesture.current;
+    const dx = cx - g.lastX;
+    const dy = cy - g.lastY;
+    g.moved += Math.abs(dx) + Math.abs(dy);
+    if (g.moved > 8) suppressClick.current = true;
+
+    if (pts.length >= 2 && g.startDist > 0) {
+      const dist = Math.hypot(pts[0].x - pts[1].x, pts[0].y - pts[1].y);
+      const target = (g.startScale * dist) / g.startDist;
+      setView((v) => {
+        const scale = Math.min(MAX_SCALE, Math.max(MIN_SCALE, target));
+        const k = scale / v.scale;
+        return clampView({ scale, x: cx - (cx - v.x) * k + dx, y: cy - (cy - v.y) * k + dy });
+      });
+    } else if (view.scale > 1) {
+      setView((v) => clampView({ ...v, x: v.x + dx, y: v.y + dy }));
+    }
+    g.lastX = cx;
+    g.lastY = cy;
+  };
+
+  const onPointerUp = (e: React.PointerEvent) => {
+    pointers.current.delete(e.pointerId);
+    if (pointers.current.size === 0) gesture.current = null;
+    else {
+      const pts = [...pointers.current.values()];
+      gesture.current = {
+        startDist: 0,
+        startScale: view.scale,
+        lastX: pts[0].x,
+        lastY: pts[0].y,
+        moved: gesture.current?.moved ?? 0,
+      };
+    }
+  };
+
+  const openSpot = (spot: MapSpot) => {
+    if (suppressClick.current) return;
+    setSelectedSpot(spot.id);
+    if (spot.locationIds.length === 1) setSheet({ mode: "detail", id: spot.locationIds[0] });
+    else setSheet({ mode: "list", title: spot.label, ids: spot.locationIds });
+  };
+
+  const switchMap = (id: MapId) => {
+    if (suppressClick.current) return;
+    setMapId(id);
+    setSelectedSpot(null);
+    resetView();
+  };
+
+  const onBackgroundClick = (e: React.MouseEvent<SVGSVGElement>) => {
+    if (!editMode || suppressClick.current || !svgRef.current) return;
+    const pt = svgRef.current.createSVGPoint();
+    pt.x = e.clientX;
+    pt.y = e.clientY;
+    const p = pt.matrixTransform(svgRef.current.getScreenCTM()!.inverse());
+    setEditPoint({ x: Math.round(p.x), y: Math.round(p.y) });
+  };
+
+  // 地図の縮尺に合わせてピンの大きさを保つ
+  const k = 1 / Math.sqrt(view.scale);
+
+  return (
+    <div className="min-h-screen bg-background p-4 pt-5">
+      <Logo />
+      <SiteNav />
+      <main className="mx-auto max-w-md space-y-3 pt-4">
+        <div className="grid grid-cols-4 gap-1 rounded-xl border border-border p-1" role="tablist">
+          {MAPS.map((m) => (
+            <button
+              key={m.id}
+              type="button"
+              role="tab"
+              aria-selected={mapId === m.id}
+              onClick={() => switchMap(m.id)}
+              className={`rounded-lg py-2 text-xs font-semibold transition-colors ${
+                mapId === m.id
+                  ? "bg-foreground text-background"
+                  : "text-muted-foreground hover:text-foreground"
+              }`}
+            >
+              {m.label}
+            </button>
+          ))}
+        </div>
+
+        {/* 表示する日：1日目と2日目で同じ教室を別の団体が使うため、日ごとに地図の中身が変わる */}
+        <div className="grid grid-cols-3 gap-1 rounded-xl border border-border p-1" role="group" aria-label="表示する日">
+          {(
+            [
+              { id: "day1", label: "1日目", date: FESTIVAL_DAY1 },
+              { id: "day2", label: "2日目", date: FESTIVAL_DAY2 },
+              { id: null, label: "両日", date: null },
+            ] as const
+          ).map((d) => (
+            <button
+              key={d.label}
+              type="button"
+              aria-pressed={day === d.id}
+              onClick={() => {
+                setDay(d.id);
+                setSelectedSpot(null);
+              }}
+              className={`whitespace-nowrap rounded-lg py-1.5 text-xs font-semibold transition-colors ${
+                day === d.id
+                  ? "bg-foreground text-background"
+                  : "text-muted-foreground hover:text-foreground"
+              }`}
+            >
+              {d.label}
+              {d.date && (
+                <span className="ml-1 font-normal opacity-80">
+                  {Number(d.date.slice(5, 7))}/{Number(d.date.slice(8, 10))}
+                </span>
+              )}
+              {today !== null && today === d.id && (
+                <span className="ml-1 rounded bg-red-500 px-1 text-[10px] text-white">今日</span>
+              )}
+            </button>
+          ))}
+        </div>
+
+        <div
+          ref={containerRef}
+          className="relative w-full select-none overflow-hidden rounded-2xl border border-border bg-white"
+          style={{
+            aspectRatio: `${MAP_VIEWBOX.width} / ${MAP_VIEWBOX.height}`,
+            touchAction: view.scale > 1 ? "none" : "pan-y",
+          }}
+          onPointerDown={onPointerDown}
+          onPointerMove={onPointerMove}
+          onPointerUp={onPointerUp}
+          onPointerCancel={onPointerUp}
+          onPointerLeave={onPointerUp}
+        >
+          <div
+            className="absolute inset-0 origin-top-left"
+            style={{
+              transform: `translate(${view.x}px, ${view.y}px) scale(${view.scale})`,
+              transition: gesture.current ? "none" : "transform 150ms ease-out",
+            }}
+          >
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={map.image}
+              alt={`${map.label}の地図`}
+              className="pointer-events-none absolute inset-0 h-full w-full"
+              draggable={false}
+            />
+            <svg
+              ref={svgRef}
+              viewBox={`0 0 ${MAP_VIEWBOX.width} ${MAP_VIEWBOX.height}`}
+              className="absolute inset-0 h-full w-full"
+              onClick={onBackgroundClick}
+            >
+              {/* 屋外MAP：建物をタップするとその建物の地図へ */}
+              {mapId === "outdoor" &&
+                OUTDOOR_BUILDINGS.map((b) => (
+                  <g
+                    key={b.map}
+                    className="cursor-pointer"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      switchMap(b.map);
+                    }}
+                  >
+                    {b.paths.map((d, i) => (
+                      <path
+                        key={i}
+                        d={d}
+                        fill="rgba(37,99,235,0.08)"
+                        stroke="#2563eb"
+                        strokeWidth={0.6 * k}
+                        strokeDasharray={`${2 * k} ${1.5 * k}`}
+                      />
+                    ))}
+                  </g>
+                ))}
+
+              {spots.map((spot) => (
+                <SpotMark
+                  key={spot.id}
+                  spot={spot}
+                  k={k}
+                  selected={selectedSpot === spot.id}
+                  wait={spotWait(spot, live.waits, now)}
+                  performing={spotIsPerforming(spot, now, live.acts)}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    openSpot(spot);
+                  }}
+                />
+              ))}
+
+              {editMode && editPoint && (
+                <g pointerEvents="none">
+                  <line x1={editPoint.x - 6} x2={editPoint.x + 6} y1={editPoint.y} y2={editPoint.y} stroke="red" strokeWidth={0.5} />
+                  <line x1={editPoint.x} x2={editPoint.x} y1={editPoint.y - 6} y2={editPoint.y + 6} stroke="red" strokeWidth={0.5} />
+                </g>
+              )}
+            </svg>
+          </div>
+
+          <div className="absolute right-2 top-2 flex flex-col gap-1.5">
+            <MapButton label="拡大" onClick={() => zoomAt(1.5)}>
+              <Plus className="h-4 w-4" />
+            </MapButton>
+            <MapButton label="縮小" onClick={() => zoomAt(1 / 1.5)}>
+              <Minus className="h-4 w-4" />
+            </MapButton>
+            <MapButton label="リセット" onClick={resetView}>
+              <RotateCcw className="h-4 w-4" />
+            </MapButton>
+          </div>
+        </div>
+
+        {editMode && (
+          <p className="rounded-lg bg-red-50 p-2 font-mono text-xs text-red-700 dark:bg-red-950 dark:text-red-200">
+            編集モード：地図をタップすると座標が出ます →{" "}
+            {editPoint ? `x: ${editPoint.x}, y: ${editPoint.y}` : "（未選択）"}
+          </p>
+        )}
+
+        <section className="space-y-3 rounded-2xl border border-border bg-card p-4 text-sm">
+          <div>
+            <h2 className="mb-1 font-bold">マップの見方</h2>
+            <p className="text-muted-foreground">
+              丸・色付きの部屋・ピンクの四角（ステージやインフォ）をタップすると、詳細が開きます。丸の数字は企画の数です。2本指で拡大・移動できます。屋外MAPの建物をタップするとその建物の地図に切り替わります。
+            </p>
+          </div>
+          <div>
+            <h2 className="mb-1.5 font-bold">委員会企画の待ち時間</h2>
+            <p className="mb-1.5 text-xs text-muted-foreground">丸や部屋の右上に吹き出しで出ます。</p>
+            <ul className="grid grid-cols-2 gap-x-3 gap-y-1">
+              {WAIT_LEVELS.map((lv) => (
+                <LegendDot key={lv} color={WAIT_LEVEL_INFO[lv].color} label={WAIT_LEVEL_INFO[lv].label} />
+              ))}
+            </ul>
+          </div>
+          <div>
+            <h2 className="mb-1.5 font-bold">ジャンル</h2>
+            <ul className="grid grid-cols-3 gap-x-3 gap-y-1">
+              {LEGEND_GENRES.map((g) => (
+                <LegendDot key={g} color={GENRE_COLORS[g]} label={g} />
+              ))}
+              <LegendDot color="#475569" label="複数" />
+            </ul>
+            <p className="mt-1.5 text-xs text-muted-foreground">緑のふちどりは、いま公演中の企画です。</p>
+          </div>
+        </section>
+      </main>
+      <Footer />
+      <KikakuSheet
+        state={sheet}
+        onChange={(s) => {
+          setSheet(s);
+          if (!s) setSelectedSpot(null);
+        }}
+        now={now}
+        live={live}
+        page="map"
+      />
+    </div>
+  );
+}
+
+function SpotMark({
+  spot,
+  k,
+  selected,
+  wait,
+  performing,
+  onClick,
+}: {
+  spot: MapSpot;
+  k: number;
+  selected: boolean;
+  wait: WaitLevel | null;
+  performing: boolean;
+  onClick: (e: React.MouseEvent) => void;
+}) {
+  // ピン・部屋の色はジャンル。待ち時間は色を変えず、吹き出しで出す
+  const color = spotColor(spot);
+  const count = spot.locationIds.length;
+
+  // 地図に描いてあるピンクの囲み（ステージ・インフォなど）を四角で囲んでボタンにする
+  if (spot.shape === "area") {
+    return (
+      <g className="group cursor-pointer" onClick={onClick} aria-label={spot.label} role="button">
+        <rect
+          x={spot.x}
+          y={spot.y}
+          width={spot.w}
+          height={spot.h}
+          rx={3}
+          className={`transition-colors ${
+            selected
+              ? "fill-pink-600/45"
+              : "fill-pink-600/15 group-hover:fill-pink-600/40 group-active:fill-pink-600/40"
+          }`}
+          stroke={performing ? "#16a34a" : "#db2777"}
+          strokeWidth={(performing || selected ? 1.6 : 1) * k}
+        >
+          {performing && !selected && (
+            <animate attributeName="stroke-opacity" values="1;0.3;1" dur="2s" repeatCount="indefinite" />
+          )}
+        </rect>
+        {wait && <WaitBubble x={spot.x + spot.w} y={spot.y} k={k} level={wait} />}
+      </g>
+    );
+  }
+
+  if (spot.shape === "rect") {
+    return (
+      <g className="group cursor-pointer" onClick={onClick} aria-label={spot.label} role="button">
+        <rect
+          x={spot.x}
+          y={spot.y}
+          width={spot.w}
+          height={spot.h}
+          fill={color}
+          className="transition-[fill-opacity]"
+          fillOpacity={selected ? 0.7 : 0.45}
+          stroke={performing ? "#16a34a" : color}
+          strokeWidth={(selected || performing ? 1.6 : 0.8) * k}
+        />
+        {count > 1 && (
+          <g transform={`translate(${spot.x + 2.8 * k} ${spot.y + 2.8 * k}) scale(${k})`}>
+            <circle r={3.2} fill="white" stroke={color} strokeWidth={0.9} />
+            <text textAnchor="middle" dy={1.4} fontSize={4} fontWeight="bold" fill={color}>
+              {count}
+            </text>
+          </g>
+        )}
+        {wait && <WaitBubble x={spot.x + spot.w} y={spot.y} k={k} level={wait} />}
+      </g>
+    );
+  }
+
+  return (
+    <g
+      className="cursor-pointer"
+      onClick={onClick}
+      transform={`translate(${spot.x} ${spot.y}) scale(${k})`}
+      aria-label={spot.label}
+      role="button"
+    >
+      {/* タップしやすいよう透明の大きめの円 */}
+      <circle r={10} fill="transparent" />
+      {performing && (
+        <circle r={8.5} fill="none" stroke="#16a34a" strokeWidth={1.6}>
+          <animate attributeName="r" values="7;10;7" dur="2s" repeatCount="indefinite" />
+          <animate attributeName="opacity" values="1;0.3;1" dur="2s" repeatCount="indefinite" />
+        </circle>
+      )}
+      <circle r={selected ? 7 : 6} fill={color} stroke="white" strokeWidth={1.4} />
+      <text
+        textAnchor="middle"
+        dy={count >= 10 ? 1.7 : 2}
+        fontSize={count >= 10 ? 5 : 6}
+        fontWeight="bold"
+        fill="white"
+      >
+        {count}
+      </text>
+      {wait && <WaitBubble x={0} y={-6} k={1} level={wait} />}
+    </g>
+  );
+}
+
+/** 待ち時間の吹き出し（x, y を右下の基準にして左上へ出す） */
+function WaitBubble({ x, y, k, level }: { x: number; y: number; k: number; level: WaitLevel }) {
+  const text = level === "closed" ? "受付終了" : WAIT_LEVEL_INFO[level].short;
+  const w = text.length * 3.6 + 3;
+  return (
+    <g transform={`translate(${x} ${y}) scale(${k})`} pointerEvents="none">
+      <rect x={-w + 3} y={-8.5} width={w} height={6.5} rx={3.2} fill={WAIT_LEVEL_INFO[level].color} stroke="white" strokeWidth={0.6} />
+      <text x={-w / 2 + 3} y={-3.7} textAnchor="middle" fontSize={4} fontWeight="bold" fill="white">
+        {text}
+      </text>
+    </g>
+  );
+}
+
+function MapButton({
+  label,
+  onClick,
+  children,
+}: {
+  label: string;
+  onClick: () => void;
+  children: React.ReactNode;
+}) {
+  return (
+    <button
+      type="button"
+      aria-label={label}
+      title={label}
+      onPointerDown={(e) => e.stopPropagation()}
+      onClick={onClick}
+      className="flex h-9 w-9 items-center justify-center rounded-lg bg-slate-900/85 text-white shadow active:bg-slate-900"
+    >
+      {children}
+    </button>
+  );
+}
+
+function LegendDot({ color, label }: { color: string; label: string }) {
+  return (
+    <li className="flex items-center gap-1.5">
+      <span className="h-3 w-3 flex-shrink-0 rounded-full" style={{ background: color }} />
+      <span className="text-xs">{label}</span>
+    </li>
+  );
+}

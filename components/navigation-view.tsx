@@ -20,6 +20,8 @@ import type { Location } from "@/app/page";
 import Footer from "@/components/footer";
 import Image from "next/image";
 import { track } from "@vercel/analytics";
+import { RouteMapView } from "@/components/route-map-view";
+import { edgeKey } from "@/lib/route-geometry";
 
 interface RouteStep {
   id: string;
@@ -62,13 +64,16 @@ export function NavigationView({
     // ちびっこ館: ノード46-60および251-259
     if ((nodeId >= 46 && nodeId <= 60) || (nodeId >= 251 && nodeId <= 259))
       return "/Chibikko_MAP_fornavigate.svg";
-    return "/GRAND_MAP.svg";
+    return "/GRAND_MAP_kikaku.svg"; // GRAND_MAP.svg は文字がフォント指定のままで端末により大きさが変わる
   };
 
   const [isScrolled, setIsScrolled] = useState(false);
   const [zoomModalOpen, setZoomModalOpen] = useState(false);
   const [currentZoomIndex, setCurrentZoomIndex] = useState(0);
   const [routeSteps, setRouteSteps] = useState<RouteStep[]>([]);
+  // 経路のノード列と階段の辺（地図に経路の線を描くのに使う）
+  const [routeNodes, setRouteNodes] = useState<number[]>([]);
+  const [stairsEdges, setStairsEdges] = useState<Set<string>>(new Set());
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -120,6 +125,14 @@ export function NavigationView({
 
         const data = await response.json();
         setRouteSteps(data.route);
+        setRouteNodes(Array.isArray(data.nodes) ? data.nodes : []);
+        setStairsEdges(
+          new Set(
+            (data.edges ?? [])
+              .filter((e: { hasStairs?: boolean }) => e.hasStairs)
+              .map((e: { from: number; to: number }) => edgeKey(e.from, e.to)),
+          ),
+        );
         track("route_searched", {
           from: from.name,
           to: to.name,
@@ -570,12 +583,20 @@ export function NavigationView({
                 )
               ) : (
                 <div className="flex items-center justify-center w-full h-full">
-                  <Image
-                    src={getMapSrcForNode(parseInt(currentStep.id))}
-                    alt="地図"
-                    height="800"
-                    width="600"
-                  />
+                  {routeNodes.length > 0 ? (
+                    <RouteMapView
+                      nodes={routeNodes}
+                      stairsEdges={stairsEdges}
+                      currentNodeId={parseInt(currentStep.id)}
+                    />
+                  ) : (
+                    <Image
+                      src={getMapSrcForNode(parseInt(currentStep.id))}
+                      alt="地図"
+                      height="800"
+                      width="600"
+                    />
+                  )}
                 </div>
               )}
 

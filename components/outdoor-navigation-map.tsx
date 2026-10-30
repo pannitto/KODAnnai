@@ -676,6 +676,10 @@ export function OutdoorNavigationMap({
 
             {/* ステージ タイムテーブルラベル */}
             {TIMETABLE.map((stage) => {
+              // 屋外MAPにラベル位置が設定されている会場だけ表示
+              if (stage.mapX == null || stage.mapY == null) return null;
+              const mapX = stage.mapX;
+              const mapY = stage.mapY;
               const info = getCurrentOrNextAct(stage, currentTime);
               if (!info) return null;
 
@@ -696,8 +700,8 @@ export function OutdoorNavigationMap({
               return (
                 <g key={stage.stageId} pointerEvents="none">
                   <rect
-                    x={stage.mapX - 34}
-                    y={stage.mapY}
+                    x={mapX - 34}
+                    y={mapY}
                     width={68}
                     height={20}
                     rx={2}
@@ -705,8 +709,8 @@ export function OutdoorNavigationMap({
                   />
                   {/* ステージ名 */}
                   <text
-                    x={stage.mapX}
-                    y={stage.mapY + 5.5}
+                    x={mapX}
+                    y={mapY + 5.5}
                     textAnchor="middle"
                     fontSize={4.2}
                     fill="white"
@@ -716,8 +720,8 @@ export function OutdoorNavigationMap({
                   </text>
                   {/* 時間行 */}
                   <text
-                    x={stage.mapX}
-                    y={stage.mapY + 11.5}
+                    x={mapX}
+                    y={mapY + 11.5}
                     textAnchor="middle"
                     fontSize={4.8}
                     fill="white"
@@ -728,8 +732,8 @@ export function OutdoorNavigationMap({
                   </text>
                   {/* 企画名 */}
                   <text
-                    x={stage.mapX}
-                    y={stage.mapY + 17.5}
+                    x={mapX}
+                    y={mapY + 17.5}
                     textAnchor="middle"
                     fontSize={4.8}
                     fill="white"

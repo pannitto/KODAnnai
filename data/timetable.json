@@ -1,0 +1,277 @@
+[
+  {
+    "venueId": "gym",
+    "venueName": "体育館ステージ",
+    "kikakuIds": [
+      "121"
+    ],
+    "day": "day1",
+    "start": "10:00",
+    "end": "11:30",
+    "act": "大学対抗クイズバトル"
+  },
+  {
+    "venueId": "gym",
+    "venueName": "体育館ステージ",
+    "kikakuIds": [
+      "121"
+    ],
+    "day": "day1",
+    "start": "12:10",
+    "end": "13:40",
+    "act": "格付けチェック"
+  },
+  {
+    "venueId": "gym",
+    "venueName": "体育館ステージ",
+    "kikakuIds": [
+      "121"
+    ],
+    "day": "day1",
+    "start": "13:55",
+    "end": "14:15",
+    "act": "HITters ヲタ芸ステージ"
+  },
+  {
+    "venueId": "gym",
+    "venueName": "体育館ステージ",
+    "kikakuIds": [
+      "121"
+    ],
+    "day": "day1",
+    "start": "14:40",
+    "end": "16:00",
+    "act": "FSCステージライブ"
+  },
+  {
+    "venueId": "gym",
+    "venueName": "体育館ステージ",
+    "kikakuIds": [
+      "121"
+    ],
+    "day": "day2",
+    "start": "10:40",
+    "end": "11:30",
+    "act": "爆笑HIT-Uパレード"
+  },
+  {
+    "venueId": "gym",
+    "venueName": "体育館ステージ",
+    "kikakuIds": [
+      "121"
+    ],
+    "day": "day2",
+    "start": "11:40",
+    "end": "13:10",
+    "act": "クイズイントロドン"
+  },
+  {
+    "venueId": "gym",
+    "venueName": "体育館ステージ",
+    "kikakuIds": [
+      "121"
+    ],
+    "day": "day2",
+    "start": "13:25",
+    "end": "14:00",
+    "act": "ハルモニアライブ"
+  },
+  {
+    "venueId": "gym",
+    "venueName": "体育館ステージ",
+    "kikakuIds": [
+      "121"
+    ],
+    "day": "day2",
+    "start": "14:35",
+    "end": "15:30",
+    "act": "一橋軽音ステージ企画"
+  },
+  {
+    "venueId": "gym",
+    "venueName": "体育館ステージ",
+    "kikakuIds": [
+      "121"
+    ],
+    "day": "day2",
+    "start": "17:00",
+    "end": "19:00",
+    "act": "後夜祭"
+  },
+  {
+    "venueId": "koda",
+    "venueName": "KODAステージ",
+    "kikakuIds": [
+      "40"
+    ],
+    "day": "day1",
+    "start": "10:00",
+    "end": "11:20",
+    "act": "Opening Festival!"
+  },
+  {
+    "venueId": "koda",
+    "venueName": "KODAステージ",
+    "kikakuIds": [
+      "40"
+    ],
+    "day": "day1",
+    "start": "11:40",
+    "end": "13:20",
+    "act": "一橋の歌うま王決定戦!!"
+  },
+  {
+    "venueId": "koda",
+    "venueName": "KODAステージ",
+    "kikakuIds": [
+      "40"
+    ],
+    "day": "day1",
+    "start": "14:10",
+    "end": "15:50",
+    "act": "Spica Dance Stage"
+  },
+  {
+    "venueId": "koda",
+    "venueName": "KODAステージ",
+    "kikakuIds": [
+      "40"
+    ],
+    "day": "day1",
+    "start": "16:30",
+    "end": "18:20",
+    "act": "中夜祭"
+  },
+  {
+    "venueId": "koda",
+    "venueName": "KODAステージ",
+    "kikakuIds": [
+      "40"
+    ],
+    "day": "day2",
+    "start": "10:10",
+    "end": "11:10",
+    "act": "CHIERISH PIRTY"
+  },
+  {
+    "venueId": "koda",
+    "venueName": "KODAステージ",
+    "kikakuIds": [
+      "40"
+    ],
+    "day": "day2",
+    "start": "11:40",
+    "end": "13:20",
+    "act": "一橋の歌うま王決定戦!!"
+  },
+  {
+    "venueId": "koda",
+    "venueName": "KODAステージ",
+    "kikakuIds": [
+      "40"
+    ],
+    "day": "day2",
+    "start": "13:35",
+    "end": "13:55",
+    "act": "Cepha Dance Stage"
+  },
+  {
+    "venueId": "koda",
+    "venueName": "KODAステージ",
+    "kikakuIds": [
+      "40"
+    ],
+    "day": "day2",
+    "start": "14:13",
+    "end": "14:53",
+    "act": "アコースティックライブ"
+  },
+  {
+    "venueId": "koda",
+    "venueName": "KODAステージ",
+    "kikakuIds": [
+      "40"
+    ],
+    "day": "day2",
+    "start": "15:05",
+    "end": "15:30",
+    "act": "TFCストリートライブ"
+  },
+  {
+    "venueId": "field",
+    "venueName": "フィールド",
+    "kikakuIds": [
+      "41"
+    ],
+    "day": "day1",
+    "start": "11:15",
+    "end": "11:35",
+    "act": "アンサンブルステージ"
+  },
+  {
+    "venueId": "field",
+    "venueName": "フィールド",
+    "kikakuIds": [
+      "41"
+    ],
+    "day": "day1",
+    "start": "11:50",
+    "end": "12:00",
+    "act": "書道パフォーマンス"
+  },
+  {
+    "venueId": "field",
+    "venueName": "フィールド",
+    "kikakuIds": [
+      "41"
+    ],
+    "day": "day1",
+    "start": "12:30",
+    "end": "13:00",
+    "act": "ジャグリングパフォーマンス"
+  },
+  {
+    "venueId": "field",
+    "venueName": "フィールド",
+    "kikakuIds": [
+      "41"
+    ],
+    "day": "day1",
+    "start": "13:15",
+    "end": "13:35",
+    "act": "Cepha Dance Stage"
+  },
+  {
+    "venueId": "field",
+    "venueName": "フィールド",
+    "kikakuIds": [
+      "41"
+    ],
+    "day": "day2",
+    "start": "10:50",
+    "end": "11:20",
+    "act": "Papalinaフラステージ"
+  },
+  {
+    "venueId": "field",
+    "venueName": "フィールド",
+    "kikakuIds": [
+      "41"
+    ],
+    "day": "day2",
+    "start": "12:10",
+    "end": "12:40",
+    "act": "ジャグリングパフォーマンス"
+  },
+  {
+    "venueId": "field",
+    "venueName": "フィールド",
+    "kikakuIds": [
+      "41"
+    ],
+    "day": "day2",
+    "start": "13:00",
+    "end": "13:15",
+    "act": "少林寺拳法ステージ演武"
+  }
+]

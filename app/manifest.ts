@@ -2,9 +2,9 @@ import type { MetadataRoute } from "next";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "KODAnnai",
-    short_name: "KODAnnai",
-    description: "KODAIRA祭 経路案内サイト",
+    name: "KODAIRA祭公式サイト",
+    short_name: "KODAIRA祭",
+    description: "KODAIRA祭の企画マップ・団体紹介・タイムテーブル・経路案内（KODAnnai）",
     start_url: "/",
     display: "standalone",
     background_color: "#0f172a",

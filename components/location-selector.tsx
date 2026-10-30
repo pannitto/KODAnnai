@@ -3,6 +3,7 @@
 import { useState, useRef, useEffect } from "react";
 import { ChevronDown, MapPin } from "lucide-react";
 import type { Location } from "@/app/page";
+import { getCategoryStyle, showsCategoryBadge } from "@/lib/categories";
 import { useSearchParams } from "next/navigation";
 import {
   LOCATIONS as SERVER_LOCATIONS,
@@ -15,17 +16,7 @@ import {
 
 const LOCATIONS: Location[] = SERVER_LOCATIONS;
 
-const MAIN_EVENT_CATEGORIES = new Set([
-  "展示",
-  "参加・体験",
-  "パフォーマンス",
-  "講演",
-  "ステージ・フィールド",
-  "クラス模擬店",
-  "サークル模擬店",
-  "販売・配布",
-  "飲料販売所",
-]);
+// カテゴリの色とバッジを出すかどうかは lib/categories.ts で一括管理
 
 export const getLocationById = getLocationByIdFromServer;
 export const maleBathrooms = maleBathroomsFromServer;
@@ -207,43 +198,7 @@ export function LocationSelector({
     setSearchTerm("");
   };
 
-  const getCategoryColor = (category: string) => {
-    // 現在の app/locations-server.tsx のカテゴリ構成に合わせた配色
-    // 方針: 目的の種類が直感で分かる色に統一
-    const colors = {
-      // メイン企画系
-      展示: "bg-emerald-100 text-emerald-900",
-      参加・体験: "bg-yellow-100 text-yellow-900",
-      パフォーマンス: "bg-red-100 text-red-900",
-      講演: "bg-indigo-100 text-indigo-900",
-      ステージ・フィールド: "bg-violet-100 text-violet-900",
-      クラス模擬店: "bg-orange-100 text-orange-900",
-      サークル模擬店: "bg-orange-200 text-orange-900",
-      販売・配布: "bg-lime-100 text-lime-900",
-      飲料販売所: "bg-cyan-100 text-cyan-900",
-
-      // 施設系
-      その他: "bg-neutral-100 text-neutral-900",
-      "今いるエリア/フロアから出発": "bg-blue-100 text-blue-900",
-      休憩所: "bg-sky-100 text-sky-900",
-      飲食スペース: "bg-yellow-100 text-yellow-900",
-      ゴミステーション: "bg-green-100 text-green-900",
-
-      // トイレ系
-      男女トイレ: "bg-purple-100 text-purple-900",
-      多目的トイレ: "bg-teal-100 text-teal-900",
-
-      // 自動選択系（少し濃くして識別）
-      男子トイレ自動選択: "bg-blue-200 text-blue-900",
-      女子トイレ自動選択: "bg-pink-200 text-pink-900",
-      ゴミステーション自動選択: "bg-green-200 text-green-900",
-      飲食スペース・休憩所自動選択: "bg-yellow-200 text-yellow-900",
-      多目的トイレ自動選択: "bg-teal-200 text-teal-900",
-    };
-    return (
-      colors[category as keyof typeof colors] || "bg-gray-100 text-gray-800"
-    );
-  };
+  const getCategoryColor = (category: string) => getCategoryStyle(category).badge;
 
   return (
     <div className="relative" ref={dropdownRef}>
@@ -276,7 +231,7 @@ export function LocationSelector({
                 >
                   {value.name}
                 </div>
-                {!departure && MAIN_EVENT_CATEGORIES.has(value.category) && (
+                {!departure && showsCategoryBadge(value.category) && (
                   <span
                     className={`shrink-0 px-2 py-0.5 rounded-full text-[13px] font-medium ${getCategoryColor(value.category)}`}
                   >
