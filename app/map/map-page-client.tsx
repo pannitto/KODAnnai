@@ -369,7 +369,9 @@ export default function MapPageClient() {
                 OUTDOOR_BUILDINGS.map((b) => (
                   <g
                     key={b.map}
-                    className="cursor-pointer"
+                    className="group cursor-pointer"
+                    role="button"
+                    aria-label={`${b.label}の館内MAPを開く`}
                     onClick={(e) => {
                       e.stopPropagation();
                       switchMap(b.map);
@@ -379,12 +381,29 @@ export default function MapPageClient() {
                       <path
                         key={i}
                         d={d}
-                        fill="rgba(37,99,235,0.08)"
+                        className="fill-blue-600/[0.08] transition-colors group-hover:fill-blue-600/25 group-active:fill-blue-600/25"
                         stroke="#2563eb"
                         strokeWidth={0.6 * k}
                         strokeDasharray={`${2 * k} ${1.5 * k}`}
                       />
                     ))}
+                    {/* 「タップで館内の地図へ」の目印 */}
+                    <g transform={`translate(${b.badge.x} ${b.badge.y}) scale(${k})`}>
+                      <rect
+                        x={-12.5}
+                        y={-3.6}
+                        width={25}
+                        height={7.2}
+                        rx={3.6}
+                        fill="white"
+                        stroke="#2563eb"
+                        strokeWidth={0.7}
+                        className="transition-colors group-hover:fill-blue-50"
+                      />
+                      <text textAnchor="middle" y={1.4} fontSize={3.9} fontWeight="bold" fill="#1d4ed8">
+                        館内MAP ›
+                      </text>
+                    </g>
                   </g>
                 ))}
 
@@ -436,7 +455,7 @@ export default function MapPageClient() {
           <div>
             <h2 className="mb-1 font-bold">マップの見方</h2>
             <p className="text-muted-foreground">
-              丸・色付きの部屋・ピンクの四角（ステージやインフォ）をタップすると、詳細が開きます。丸の数字は企画の数です。2本指で拡大・移動できます。屋外MAPの建物をタップするとその建物の地図に切り替わります。
+              丸・色付きの部屋・ピンクの四角（ステージやインフォ）をタップすると、詳細が開きます。丸の数字は企画の数です。2本指で拡大・移動できます。屋外MAPで「館内MAP ›」の付いた建物をタップすると、その建物の地図に切り替わります。
             </p>
           </div>
           <div>
@@ -494,7 +513,8 @@ function SpotMark({
   const color = spotColor(spot);
   const count = spot.locationIds.length;
 
-  // 地図に描いてあるピンクの囲み（ステージ・インフォなど）を四角で囲んでボタンにする
+  // 地図に描いてあるピンクの四角（ステージ・インフォなど）をそのままボタンにする。
+  // ふだんは何も描かず、カーソルを合わせたとき・タップしたときだけ色を濃くする
   if (spot.shape === "area") {
     return (
       <g className="group cursor-pointer" onClick={onClick} aria-label={spot.label} role="button">
@@ -503,14 +523,14 @@ function SpotMark({
           y={spot.y}
           width={spot.w}
           height={spot.h}
-          rx={3}
+          rx={1}
           className={`transition-colors ${
             selected
-              ? "fill-pink-600/45"
-              : "fill-pink-600/15 group-hover:fill-pink-600/40 group-active:fill-pink-600/40"
+              ? "fill-black/25"
+              : "fill-transparent group-hover:fill-black/20 group-active:fill-black/20"
           }`}
-          stroke={performing ? "#16a34a" : "#db2777"}
-          strokeWidth={(performing || selected ? 1.6 : 1) * k}
+          stroke={selected ? "#1d4ed8" : performing ? "#16a34a" : "none"}
+          strokeWidth={1.4 * k}
         >
           {performing && !selected && (
             <animate attributeName="stroke-opacity" values="1;0.3;1" dur="2s" repeatCount="indefinite" />
