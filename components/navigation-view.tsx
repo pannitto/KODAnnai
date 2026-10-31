@@ -22,6 +22,13 @@ import Image from "next/image";
 import { track } from "@vercel/analytics";
 import { RouteMapView } from "@/components/route-map-view";
 import { NAV_MAP_SRC, edgeKey, getMapIdForNode } from "@/lib/route-geometry";
+import {
+  MOVE_LABEL,
+  MOVE_PICTOGRAM,
+  getRouteMoves,
+  moveText,
+  type RouteMove,
+} from "@/lib/floor-moves";
 
 interface RouteStep {
   id: string;
@@ -215,6 +222,11 @@ export function NavigationView({
   };
 
   const currentStep = routeSteps[currentZoomIndex];
+  // 階段・エレベーターでの階の移動（ステップの番号＝経路のノードの番号）
+  const floorMoves = getRouteMoves(routeNodes, stairsEdges);
+  const moveStartingAt = (index: number) => floorMoves.find((m) => m.startIndex === index);
+  const moveDuring = (index: number) =>
+    floorMoves.find((m) => index >= m.startIndex && index < m.endIndex);
   const departureColor = "#7aaad8";
   const arrivalColor = "#7aaad8";
 
@@ -502,6 +514,13 @@ export function NavigationView({
                       )}
                     </div>
                   </div>
+
+                  {/* 階段・エレベーターで階が変わるところ */}
+                  {moveStartingAt(index) && (
+                    <div className="mb-3 -mt-1">
+                      <FloorMoveBanner move={moveStartingAt(index)!} />
+                    </div>
+                  )}
                 </div>
               ),
           )}
@@ -551,6 +570,9 @@ export function NavigationView({
 
                     {/* Description and Notice */}
                     <div className="w-full mt-4 space-y-4">
+                      {moveDuring(currentZoomIndex) && (
+                        <FloorMoveBanner move={moveDuring(currentZoomIndex)!} className="mr-16" />
+                      )}
                       {currentZoomIndex < routeSteps.length - 1 && (
                         <div className="flex items-center gap-3">
                           {currentStep.notice && (
@@ -658,6 +680,27 @@ export function NavigationView({
       )}
 
       <Footer />
+    </div>
+  );
+}
+
+/** 階段・エレベーターで階を移動するところの目立つ表示（ピクトグラム＋「階段で3Fへ上がる」） */
+function FloorMoveBanner({ move, className = "" }: { move: RouteMove; className?: string }) {
+  const floors = Math.abs(move.to - move.from);
+  return (
+    <div className={`flex items-center gap-3 rounded-xl border-2 border-blue-500 bg-blue-50 px-3 py-2 dark:bg-blue-950 ${className}`}>
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        src={MOVE_PICTOGRAM[move.kind]}
+        alt={MOVE_LABEL[move.kind]}
+        className="h-11 w-11 flex-shrink-0 rounded-md bg-white p-0.5"
+      />
+      <div className="min-w-0">
+        <div className="text-base font-bold text-blue-800 dark:text-blue-200">{moveText(move)}</div>
+        <div className="text-xs text-blue-700/80 dark:text-blue-300/80">
+          {move.from}F → {move.to}F{floors > 1 && move.kind === "stairs" ? `（${floors}階分そのまま）` : ""}
+        </div>
+      </div>
     </div>
   );
 }

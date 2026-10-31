@@ -23,6 +23,7 @@ import {
   LOCATIONS,
 } from "@/app/locations-server";
 import { MAP_SPOTS, type MapId } from "@/lib/map-spots";
+import { isFloorMoveEdge } from "@/lib/floor-moves";
 
 export type Point = [number, number];
 export type NodePoints = Partial<Record<MapId, Point>>;
@@ -73,6 +74,19 @@ export const NODE_POINTS: Record<number, NodePoints> = {
   42: { outdoor: [216.7, 300.5] }, // ゴミステーション
   44: { outdoor: [228.3, 300.3] }, // 顔出しパネル
   45: { outdoor: [234.7, 300.3] }, // スノードーム工房
+  56: { main: [72.2, 159.3] }, // 企画本館MAP
+  57: { main: [93.1, 156.4] }, // ゴミステーション
+  58: { main: [94.3, 132.6] }, // 飲料販売所
+  59: { main: [93.9, 142.3] }, // 飲食スペース
+  60: { main: [60.8, 108.4] }, // 企画本館1F多目的トイレ
+  64: { main: [62, 181.4] }, // 企画本館1F男女トイレ(EV付近)
+  73: { main: [199.7, 180.6] }, // 企画本館2F男女トイレ
+  84: { main: [61.2, 306.4] }, // 企画本館3F男女トイレ
+  94: { main: [200.1, 307.2] }, // 企画本館4F男女トイレ
+  98: { bekkan: [53.5, 159.8] }, // 企画別館多目的トイレ
+  99: { bekkan: [54.3, 146.8] }, // 企画別館男女トイレ
+  102: { bekkan: [53.4, 269] }, // 企画別館2F男女トイレ
+  104: { bekkan: [199.4, 263.9] }, // 企画別館3F男女トイレ
   105: { outdoor: [104.5, 243.1] }, // メインステージ前休憩所
   106: { outdoor: [90.9, 243.1] }, // ゴミステーション
   107: { outdoor: [78.2, 242.6] }, // 似顔絵・陶器販売
@@ -126,6 +140,53 @@ export const NODE_POINTS: Record<number, NodePoints> = {
   244: { outdoor: [194.4, 233.7] }, // 南サークルロード
   245: { outdoor: [218.2, 234.1] }, // 南サークルロード
   246: { outdoor: [231.4, 234.2] }, // 南サークルロード
+  261: { main: [72.7, 144] }, // 企画本館 吹き抜け
+  262: { main: [50.6, 122.4] }, // 企画本館 1F
+  263: { main: [48.4, 160.6] }, // 企画本館 1F
+  265: { main: [61.2, 165.7] }, // 企画本館 1F
+  267: { main: [189.1, 124.1] }, // 企画本館 2F
+  269: { main: [189.1, 158.5] }, // 企画本館 2F
+  271: { main: [199.7, 166.1] }, // 企画本館 2F
+  272: { main: [216.3, 166.1] }, // 企画本館 2F
+  273: { main: [234.6, 165.7] }, // 企画本館 2F
+  274: { main: [246.7, 160.8] }, // 企画本館 2F
+  276: { main: [247.1, 141.6] }, // 企画本館 2F
+  277: { main: [247.1, 134.1] }, // 企画本館 2F
+  278: { main: [247.1, 123.9] }, // 企画本館 2F
+  279: { main: [216.5, 123.4] }, // 企画本館 2F
+  281: { main: [50.6, 248.6] }, // 企画本館 3F
+  282: { main: [50.6, 263] }, // 企画本館 3F
+  284: { main: [50.1, 287.7] }, // 企画本館 3F
+  286: { main: [60.8, 292.8] }, // 企画本館 3F
+  287: { main: [75.6, 292.7] }, // 企画本館 3F
+  288: { main: [94.3, 292.3] }, // 企画本館 3F
+  289: { main: [108.3, 292.3] }, // 企画本館 3F
+  291: { main: [107.9, 282.9] }, // 企画本館 3F
+  292: { main: [107.9, 273.1] }, // 企画本館 3F
+  294: { main: [107.9, 249.8] }, // 企画本館 3F
+  295: { main: [94.3, 249.8] }, // 企画本館 3F
+  296: { main: [74.7, 249.4] }, // 企画本館 3F
+  298: { main: [189.1, 256.7] }, // 企画本館 4F
+  300: { main: [188.7, 287.7] }, // 企画本館 4F
+  302: { main: [200.2, 293.2] }, // 企画本館 4F
+  303: { main: [217.5, 293] }, // 企画本館 4F
+  304: { main: [188.6, 238.6] }, // 企画本館 4F
+  305: { bekkan: [75.6, 170.6] }, // 企画別館 1F
+  306: { bekkan: [74.4, 160.4] }, // 企画別館 1F
+  307: { bekkan: [85, 160.4] }, // 企画別館 1F
+  308: { bekkan: [74.8, 146.3] }, // 企画別館 1F
+  309: { bekkan: [85.4, 145.9] }, // 企画別館 1F
+  310: { bekkan: [65.9, 146.3] }, // 企画別館 1F
+  314: { bekkan: [89.6, 281] }, // 企画別館 2F
+  315: { bekkan: [79.4, 281] }, // 企画別館 2F
+  317: { bekkan: [52.7, 281.9] }, // 企画別館 2F
+  318: { bekkan: [51.4, 253.4] }, // 企画別館 2F
+  319: { bekkan: [78.6, 253] }, // 企画別館 2F
+  320: { bekkan: [101.1, 252.1] }, // 企画別館 2F
+  321: { bekkan: [242.9, 282.7] }, // 企画別館 3F
+  322: { bekkan: [215.6, 282.7] }, // 企画別館 3F
+  323: { bekkan: [199, 282.3] }, // 企画別館 3F
+  326: { bekkan: [255.3, 283.2] }, // 企画別館 3F
 };
 
 /**
@@ -187,8 +248,8 @@ export function isSeededOnly(node: number, map: MapId): boolean {
 export function getMapIdForNode(nodeId: number): MapId {
   // 企画本館: ノード86(4F)、56-60（吹き抜け・飲食スペース・1Fトイレ）、260-304
   if (nodeId === 86 || (nodeId >= 56 && nodeId <= 60) || (nodeId >= 260 && nodeId <= 304)) return "main";
-  // 企画別館: ノード305-328
-  if (nodeId >= 305 && nodeId <= 328) return "bekkan";
+  // 企画別館: ノード305-326（327・328 は体育館なので屋外MAP）
+  if (nodeId >= 305 && nodeId <= 326) return "bekkan";
   // ちびっこ館: ノード46-55および251-259
   if ((nodeId >= 46 && nodeId <= 55) || (nodeId >= 251 && nodeId <= 259)) return "chibikko";
   // 企画（教室など）のノードは場所から判断
@@ -218,6 +279,8 @@ export type RouteSegment = {
   to: number;
   points: Point[];
   jump: boolean;
+  /** 階段・エレベーターで階が変わる辺（線は描かず、ピクトグラムで示す） */
+  floorMove: boolean;
   /** 経路の何番目の辺か */
   index: number;
 };
@@ -252,6 +315,7 @@ export function buildRouteSegments(
       to: b,
       points: [pa, ...mid, pb],
       jump: opt?.jump ?? stairsEdges.has(key),
+      floorMove: isFloorMoveEdge(a, b),
       index: i,
     });
   }
