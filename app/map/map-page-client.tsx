@@ -645,10 +645,23 @@ function roomNames(spot: MapSpot): string[] {
     const loc = getLocationById(id);
     if (!loc) continue;
     const org = getOrganizer(loc);
-    const name = !org || isCommitteeKikaku(loc) ? getDisplayName(loc) : org;
+    const name = !org || isCommitteeKikaku(loc) ? getDisplayName(loc) : shortOrgName(org);
     if (name && !out.includes(name)) out.push(name);
   }
   return out.length ? out : [spot.label];
+}
+
+/**
+ * 地図用に団体名を短くする：先頭の「一橋大学」「一橋・津田塾大学」などと、
+ * 後ろの「協力 ○○」を除く（例：一橋大学・津田塾大学写真部 → 写真部）
+ */
+function shortOrgName(org: string): string {
+  const short = org
+    .replace(/^(一橋大学|一橋)([・･\s　]*(津田塾大学|津田塾))?[・･\s　]*/, "")
+    .replace(/^(津田塾大学|津田塾)[・･\s　]*/, "")
+    .replace(/[\s　]*協力[\s　].*$/, "")
+    .trim();
+  return short || org;
 }
 
 /** 文字の幅（全角＝1、半角＝0.58 文字分として見積もる） */
@@ -658,26 +671,26 @@ function textEm(str: string): number {
   return w;
 }
 
-/** 1行を、見た目の幅がだいたい同じになるよう n 行に分ける */
+/** 1行を、見た目の幅がだいたい同じになるよう n 行に分ける（英単語の途中では切らない） */
 function splitLine(l: string, n: number): string[] {
   if (n <= 1) return [l];
-  const chars = [...l];
+  const tokens = l.match(/[A-Za-z0-9&.'!?-]+|[\s\S]/g) ?? [l];
   const total = textEm(l);
   const out: string[] = [];
   let cur = "";
   let acc = 0;
   let k = 1;
-  for (const ch of chars) {
-    cur += ch;
-    acc += textEm(ch);
+  for (const t of tokens) {
+    cur += t;
+    acc += textEm(t);
     if (k < n && acc >= (total * k) / n) {
-      out.push(cur);
+      out.push(cur.trim());
       cur = "";
       k++;
     }
   }
-  if (cur) out.push(cur);
-  return out;
+  if (cur.trim()) out.push(cur.trim());
+  return out.filter(Boolean);
 }
 
 /**

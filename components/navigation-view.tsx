@@ -15,13 +15,15 @@ import {
   Lightbulb,
   TriangleAlert,
   Accessibility,
+  Map as MapIcon,
+  Camera,
 } from "lucide-react";
 import type { Location } from "@/app/page";
 import Footer from "@/components/footer";
 import Image from "next/image";
 import { track } from "@vercel/analytics";
 import { RouteMapView } from "@/components/route-map-view";
-import { NAV_MAP_SRC, edgeKey, getMapIdForNode } from "@/lib/route-geometry";
+import { edgeKey } from "@/lib/route-geometry";
 import {
   MOVE_LABEL,
   MOVE_PICTOGRAM,
@@ -29,6 +31,10 @@ import {
   moveText,
   type RouteMove,
 } from "@/lib/floor-moves";
+
+const VIEW_STORAGE_KEY = "kodannai-nav-view";
+/** 地図で案内するときの地図の高さ（下の説明とボタンが画面に収まるように） */
+const MAP_GUIDE_HEIGHT = "min(620px, max(300px, calc(100svh - 400px)))";
 
 interface RouteStep {
   id: string;
@@ -61,8 +67,6 @@ export function NavigationView({
   const getAssemblyImageSrc = (image: string) =>
     `/assembly/${image.replace(/\.png$/i, ".webp")}`;
 
-  // ノードIDからフロアマップSVGを返す（どの地図かは lib/route-geometry.ts の getMapIdForNode で一元管理）
-  const getMapSrcForNode = (nodeId: number): string => NAV_MAP_SRC[getMapIdForNode(nodeId)];
 
   const [isScrolled, setIsScrolled] = useState(false);
   const [zoomModalOpen, setZoomModalOpen] = useState(false);
@@ -76,12 +80,26 @@ export function NavigationView({
 
   const [highlight, setHighlight] = useState(false);
 
-  const [mapMode, setMapMode] = useState(false);
+  // 案内のしかた：地図（経路の線）か写真か。最後に選んだほうを覚えておく
+  const [view, setView] = useState<"map" | "photo">("map");
   const [navTransitioning, setNavTransitioning] = useState(false);
 
   useEffect(() => {
-    if (zoomModalOpen) setMapMode(false);
-  }, [zoomModalOpen]);
+    try {
+      const saved = localStorage.getItem(VIEW_STORAGE_KEY);
+      if (saved === "map" || saved === "photo") setView(saved);
+    } catch {
+      // 使えない環境では既定（地図）のまま
+    }
+  }, []);
+  const changeView = (v: "map" | "photo") => {
+    setView(v);
+    try {
+      localStorage.setItem(VIEW_STORAGE_KEY, v);
+    } catch {
+      // 無視
+    }
+  };
 
   useEffect(() => {
     // Trigger both effects on mount
@@ -185,7 +203,7 @@ export function NavigationView({
         block: "center",
       });
     }
-  }, [currentZoomIndex, zoomModalOpen]);
+  }, [currentZoomIndex, zoomModalOpen, view]);
 
   const openZoomModal = (index: number) => {
     setCurrentZoomIndex(index);
@@ -375,6 +393,8 @@ export function NavigationView({
       </div>
 
       <div className="px-4">
+        {view === "photo" && (
+        <>
         {/* Route Summary */}
         <div
           className={`px-4 transition-all duration-300 ${
@@ -423,7 +443,125 @@ export function NavigationView({
             </div> */}
           </div>
         </div>
+        </>
+        )}
 
+        {/* 案内のしかたの切り替え（地図／写真） */}
+        <div className="mb-3 grid grid-cols-2 gap-1 rounded-xl border border-border bg-background p-1" role="tablist">
+          {(
+            [
+              { id: "map", label: "地図で案内", Icon: MapIcon },
+              { id: "photo", label: "写真で案内", Icon: Camera },
+            ] as const
+          ).map(({ id, label, Icon }) => (
+            <button
+              key={id}
+              type="button"
+              role="tab"
+              aria-selected={view === id}
+              onClick={() => changeView(id)}
+              className={`flex items-center justify-center gap-1.5 rounded-lg py-2.5 text-sm font-bold transition-colors ${
+                view === id ? "bg-blue-600 text-white shadow" : "text-muted-foreground hover:bg-accent"
+              }`}
+            >
+              <Icon className="h-4 w-4" />
+              {label}
+            </button>
+          ))}
+        </div>
+
+        {view === "map" && routeNodes.length > 0 && (() => {
+          const lastIndex = routeSteps.length - 1;
+          const idx = Math.min(currentZoomIndex, lastIndex);
+          const step = routeSteps[idx];
+          const isFirst = idx === 0;
+          const isLast = idx === lastIndex;
+          const nodeId = routeNodes[idx] ?? parseInt(step?.id ?? "0");
+          const move = moveDuring(idx);
+          const title = isLast ? `到着：${to.name}` : step?.title;
+          return (
+            <div className="space-y-3 pb-6">
+              <div className="flex justify-center rounded-2xl border border-border bg-card p-1" style={{ height: MAP_GUIDE_HEIGHT }}>
+                <RouteMapView
+                  nodes={routeNodes}
+                  stairsEdges={stairsEdges}
+                  currentNodeId={nodeId}
+                  maxHeight={MAP_GUIDE_HEIGHT}
+                />
+              </div>
+
+              {/* いまのステップ */}
+              <div className="flex items-center gap-3 rounded-xl border-2 border-blue-500/60 bg-card p-3">
+                {!isFirst && !isLast && step && (
+                  <button
+                    type="button"
+                    onClick={() => openZoomModal(idx)}
+                    className="relative h-16 w-16 flex-shrink-0 overflow-hidden rounded-lg border-2 border-primary"
+                    aria-label="この場所の写真を見る"
+                  >
+                    <Image
+                      src={getAssemblyImageSrc(step.image)}
+                      alt={step.title}
+                      width={135}
+                      height={240}
+                      className="h-full w-full object-cover"
+                    />
+                    <span className="absolute inset-x-0 bottom-0 bg-black/60 text-center text-[10px] font-bold text-white">写真</span>
+                  </button>
+                )}
+                <div className="min-w-0 flex-1">
+                  <div className="text-xs font-semibold text-muted-foreground">
+                    {isFirst ? "スタート" : isLast ? "ゴール" : `${idx + 1} / ${lastIndex}`}
+                  </div>
+                  <div className="text-lg font-bold leading-snug">{title}</div>
+                  {isFirst && step?.subtitle && (
+                    <div className="text-sm text-muted-foreground">{step.subtitle}</div>
+                  )}
+                </div>
+              </div>
+
+              {move && <FloorMoveBanner move={move} />}
+              {!isLast && step?.notice && (
+                <span
+                  className={`inline-block px-2 py-1 rounded-full text-xs font-medium border ${getNoticeColor(step.notice.color)}`}
+                >
+                  {step.notice.text}
+                </span>
+              )}
+
+              {/* 進む・戻る */}
+              <div className="relative h-2 w-full rounded-full bg-gray-200 dark:bg-gray-700">
+                <div
+                  className="absolute left-0 top-0 h-2 rounded-full bg-blue-500 transition-all duration-300"
+                  style={{ width: `${(idx / Math.max(1, lastIndex)) * 100}%` }}
+                />
+              </div>
+              <div className="flex items-center justify-between gap-3">
+                <button
+                  type="button"
+                  onClick={goToPrevious}
+                  disabled={isFirst || navTransitioning}
+                  className="flex flex-1 items-center justify-center gap-1 rounded-xl bg-accent py-3 font-bold text-secondary-foreground disabled:opacity-40"
+                >
+                  <ChevronLeft className="h-5 w-5" />
+                  前へ
+                </button>
+                <button
+                  type="button"
+                  onClick={goToNext}
+                  disabled={isLast || navTransitioning}
+                  className="flex flex-[2] items-center justify-center gap-1 rounded-xl bg-blue-600 py-3 font-bold text-white disabled:opacity-40"
+                >
+                  {idx === lastIndex - 1 ? "到着" : "次へ"}
+                  <ChevronRight className="h-5 w-5" />
+                </button>
+              </div>
+            </div>
+          );
+        })()}
+
+        {view === "photo" && (
+        <>
         {/* Route Steps */}
         <div className="space-y-0">
           {routeSteps.map(
@@ -534,6 +672,8 @@ export function NavigationView({
           <div className="text-lg font-bold">到着</div>
           <div className="text-sm font-semibold opacity-90 mt-1">{to.name}</div>
         </div>
+        </>
+        )}
       </div>
 
       {zoomModalOpen && currentStep && (
@@ -554,74 +694,56 @@ export function NavigationView({
 
             {/* Modal Content */}
             <div className="flex-1 overflow-auto flex flex-col items-center justify-center p-2 relative">
-              {!mapMode ? (
-                currentZoomIndex !== 0 ? (
-                  <>
-                    {/* Large Image */}
-                    <div className="flex items-center justify-center w-full h-full">
-                      <Image
-                        src={getAssemblyImageSrc(currentStep.image)}
-                        width={540}
-                        height={960}
-                        alt={currentStep.title}
-                        className="max-w-full max-h-full object-contain rounded-md"
-                      />
-                    </div>
-
-                    {/* Description and Notice */}
-                    <div className="w-full mt-4 space-y-4">
-                      {moveDuring(currentZoomIndex) && (
-                        <FloorMoveBanner move={moveDuring(currentZoomIndex)!} className="mr-16" />
-                      )}
-                      {currentZoomIndex < routeSteps.length - 1 && (
-                        <div className="flex items-center gap-3">
-                          {currentStep.notice && (
-                            <span
-                              className={`px-2 py-1 rounded-full text-xs font-medium border ${getNoticeColor(
-                                currentStep.notice.color,
-                              )}`}
-                            >
-                              {currentStep.notice.text}
-                            </span>
-                          )}
-                        </div>
-                      )}
-                    </div>
-                  </>
-                ) : (
+              {currentZoomIndex !== 0 ? (
+                <>
+                  {/* Large Image */}
                   <div className="flex items-center justify-center w-full h-full">
-                    このステップに画像はありません
+                    <Image
+                      src={getAssemblyImageSrc(currentStep.image)}
+                      width={540}
+                      height={960}
+                      alt={currentStep.title}
+                      className="max-w-full max-h-full object-contain rounded-md"
+                    />
                   </div>
-                )
+
+                  {/* Description and Notice */}
+                  <div className="w-full mt-4 space-y-4">
+                    {moveDuring(currentZoomIndex) && (
+                      <FloorMoveBanner move={moveDuring(currentZoomIndex)!} className="mr-16" />
+                    )}
+                    {currentZoomIndex < routeSteps.length - 1 && (
+                      <div className="flex items-center gap-3">
+                        {currentStep.notice && (
+                          <span
+                            className={`px-2 py-1 rounded-full text-xs font-medium border ${getNoticeColor(
+                              currentStep.notice.color,
+                            )}`}
+                          >
+                            {currentStep.notice.text}
+                          </span>
+                        )}
+                      </div>
+                    )}
+                  </div>
+                </>
               ) : (
                 <div className="flex items-center justify-center w-full h-full">
-                  {routeNodes.length > 0 ? (
-                    <RouteMapView
-                      nodes={routeNodes}
-                      stairsEdges={stairsEdges}
-                      currentNodeId={parseInt(currentStep.id)}
-                    />
-                  ) : (
-                    <Image
-                      src={getMapSrcForNode(parseInt(currentStep.id))}
-                      alt="地図"
-                      height="800"
-                      width="600"
-                    />
-                  )}
+                  このステップに画像はありません
                 </div>
               )}
 
-              {/* Floating Toggle Button */}
+              {/* 地図で見る（同じステップのまま、地図の案内に切り替える） */}
               <button
-                onClick={() => setMapMode(!mapMode)}
-                className="absolute bottom-9 right-6 w-12 h-12 rounded-full bg-accent text-secondary-foreground flex items-center justify-center shadow-lg shadow-accent hover:scale-105 transition-transform"
+                onClick={() => {
+                  changeView("map");
+                  closeZoomModal();
+                }}
+                aria-label="地図で見る"
+                className="absolute bottom-9 right-6 flex h-12 items-center gap-1 rounded-full bg-blue-600 px-4 text-sm font-bold text-white shadow-lg hover:scale-105 transition-transform"
               >
-                {mapMode ? (
-                  <ChevronLeft className="h-6 w-6" /> // Back icon
-                ) : (
-                  <MapPin className="h-6 w-6" /> // Map pin icon
-                )}
+                <MapIcon className="h-5 w-5" />
+                地図
               </button>
             </div>
 

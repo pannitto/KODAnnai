@@ -43,11 +43,13 @@ type Props = {
   stairsEdges?: Set<string>;
   /** いま見ているステップのノード */
   currentNodeId: number;
+  /** 地図の高さの上限（CSS の長さ） */
+  maxHeight?: string;
 };
 
 const toD = (pts: Point[]) => pts.map((p, i) => `${i ? "L" : "M"}${p[0]},${p[1]}`).join(" ");
 
-export function RouteMapView({ nodes, stairsEdges, currentNodeId }: Props) {
+export function RouteMapView({ nodes, stairsEdges, currentNodeId, maxHeight = "92vh - 160px" }: Props) {
   const { resolvedTheme } = useTheme();
   const mapId = getMapIdForNode(currentNodeId);
   const points = useMemo(() => getNodePoints(), []);
@@ -95,7 +97,7 @@ export function RouteMapView({ nodes, stairsEdges, currentNodeId }: Props) {
       className="relative mx-auto max-h-full w-full"
       style={{
         aspectRatio: `${MAP_VIEWBOX.width} / ${MAP_VIEWBOX.height}`,
-        maxWidth: `calc((92vh - 160px) * ${MAP_VIEWBOX.width / MAP_VIEWBOX.height})`,
+        maxWidth: `calc((${maxHeight}) * ${MAP_VIEWBOX.width / MAP_VIEWBOX.height})`,
       }}
     >
       {/* eslint-disable-next-line @next/next/no-img-element */}
