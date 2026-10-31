@@ -297,7 +297,7 @@ function Detail({
               </span>
             </div>
           ) : (
-            <p className="text-sm text-muted-foreground">更新なし</p>
+            <p className="text-sm text-muted-foreground">情報なし</p>
           )}
         </div>
       )}

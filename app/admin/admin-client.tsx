@@ -131,7 +131,7 @@ export default function AdminClient() {
           waits={live.waits}
           saving={saving}
           onSet={(id, name, level) =>
-            post(id, { type: "wait", id, level }, `「${name}」を${level ? WAIT_LEVEL_INFO[level].label : "更新なし"}にしました`)
+            post(id, { type: "wait", id, level }, `「${name}」を${level ? WAIT_LEVEL_INFO[level].label : "情報なし"}にしました`)
           }
         />
       )}
@@ -169,7 +169,7 @@ function WaitTab({
   );
   return (
     <section className="space-y-3">
-      <p className="text-xs text-muted-foreground">90分以上更新がないと「更新なし」の表示に戻ります。</p>
+      <p className="text-xs text-muted-foreground">90分以上更新がないと「情報なし」の表示に戻ります。</p>
       <input
         type="search"
         value={filter}
@@ -192,7 +192,7 @@ function WaitTab({
                     {now && `（${formatAgo(cur.updatedAt, now)}）`}
                   </>
                 ) : (
-                  "更新なし"
+                  "情報なし"
                 )}
               </p>
               <div className="mt-2 grid grid-cols-3 gap-1.5">

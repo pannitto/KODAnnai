@@ -24,7 +24,7 @@ export const WAIT_LEVEL_INFO: Record<
   closed: { short: "受付終了", label: "現在入場できません", color: "#7e22ce" },
 };
 
-/** これより古い情報は「更新なし」として扱う（分） */
+/** これより古い情報は「情報なし」として扱う（分） */
 export const WAIT_STALE_MINUTES = 90;
 
 export function isWaitLevel(v: unknown): v is WaitLevel {
