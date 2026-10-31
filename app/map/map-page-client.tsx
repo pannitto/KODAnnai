@@ -462,7 +462,7 @@ export default function MapPageClient() {
           </div>
           <div>
             <h2 className="mb-1.5 font-bold">委員会企画の待ち時間</h2>
-            <p className="mb-1.5 text-xs text-muted-foreground">丸の右か、部屋のすぐ横（多くは部屋の左。部屋名にかぶらない位置）に「15分」のように出ます。数字は「この時間以内に入れる」目安です。</p>
+            <p className="mb-1.5 text-xs text-muted-foreground">丸や部屋の周辺に「15分」のように出ます。この時間以内に入れる目安です。</p>
             <ul className="grid grid-cols-2 gap-x-3 gap-y-1">
               {WAIT_LEVELS.map((lv) => (
                 <LegendDot key={lv} color={WAIT_LEVEL_INFO[lv].color} label={WAIT_LEVEL_INFO[lv].label} />
