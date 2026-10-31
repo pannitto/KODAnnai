@@ -37,6 +37,27 @@ const EDGES = (() => {
 })();
 const ALL_NODES = [...new Set(EDGES.flatMap((e) => [e.a, e.b]))].sort((x, y) => x - y);
 
+/**
+ * 出入口の外側のノード：別の地図のノードだが、この地図のノードと直接つながっているもの。
+ * 館内MAPにも置くと、ナビで「どちらへ外に出るか」が線で分かる。
+ */
+const ENTRANCE_NEIGHBORS: Record<MapId, Set<number>> = (() => {
+  const out: Record<MapId, Set<number>> = {
+    outdoor: new Set(),
+    main: new Set(),
+    bekkan: new Set(),
+    chibikko: new Set(),
+  };
+  for (const e of EDGES) {
+    const ma = getMapIdForNode(e.a);
+    const mb = getMapIdForNode(e.b);
+    if (ma === mb) continue;
+    out[ma].add(e.b);
+    out[mb].add(e.a);
+  }
+  return out;
+})();
+
 function nodeName(n: number): string {
   const info = getNodeDisplayInfoByLocid(String(n));
   return info?.name || info?.position || "";
@@ -76,7 +97,11 @@ export default function RouteEditorClient() {
   }, [base, draft]);
 
   const nodesForMap = ALL_NODES.filter(
-    (n) => showAllNodes || getMapIdForNode(n) === mapId || points[n]?.[mapId],
+    (n) =>
+      showAllNodes ||
+      getMapIdForNode(n) === mapId ||
+      ENTRANCE_NEIGHBORS[mapId].has(n) ||
+      points[n]?.[mapId],
   );
   const unplaced = nodesForMap.filter((n) => !points[n]?.[mapId]);
   const placedCount = nodesForMap.length - unplaced.length;
@@ -237,16 +262,20 @@ export default function RouteEditorClient() {
             <p className="mb-1 font-bold">
               この地図のノード（{placedCount}/{nodesForMap.length} 登録済み）
             </p>
+            <p className="mb-1 text-xs text-muted-foreground">
+              「外」付きの点線のノードは、隣の地図（屋外や別の建物）の出入口の外側です。置くと、ナビでどちらへ出入りするかが線で分かります。
+            </p>
             <div className="flex max-h-64 flex-wrap gap-1 overflow-y-auto">
               {nodesForMap.map((n) => (
                 <button
                   key={n}
                   type="button"
-                  title={nodeName(n)}
+                  title={`${nodeName(n)}${ENTRANCE_NEIGHBORS[mapId].has(n) ? "（出入口の外側）" : ""}`}
                   onClick={() => setSelected(n)}
-                  className={`rounded border px-1.5 py-0.5 text-xs ${n === selected ? "border-red-600 bg-red-600 text-white" : points[n]?.[mapId] ? "border-border" : "border-amber-500 font-bold text-amber-600"}`}
+                  className={`rounded border px-1.5 py-0.5 text-xs ${n === selected ? "border-red-600 bg-red-600 text-white" : points[n]?.[mapId] ? "border-border" : "border-amber-500 font-bold text-amber-600"} ${ENTRANCE_NEIGHBORS[mapId].has(n) ? "border-dashed" : ""}`}
                 >
                   {n}
+                  {ENTRANCE_NEIGHBORS[mapId].has(n) && <span className="ml-0.5 text-[10px]">外</span>}
                 </button>
               ))}
             </div>
