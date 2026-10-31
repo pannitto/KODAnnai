@@ -1,7 +1,20 @@
 "use client";
 
 import { useEffect, useState, useCallback } from "react";
+import { useTheme } from "next-themes";
 import { EMPTY_LIVE, type LiveData } from "@/lib/live";
+
+/**
+ * ダークモードかどうか。マウント前は false。
+ * （サーバーで描いたHTMLは常にライト。マウント前から true にすると、
+ *   画像の src などがライトのまま残ってしまうため）
+ */
+export function useIsDark(): boolean {
+  const { resolvedTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
+  return mounted && resolvedTheme === "dark";
+}
 
 /**
  * 現在時刻（30秒ごとに更新）。マウント前は null（SSRとのズレ防止）。

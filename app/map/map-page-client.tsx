@@ -7,7 +7,8 @@ import Footer from "@/components/footer";
 import { SiteNav } from "@/components/festival/site-nav";
 import { KikakuSheet, type SheetState } from "@/components/festival/kikaku-sheet";
 import { StageNowLabels } from "@/components/festival/stage-now-labels";
-import { useNow, useQueryParam, useLive } from "@/components/festival/hooks";
+import { BuildingBadge } from "@/components/festival/building-badge";
+import { useNow, useQueryParam, useLive, useIsDark } from "@/components/festival/hooks";
 import { getLocationById } from "@/app/locations-server";
 import {
   MAPS,
@@ -115,6 +116,7 @@ export default function MapPageClient() {
   const suppressClick = useRef(false);
 
   const map = MAPS.find((m) => m.id === mapId)!;
+  const dark = useIsDark();
   // 表示する日（開催日はその日、それ以外の日は両日分）。日によって同じ教室の団体が変わる
   const [day, setDay] = useState<FestivalDay | null>(null);
   const today = now ? getFestivalDay(now) : null;
@@ -334,7 +336,7 @@ export default function MapPageClient() {
 
         <div
           ref={containerRef}
-          className="relative w-full select-none overflow-hidden rounded-2xl border border-border bg-white"
+          className="relative w-full select-none overflow-hidden rounded-2xl border border-border bg-white dark:bg-black"
           style={{
             aspectRatio: `${MAP_VIEWBOX.width} / ${MAP_VIEWBOX.height}`,
             touchAction: view.scale > 1 ? "none" : "pan-y",
@@ -354,7 +356,7 @@ export default function MapPageClient() {
           >
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src={map.image}
+              src={dark ? map.darkImage : map.image}
               alt={`${map.label}の地図`}
               className="pointer-events-none absolute inset-0 h-full w-full"
               draggable={false}
@@ -389,22 +391,7 @@ export default function MapPageClient() {
                       />
                     ))}
                     {/* 「タップで館内の地図へ」の目印 */}
-                    <g transform={`translate(${b.badge.x} ${b.badge.y}) scale(${k})`}>
-                      <rect
-                        x={-12.5}
-                        y={-3.6}
-                        width={25}
-                        height={7.2}
-                        rx={3.6}
-                        fill="white"
-                        stroke="#2563eb"
-                        strokeWidth={0.7}
-                        className="transition-colors group-hover:fill-blue-50"
-                      />
-                      <text textAnchor="middle" y={1.4} fontSize={3.9} fontWeight="bold" fill="#1d4ed8">
-                        館内MAP ›
-                      </text>
-                    </g>
+                    <BuildingBadge x={b.badge.x} y={b.badge.y} k={k} dark={dark} />
                   </g>
                 ))}
 
@@ -474,7 +461,7 @@ export default function MapPageClient() {
           </div>
           <div>
             <h2 className="mb-1.5 font-bold">委員会企画の待ち時間</h2>
-            <p className="mb-1.5 text-xs text-muted-foreground">丸や部屋の右上に吹き出しで出ます。</p>
+            <p className="mb-1.5 text-xs text-muted-foreground">部屋の右下、または丸の右に「15分」のように出ます（数字は「この時間以内に入れる」目安です）。</p>
             <ul className="grid grid-cols-2 gap-x-3 gap-y-1">
               {WAIT_LEVELS.map((lv) => (
                 <LegendDot key={lv} color={WAIT_LEVEL_INFO[lv].color} label={WAIT_LEVEL_INFO[lv].label} />
@@ -550,7 +537,6 @@ function SpotMark({
             <animate attributeName="stroke-opacity" values="1;0.3;1" dur="2s" repeatCount="indefinite" />
           )}
         </rect>
-        {wait && <WaitBubble x={spot.x + spot.w} y={spot.y} k={k} level={wait} />}
       </g>
     );
   }
@@ -577,7 +563,13 @@ function SpotMark({
             </text>
           </g>
         )}
-        {wait && <WaitBubble x={spot.x + spot.w} y={spot.y} k={k} level={wait} />}
+        {wait && (
+          <WaitBubble
+            {...(spot.waitAt ?? { x: spot.x + spot.w - 0.8, y: spot.y + spot.h - 0.8, anchor: "end" })}
+            k={k}
+            level={wait}
+          />
+        )}
       </g>
     );
   }
@@ -608,19 +600,37 @@ function SpotMark({
       >
         {count}
       </text>
-      {wait && <WaitBubble x={0} y={-6} k={1} level={wait} />}
+      {wait && <WaitBubble x={8} y={2.6} k={1} level={wait} anchor="start" />}
     </g>
   );
 }
 
-/** 待ち時間の吹き出し（x, y を右下の基準にして左上へ出す） */
-function WaitBubble({ x, y, k, level }: { x: number; y: number; k: number; level: WaitLevel }) {
-  const text = level === "closed" ? "受付終了" : WAIT_LEVEL_INFO[level].short;
-  const w = text.length * 3.6 + 3;
+/**
+ * 待ち時間の小さな札（「15分」など）。
+ * x, y は札の下端の基準点。anchor="end" なら札の右下、"start" なら左下が (x, y) に来る。
+ * 部屋（四角）は部屋の中の右下に、丸は丸の右に出す（ほかの教室名にかぶらないように）。
+ */
+function WaitBubble({
+  x,
+  y,
+  k,
+  level,
+  anchor = "end",
+}: {
+  x: number;
+  y: number;
+  k: number;
+  level: WaitLevel;
+  anchor?: "start" | "end";
+}) {
+  const text = level === "closed" ? "終了" : `${level}分`;
+  const w = text.length * 3.1 + 2.2;
+  const h = 4.8;
+  const left = anchor === "end" ? -w : 0;
   return (
     <g transform={`translate(${x} ${y}) scale(${k})`} pointerEvents="none">
-      <rect x={-w + 3} y={-8.5} width={w} height={6.5} rx={3.2} fill={WAIT_LEVEL_INFO[level].color} stroke="white" strokeWidth={0.6} />
-      <text x={-w / 2 + 3} y={-3.7} textAnchor="middle" fontSize={4} fontWeight="bold" fill="white">
+      <rect x={left} y={-h} width={w} height={h} rx={1.2} fill={WAIT_LEVEL_INFO[level].color} stroke="white" strokeWidth={0.5} />
+      <text x={left + w / 2} y={-1.25} textAnchor="middle" fontSize={3.4} fontWeight="bold" fill="white" fontFamily="sans-serif">
         {text}
       </text>
     </g>

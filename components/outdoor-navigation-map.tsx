@@ -11,6 +11,21 @@ import {
 } from "@/app/locations-server";
 import { getNodeDisplayInfoByLocid } from "@/app/locations-server";
 import { StageNowLabels } from "@/components/festival/stage-now-labels";
+import { BuildingBadge } from "@/components/festival/building-badge";
+import { OUTDOOR_BUILDINGS } from "@/lib/map-spots";
+
+// 屋外MAPの建物の「館内MAP ›」の位置（企画マップと共通）
+const BADGE = Object.fromEntries(OUTDOOR_BUILDINGS.map((b) => [b.map, b.badge]));
+// この画面は拡大しないので、企画マップより少し大きめの札にする
+const BADGE_SIZE = { w: 36, h: 9.6, fontSize: 4.1 };
+// 建物の枠：ふだんは薄い点線、カーソルを合わせると濃くする（タップで館内の地図へ行けることを示す）
+const buildingFill = (hovered: boolean) => (hovered ? "rgba(37,99,235,0.18)" : "rgba(37,99,235,0.06)");
+const buildingStroke = (hovered: boolean) => ({
+  stroke: "#2563eb",
+  strokeWidth: hovered ? 1 : 0.6,
+  strokeDasharray: hovered ? undefined : "2 1.5",
+  strokeOpacity: hovered ? 1 : 0.7,
+});
 
 interface OutdoorNavigationMapProps {
   onStartPointSelected: (
@@ -32,6 +47,7 @@ export function OutdoorNavigationMap({
   selectedNodeId,
 }: OutdoorNavigationMapProps) {
   const { resolvedTheme } = useTheme();
+  const dark = resolvedTheme === "dark";
   const svgContainerRef = useRef<HTMLDivElement>(null);
   const [hoveredNodeId, setHoveredNodeId] = useState<number | null>(null);
   const [isMainBuildingHovered, setIsMainBuildingHovered] = useState(false);
@@ -477,9 +493,6 @@ export function OutdoorNavigationMap({
         <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-2">
           地図から現在地を選択してください
         </h3>
-        <p className="text-xs text-muted-foreground">
-          今いる場所に一番近いオレンジの丸をタップすると、そこから経路案内します。建物の中にいる方は、建物をタップして建物の地図から選んでください。
-        </p>
       </div>
 
       {/* 確認ダイアログ */}
@@ -538,11 +551,8 @@ export function OutdoorNavigationMap({
             >
               <path
                 d="M242.25,239.53v61c-18.98.1-42.34.37-61.32.47,0-8.18,0-13.98,0-22.16-2.01-.07-5.44.07-7.45,0,0-4.65,0-10.29,0-14.94,2.01-.06,5.44.06,7.45,0,0-8.14,0-15.68,0-23.82,18.98,0,42.34-.55,61.32-.55Z"
-                fill={
-                  isMainBuildingHovered ? "rgba(37,99,235,0.18)" : "transparent"
-                }
-                stroke={isMainBuildingHovered ? "#2563eb" : "transparent"}
-                strokeWidth="1"
+                fill={buildingFill(isMainBuildingHovered)}
+                {...buildingStroke(isMainBuildingHovered)}
               />
               <path
                 d="M206.32,284.47c7.5,0,15,0,22.51,0v-7.43h-2.7c0-4.46.02-8.92.03-13.38h2.67v-7.15c-7.41,0-14.83,0-22.24.01-.09,9.31-.17,18.63-.26,27.94Z"
@@ -552,6 +562,7 @@ export function OutdoorNavigationMap({
                 stroke={isMainBuildingHovered ? "#16a34a" : "transparent"}
                 strokeWidth="1"
               />
+              <BuildingBadge {...BADGE.main} {...BADGE_SIZE} dark={dark} active={isMainBuildingHovered} />
             </g>
 
             {/* 企画別館エリア */}
@@ -563,10 +574,10 @@ export function OutdoorNavigationMap({
             >
               <polygon
                 points="123.85 216.76 153.21 216.76 153.21 188.76 162.24 188.76 162.24 167.01 112.13 167.01 112.13 188.26 123.85 188.26 123.85 216.76"
-                fill={isBekkanHovered ? "rgba(37,99,235,0.18)" : "transparent"}
-                stroke={isBekkanHovered ? "#2563eb" : "transparent"}
-                strokeWidth="1"
+                fill={buildingFill(isBekkanHovered)}
+                {...buildingStroke(isBekkanHovered)}
               />
+              <BuildingBadge {...BADGE.bekkan} {...BADGE_SIZE} dark={dark} active={isBekkanHovered} />
             </g>
 
             {/* ちびっこ館エリア */}
@@ -578,12 +589,10 @@ export function OutdoorNavigationMap({
             >
               <path
                 d="M223.26,341.22c.67,2.41,1.35,4.82,2.02,7.23,2.14-.42,4.28-.85,6.42-1.27,3.9,3.03,7.8,6.06,11.7,9.09,11.27-.13,22.54-.25,33.81-.38.03-16.47.07-32.93.10-49.4-5.86,0-11.72,0-17.58,0v9.31c-7.53-.23-15.06-.47-22.59-.70.56,2.2,1.43,6.89-.32,12.24-3.16,9.64-12.18,13.34-13.56,13.88Z"
-                fill={
-                  isChibikkoHovered ? "rgba(37,99,235,0.18)" : "transparent"
-                }
-                stroke={isChibikkoHovered ? "#2563eb" : "transparent"}
-                strokeWidth="1"
+                fill={buildingFill(isChibikkoHovered)}
+                {...buildingStroke(isChibikkoHovered)}
               />
+              <BuildingBadge {...BADGE.chibikko} {...BADGE_SIZE} dark={dark} active={isChibikkoHovered} />
             </g>
 
             {/* インタラクティブなマーカーオーバーレイ */}
