@@ -74,6 +74,12 @@ export const NODE_POINTS: Record<number, NodePoints> = {
   42: { outdoor: [216.7, 300.5] }, // ゴミステーション
   44: { outdoor: [228.3, 300.3] }, // 顔出しパネル
   45: { outdoor: [234.7, 300.3] }, // スノードーム工房
+  46: { chibikko: [79, 109.6] }, // ちびっこ館トイレ
+  47: { chibikko: [86.3, 145.7] }, // ベビーカー預かり所
+  48: { chibikko: [125.4, 124.1] }, // 救護室
+  49: { chibikko: [124.9, 161.9] }, // 授乳室
+  50: { chibikko: [85.8, 161] }, // おむつ替え室
+  51: { chibikko: [213.7, 147.9] }, // アトラクション
   56: { main: [72.2, 159.3] }, // 企画本館MAP
   57: { main: [93.1, 156.4] }, // ゴミステーション
   58: { main: [94.3, 132.6] }, // 飲料販売所
@@ -140,6 +146,12 @@ export const NODE_POINTS: Record<number, NodePoints> = {
   244: { outdoor: [194.4, 233.7] }, // 南サークルロード
   245: { outdoor: [218.2, 234.1] }, // 南サークルロード
   246: { outdoor: [231.4, 234.2] }, // 南サークルロード
+  251: { chibikko: [73.5, 128.8] }, // ちびっこ館
+  254: { chibikko: [93.5, 130.5] }, // ちびっこ館
+  255: { chibikko: [103.7, 130] }, // ちびっこ館
+  256: { chibikko: [104.5, 123.7] }, // ちびっこ館
+  257: { chibikko: [100.3, 162.3] }, // ちびっこ館
+  259: { chibikko: [204.4, 168.7] }, // ちびっこ館
   261: { main: [72.7, 144] }, // 企画本館 吹き抜け
   262: { main: [50.6, 122.4] }, // 企画本館 1F
   263: { main: [48.4, 160.6] }, // 企画本館 1F
@@ -202,6 +214,18 @@ export const EDGE_OPTIONS: Record<string, { via?: Point[]; jump?: boolean }> = {
 // 初期値の組み立て
 // ------------------------------------------
 
+/**
+ * 建物の出入口の「外側」のノードを、館内MAPにも置く初期位置。
+ * 館内MAPに描いてあるピンクの出入口の矢印の外側の端に置いてある。
+ * これで館内MAPでも「どちらへ外に出るか」が線で分かる（/route-editor で動かせる）。
+ */
+const ENTRANCE_SEEDS: Record<number, NodePoints> = {
+  237: { main: [13, 143.5] }, // 企画本館 左（西）の出入口の外 → クラス模擬店ロータリー
+  235: { main: [78, 199] }, // 企画本館 下（南）の出入口の外
+  228: { bekkan: [74.5, 178] }, // 企画別館 出入口の外 → KODAステージ側
+  233: { chibikko: [59, 126] }, // ちびっこ館 出入口の外 → ファミリーエリア
+};
+
 function seedPoints(): Record<number, NodePoints> {
   const out: Record<number, NodePoints> = {};
   const put = (node: number, map: MapId, p: Point) => {
@@ -211,6 +235,8 @@ function seedPoints(): Record<number, NodePoints> {
   for (const m of MAIN_BUILDING_START_POINT_MARKERS) put(m.nodeId, "main", [m.cx, m.cy]);
   for (const m of BEKKAN_START_POINT_MARKERS) put(m.nodeId, "bekkan", [m.cx, m.cy]);
   for (const m of CHIBIKKO_START_POINT_MARKERS) put(m.nodeId, "chibikko", [m.cx, m.cy]);
+  for (const [k, v] of Object.entries(ENTRANCE_SEEDS))
+    for (const [m, p] of Object.entries(v)) put(Number(k), m as MapId, p as Point);
   // 企画マップの部屋（四角）の中心を、その企画のノードの初期位置にする
   for (const spot of MAP_SPOTS) {
     if (spot.shape !== "rect") continue;

@@ -33,7 +33,12 @@ export const NODE_FLOORS: Record<number, number> = {
   309: 1, 310: 1,
   314: 2, 316: 2,
   321: 3, 322: 3,
+  // ちびっこ館（2F の出口用の階段 258 → 1F 254）
+  254: 1, 258: 2,
 };
+
+/** route-finder.ts で hasStairs が付いていないが階段の辺（"小さい番号-大きい番号"） */
+const EXTRA_STAIRS = new Set(["254-258"]);
 
 export const MOVE_PICTOGRAM: Record<MoveKind, string> = {
   stairs: "/pictograms/stairs.svg",
@@ -50,7 +55,8 @@ export function getEdgeMove(a: number, b: number, hasStairs: boolean): FloorMove
   const fa = NODE_FLOORS[a];
   const fb = NODE_FLOORS[b];
   if (fa == null || fb == null || fa === fb) return null;
-  return { kind: hasStairs ? "stairs" : "elevator", from: fa, to: fb };
+  const stairs = hasStairs || EXTRA_STAIRS.has(a < b ? `${a}-${b}` : `${b}-${a}`);
+  return { kind: stairs ? "stairs" : "elevator", from: fa, to: fb };
 }
 
 /** 「階段で3Fへ上がる」「エレベーターで1Fへ」などの文 */

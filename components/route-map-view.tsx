@@ -14,6 +14,27 @@ import {
 } from "@/lib/route-geometry";
 import { MAP_VIEWBOX } from "@/lib/map-spots";
 import { MOVE_PICTOGRAM, getRouteMoves, type RouteMove } from "@/lib/floor-moves";
+import type { MapId } from "@/lib/map-spots";
+
+const MAP_NAME: Record<MapId, string> = {
+  outdoor: "屋外",
+  main: "企画本館",
+  bekkan: "企画別館",
+  chibikko: "ちびっこ館",
+};
+
+/** 地図が切り替わるところ（建物に入る・外に出る） */
+type MapTransition = {
+  kind: "exit" | "enter";
+  at: Point;
+  /** 進む向き（at の手前の点） */
+  from?: Point;
+  /** 進む向き（at の先の点） */
+  toward?: Point;
+  /** 行き先（exit）または来たところ（enter）の地図 */
+  other: MapId;
+  index: number;
+};
 
 type Props = {
   /** 経路のノード列（/api/route の nodes） */
@@ -40,6 +61,28 @@ export function RouteMapView({ nodes, stairsEdges, currentNodeId }: Props) {
   // 階段・エレベーターでの移動（線ではなくピクトグラムで示す）
   const moves = useMemo(() => getRouteMoves(nodes, stairsEdges ?? new Set()), [nodes, stairsEdges]);
   const lineSegments = segments.filter((s) => !s.floorMove);
+
+  // 建物に入る・外に出るところ（隣の地図へ切り替わる辺）
+  const transitions = useMemo(() => {
+    const out: MapTransition[] = [];
+    const pt = (i: number) => (i >= 0 && i < nodes.length ? points[nodes[i]]?.[mapId] : undefined);
+    for (let i = 0; i < nodes.length - 1; i++) {
+      const ha = getMapIdForNode(nodes[i]);
+      const hb = getMapIdForNode(nodes[i + 1]);
+      if (ha === hb) continue;
+      const pa = pt(i);
+      const pb = pt(i + 1);
+      if (!pa && !pb) continue;
+      if (ha === mapId) {
+        // この地図から出ていく：外側の点（あれば）に「屋外へ出る」
+        out.push({ kind: "exit", at: (pb ?? pa)!, from: pb ? pa : pt(i - 1), other: hb, index: i });
+      } else if (hb === mapId) {
+        // ほかの地図から入ってくる
+        out.push({ kind: "enter", at: (pa ?? pb)!, toward: pa ? pb : pt(i + 2), other: ha, index: i });
+      }
+    }
+    return out;
+  }, [nodes, mapId, points]);
   const here = points[currentNodeId]?.[mapId];
   const goal = points[nodes[nodes.length - 1]]?.[mapId];
   const start = points[nodes[0]]?.[mapId];
@@ -57,7 +100,7 @@ export function RouteMapView({ nodes, stairsEdges, currentNodeId }: Props) {
     >
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img src={src} alt="地図" className="absolute inset-0 h-full w-full" draggable={false} />
-      {(segments.length > 0 || moves.length > 0) && (
+      {(segments.length > 0 || moves.length > 0 || transitions.length > 0) && (
         <svg
           viewBox={`0 0 ${MAP_VIEWBOX.width} ${MAP_VIEWBOX.height}`}
           className="pointer-events-none absolute inset-0 h-full w-full"
@@ -107,6 +150,10 @@ export function RouteMapView({ nodes, stairsEdges, currentNodeId }: Props) {
                 )}
               </g>
             ))}
+          {/* 建物に入る・外に出るところ */}
+          {transitions.map((t) => (
+            <TransitionMark key={`${t.kind}${t.index}`} t={t} done={t.index < currentIndex} />
+          ))}
           {/* 階段・エレベーター：乗る場所に「ピクトグラム＋何階へ」、降りる場所に「何階に着く」 */}
           {moves.map((m) => (
             <FloorMoveMarks
@@ -188,6 +235,46 @@ function FloorMoveMarks({
           </text>
         </g>
       )}
+    </g>
+  );
+}
+
+/** 「屋外へ出る ›」「企画本館に入る ›」「屋外から入る」の札。進む向きの先に置く */
+function TransitionMark({ t, done }: { t: MapTransition; done: boolean }) {
+  const text =
+    t.kind === "exit"
+      ? t.other === "outdoor"
+        ? "屋外へ出る ›"
+        : `${MAP_NAME[t.other]}に入る ›`
+      : t.other === "outdoor"
+        ? "屋外から入る"
+        : `${MAP_NAME[t.other]}から`;
+  // 向き：出るときは「手前→この点」の先、入るときは「この点→先」の逆側に札を出す
+  let dx = 0;
+  let dy = -1;
+  const ref = t.kind === "exit" ? t.from : t.toward;
+  if (ref) {
+    const vx = t.kind === "exit" ? t.at[0] - ref[0] : ref[0] - t.at[0];
+    const vy = t.kind === "exit" ? t.at[1] - ref[1] : ref[1] - t.at[1];
+    const len = Math.hypot(vx, vy);
+    if (len > 0.01) {
+      dx = t.kind === "exit" ? vx / len : -vx / len;
+      dy = t.kind === "exit" ? vy / len : -vy / len;
+    }
+  }
+  const w = text.length * 4.3 + 5;
+  const h = 8.5;
+  const dist = 6 + Math.abs(dx) * (w / 2) + Math.abs(dy) * (h / 2);
+  const cx = Math.min(MAP_VIEWBOX.width - w / 2 - 1, Math.max(w / 2 + 1, t.at[0] + dx * dist));
+  const cy = Math.min(MAP_VIEWBOX.height - h / 2 - 1, Math.max(h / 2 + 1, t.at[1] + dy * dist));
+  const color = done ? "#94a3b8" : t.kind === "exit" ? "#d2559a" : "#64748b";
+  return (
+    <g>
+      <circle cx={t.at[0]} cy={t.at[1]} r={2.2} fill={color} stroke="white" strokeWidth={0.8} />
+      <rect x={cx - w / 2} y={cy - h / 2} width={w} height={h} rx={h / 2} fill={color} stroke="white" strokeWidth={0.6} />
+      <text x={cx} y={cy + 1.7} textAnchor="middle" fontSize={4.6} fontWeight="bold" fill="white" fontFamily="sans-serif">
+        {text}
+      </text>
     </g>
   );
 }
