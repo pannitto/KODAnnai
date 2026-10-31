@@ -41,7 +41,10 @@
     "hours": "常時",
     "desc": "みんなのメッセージやイラストで完成する巨大アート！正門裏に一枚絵を一緒に作り上げましょう！",
     "stay": "",
-    "conditions": [],
+    "conditions": [
+      "ちびっこ向け",
+      "受験生向け"
+    ],
     "sns": "https://www.instagram.com/kodairafes",
     "image": "https://storage.googleapis.com/studio-design-asset-files/projects/6kq94V9DOp/s-1024x1024_v-fs_webp_cfde0e2c-dd77-4a2a-9b54-e93cf2e93d22.png"
   },
@@ -1095,7 +1098,9 @@
     "hours": "",
     "desc": "",
     "stay": "",
-    "conditions": [],
+    "conditions": [
+      "ちびっこ向け"
+    ],
     "sns": "",
     "image": ""
   },
@@ -1122,7 +1127,9 @@
     "hours": "10:00-16:00（1日目）\n10:00-15:30（2日目）",
     "desc": "オリジナルのスノードームを作ることができます！逆さまにするとラメがキラキラと舞ってきれいです！",
     "stay": "",
-    "conditions": [],
+    "conditions": [
+      "ちびっこ向け"
+    ],
     "sns": "https://www.instagram.com/kodairafes",
     "image": "https://storage.googleapis.com/studio-design-asset-files/projects/6kq94V9DOp/s-1022x1024_v-fs_webp_1c733f44-ff4d-4fcd-a110-31b0b78cb913.png"
   },
@@ -1156,7 +1163,8 @@
     "desc": "大学生の手作りアトラクションが大集合！5種類全部無料で遊べます！景品ももらえるよ！",
     "stay": "",
     "conditions": [
-      "雨でも楽しめる"
+      "雨でも楽しめる",
+      "ちびっこ向け"
     ],
     "sns": "https://www.instagram.com/kodairafes",
     "image": "https://storage.googleapis.com/studio-design-asset-files/projects/6kq94V9DOp/s-1080x1080_v-fs_webp_d3c035e6-c189-4b3a-922d-ebdd9c094ee2.jpg"
@@ -1185,7 +1193,8 @@
     "desc": "スライム・レインボースティック・万華鏡の3種類の工作を楽しめます！作ったものは持って帰ってOK！",
     "stay": "",
     "conditions": [
-      "雨でも楽しめる"
+      "雨でも楽しめる",
+      "ちびっこ向け"
     ],
     "sns": "https://www.instagram.com/kodairafes",
     "image": "https://storage.googleapis.com/studio-design-asset-files/projects/6kq94V9DOp/s-500x500_webp_bdafd14f-e118-42cc-bae3-f59e5099d888.jpg"
@@ -1217,7 +1226,8 @@
     "desc": "マジック・ジャグリング・ヒーローショーの3つのショーを開催！子供も保護者の方も一緒に楽しめる！",
     "stay": "",
     "conditions": [
-      "雨でも楽しめる"
+      "雨でも楽しめる",
+      "ちびっこ向け"
     ],
     "sns": "https://www.instagram.com/kodairafes",
     "image": "https://storage.googleapis.com/studio-design-asset-files/projects/6kq94V9DOp/s-827x827_v-fs_webp_44bd88ff-df25-4a3b-a216-948328640d02.jpg"
@@ -1243,7 +1253,8 @@
     "desc": "ちびっこが絵本を読んだり読み聞かせを楽しめる！休憩スペースとしてもご利用いただけます！",
     "stay": "",
     "conditions": [
-      "雨でも楽しめる"
+      "雨でも楽しめる",
+      "ちびっこ向け"
     ],
     "sns": "https://www.instagram.com/kodairafes",
     "image": "https://storage.googleapis.com/studio-design-asset-files/projects/6kq94V9DOp/s-827x827_v-fs_webp_f2c0c7cc-17f6-48dd-92e4-3b4bea9a2db2.jpg"

@@ -76,7 +76,7 @@ const GENRES = [
     .matchAll(/"([^"]+)"/g),
 ].map((m) => m[1]);
 const DAYS = ["両日", "1日目", "2日目"];
-const CONDITIONS = ["受験生向け", "雨でも楽しめる"];
+const CONDITIONS = ["受験生向け", "ちびっこ向け", "雨でも楽しめる"];
 const TIME = /^([01]?\d|2[0-3]):[0-5]\d$/;
 
 const errors = [];

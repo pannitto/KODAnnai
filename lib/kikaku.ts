@@ -122,7 +122,7 @@ export function getSnsUrl(loc: Location): string | null {
 }
 
 /** 絞り込み用の条件（ジャンルとは別軸） */
-export const CONDITIONS = ["受験生向け", "雨でも楽しめる"] as const;
+export const CONDITIONS = ["受験生向け", "ちびっこ向け", "雨でも楽しめる"] as const;
 export type Condition = (typeof CONDITIONS)[number];
 
 export function getConditions(loc: Location): Condition[] {

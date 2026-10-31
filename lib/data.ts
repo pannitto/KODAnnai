@@ -31,7 +31,7 @@ export type KikakuRow = {
   desc: string;
   /** 滞在の目安（例: 約20分、出入り自由） */
   stay: string;
-  /** 受験生向け・雨でも楽しめる */
+  /** 受験生向け・ちびっこ向け・雨でも楽しめる */
   conditions: string[];
   sns: string;
   /** 画像のURL（/kikaku/ID.jpg または https://…） */
