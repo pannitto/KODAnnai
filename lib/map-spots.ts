@@ -52,10 +52,10 @@ export type MapSpot = {
 
 export const MAP_SPOTS: MapSpot[] = [
   // ---------------- 屋外 ----------------
-  // 正門通りの委員会企画は1つずつ丸を置く（位置は仮。/map?edit=1 で座標を調べて直す）
-  { id: "seimon-anketo", map: "outdoor", shape: "pin", x: 153, y: 340, label: "来場者アンケート景品ブース", locationIds: ["5"] },
-  { id: "seimon-yataiou", map: "outdoor", shape: "pin", x: 153, y: 353, label: "屋台王決定戦投票所", locationIds: ["7"] },
-  { id: "seimon-panel", map: "outdoor", shape: "pin", x: 153, y: 366, label: "パネルアート（正門裏）", locationIds: ["6"] },
+  // 正門通りの委員会企画は1つずつ丸を置く（位置は経路案内のノード 5・6・7 と同じ。lib/route-geometry.ts の NODE_POINTS）
+  { id: "seimon-anketo", map: "outdoor", shape: "pin", x: 149.1, y: 350.1, label: "来場者アンケート景品ブース", locationIds: ["5"] },
+  { id: "seimon-yataiou", map: "outdoor", shape: "pin", x: 151.3, y: 321.2, label: "屋台王決定戦投票所", locationIds: ["7"] },
+  { id: "seimon-panel", map: "outdoor", shape: "pin", x: 149.4, y: 338.5, label: "パネルアート（正門裏）", locationIds: ["6"] },
   // 地図に描いてあるピンクの四角（インフォ・パンフレット・ステージ類）を、そのままタップ範囲にする
   // 兼松講堂・西キャンパスの企画（122・123）はインフォメーションセンターから案内するので、ここに入れる
   { id: "info", map: "outdoor", shape: "area", x: 116, y: 336, w: 13, h: 25, label: "インフォメーションセンター", locationIds: ["2", "122", "123"] },
