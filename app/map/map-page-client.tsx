@@ -471,6 +471,7 @@ export default function MapPageClient() {
           </div>
           <div>
             <h2 className="mb-1.5 font-bold">ジャンル</h2>
+            <p className="mb-1.5 text-xs text-muted-foreground">丸や部屋の色は、ジャンルの色です。</p>
             <ul className="grid grid-cols-3 gap-x-3 gap-y-1">
               {LEGEND_GENRES.map((g) => (
                 <LegendDot key={g} color={GENRE_COLORS[g]} label={g} />
