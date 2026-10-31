@@ -43,6 +43,8 @@ export type MapSpot = {
    * 部屋番号の文字にかぶるときだけ書く。anchor: "end" は札の右下、"start" は左下を (x, y) に合わせる
    */
   waitAt?: { x: number; y: number; anchor?: "start" | "end" };
+  /** 丸の下に出す短い名前（丸だけでは区別しにくいとき） */
+  caption?: string;
 } & (
   | { shape: "pin"; x: number; y: number }
   | { shape: "rect" | "area"; x: number; y: number; w: number; h: number }
@@ -100,13 +102,17 @@ export const MAP_SPOTS: MapSpot[] = [
   { id: "1406", map: "main", shape: "rect", x: 205, y: 296, w: 27, h: 20, label: "1406", waitAt: { x: 232, y: 321.6 }, locationIds: ["93"] },
 
   // ---------------- 企画別館 ----------------
-  { id: "bekkan-lounge", map: "bekkan", shape: "rect", x: 86, y: 149, w: 23, h: 24, label: "企画別館 ラウンジ", locationIds: ["97"] },
+  { id: "bekkan-lounge", map: "bekkan", shape: "rect", x: 86, y: 149, w: 23, h: 24, label: "企画別館 ラウンジ", waitAt: { x: 109, y: 178.6 }, locationIds: ["97"] },
   { id: "2203", map: "bekkan", shape: "rect", x: 19, y: 221, w: 43, h: 24, label: "2203", locationIds: ["100"] },
   { id: "2205", map: "bekkan", shape: "rect", x: 93, y: 260, w: 37, h: 19, label: "2205", locationIds: ["101"] },
   { id: "2301", map: "bekkan", shape: "rect", x: 194, y: 288, w: 68, h: 37, label: "2301", locationIds: ["103"] },
 
   // ---------------- ちびっこ館 ----------------
-  { id: "chibikko-2f", map: "chibikko", shape: "pin", x: 225, y: 140, label: "ちびっこ館2F", locationIds: ["51", "52", "53", "54"] },
+  // 2F の4つの委員会企画は、待ち時間をそれぞれ見られるよう1つずつ丸を置く（ノード51の位置を中心に2×2）
+  { id: "chibikko-attraction", map: "chibikko", shape: "pin", x: 202, y: 135, label: "アトラクション", caption: "アトラクション", locationIds: ["51"] },
+  { id: "chibikko-kousaku", map: "chibikko", shape: "pin", x: 230, y: 135, label: "工作", caption: "工作", locationIds: ["52"] },
+  { id: "chibikko-show", map: "chibikko", shape: "pin", x: 202, y: 155, label: "ショー", caption: "ショー", locationIds: ["53"] },
+  { id: "chibikko-ehon", map: "chibikko", shape: "pin", x: 230, y: 155, label: "絵本", caption: "絵本", locationIds: ["54"] },
 ];
 
 /** 屋外MAP上の建物（タップでその建物のMAPへ切り替え） */

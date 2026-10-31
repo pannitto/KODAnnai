@@ -27,6 +27,8 @@ import {
   isCommitteeKikaku,
   getDays,
   isOpenOn,
+  getOrganizer,
+  getDisplayName,
 } from "@/lib/kikaku";
 import {
   FESTIVAL_DAY1,
@@ -401,6 +403,7 @@ export default function MapPageClient() {
                   selected={selectedSpot === spot.id}
                   wait={spotWait(spot, live.waits, now)}
                   performing={spotIsPerforming(spot, now, live.acts)}
+                  dark={dark}
                   onClick={(e) => {
                     e.stopPropagation();
                     openSpot(spot);
@@ -454,7 +457,7 @@ export default function MapPageClient() {
           <div>
             <h2 className="mb-1 font-bold">マップの見方</h2>
             <p className="text-muted-foreground">
-              丸・色付きの部屋・ピンクの四角（ステージやインフォ）をタップすると、詳細が開きます。丸の数字は企画の数です。2本指で拡大・移動できます。屋外MAPで「館内MAP ›」の付いた建物をタップすると、その建物の地図に切り替わります。
+              丸・団体名の入った部屋・ピンクの四角（ステージやインフォ）をタップすると、詳細が開きます。部屋には部屋番号の代わりに団体名（委員会の企画は企画名）が出ます。丸の数字は企画の数です。2本指で拡大・移動できます。屋外MAPで「館内MAP ›」の付いた建物をタップすると、その建物の地図に切り替わります。
             </p>
           </div>
           <div>
@@ -499,10 +502,12 @@ function SpotMark({
   selected,
   wait,
   performing,
+  dark,
   onClick,
 }: {
   spot: MapSpot;
   k: number;
+  dark: boolean;
   selected: boolean;
   wait: WaitLevel | null;
   performing: boolean;
@@ -540,8 +545,16 @@ function SpotMark({
   }
 
   if (spot.shape === "rect") {
+    // 部屋：部屋番号の上から団体名で塗りつぶす（来場者には部屋番号より団体名のほうが分かりやすい）
+    const names = roomNames(spot);
+    const lines = names.length > 2 ? [names[0], `ほか${names.length - 1}件`] : names;
+    const fit = fitText(lines, spot.w - 2, spot.h - 2);
+    const lineH = fit.size * 1.18;
+    const top = spot.y + spot.h / 2 - (lineH * fit.lines.length) / 2 + fit.size * 0.86;
     return (
-      <g className="group cursor-pointer" onClick={onClick} aria-label={spot.label} role="button">
+      <g className="group cursor-pointer" onClick={onClick} aria-label={`${spot.label}：${names.join("、")}`} role="button">
+        {/* 下の部屋番号を隠す */}
+        <rect x={spot.x} y={spot.y} width={spot.w} height={spot.h} fill={dark ? "#0f172a" : "#ffffff"} />
         <rect
           x={spot.x}
           y={spot.y}
@@ -549,18 +562,24 @@ function SpotMark({
           height={spot.h}
           fill={color}
           className="transition-[fill-opacity]"
-          fillOpacity={selected ? 0.7 : 0.45}
+          fillOpacity={selected ? 0.5 : 0.22}
           stroke={performing ? "#16a34a" : color}
-          strokeWidth={(selected || performing ? 1.6 : 0.8) * k}
+          strokeWidth={(selected || performing ? 1.6 : 1) * k}
         />
-        {count > 1 && (
-          <g transform={`translate(${spot.x + 2.8 * k} ${spot.y + 2.8 * k}) scale(${k})`}>
-            <circle r={3.2} fill="white" stroke={color} strokeWidth={0.9} />
-            <text textAnchor="middle" dy={1.4} fontSize={4} fontWeight="bold" fill={color}>
-              {count}
-            </text>
-          </g>
-        )}
+        <text
+          textAnchor="middle"
+          fontSize={fit.size}
+          fontWeight="bold"
+          fill={dark ? "#f1f5f9" : "#0f172a"}
+          fontFamily="sans-serif"
+          pointerEvents="none"
+        >
+          {fit.lines.map((line, i) => (
+            <tspan key={i} x={spot.x + spot.w / 2} y={top + i * lineH}>
+              {line}
+            </tspan>
+          ))}
+        </text>
         {wait && (
           <WaitBubble
             {...(spot.waitAt ?? { x: spot.x + spot.w - 0.8, y: spot.y + spot.h - 0.8, anchor: "end" })}
@@ -598,9 +617,101 @@ function SpotMark({
       >
         {count}
       </text>
+      {spot.caption && (
+        <text
+          y={10.2}
+          textAnchor="middle"
+          fontSize={3.4}
+          fontWeight="bold"
+          fill={dark ? "#f1f5f9" : "#0f172a"}
+          stroke={dark ? "#0f172a" : "white"}
+          strokeWidth={0.9}
+          paintOrder="stroke"
+          fontFamily="sans-serif"
+          pointerEvents="none"
+        >
+          {spot.caption}
+        </text>
+      )}
       {wait && <WaitBubble x={8} y={2.6} k={1} level={wait} anchor="start" />}
     </g>
   );
+}
+
+/** 部屋に出す名前：委員会の企画は企画名、それ以外は団体名（同じ団体はまとめる） */
+function roomNames(spot: MapSpot): string[] {
+  const out: string[] = [];
+  for (const id of spot.locationIds) {
+    const loc = getLocationById(id);
+    if (!loc) continue;
+    const org = getOrganizer(loc);
+    const name = !org || isCommitteeKikaku(loc) ? getDisplayName(loc) : org;
+    if (name && !out.includes(name)) out.push(name);
+  }
+  return out.length ? out : [spot.label];
+}
+
+/** 文字の幅（全角＝1、半角＝0.58 文字分として見積もる） */
+function textEm(str: string): number {
+  let w = 0;
+  for (const ch of str) w += ch.charCodeAt(0) < 0x2000 ? 0.58 : 1;
+  return w;
+}
+
+/** 1行を、見た目の幅がだいたい同じになるよう n 行に分ける */
+function splitLine(l: string, n: number): string[] {
+  if (n <= 1) return [l];
+  const chars = [...l];
+  const total = textEm(l);
+  const out: string[] = [];
+  let cur = "";
+  let acc = 0;
+  let k = 1;
+  for (const ch of chars) {
+    cur += ch;
+    acc += textEm(ch);
+    if (k < n && acc >= (total * k) / n) {
+      out.push(cur);
+      cur = "";
+      k++;
+    }
+  }
+  if (cur) out.push(cur);
+  return out;
+}
+
+/**
+ * 四角（幅 w・高さ h）に収まる文字の大きさと行を決める。
+ * 1〜4行に折り返したうち、いちばん大きく出せるものを選ぶ。それでも入らなければ「…」で切る。
+ */
+function fitText(lines: string[], w: number, h: number): { size: number; lines: string[] } {
+  const MAX = 4.4;
+  const MIN = 2.2;
+  const sizeFor = (ls: string[]) =>
+    Math.min(MAX, w / Math.max(...ls.map(textEm)), h / (ls.length * 1.18));
+  let best = { size: sizeFor(lines), lines };
+  for (let n = 2; n <= 4; n++) {
+    const wrapped = lines.flatMap((l) => (textEm(l) < 5 ? [l] : splitLine(l, n)));
+    const sz = sizeFor(wrapped);
+    if (sz > best.size + 0.05) best = { size: sz, lines: wrapped };
+  }
+  if (best.size >= MIN) return best;
+  // 最小の大きさで入るところまでで切る
+  const maxLines = Math.max(1, Math.floor(h / (MIN * 1.18)));
+  const maxEm = w / MIN;
+  const cut = best.lines.slice(0, maxLines).map((l) => {
+    if (textEm(l) <= maxEm) return l;
+    let acc = 0;
+    let outStr = "";
+    for (const ch of l) {
+      if (acc + textEm(ch) > maxEm - 1) break;
+      acc += textEm(ch);
+      outStr += ch;
+    }
+    return outStr + "…";
+  });
+  if (best.lines.length > maxLines) cut[maxLines - 1] = cut[maxLines - 1].replace(/…?$/, "…");
+  return { size: MIN, lines: cut };
 }
 
 /**
