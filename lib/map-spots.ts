@@ -46,16 +46,30 @@ export type MapSpot = {
   /** 丸の下に出す短い名前（丸だけでは区別しにくいとき） */
   caption?: string;
 } & (
-  | { shape: "pin"; x: number; y: number }
+  | {
+      shape: "pin";
+      /** node を書かないとき、または node の座標がまだ無いときの位置 */
+      x: number;
+      y: number;
+      /**
+       * 経路案内のノード番号。書くと、丸はそのノードの位置（lib/route-geometry.ts の NODE_POINTS、
+       * /route-editor で動かしたもの）に自動で置かれる。ノードを動かせば丸も一緒に動く。
+       */
+      node?: number;
+      /** ノードの位置からずらす量 [x, y]（同じノードに丸を複数置くときなど） */
+      offset?: [number, number];
+      /** 待ち時間の札を丸のどちら側に出すか（既定は右） */
+      waitSide?: "right" | "left";
+    }
   | { shape: "rect" | "area"; x: number; y: number; w: number; h: number }
 );
 
 export const MAP_SPOTS: MapSpot[] = [
   // ---------------- 屋外 ----------------
-  // 正門通りの委員会企画は1つずつ丸を置く（位置は経路案内のノード 5・6・7 と同じ。lib/route-geometry.ts の NODE_POINTS）
-  { id: "seimon-anketo", map: "outdoor", shape: "pin", x: 149.1, y: 350.1, label: "来場者アンケート景品ブース", locationIds: ["5"] },
-  { id: "seimon-yataiou", map: "outdoor", shape: "pin", x: 151.3, y: 321.2, label: "屋台王決定戦投票所", locationIds: ["7"] },
-  { id: "seimon-panel", map: "outdoor", shape: "pin", x: 149.4, y: 338.5, label: "パネルアート（正門裏）", locationIds: ["6"] },
+  // 正門通りの委員会企画は1つずつ丸を置く（位置は経路案内のノード 5・6・7 に連動）
+  { id: "seimon-anketo", map: "outdoor", shape: "pin", node: 5, x: 149.1, y: 350.1, label: "来場者アンケート景品ブース", locationIds: ["5"] },
+  { id: "seimon-yataiou", map: "outdoor", shape: "pin", node: 7, x: 151.3, y: 321.2, label: "屋台王決定戦投票所", locationIds: ["7"] },
+  { id: "seimon-panel", map: "outdoor", shape: "pin", node: 6, x: 149.4, y: 338.5, label: "パネルアート（正門裏）", locationIds: ["6"] },
   // 地図に描いてあるピンクの四角（インフォ・パンフレット・ステージ類）を、そのままタップ範囲にする
   // 兼松講堂・西キャンパスの企画（122・123）はインフォメーションセンターから案内するので、ここに入れる
   { id: "info", map: "outdoor", shape: "area", x: 116, y: 336, w: 13, h: 25, label: "インフォメーションセンター", locationIds: ["2", "122", "123"] },
@@ -65,7 +79,9 @@ export const MAP_SPOTS: MapSpot[] = [
   { id: "koda-stage", map: "outdoor", shape: "area", x: 124, y: 217, w: 29, h: 16, label: "KODAステージ", locationIds: ["40"] },
   { id: "kita-circle", map: "outdoor", shape: "pin", x: 79, y: 243, label: "北サークルロード", locationIds: ["107", "108"] },
   { id: "minami-circle", map: "outdoor", shape: "pin", x: 175, y: 235, label: "南サークルロード", locationIds: ["111", "112", "113", "114", "115", "116", "117"] },
-  { id: "family", map: "outdoor", shape: "pin", x: 229, y: 305, label: "ファミリーエリア", locationIds: ["44", "45"] },
+  // ファミリーエリアは企画ごとに丸を置く（ノード 44・45 に連動。2つが近いので左右に少し離し、待ち時間は外側に出す）
+  { id: "family-kaodashi", map: "outdoor", shape: "pin", node: 44, offset: [-4, 0], waitSide: "left", x: 224.3, y: 300.3, label: "顔出しパネル", locationIds: ["44"] },
+  { id: "family-snowdome", map: "outdoor", shape: "pin", node: 45, offset: [4, 0], x: 238.7, y: 300.3, label: "スノードーム工房", locationIds: ["45"] },
   { id: "field", map: "outdoor", shape: "area", x: 198.7, y: 333, w: 28, h: 12.3, label: "フィールド", locationIds: ["41"] },
   { id: "gym-stage", map: "outdoor", shape: "area", x: 43.5, y: 114.5, w: 15, h: 29, label: "体育館ステージ", locationIds: ["121"] },
 
@@ -95,7 +111,7 @@ export const MAP_SPOTS: MapSpot[] = [
   { id: "1318", map: "main", shape: "rect", x: 66, y: 225, w: 19, h: 20, label: "1318", locationIds: ["83"] },
   // 4F
   { id: "1401", map: "main", shape: "rect", x: 161, y: 224, w: 23, h: 27, label: "1401", locationIds: ["85"] },
-  { id: "4f-rouka", map: "main", shape: "pin", x: 189, y: 250, label: "企画本館4F廊下", locationIds: ["86"] },
+  { id: "4f-rouka", map: "main", shape: "pin", node: 86, x: 188.7, y: 271.5, label: "企画本館4F廊下", locationIds: ["86"] },
   { id: "1403", map: "main", shape: "rect", x: 161, y: 268, w: 23, h: 16, label: "1403", waitAt: { x: 160.2, y: 278.4 }, locationIds: ["87"] },
   { id: "1404", map: "main", shape: "rect", x: 161, y: 284, w: 23, h: 15, label: "1404", waitAt: { x: 160.2, y: 293.9 }, locationIds: ["88", "89"] },
   { id: "1405", map: "main", shape: "rect", x: 161, y: 299, w: 23, h: 17, label: "1405", waitAt: { x: 160.2, y: 309.9 }, locationIds: ["90", "91", "92"] },
@@ -108,11 +124,11 @@ export const MAP_SPOTS: MapSpot[] = [
   { id: "2301", map: "bekkan", shape: "rect", x: 194, y: 288, w: 68, h: 37, label: "2301", locationIds: ["103"] },
 
   // ---------------- ちびっこ館 ----------------
-  // 2F の4つの委員会企画は、待ち時間をそれぞれ見られるよう1つずつ丸を置く（ノード51の位置を中心に2×2）
-  { id: "chibikko-attraction", map: "chibikko", shape: "pin", x: 202, y: 135, label: "アトラクション", caption: "アトラクション", locationIds: ["51"] },
-  { id: "chibikko-kousaku", map: "chibikko", shape: "pin", x: 230, y: 135, label: "工作", caption: "工作", locationIds: ["52"] },
-  { id: "chibikko-show", map: "chibikko", shape: "pin", x: 202, y: 155, label: "ショー", caption: "ショー", locationIds: ["53"] },
-  { id: "chibikko-ehon", map: "chibikko", shape: "pin", x: 230, y: 155, label: "絵本", caption: "絵本", locationIds: ["54"] },
+  // 2F の4つの委員会企画は、待ち時間をそれぞれ見られるよう1つずつ丸を置く（ノード51の位置を中心に2×2。ノードに連動）
+  { id: "chibikko-attraction", map: "chibikko", shape: "pin", node: 51, offset: [-12, -12], x: 202, y: 135, label: "アトラクション", caption: "アトラクション", locationIds: ["51"] },
+  { id: "chibikko-kousaku", map: "chibikko", shape: "pin", node: 51, offset: [16, -12], x: 230, y: 135, label: "工作", caption: "工作", locationIds: ["52"] },
+  { id: "chibikko-show", map: "chibikko", shape: "pin", node: 51, offset: [-12, 7], x: 202, y: 155, label: "ショー", caption: "ショー", locationIds: ["53"] },
+  { id: "chibikko-ehon", map: "chibikko", shape: "pin", node: 51, offset: [16, 7], x: 230, y: 155, label: "絵本", caption: "絵本", locationIds: ["54"] },
 ];
 
 /** 屋外MAP上の建物（タップでその建物のMAPへ切り替え） */

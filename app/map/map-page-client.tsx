@@ -10,6 +10,7 @@ import { StageNowLabels } from "@/components/festival/stage-now-labels";
 import { BuildingBadge } from "@/components/festival/building-badge";
 import { useNow, useQueryParam, useLive, useIsDark } from "@/components/festival/hooks";
 import { clientToSvgPoint } from "@/lib/svg-point";
+import { getNodePoints } from "@/lib/route-geometry";
 import { getLocationById } from "@/app/locations-server";
 import {
   MAPS,
@@ -48,6 +49,17 @@ import {
 
 const MIN_SCALE = 1;
 const MAX_SCALE = 4;
+
+// 経路案内のノードの位置（node を書いた丸は、ここから位置を決める）
+const NODE_PTS = getNodePoints();
+
+/** node を書いた丸を、そのノードの位置（＋offset）に置く */
+function placeSpot(s: MapSpot): MapSpot {
+  if (s.shape !== "pin" || s.node == null) return s;
+  const p = NODE_PTS[s.node]?.[s.map];
+  if (!p) return s;
+  return { ...s, x: p[0] + (s.offset?.[0] ?? 0), y: p[1] + (s.offset?.[1] ?? 0) };
+}
 
 // 地図に出ている企画のジャンルだけを凡例に出す
 const LEGEND_GENRES = GENRES.filter((g) =>
@@ -134,6 +146,7 @@ export default function MapPageClient() {
   const spots = useMemo(
     () =>
       MAP_SPOTS.filter((s) => s.map === mapId)
+        .map(placeSpot)
         .map((s) => ({
           ...s,
           locationIds: s.locationIds.filter((id) => {
@@ -634,7 +647,12 @@ function SpotMark({
           {spot.caption}
         </text>
       )}
-      {wait && <WaitBubble x={8} y={2.6} k={1} level={wait} anchor="start" />}
+      {wait &&
+        ("waitSide" in spot && spot.waitSide === "left" ? (
+          <WaitBubble x={-8} y={2.6} k={1} level={wait} anchor="end" />
+        ) : (
+          <WaitBubble x={8} y={2.6} k={1} level={wait} anchor="start" />
+        ))}
     </g>
   );
 }
