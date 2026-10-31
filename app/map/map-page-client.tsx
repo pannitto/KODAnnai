@@ -9,6 +9,7 @@ import { KikakuSheet, type SheetState } from "@/components/festival/kikaku-sheet
 import { StageNowLabels } from "@/components/festival/stage-now-labels";
 import { BuildingBadge } from "@/components/festival/building-badge";
 import { useNow, useQueryParam, useLive, useIsDark } from "@/components/festival/hooks";
+import { clientToSvgPoint } from "@/lib/svg-point";
 import { getLocationById } from "@/app/locations-server";
 import {
   MAPS,
@@ -264,10 +265,7 @@ export default function MapPageClient() {
 
   const onBackgroundClick = (e: React.MouseEvent<SVGSVGElement>) => {
     if (!editMode || suppressClick.current || !svgRef.current) return;
-    const pt = svgRef.current.createSVGPoint();
-    pt.x = e.clientX;
-    pt.y = e.clientY;
-    const p = pt.matrixTransform(svgRef.current.getScreenCTM()!.inverse());
+    const p = clientToSvgPoint(svgRef.current, e.clientX, e.clientY);
     setEditPoint({ x: Math.round(p.x), y: Math.round(p.y) });
   };
 

@@ -12,6 +12,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { getEdges } from "@/lib/route-finder";
 import { getNodeDisplayInfoByLocid } from "@/app/locations-server";
+import { clientToSvgPoint } from "@/lib/svg-point";
 import { MAPS, MAP_VIEWBOX, type MapId } from "@/lib/map-spots";
 import {
   NODE_POINTS,
@@ -82,10 +83,7 @@ export default function RouteEditorClient() {
 
   const place = (e: React.MouseEvent<SVGSVGElement>) => {
     if (selected == null || !svgRef.current) return;
-    const pt = svgRef.current.createSVGPoint();
-    pt.x = e.clientX;
-    pt.y = e.clientY;
-    const p = pt.matrixTransform(svgRef.current.getScreenCTM()!.inverse());
+    const p = clientToSvgPoint(svgRef.current, e.clientX, e.clientY);
     const value: Point = [Math.round(p.x * 10) / 10, Math.round(p.y * 10) / 10];
     setDraft((d) => ({ ...d, [selected]: { ...(d[selected] ?? {}), [mapId]: value } }));
     if (autoNext) {
