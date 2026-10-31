@@ -3,7 +3,8 @@
 // ナビ画面の「地図」：地図画像の上に経路を線で重ねる
 // 座標データは lib/route-geometry.ts（/route-editor で作成）
 
-import { useMemo } from "react";
+import { useMemo, useState } from "react";
+import { Maximize2, ZoomIn } from "lucide-react";
 import { useTheme } from "next-themes";
 import {
   NAV_MAP_SRC,
@@ -47,6 +48,9 @@ type Props = {
   maxHeight?: string;
 };
 
+/** 経路に寄せるときの拡大率の上限 */
+const MAX_ZOOM = 3;
+
 const toD = (pts: Point[]) => pts.map((p, i) => `${i ? "L" : "M"}${p[0]},${p[1]}`).join(" ");
 
 export function RouteMapView({ nodes, stairsEdges, currentNodeId, maxHeight = "92vh - 160px" }: Props) {
@@ -89,6 +93,29 @@ export function RouteMapView({ nodes, stairsEdges, currentNodeId, maxHeight = "9
   const goal = points[nodes[nodes.length - 1]]?.[mapId];
   const start = points[nodes[0]]?.[mapId];
 
+  // 経路が必ず画面に入る範囲で、地図を拡大して表示する（「全体」ボタンで切り替え）
+  const [fitRoute, setFitRoute] = useState(true);
+  const zoom = useMemo(() => {
+    const W = MAP_VIEWBOX.width;
+    const H = MAP_VIEWBOX.height;
+    const pts = nodes.map((n) => points[n]?.[mapId]).filter((p): p is Point => !!p);
+    if (!fitRoute || pts.length === 0) return { s: 1, tx: 0, ty: 0 };
+    // 経路の点を囲む四角＋目印（吹き出し・札）のぶんの余白
+    const x0 = Math.min(...pts.map((p) => p[0])) - 18;
+    const x1 = Math.max(...pts.map((p) => p[0])) + 30;
+    const y0 = Math.min(...pts.map((p) => p[1])) - 26;
+    const y1 = Math.max(...pts.map((p) => p[1])) + 16;
+    const s = Math.max(1, Math.min(MAX_ZOOM, W / Math.max(x1 - x0, 60), H / Math.max(y1 - y0, 60)));
+    const cx = (x0 + x1) / 2;
+    const cy = (y0 + y1) / 2;
+    // 経路の中心を画面の中心に。ただし地図の外（白い部分）が見えないように端で止める
+    const tx = Math.min(0, Math.max(W - W * s, W / 2 - cx * s));
+    const ty = Math.min(0, Math.max(H - H * s, H / 2 - cy * s));
+    return { s, tx, ty };
+  }, [nodes, points, mapId, fitRoute]);
+  // 拡大しても目印や線が大きくなりすぎないようにする係数
+  const k = 1 / Math.sqrt(zoom.s);
+
   let src = NAV_MAP_SRC[mapId];
   if (resolvedTheme === "dark") src = src.replace(".svg", "_dark.svg");
 
@@ -100,6 +127,13 @@ export function RouteMapView({ nodes, stairsEdges, currentNodeId, maxHeight = "9
         maxWidth: `calc((${maxHeight}) * ${MAP_VIEWBOX.width / MAP_VIEWBOX.height})`,
       }}
     >
+      <div className="absolute inset-0 overflow-hidden rounded-md">
+      <div
+        className="absolute inset-0 origin-top-left transition-transform duration-300 ease-out"
+        style={{
+          transform: `translate(${(zoom.tx / MAP_VIEWBOX.width) * 100}%, ${(zoom.ty / MAP_VIEWBOX.height) * 100}%) scale(${zoom.s})`,
+        }}
+      >
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img src={src} alt="地図" className="absolute inset-0 h-full w-full" draggable={false} />
       {(segments.length > 0 || moves.length > 0 || transitions.length > 0) && (
@@ -122,10 +156,10 @@ export function RouteMapView({ nodes, stairsEdges, currentNodeId, maxHeight = "9
                 d={toD(s.points)}
                 fill="none"
                 stroke="#94a3b8"
-                strokeWidth={2.4}
+                strokeWidth={2.4 * k}
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                strokeDasharray={s.jump ? "2 3" : undefined}
+                strokeDasharray={s.jump ? `${2 * k} ${3 * k}` : undefined}
               />
             ))}
           {/* これから進む（青・白フチ） */}
@@ -133,28 +167,28 @@ export function RouteMapView({ nodes, stairsEdges, currentNodeId, maxHeight = "9
             .filter((s) => s.index >= currentIndex)
             .map((s) => (
               <g key={`r${s.index}`}>
-                <path d={toD(s.points)} fill="none" stroke="white" strokeWidth={4.6} strokeLinecap="round" strokeLinejoin="round" opacity={s.jump ? 0 : 0.9} />
+                <path d={toD(s.points)} fill="none" stroke="white" strokeWidth={4.6 * k} strokeLinecap="round" strokeLinejoin="round" opacity={s.jump ? 0 : 0.9} />
                 <path
                   d={toD(s.points)}
                   fill="none"
                   stroke="#2563eb"
-                  strokeWidth={2.6}
+                  strokeWidth={2.6 * k}
                   strokeLinecap="round"
                   strokeLinejoin="round"
-                  strokeDasharray={s.jump ? "2 3" : undefined}
+                  strokeDasharray={s.jump ? `${2 * k} ${3 * k}` : undefined}
                   markerEnd={s.index === currentIndex ? "url(#route-arrow)" : undefined}
                 />
                 {/* 進む向きに流れる点 */}
                 {!s.jump && (
-                  <path d={toD(s.points)} fill="none" stroke="white" strokeWidth={1} strokeLinecap="round" strokeDasharray="0.1 5">
-                    <animate attributeName="stroke-dashoffset" from="0" to="-5.1" dur="0.8s" repeatCount="indefinite" />
+                  <path d={toD(s.points)} fill="none" stroke="white" strokeWidth={1 * k} strokeLinecap="round" strokeDasharray={`0.1 ${5 * k}`}>
+                    <animate attributeName="stroke-dashoffset" from="0" to={-5.1 * k} dur="0.8s" repeatCount="indefinite" />
                   </path>
                 )}
               </g>
             ))}
           {/* 建物に入る・外に出るところ */}
           {transitions.map((t) => (
-            <TransitionMark key={`${t.kind}${t.index}`} t={t} done={t.index < currentIndex} />
+            <TransitionMark key={`${t.kind}${t.index}`} t={t} done={t.index < currentIndex} k={k} />
           ))}
           {/* 階段・エレベーター：乗る場所に「ピクトグラム＋何階へ」、降りる場所に「何階に着く」 */}
           {moves.map((m) => (
@@ -165,17 +199,18 @@ export function RouteMapView({ nodes, stairsEdges, currentNodeId, maxHeight = "9
               to={points[nodes[m.endIndex]]?.[mapId]}
               active={currentIndex >= m.startIndex && currentIndex <= m.endIndex}
               done={currentIndex > m.endIndex}
+              k={k}
             />
           ))}
-          {start && <circle cx={start[0]} cy={start[1]} r={3.2} fill="white" stroke="#16a34a" strokeWidth={1.8} />}
+          {start && <circle cx={start[0]} cy={start[1]} r={3.2 * k} fill="white" stroke="#16a34a" strokeWidth={1.8 * k} />}
           {goal && (
-            <g transform={`translate(${goal[0]} ${goal[1]})`}>
+            <g transform={`translate(${goal[0]} ${goal[1]}) scale(${k})`}>
               <circle r={4.2} fill="#dc2626" stroke="white" strokeWidth={1.4} />
               <text textAnchor="middle" dy={1.6} fontSize={4.4} fontWeight="bold" fill="white">着</text>
             </g>
           )}
           {here && (
-            <g transform={`translate(${here[0]} ${here[1]})`}>
+            <g transform={`translate(${here[0]} ${here[1]}) scale(${k})`}>
               <circle r={7} fill="#f97316" opacity={0.25}>
                 <animate attributeName="r" values="4;8;4" dur="1.6s" repeatCount="indefinite" />
               </circle>
@@ -184,6 +219,17 @@ export function RouteMapView({ nodes, stairsEdges, currentNodeId, maxHeight = "9
           )}
         </svg>
       )}
+      </div>
+      </div>
+      {/* 経路に寄せる／地図全体を見る */}
+      <button
+        type="button"
+        onClick={() => setFitRoute((v) => !v)}
+        className="absolute right-1.5 top-1.5 flex items-center gap-1 rounded-full bg-slate-900/80 px-2.5 py-1.5 text-xs font-bold text-white shadow"
+      >
+        {fitRoute ? <Maximize2 className="h-3.5 w-3.5" /> : <ZoomIn className="h-3.5 w-3.5" />}
+        {fitRoute ? "全体" : "経路に寄せる"}
+      </button>
     </div>
   );
 }
@@ -195,12 +241,14 @@ function FloorMoveMarks({
   to,
   active,
   done,
+  k,
 }: {
   move: RouteMove;
   from?: Point;
   to?: Point;
   active: boolean;
   done: boolean;
+  k: number;
 }) {
   const up = move.to > move.from;
   const color = done ? "#94a3b8" : active ? "#dc2626" : "#2563eb";
@@ -215,13 +263,13 @@ function FloorMoveMarks({
           x2={to[0]}
           y2={to[1]}
           stroke={color}
-          strokeWidth={0.8}
-          strokeDasharray="1.5 2"
+          strokeWidth={0.8 * k}
+          strokeDasharray={`${1.5 * k} ${2 * k}`}
           opacity={0.6}
         />
       )}
       {from && (
-        <g transform={`translate(${from[0] + 3} ${from[1] - 17})`}>
+        <g transform={`translate(${from[0]} ${from[1]}) scale(${k}) translate(3 -17)`}>
           <rect x={0} y={0} width={34} height={14} rx={2.6} fill="white" stroke={color} strokeWidth={1.1} />
           <image href={icon} x={1.3} y={1.3} width={11.4} height={11.4} />
           <text x={23.6} y={9.6} textAnchor="middle" fontSize={7} fontWeight="bold" fill={color} fontFamily="sans-serif">
@@ -230,7 +278,7 @@ function FloorMoveMarks({
         </g>
       )}
       {to && (
-        <g transform={`translate(${to[0] + 3} ${to[1] + 2})`}>
+        <g transform={`translate(${to[0]} ${to[1]}) scale(${k}) translate(3 2)`}>
           <rect x={0} y={0} width={23} height={9.5} rx={2} fill={color} />
           <text x={11.5} y={6.9} textAnchor="middle" fontSize={5.6} fontWeight="bold" fill="white" fontFamily="sans-serif">
             {move.to}F着
@@ -242,7 +290,7 @@ function FloorMoveMarks({
 }
 
 /** 「屋外へ出る ›」「企画本館に入る ›」「屋外から入る」の札。進む向きの先に置く */
-function TransitionMark({ t, done }: { t: MapTransition; done: boolean }) {
+function TransitionMark({ t, done, k }: { t: MapTransition; done: boolean; k: number }) {
   const text =
     t.kind === "exit"
       ? t.other === "outdoor"
@@ -271,7 +319,7 @@ function TransitionMark({ t, done }: { t: MapTransition; done: boolean }) {
   const cy = Math.min(MAP_VIEWBOX.height - h / 2 - 1, Math.max(h / 2 + 1, t.at[1] + dy * dist));
   const color = done ? "#94a3b8" : t.kind === "exit" ? "#d2559a" : "#64748b";
   return (
-    <g>
+    <g transform={`translate(${t.at[0]} ${t.at[1]}) scale(${k}) translate(${-t.at[0]} ${-t.at[1]})`}>
       <circle cx={t.at[0]} cy={t.at[1]} r={2.2} fill={color} stroke="white" strokeWidth={0.8} />
       <rect x={cx - w / 2} y={cy - h / 2} width={w} height={h} rx={h / 2} fill={color} stroke="white" strokeWidth={0.6} />
       <text x={cx} y={cy + 1.7} textAnchor="middle" fontSize={4.6} fontWeight="bold" fill="white" fontFamily="sans-serif">
