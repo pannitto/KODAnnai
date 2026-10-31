@@ -185,12 +185,12 @@ export function isSeededOnly(node: number, map: MapId): boolean {
 
 /** ナビ画面で表示する地図SVG（components/navigation-view.tsx から移動） */
 export function getMapIdForNode(nodeId: number): MapId {
-  // 企画本館: ノード86(4F)および260-304
-  if (nodeId === 86 || (nodeId >= 260 && nodeId <= 304)) return "main";
+  // 企画本館: ノード86(4F)、56-60（吹き抜け・飲食スペース・1Fトイレ）、260-304
+  if (nodeId === 86 || (nodeId >= 56 && nodeId <= 60) || (nodeId >= 260 && nodeId <= 304)) return "main";
   // 企画別館: ノード305-328
   if (nodeId >= 305 && nodeId <= 328) return "bekkan";
-  // ちびっこ館: ノード46-60および251-259
-  if ((nodeId >= 46 && nodeId <= 60) || (nodeId >= 251 && nodeId <= 259)) return "chibikko";
+  // ちびっこ館: ノード46-55および251-259
+  if ((nodeId >= 46 && nodeId <= 55) || (nodeId >= 251 && nodeId <= 259)) return "chibikko";
   // 企画（教室など）のノードは場所から判断
   const loc = LOCATIONS.find((l) => l.locid === String(nodeId) && l.id === String(nodeId));
   if (loc) {

@@ -21,7 +21,7 @@ import Footer from "@/components/footer";
 import Image from "next/image";
 import { track } from "@vercel/analytics";
 import { RouteMapView } from "@/components/route-map-view";
-import { edgeKey } from "@/lib/route-geometry";
+import { NAV_MAP_SRC, edgeKey, getMapIdForNode } from "@/lib/route-geometry";
 
 interface RouteStep {
   id: string;
@@ -54,18 +54,8 @@ export function NavigationView({
   const getAssemblyImageSrc = (image: string) =>
     `/assembly/${image.replace(/\.png$/i, ".webp")}`;
 
-  // ノードIDからフロアマップSVGを返す
-  const getMapSrcForNode = (nodeId: number): string => {
-    // 企画本館: ノード86(4F)および260-304
-    if (nodeId === 86 || (nodeId >= 260 && nodeId <= 304))
-      return "/Main_building_MAP_fornavigate.svg";
-    // 企画別館: ノード305-328
-    if (nodeId >= 305 && nodeId <= 328) return "/Bekkan_MAP_fornavigate.svg";
-    // ちびっこ館: ノード46-60および251-259
-    if ((nodeId >= 46 && nodeId <= 60) || (nodeId >= 251 && nodeId <= 259))
-      return "/Chibikko_MAP_fornavigate.svg";
-    return "/GRAND_MAP_kikaku.svg?v=20261031-1"; // GRAND_MAP.svg は文字がフォント指定のままで端末により大きさが変わる
-  };
+  // ノードIDからフロアマップSVGを返す（どの地図かは lib/route-geometry.ts の getMapIdForNode で一元管理）
+  const getMapSrcForNode = (nodeId: number): string => NAV_MAP_SRC[getMapIdForNode(nodeId)];
 
   const [isScrolled, setIsScrolled] = useState(false);
   const [zoomModalOpen, setZoomModalOpen] = useState(false);
