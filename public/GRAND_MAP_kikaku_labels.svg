@@ -137,6 +137,10 @@
         fill: #f7c96b;
       }
     </style>
+    <!-- 右の長い道の上のカーブ部分を切る（使わない道のため。地図の縦を短くできる） -->
+    <clipPath id="clip_road_top">
+      <rect x="-10" y="93" width="320" height="330"/>
+    </clipPath>
   </defs>
 <g id="_文字">
     <g id="g143" class="st2">

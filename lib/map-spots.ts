@@ -39,9 +39,9 @@ export const MAPS: {
     id: "outdoor",
     label: "屋外",
     // 文字なしの地図。文字（エリア名）は labels を丸の上に重ねる
-    image: "/GRAND_MAP_kikaku_base.svg?v=20261102-2",
-    darkImage: "/GRAND_MAP_kikaku_dark_base.svg?v=20261102-2",
-    labels: { image: "/GRAND_MAP_kikaku_labels.svg?v=20261102-2", darkImage: "/GRAND_MAP_kikaku_dark_labels.svg?v=20261102-2" },
+    image: "/GRAND_MAP_kikaku_base.svg?v=20261102-3",
+    darkImage: "/GRAND_MAP_kikaku_dark_base.svg?v=20261102-3",
+    labels: { image: "/GRAND_MAP_kikaku_labels.svg?v=20261102-3", darkImage: "/GRAND_MAP_kikaku_dark_labels.svg?v=20261102-3" },
     view: { x: 0, y: 84, width: 295.32, height: 324 }, // 上は体育館の上端まで（右の道の上の方は切る）
   },
   { id: "main", label: "企画本館", image: "/Main_building_MAP.svg", darkImage: "/Main_building_MAP_dark.svg?v=20261031-1", view: { x: 8, y: 85, width: 274, height: 236 } },

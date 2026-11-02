@@ -37,6 +37,15 @@ const NODE_PTS = getNodePoints();
 function markerPoint(marker: { nodeId: number; cx: number; cy: number }, id: MapId): [number, number] {
   return NODE_PTS[marker.nodeId]?.[id] ?? [marker.cx, marker.cy];
 }
+// 屋外MAPで出す範囲（地図SVGの座標）。見出し「KODAIRA祭屋外MAP」より上の空白を切り落とす。
+// 地図SVGの絵の範囲が変わったら、ここも直す（丸・建物の枠の座標はそのまま使える）
+const NAV_VIEW = { x: 0, y: 50, width: 295.32, height: 358 };
+const NAV_IMAGE_STYLE: React.CSSProperties = {
+  left: `${(-NAV_VIEW.x / NAV_VIEW.width) * 100}%`,
+  top: `${(-NAV_VIEW.y / NAV_VIEW.height) * 100}%`,
+  width: `${(295.32 / NAV_VIEW.width) * 100}%`,
+  height: `${(413.16 / NAV_VIEW.height) * 100}%`,
+};
 // 建物の枠：ふだんは薄い点線、カーソルを合わせると濃くする（タップで館内の地図へ行けることを示す）
 const buildingFill = (hovered: boolean) =>
   hovered ? "rgba(37,99,235,0.18)" : "rgba(37,99,235,0.06)";
@@ -580,15 +589,21 @@ export function OutdoorNavigationMap({
         {/* SVG背景画像 */}
         <div
           ref={svgContainerRef}
-          className="w-full bg-contain bg-no-repeat bg-center"
-          style={{
-            backgroundImage: `url(${mapImageUrl})`,
-            aspectRatio: "295.32 / 413.16",
-          }}
+          className="relative w-full overflow-hidden"
+          style={{ aspectRatio: `${NAV_VIEW.width} / ${NAV_VIEW.height}` }}
         >
+          {/* 地図（文字なし）。上の空白を切り落とした範囲（NAV_VIEW）が枠にぴったり入るように置く */}
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={mapImageUrl}
+            alt="屋外MAP"
+            className="pointer-events-none absolute max-w-none"
+            style={NAV_IMAGE_STYLE}
+            draggable={false}
+          />
           {/* SVGオーバーレイ - マーカーと相互作用 */}
           <svg
-            viewBox="0 0 295.32 413.16"
+            viewBox={`${NAV_VIEW.x} ${NAV_VIEW.y} ${NAV_VIEW.width} ${NAV_VIEW.height}`}
             className="w-full h-full"
             style={{ position: "absolute", top: 0, left: 0 }}
           >
@@ -773,7 +788,8 @@ export function OutdoorNavigationMap({
               src={labelsImageUrl}
               alt=""
               aria-hidden
-              className="pointer-events-none absolute left-0 top-0 h-full w-full"
+              className="pointer-events-none absolute max-w-none"
+              style={NAV_IMAGE_STYLE}
               draggable={false}
             />
           )}

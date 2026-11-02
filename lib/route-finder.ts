@@ -4178,7 +4178,7 @@ const NODE_TRIPLETS: NodeTriplet[] = [
     current: 227,
     next: 240,
     prev_name: "池につづく方向を向く",
-    curr_name: "道を向けたら右折する",
+    curr_name: "道を抜けたら右折する",
     next_name: "",
     image: "238_227_240.webp",
   },
