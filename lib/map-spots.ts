@@ -25,12 +25,25 @@ export const MAPS: {
    * 地図SVGを差し替えて絵の範囲が変わったら、ここの数字も直す。丸・部屋・マークの座標はそのまま使える。
    */
   view: { x: number; y: number; width: number; height: number };
+  /**
+   * 文字だけの画像（丸より上に重ねる）。ある地図は image／darkImage が「文字なしの地図」になる。
+   * scripts/split-map-labels.mjs で、Illustrator の「文字」レイヤーを分けて作る。
+   */
+  labels?: { image: string; darkImage: string };
 }[] = [
   // 屋外は GRAND_MAP_fornavigate.svg から「オレンジの丸」と「操作説明」を除いたもの。
   // 建物の *_dark.svg は *_fornavigate_dark.svg から同じように除いたもの。
   // 画像を差し替えたら ?v= の日付も変える（ブラウザが古い画像を使い続けないように）
   // GRAND_MAP.svg は文字がフォント指定のままで、端末によって文字の大きさが変わるため使わない。
-  { id: "outdoor", label: "屋外", image: "/GRAND_MAP_kikaku.svg?v=20261102-1", darkImage: "/GRAND_MAP_kikaku_dark.svg?v=20261102-1", view: { x: 0, y: 48, width: 295.32, height: 360 } },
+  {
+    id: "outdoor",
+    label: "屋外",
+    // 文字なしの地図。文字（エリア名）は labels を丸の上に重ねる
+    image: "/GRAND_MAP_kikaku_base.svg?v=20261102-2",
+    darkImage: "/GRAND_MAP_kikaku_dark_base.svg?v=20261102-2",
+    labels: { image: "/GRAND_MAP_kikaku_labels.svg?v=20261102-2", darkImage: "/GRAND_MAP_kikaku_dark_labels.svg?v=20261102-2" },
+    view: { x: 0, y: 84, width: 295.32, height: 324 }, // 上は体育館の上端まで（右の道の上の方は切る）
+  },
   { id: "main", label: "企画本館", image: "/Main_building_MAP.svg", darkImage: "/Main_building_MAP_dark.svg?v=20261031-1", view: { x: 8, y: 85, width: 274, height: 236 } },
   { id: "bekkan", label: "企画別館", image: "/Bekkan_MAP.svg", darkImage: "/Bekkan_MAP_dark.svg?v=20261031-1", view: { x: 14, y: 75, width: 274, height: 255 } },
   { id: "chibikko", label: "ちびっこ館", image: "/Chibikko_MAP.svg", darkImage: "/Chibikko_MAP_dark.svg?v=20261031-1", view: { x: 8, y: 78, width: 280, height: 116 } },

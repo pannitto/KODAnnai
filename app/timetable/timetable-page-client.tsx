@@ -8,6 +8,12 @@ import { KikakuSheet, isStageVenue, type SheetState } from "@/components/festiva
 import { useNow, useLive } from "@/components/festival/hooks";
 import { useFavorites } from "@/components/festival/favorites";
 import { actFavId } from "@/lib/stage-acts";
+
+/**
+ * 会場の企画が、そのまま1つの公演になっている会場（兼松講堂の謎解きステージなど）。
+ * 企画をいいねしても会場の列ではなく、公演のブロックに♥を付ける。
+ */
+const ACT_LIKE_VENUES = new Set(["kanematsu"]);
 import {
   FESTIVAL_DAY1,
   FESTIVAL_DAY2,
@@ -55,17 +61,21 @@ export default function TimetablePageClient() {
   }, [today]);
 
   // いいねした企画の会場を左（先頭）に。それ以外の順番はそのまま
+  // - ステージ・フィールド・兼松講堂：会場の列（見出し）は、会場そのものをいいねしたときだけ。
+  //   公演をいいねしたときは、その公演のブロックに♥が付くだけ（会場はいいねしたことにしない）
+  // - それ以外（ちびっこ館など、企画の中の公演）：企画をいいねすると会場の列がいいねになる
   const { favs } = useFavorites();
-  // 会場そのもの、またはその会場の公演をいいねしていれば「いいねした会場」
   const isFavStage = (s: StageSchedule) =>
-    (s.locationIds ?? []).some((id) => favs.has(id)) ||
-    [...s.day1, ...s.day2].some((e) => favs.has(actFavId(s.stageId, e.act)));
+    !ACT_LIKE_VENUES.has(s.stageId) && (s.locationIds ?? []).some((id) => favs.has(id));
+  /** 公演のブロックの♥：ステージ・フィールドは公演ごと、兼松講堂は企画（＝その公演）のいいね */
+  const isFavAct = (s: StageSchedule, act: string) =>
+    isStageVenue(s)
+      ? favs.has(actFavId(s.stageId, act))
+      : ACT_LIKE_VENUES.has(s.stageId) && (s.locationIds ?? []).some((id) => favs.has(id));
   const stages = useMemo(() => {
     const list = getStagesForDay(day);
-    const fav = (s: StageSchedule) =>
-      (s.locationIds ?? []).some((id) => favs.has(id)) ||
-      [...s.day1, ...s.day2].some((e) => favs.has(actFavId(s.stageId, e.act)));
-    return [...list.filter(fav), ...list.filter((s) => !fav(s))];
+    return [...list.filter(isFavStage), ...list.filter((s) => !isFavStage(s))];
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [day, favs]);
   // 運営ページで入力した中止・時間変更を反映した公演（会場ごと）
   const actsByStage = useMemo(
@@ -250,7 +260,7 @@ export default function TimetablePageClient() {
                       <ActBlock
                         key={s.stageId + e.originalStart}
                         entry={e}
-                        fav={favs.has(actFavId(s.stageId, e.act))}
+                        fav={isFavAct(s, e.act)}
                         left={col * COL_W}
                         top={(toMinutes(e.start) - startMin) * PX_PER_MIN}
                         height={(toMinutes(e.end) - toMinutes(e.start)) * PX_PER_MIN}

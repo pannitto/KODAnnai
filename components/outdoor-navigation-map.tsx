@@ -12,7 +12,8 @@ import {
 import { getNodeDisplayInfoByLocid } from "@/app/locations-server";
 import { StageNowLabels } from "@/components/festival/stage-now-labels";
 import { BuildingBadge } from "@/components/festival/building-badge";
-import { OUTDOOR_BUILDINGS } from "@/lib/map-spots";
+import { MAPS, OUTDOOR_BUILDINGS, type MapId } from "@/lib/map-spots";
+import { getNodePoints } from "@/lib/route-geometry";
 
 // 屋外MAPの建物の「館内MAP ›」の位置（企画マップと共通）
 const BADGE = Object.fromEntries(
@@ -20,6 +21,22 @@ const BADGE = Object.fromEntries(
 );
 // この画面は拡大しないので、企画マップより少し大きめの札にする
 const BADGE_SIZE = { w: 36, h: 9.6, fontSize: 4.1 };
+// 地図の画像は企画マップ（lib/map-spots.ts の MAPS）と同じものを使う
+const OUTDOOR_MAP = MAPS.find((m) => m.id === "outdoor")!;
+const mapImage = (id: MapId) => {
+  const m = MAPS.find((x) => x.id === id)!;
+  return { light: m.image, dark: m.darkImage };
+};
+const BUILDING_IMAGE = {
+  main: mapImage("main"),
+  bekkan: mapImage("bekkan"),
+  chibikko: mapImage("chibikko"),
+};
+// 館内のオレンジの丸の位置：/route-editor で置いたノードの位置（なければ今までの丸の位置）
+const NODE_PTS = getNodePoints();
+function markerPoint(marker: { nodeId: number; cx: number; cy: number }, id: MapId): [number, number] {
+  return NODE_PTS[marker.nodeId]?.[id] ?? [marker.cx, marker.cy];
+}
 // 建物の枠：ふだんは薄い点線、カーソルを合わせると濃くする（タップで館内の地図へ行けることを示す）
 const buildingFill = (hovered: boolean) =>
   hovered ? "rgba(37,99,235,0.18)" : "rgba(37,99,235,0.06)";
@@ -68,12 +85,17 @@ export function OutdoorNavigationMap({
     const interval = setInterval(() => setCurrentTime(new Date()), 30000);
     return () => clearInterval(interval);
   }, []);
-  // 屋外MAPは企画マップと同じ画像。オレンジの丸はこの画面で上から描く
+  // 屋外MAPは企画マップと同じ画像（文字なしの地図＋文字だけの画像）。オレンジの丸はこの画面で描く
   // （画像を差し替えたら ?v= の日付も変える）
   const mapImageUrl =
     resolvedTheme === "dark"
-      ? "/GRAND_MAP_kikaku_dark.svg?v=20261102-1"
-      : "/GRAND_MAP_kikaku.svg?v=20261102-1";
+      ? OUTDOOR_MAP.darkImage
+      : OUTDOOR_MAP.image;
+  // 文字（エリア名）だけの画像。オレンジの丸の上に重ねて、文字が隠れないようにする
+  const labelsImageUrl =
+    resolvedTheme === "dark"
+      ? OUTDOOR_MAP.labels?.darkImage
+      : OUTDOOR_MAP.labels?.image;
 
   const handleMarkerClick = (
     marker: (typeof OUTDOOR_START_POINT_MARKERS)[0],
@@ -135,6 +157,10 @@ export function OutdoorNavigationMap({
             ← 屋外MAPへ戻る
           </button>
         </div>
+        <p className="-mt-2 mb-4 text-sm text-gray-600 dark:text-gray-300">
+          現在地に最も近い<span className="font-semibold text-orange-500">オレンジの丸</span>
+          をタップしてください。タップした地点からの経路案内になります。
+        </p>
 
         {/* 確認ダイアログ */}
         {pendingMarker && (
@@ -172,9 +198,7 @@ export function OutdoorNavigationMap({
           <div ref={svgContainerRef} className="relative">
             <Image
               src={
-                resolvedTheme === "dark"
-                  ? "/Main_building_MAP_fornavigate_dark.svg?v=20260429-1"
-                  : "/Main_building_MAP_fornavigate.svg?v=20260425-1"
+                resolvedTheme === "dark" ? BUILDING_IMAGE.main.dark : BUILDING_IMAGE.main.light
               }
               alt="企画本館マップ"
               width={295}
@@ -191,6 +215,7 @@ export function OutdoorNavigationMap({
               {MAIN_BUILDING_START_POINT_MARKERS.map((marker) => {
                 const isSelected = selectedNodeId === marker.nodeId;
                 const isHovered = hoveredNodeId === marker.nodeId;
+                const [cx, cy] = markerPoint(marker, "main");
 
                 return (
                   <g
@@ -203,8 +228,8 @@ export function OutdoorNavigationMap({
                     {/* 外側のハイライトリング（ホバー時に表示） */}
                     {isHovered && (
                       <circle
-                        cx={marker.cx}
-                        cy={marker.cy}
+                        cx={cx}
+                        cy={cy}
                         r="12"
                         fill="none"
                         stroke="#ff6b6b"
@@ -216,8 +241,8 @@ export function OutdoorNavigationMap({
                     {/* 選択中のリング */}
                     {isSelected && (
                       <circle
-                        cx={marker.cx}
-                        cy={marker.cy}
+                        cx={cx}
+                        cy={cy}
                         r="10"
                         fill="none"
                         stroke="#4ade80"
@@ -226,10 +251,13 @@ export function OutdoorNavigationMap({
                       />
                     )}
 
+                    {/* オレンジの丸（企画マップと同じ地図に、ノードの位置で描く） */}
+                    <circle cx={cx} cy={cy} r="5" fill="#f39800" pointerEvents="none" />
+
                     {/* インタラクティブエリア（透明な大きな円） */}
                     <circle
-                      cx={marker.cx}
-                      cy={marker.cy}
+                      cx={cx}
+                      cy={cy}
                       r="15"
                       fill="transparent"
                       style={{
@@ -261,6 +289,10 @@ export function OutdoorNavigationMap({
             ← 屋外MAPへ戻る
           </button>
         </div>
+        <p className="-mt-2 mb-4 text-sm text-gray-600 dark:text-gray-300">
+          現在地に最も近い<span className="font-semibold text-orange-500">オレンジの丸</span>
+          をタップしてください。タップした地点からの経路案内になります。
+        </p>
 
         {/* 確認ダイアログ */}
         {pendingMarker && (
@@ -298,9 +330,7 @@ export function OutdoorNavigationMap({
           <div ref={svgContainerRef} className="relative">
             <Image
               src={
-                resolvedTheme === "dark"
-                  ? "/Bekkan_MAP_fornavigate_dark.svg?v=20260428-1"
-                  : "/Bekkan_MAP_fornavigate.svg?v=20260424-2"
+                resolvedTheme === "dark" ? BUILDING_IMAGE.bekkan.dark : BUILDING_IMAGE.bekkan.light
               }
               alt="企画別館マップ"
               width={295}
@@ -317,6 +347,7 @@ export function OutdoorNavigationMap({
               {BEKKAN_START_POINT_MARKERS.map((marker) => {
                 const isSelected = selectedNodeId === marker.nodeId;
                 const isHovered = hoveredNodeId === marker.nodeId;
+                const [cx, cy] = markerPoint(marker, "bekkan");
 
                 return (
                   <g
@@ -329,8 +360,8 @@ export function OutdoorNavigationMap({
                     {/* 外側のハイライトリング（ホバー時に表示） */}
                     {isHovered && (
                       <circle
-                        cx={marker.cx}
-                        cy={marker.cy}
+                        cx={cx}
+                        cy={cy}
                         r="12"
                         fill="none"
                         stroke="#ff6b6b"
@@ -342,8 +373,8 @@ export function OutdoorNavigationMap({
                     {/* 選択中のリング */}
                     {isSelected && (
                       <circle
-                        cx={marker.cx}
-                        cy={marker.cy}
+                        cx={cx}
+                        cy={cy}
                         r="10"
                         fill="none"
                         stroke="#4ade80"
@@ -352,10 +383,13 @@ export function OutdoorNavigationMap({
                       />
                     )}
 
+                    {/* オレンジの丸（企画マップと同じ地図に、ノードの位置で描く） */}
+                    <circle cx={cx} cy={cy} r="5" fill="#f39800" pointerEvents="none" />
+
                     {/* インタラクティブエリア（透明な大きな円） */}
                     <circle
-                      cx={marker.cx}
-                      cy={marker.cy}
+                      cx={cx}
+                      cy={cy}
                       r="15"
                       fill="transparent"
                       style={{
@@ -387,6 +421,10 @@ export function OutdoorNavigationMap({
             ← 屋外MAPへ戻る
           </button>
         </div>
+        <p className="-mt-2 mb-4 text-sm text-gray-600 dark:text-gray-300">
+          現在地に最も近い<span className="font-semibold text-orange-500">オレンジの丸</span>
+          をタップしてください。タップした地点からの経路案内になります。
+        </p>
 
         {/* 確認ダイアログ */}
         {pendingMarker && (
@@ -423,9 +461,7 @@ export function OutdoorNavigationMap({
           <div ref={svgContainerRef} className="relative">
             <Image
               src={
-                resolvedTheme === "dark"
-                  ? "/Chibikko_MAP_fornavigate_dark.svg?v=20260428-1"
-                  : "/Chibikko_MAP_fornavigate.svg?v=20260425-1"
+                resolvedTheme === "dark" ? BUILDING_IMAGE.chibikko.dark : BUILDING_IMAGE.chibikko.light
               }
               alt="企画ちびっこ館マップ"
               width={295}
@@ -442,6 +478,7 @@ export function OutdoorNavigationMap({
               {CHIBIKKO_START_POINT_MARKERS.map((marker) => {
                 const isSelected = selectedNodeId === marker.nodeId;
                 const isHovered = hoveredNodeId === marker.nodeId;
+                const [cx, cy] = markerPoint(marker, "chibikko");
 
                 return (
                   <g
@@ -453,8 +490,8 @@ export function OutdoorNavigationMap({
                   >
                     {isHovered && (
                       <circle
-                        cx={marker.cx}
-                        cy={marker.cy}
+                        cx={cx}
+                        cy={cy}
                         r="12"
                         fill="none"
                         stroke="#ff6b6b"
@@ -464,8 +501,8 @@ export function OutdoorNavigationMap({
                     )}
                     {isSelected && (
                       <circle
-                        cx={marker.cx}
-                        cy={marker.cy}
+                        cx={cx}
+                        cy={cy}
                         r="10"
                         fill="none"
                         stroke="#4ade80"
@@ -474,8 +511,8 @@ export function OutdoorNavigationMap({
                       />
                     )}
                     <circle
-                      cx={marker.cx}
-                      cy={marker.cy}
+                      cx={cx}
+                      cy={cy}
                       r="15"
                       fill="transparent"
                       style={{ cursor: "pointer" }}
@@ -496,6 +533,16 @@ export function OutdoorNavigationMap({
         <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-2">
           地図から現在地を選択してください
         </h3>
+        {/* 屋外MAPの画像（kikaku 版）には操作説明が入っていないので、ここに書く */}
+        <ul className="space-y-1 text-sm text-gray-600 dark:text-gray-300">
+          <li>
+            現在地に最も近い<span className="font-semibold text-orange-500">オレンジの丸</span>
+            をタップしてください。タップした地点からの経路案内になります。
+          </li>
+          <li>
+            建物（企画本館・企画別館・ちびっこ館）をタップすると、その建物の館内MAPに切り替わります。
+          </li>
+        </ul>
       </div>
 
       {/* 確認ダイアログ */}
@@ -653,7 +700,8 @@ export function OutdoorNavigationMap({
                     />
                   )}
 
-                  {/* オレンジの丸（以前は地図画像に描いてあったものを、ここで描く） */}
+                  {/* オレンジの丸（以前は地図画像に描いてあったものを、ここで描く）。
+                      エリア名の文字は、この上に重ねる文字だけの画像で出る */}
                   <circle
                     cx={marker.cx}
                     cy={marker.cy}
@@ -718,6 +766,17 @@ export function OutdoorNavigationMap({
             {/* ステージの「公演中／次の公演」ラベル（企画マップと共通の部品） */}
             <StageNowLabels now={currentTime} />
           </svg>
+          {/* 文字（エリア名）だけの画像を、オレンジの丸の上に重ねる。タップは下に通す */}
+          {labelsImageUrl && (
+            // eslint-disable-next-line @next/next/no-img-element
+            <img
+              src={labelsImageUrl}
+              alt=""
+              aria-hidden
+              className="pointer-events-none absolute left-0 top-0 h-full w-full"
+              draggable={false}
+            />
+          )}
         </div>
       </div>
     </div>

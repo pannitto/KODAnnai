@@ -564,6 +564,24 @@ export default function MapPageClient() {
                 </g>
               )}
             </svg>
+            {/* 文字（エリア名）だけの画像を、丸やマークの上に重ねる。タップは下に通す */}
+            {map.labels && (
+              // eslint-disable-next-line @next/next/no-img-element
+              <img
+                src={dark ? map.labels.darkImage : map.labels.image}
+                alt=""
+                aria-hidden
+                className="pointer-events-none absolute max-w-none"
+                style={{
+                // 地図全体を、view の範囲が枠にぴったり入る位置・大きさで置く
+                left: `${(-map.view.x / map.view.width) * 100}%`,
+                top: `${(-map.view.y / map.view.height) * 100}%`,
+                width: `${(MAP_VIEWBOX.width / map.view.width) * 100}%`,
+                height: `${(MAP_VIEWBOX.height / map.view.height) * 100}%`,
+              }}
+                draggable={false}
+              />
+            )}
           </div>
 
         </div>
