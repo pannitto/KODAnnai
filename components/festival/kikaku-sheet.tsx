@@ -2,7 +2,19 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { X, ChevronLeft, ChevronRight, MapPin, Clock, Navigation, Hourglass, Map as MapIcon, CalendarClock, CalendarDays, ExternalLink } from "lucide-react";
+import {
+  X,
+  ChevronLeft,
+  ChevronRight,
+  MapPin,
+  Clock,
+  Navigation,
+  Hourglass,
+  Map as MapIcon,
+  CalendarClock,
+  CalendarDays,
+  ExternalLink,
+} from "lucide-react";
 import type { Location } from "@/app/page";
 import { getLocationById } from "@/app/locations-server";
 import {
@@ -22,18 +34,27 @@ import {
   isCommitteeKikaku,
 } from "@/lib/kikaku";
 import {
+  actFavId,
+  findOrgKikaku,
+  getActImage,
+  isStageVenue,
+} from "@/lib/stage-acts";
+import {
+  FESTIVAL_DAY1,
+  FESTIVAL_DAY2,
+  findAct,
   getActStatusForLocation,
   getFestivalDay,
   getJstParts,
   toMinutes,
+  type FestivalDay,
+  type StageSchedule,
 } from "@/lib/timetable";
-import {
-  WAIT_LEVEL_INFO,
-  formatAgo,
-  getFreshWait,
-} from "@/lib/wait-times";
+import { WAIT_LEVEL_INFO, formatAgo, getFreshWait } from "@/lib/wait-times";
 import { findSpotByLocationId } from "@/lib/map-spots";
 import type { LiveData } from "@/lib/live";
+import { FavoriteButton, useFavorites } from "@/components/festival/favorites";
+import { FacilityDetail } from "@/components/festival/facility-detail";
 
 export type SheetState =
   | null
@@ -43,7 +64,23 @@ export type SheetState =
       id: string;
       /** 一覧から開いたときの戻り先 */
       back?: { title: string; ids: string[] };
+    }
+  | {
+      /** ステージ・フィールドの1公演の紹介 */
+      mode: "act";
+      venueId: string;
+      day: FestivalDay;
+      /** もとの開始時刻（data/timetable.csv の開始） */
+      start: string;
+    }
+  | {
+      /** 地図のピクトグラム（トイレなど）の施設情報（lib/map-facilities.ts の id） */
+      mode: "facility";
+      id: string;
     };
+
+/** ステージ・フィールドの会場か（ちびっこ館のショーなど、企画の中の公演は含めない） */
+export { isStageVenue };
 
 type Props = {
   state: SheetState;
@@ -66,7 +103,11 @@ export function KikakuSheet({ state, onChange, now, live, page }: Props) {
   if (!state) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-end justify-center" role="dialog" aria-modal="true">
+    <div
+      className="fixed inset-0 z-50 flex items-end justify-center"
+      role="dialog"
+      aria-modal="true"
+    >
       <button
         type="button"
         aria-label="閉じる"
@@ -104,11 +145,35 @@ export function KikakuSheet({ state, onChange, now, live, page }: Props) {
             now={now}
             live={live}
             onPick={(id) =>
-              onChange({ mode: "detail", id, back: { title: state.title, ids: state.ids } })
+              onChange({
+                mode: "detail",
+                id,
+                back: { title: state.title, ids: state.ids },
+              })
             }
           />
+        ) : state.mode === "facility" ? (
+          <FacilityDetail id={state.id} />
+        ) : state.mode === "act" ? (
+          <ActDetail
+            venueId={state.venueId}
+            day={state.day}
+            start={state.start}
+            now={now}
+            live={live}
+            page={page}
+            onOpenVenue={(id) => onChange({ mode: "detail", id })}
+          />
         ) : (
-          <Detail id={state.id} now={now} live={live} page={page} />
+          <Detail
+            id={state.id}
+            now={now}
+            live={live}
+            page={page}
+            onOpenAct={(venueId, day, start) =>
+              onChange({ mode: "act", venueId, day, start })
+            }
+          />
         )}
       </div>
     </div>
@@ -129,10 +194,13 @@ function SpotList({
   onPick: (id: string) => void;
 }) {
   const locs = ids.map(getLocationById).filter((l): l is Location => !!l);
+  const { isFav } = useFavorites();
   return (
     <div className="pt-2">
       <h2 className="pr-8 text-lg font-bold">{title}</h2>
-      <p className="mb-3 text-xs text-muted-foreground">{locs.length}件の企画</p>
+      <p className="mb-3 text-xs text-muted-foreground">
+        {locs.length}件の企画
+      </p>
       <ul className="divide-y divide-border overflow-hidden rounded-xl border border-border">
         {locs.map((loc) => (
           <li key={loc.id}>
@@ -143,7 +211,17 @@ function SpotList({
             >
               <Thumb loc={loc} size={44} />
               <span className="min-w-0 flex-1">
-                <span className="block truncate text-sm font-semibold">{getDisplayName(loc)}</span>
+                <span className="block truncate text-sm font-semibold">
+                  {isFav(loc.id) && (
+                    <span
+                      className="mr-1 text-pink-500"
+                      aria-label="いいね済み"
+                    >
+                      ♥
+                    </span>
+                  )}
+                  {getDisplayName(loc)}
+                </span>
                 <span className="block truncate text-xs text-muted-foreground">
                   {getOrganizer(loc) || getPlaceLabel(loc)}
                 </span>
@@ -171,7 +249,9 @@ export function StatusBadges({
   compact?: boolean;
 }) {
   if (!now) return null;
-  const wait = isCommitteeKikaku(loc) ? getFreshWait(live.waits, loc.id, now) : null;
+  const wait = isCommitteeKikaku(loc)
+    ? getFreshWait(live.waits, loc.id, now)
+    : null;
   const acts = getActStatusForLocation(loc.id, now, live.acts);
   const current = acts.find((a) => a.current)?.current;
   const nowMin = getJstParts(now).minutes;
@@ -181,13 +261,17 @@ export function StatusBadges({
     .find((n) => n && toMinutes(n.start) - nowMin <= 30);
 
   return (
-    <span className={`flex flex-shrink-0 flex-wrap items-center gap-1 ${compact ? "justify-end" : ""}`}>
+    <span
+      className={`flex flex-shrink-0 flex-wrap items-center gap-1 ${compact ? "justify-end" : ""}`}
+    >
       {wait && (
         <span
           className="rounded-full px-2 py-0.5 text-[11px] font-bold text-white"
           style={{ background: WAIT_LEVEL_INFO[wait.level].color }}
         >
-          {wait.level === "closed" ? "受付終了" : `待ち${WAIT_LEVEL_INFO[wait.level].short}`}
+          {wait.level === "closed"
+            ? "受付終了"
+            : `待ち${WAIT_LEVEL_INFO[wait.level].short}`}
         </span>
       )}
       {current ? (
@@ -208,14 +292,20 @@ function Detail({
   now,
   live,
   page,
+  onOpenAct,
 }: {
   id: string;
   now: Date | null;
   live: LiveData;
   page: Props["page"];
+  /** ステージの公演をタップしたとき（その公演の紹介を開く） */
+  onOpenAct: (venueId: string, day: FestivalDay, start: string) => void;
 }) {
   const loc = getLocationById(id);
-  if (!loc) return <p className="py-6 text-center text-sm">企画が見つかりませんでした</p>;
+  if (!loc)
+    return (
+      <p className="py-6 text-center text-sm">企画が見つかりませんでした</p>
+    );
 
   const genre = getGenre(loc);
   const description = getDescription(loc);
@@ -229,7 +319,8 @@ function Detail({
   const committee = isCommitteeKikaku(loc);
   const wait = committee && now ? getFreshWait(live.waits, loc.id, now) : null;
   const acts = now ? getActStatusForLocation(loc.id, now, live.acts) : [];
-  const isFestivalDay = now ? getFestivalDay(now) !== null : false;
+  const day = now ? getFestivalDay(now) : null;
+  const isFestivalDay = day !== null;
   const hasSpot = !!findSpotByLocationId(loc.id);
 
   return (
@@ -256,8 +347,17 @@ function Detail({
           </span>
         )}
       </div>
-      <h2 className="text-xl font-bold leading-snug">{getDisplayName(loc)}</h2>
-      {organizer && <p className="mt-0.5 text-sm text-muted-foreground">{organizer}</p>}
+      <div className="flex items-start justify-between gap-3">
+        <div className="min-w-0">
+          <h2 className="text-xl font-bold leading-snug">
+            {getDisplayName(loc)}
+          </h2>
+          {organizer && (
+            <p className="mt-0.5 text-sm text-muted-foreground">{organizer}</p>
+          )}
+        </div>
+        <FavoriteButton id={loc.id} />
+      </div>
 
       <dl className="mt-4 space-y-2 text-sm">
         <Row icon={<MapPin className="h-4 w-4" />} label="場所">
@@ -271,8 +371,9 @@ function Detail({
             <span className="whitespace-pre-line">{hours}</span>
           </Row>
         )}
-        {stay && (
-          <Row icon={<Hourglass className="h-4 w-4" />} label="滞在の目安">
+        {/* ステージ・フィールドは公演ごとに長さが違うので、所要時間は公演の紹介のほうに出す */}
+        {stay && genre !== "ステージ・フィールド" && (
+          <Row icon={<Hourglass className="h-4 w-4" />} label="所要時間目安">
             {stay}
           </Row>
         )}
@@ -305,31 +406,48 @@ function Detail({
       {acts.length > 0 && (
         <div className="mt-4 space-y-2">
           {acts.map(({ stage, current, next }) => (
-            <div key={stage.stageId} className="rounded-xl border border-border bg-card p-3">
+            <div
+              key={stage.stageId}
+              className="rounded-xl border border-border bg-card p-3"
+            >
               {acts.length > 1 && (
-                <p className="mb-1 text-xs font-semibold text-muted-foreground">{stage.stageName}</p>
+                <p className="mb-1 text-xs font-semibold text-muted-foreground">
+                  {stage.stageName}
+                </p>
               )}
               {current && (
-                <div className="mb-2">
-                  <p className="text-xs font-bold text-green-600">
-                    ▶ 公演中 {current.start}〜{current.end}
-                    {current.changed && <span className="ml-1 rounded bg-amber-500 px-1 text-white">時間変更</span>}
-                  </p>
-                  <p className="font-semibold">{current.act}</p>
-                </div>
+                <ActLine
+                  label={`▶ 公演中 ${current.start}〜${current.end}`}
+                  tone="text-green-600"
+                  changed={current.changed}
+                  act={current.act}
+                  onClick={
+                    isStageVenue(stage) && day
+                      ? () =>
+                          onOpenAct(stage.stageId, day, current.originalStart)
+                      : undefined
+                  }
+                  className="mb-2"
+                />
               )}
               {next ? (
-                <div>
-                  <p className="text-xs font-bold text-amber-600">
-                    次の公演 {next.start}〜{next.end}
-                    {next.changed && <span className="ml-1 rounded bg-amber-500 px-1 text-white">時間変更</span>}
-                  </p>
-                  <p className="font-semibold">{next.act}</p>
-                </div>
+                <ActLine
+                  label={`次の公演 ${next.start}〜${next.end}`}
+                  tone="text-amber-600"
+                  changed={next.changed}
+                  act={next.act}
+                  onClick={
+                    isStageVenue(stage) && day
+                      ? () => onOpenAct(stage.stageId, day, next.originalStart)
+                      : undefined
+                  }
+                />
               ) : (
                 !current && (
                   <p className="text-sm text-muted-foreground">
-                    {isFestivalDay ? "本日の公演は終了しました" : "公演時間はタイムテーブルをご覧ください"}
+                    {isFestivalDay
+                      ? "本日の公演は終了しました"
+                      : "公演時間はタイムテーブルをご覧ください"}
                   </p>
                 )
               )}
@@ -339,7 +457,9 @@ function Detail({
       )}
 
       {description && (
-        <p className="mt-4 whitespace-pre-wrap text-sm leading-relaxed">{description}</p>
+        <p className="mt-4 whitespace-pre-wrap text-sm leading-relaxed">
+          {description}
+        </p>
       )}
 
       <div className="mt-5 space-y-2">
@@ -418,7 +538,11 @@ export function Thumb({ loc, size }: { loc: Location; size: number }) {
       width={size}
       height={size}
       className="flex-shrink-0 rounded-lg bg-background object-cover"
-      style={{ width: size, height: size, boxShadow: `inset 0 0 0 2px ${color}` }}
+      style={{
+        width: size,
+        height: size,
+        boxShadow: `inset 0 0 0 2px ${color}`,
+      }}
       onError={() => setFailed(true)}
     />
   ) : (
@@ -455,6 +579,236 @@ function DetailImage({ src }: { src: string }) {
         className="relative h-full w-full object-contain"
         onError={() => setFailed(true)}
       />
+    </div>
+  );
+}
+
+/** 詳細の「公演中／次の公演」の1行。ステージの公演はタップでその公演の紹介へ */
+function ActLine({
+  label,
+  tone,
+  changed,
+  act,
+  onClick,
+  className = "",
+}: {
+  label: string;
+  tone: string;
+  changed: boolean;
+  act: string;
+  onClick?: () => void;
+  className?: string;
+}) {
+  const body = (
+    <>
+      <p className={`text-xs font-bold ${tone}`}>
+        {label}
+        {changed && (
+          <span className="ml-1 rounded bg-amber-500 px-1 text-white">
+            時間変更
+          </span>
+        )}
+      </p>
+      <p className="font-semibold">{act}</p>
+    </>
+  );
+  if (!onClick) return <div className={className}>{body}</div>;
+  return (
+    <button
+      type="button"
+      onClick={onClick}
+      className={`flex w-full items-center justify-between gap-2 rounded-lg text-left hover:bg-background ${className}`}
+    >
+      <span className="min-w-0">{body}</span>
+      <ChevronRight className="h-4 w-4 flex-shrink-0 text-muted-foreground" />
+    </button>
+  );
+}
+
+const DAY_LABEL: Record<FestivalDay, string> = {
+  day1: `1日目（${Number(FESTIVAL_DAY1.slice(5, 7))}/${Number(FESTIVAL_DAY1.slice(8))}）`,
+  day2: `2日目（${Number(FESTIVAL_DAY2.slice(5, 7))}/${Number(FESTIVAL_DAY2.slice(8))}）`,
+};
+
+/**
+ * ステージ・フィールドの1公演の紹介（団体紹介の詳細と同じ形）。
+ * 所要時間は公演の時間（開始〜終了）から出す。中止・時間変更（/admin）も反映する。
+ */
+function ActDetail({
+  venueId,
+  day,
+  start,
+  now,
+  live,
+  page,
+  onOpenVenue,
+}: {
+  venueId: string;
+  day: FestivalDay;
+  start: string;
+  now: Date | null;
+  live: LiveData;
+  page: Props["page"];
+  onOpenVenue: (kikakuId: string) => void;
+}) {
+  const found = findAct(venueId, day, start, live.acts);
+  if (!found)
+    return (
+      <p className="py-6 text-center text-sm">公演が見つかりませんでした</p>
+    );
+  const { stage, entry } = found;
+  const venue = (stage.locationIds ?? [])
+    .map(getLocationById)
+    .find((l): l is Location => !!l);
+  const genre = venue ? getGenre(venue) : null;
+  const minutes = toMinutes(entry.end) - toMinutes(entry.start);
+  const nowMin = now ? getJstParts(now).minutes : null;
+  const today = now ? getFestivalDay(now) : null;
+  const status = entry.canceled
+    ? "canceled"
+    : today === day && nowMin !== null
+      ? nowMin >= toMinutes(entry.end)
+        ? "past"
+        : nowMin >= toMinutes(entry.start)
+          ? "current"
+          : "future"
+      : "future";
+  const hasSpot = venue ? !!findSpotByLocationId(venue.id) : false;
+  // 画像：公演の画像 → 同じ団体の教室企画のアイコン → 会場の写真
+  const orgKikaku = findOrgKikaku(entry.org);
+  const image = getActImage(entry, venue ?? null);
+
+  return (
+    <div className="pt-2">
+      {image && <DetailImage key={image} src={image} />}
+      <div className="mb-2 flex flex-wrap gap-1.5 pr-8">
+        {genre && (
+          <span
+            className="rounded-full px-2.5 py-0.5 text-xs font-bold text-white"
+            style={{ background: GENRE_COLORS[genre] }}
+          >
+            {genre}
+          </span>
+        )}
+        <span className="rounded-full border border-border px-2.5 py-0.5 text-xs text-muted-foreground">
+          {stage.stageName}
+        </span>
+      </div>
+      <div className="flex items-start justify-between gap-3">
+        <div className="min-w-0">
+          <h2 className="text-xl font-bold leading-snug">{entry.act}</h2>
+          {entry.org && (
+            <p className="mt-0.5 text-sm text-muted-foreground">{entry.org}</p>
+          )}
+        </div>
+        <FavoriteButton id={actFavId(stage.stageId, entry.act)} />
+      </div>
+
+      {status === "canceled" ? (
+        <p className="mt-3 rounded-xl bg-red-50 px-3 py-2 text-sm font-bold text-red-700 dark:bg-red-950 dark:text-red-200">
+          この公演は中止になりました{entry.note ? `（${entry.note}）` : ""}
+        </p>
+      ) : status === "current" ? (
+        <p className="mt-3 rounded-xl bg-green-50 px-3 py-2 text-sm font-bold text-green-700 dark:bg-green-950 dark:text-green-200">
+          ▶ いま公演中です
+        </p>
+      ) : entry.changed || entry.note ? (
+        <p className="mt-3 rounded-xl bg-amber-50 px-3 py-2 text-sm font-bold text-amber-700 dark:bg-amber-950 dark:text-amber-200">
+          {entry.changed
+            ? `時間が変更になりました（もとは ${entry.originalStart}〜${entry.originalEnd}）`
+            : ""}
+          {entry.note ? `${entry.changed ? " " : ""}${entry.note}` : ""}
+        </p>
+      ) : null}
+
+      <dl className="mt-4 space-y-2 text-sm">
+        <Row icon={<MapPin className="h-4 w-4" />} label="場所">
+          {stage.stageName}
+          {venue && getPlaceLabel(venue) !== stage.stageName
+            ? `（${getPlaceLabel(venue)}）`
+            : ""}
+        </Row>
+        <Row icon={<CalendarDays className="h-4 w-4" />} label="日にち">
+          {DAY_LABEL[day]}
+        </Row>
+        <Row icon={<Clock className="h-4 w-4" />} label="時間">
+          <span
+            className={status === "canceled" ? "line-through opacity-60" : ""}
+          >
+            {entry.start}〜{entry.end}
+          </span>
+        </Row>
+        <Row icon={<Hourglass className="h-4 w-4" />} label="所要時間">
+          約{minutes}分
+        </Row>
+      </dl>
+
+      {entry.desc && (
+        <p className="mt-4 whitespace-pre-wrap text-sm leading-relaxed">
+          {entry.desc}
+        </p>
+      )}
+
+      <div className="mt-5 space-y-2">
+        {venue && (
+          <Link
+            href={getNavigateUrl(venue)}
+            className="flex w-full items-center justify-center gap-2 rounded-xl bg-orange-500 py-3 text-base font-bold text-white shadow-sm active:bg-orange-600"
+          >
+            <Navigation className="h-5 w-5" />
+            KODAnnaiでここへ行く
+          </Link>
+        )}
+        <div className="flex gap-2">
+          {venue && (
+            <button
+              type="button"
+              onClick={() => onOpenVenue(venue.id)}
+              className="flex flex-1 items-center justify-center gap-1.5 rounded-xl border border-border py-2.5 text-sm font-medium"
+            >
+              <MapPin className="h-4 w-4" />
+              会場の詳細
+            </button>
+          )}
+          {page !== "map" && venue && hasSpot && (
+            <Link
+              href={`/map?id=${encodeURIComponent(venue.id)}`}
+              className="flex flex-1 items-center justify-center gap-1.5 rounded-xl border border-border py-2.5 text-sm font-medium"
+            >
+              <MapIcon className="h-4 w-4" />
+              地図で見る
+            </Link>
+          )}
+          {entry.sns && (
+            <a
+              href={entry.sns}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex flex-1 items-center justify-center gap-1.5 rounded-xl border border-border py-2.5 text-sm font-medium"
+            >
+              <ExternalLink className="h-4 w-4" />
+              SNS・Web
+            </a>
+          )}
+        </div>
+        {orgKikaku && (
+          <button
+            type="button"
+            onClick={() => onOpenVenue(orgKikaku.id)}
+            className="flex w-full items-center justify-between gap-2 rounded-xl border border-border px-3 py-2.5 text-left text-sm"
+          >
+            <span className="min-w-0">
+              <span className="block text-xs text-muted-foreground">
+                この団体の企画
+              </span>
+              <span className="block truncate font-medium">
+                {getDisplayName(orgKikaku)}（{getPlaceLabel(orgKikaku)}）
+              </span>
+            </span>
+            <ChevronRight className="h-4 w-4 flex-shrink-0 text-muted-foreground" />
+          </button>
+        )}
+      </div>
     </div>
   );
 }

@@ -184,7 +184,7 @@ export default function HomePageClient() {
         (depId && !validDep) ||
         (destId && !validDest) ||
         (depId && destId && depId === destId) ||
-        ["m", "f", "g", "r", "u"].includes(parsedDepId ?? "")
+        ["t", "g", "r", "u"].includes(parsedDepId ?? "")
       ) {
         router.replace("/");
         router.refresh();
@@ -373,15 +373,13 @@ export default function HomePageClient() {
         };
 
         const candidates =
-          destination.locid === "m"
-            ? maleBathrooms
-            : destination.locid === "f"
-              ? femaleBathrooms
-              : destination.locid === "g"
-                ? garbageStations
-                : destination.locid === "r"
-                  ? restAreas
-                  : multipurposeBathrooms;
+          destination.locid === "t"
+            ? [...maleBathrooms, ...femaleBathrooms]
+            : destination.locid === "g"
+              ? garbageStations
+              : destination.locid === "r"
+                ? restAreas
+                : multipurposeBathrooms;
 
         if (candidates.length === 0) {
           setError(

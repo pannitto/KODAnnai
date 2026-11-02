@@ -15,11 +15,14 @@ import { BuildingBadge } from "@/components/festival/building-badge";
 import { OUTDOOR_BUILDINGS } from "@/lib/map-spots";
 
 // 屋外MAPの建物の「館内MAP ›」の位置（企画マップと共通）
-const BADGE = Object.fromEntries(OUTDOOR_BUILDINGS.map((b) => [b.map, b.badge]));
+const BADGE = Object.fromEntries(
+  OUTDOOR_BUILDINGS.map((b) => [b.map, b.badge]),
+);
 // この画面は拡大しないので、企画マップより少し大きめの札にする
 const BADGE_SIZE = { w: 36, h: 9.6, fontSize: 4.1 };
 // 建物の枠：ふだんは薄い点線、カーソルを合わせると濃くする（タップで館内の地図へ行けることを示す）
-const buildingFill = (hovered: boolean) => (hovered ? "rgba(37,99,235,0.18)" : "rgba(37,99,235,0.06)");
+const buildingFill = (hovered: boolean) =>
+  hovered ? "rgba(37,99,235,0.18)" : "rgba(37,99,235,0.06)";
 const buildingStroke = (hovered: boolean) => ({
   stroke: "#2563eb",
   strokeWidth: hovered ? 1 : 0.6,
@@ -562,7 +565,12 @@ export function OutdoorNavigationMap({
                 stroke={isMainBuildingHovered ? "#16a34a" : "transparent"}
                 strokeWidth="1"
               />
-              <BuildingBadge {...BADGE.main} {...BADGE_SIZE} dark={dark} active={isMainBuildingHovered} />
+              <BuildingBadge
+                {...BADGE.main}
+                {...BADGE_SIZE}
+                dark={dark}
+                active={isMainBuildingHovered}
+              />
             </g>
 
             {/* 企画別館エリア */}
@@ -577,7 +585,12 @@ export function OutdoorNavigationMap({
                 fill={buildingFill(isBekkanHovered)}
                 {...buildingStroke(isBekkanHovered)}
               />
-              <BuildingBadge {...BADGE.bekkan} {...BADGE_SIZE} dark={dark} active={isBekkanHovered} />
+              <BuildingBadge
+                {...BADGE.bekkan}
+                {...BADGE_SIZE}
+                dark={dark}
+                active={isBekkanHovered}
+              />
             </g>
 
             {/* ちびっこ館エリア */}
@@ -592,7 +605,12 @@ export function OutdoorNavigationMap({
                 fill={buildingFill(isChibikkoHovered)}
                 {...buildingStroke(isChibikkoHovered)}
               />
-              <BuildingBadge {...BADGE.chibikko} {...BADGE_SIZE} dark={dark} active={isChibikkoHovered} />
+              <BuildingBadge
+                {...BADGE.chibikko}
+                {...BADGE_SIZE}
+                dark={dark}
+                active={isChibikkoHovered}
+              />
             </g>
 
             {/* インタラクティブなマーカーオーバーレイ */}
@@ -636,7 +654,13 @@ export function OutdoorNavigationMap({
                   )}
 
                   {/* オレンジの丸（以前は地図画像に描いてあったものを、ここで描く） */}
-                  <circle cx={marker.cx} cy={marker.cy} r="5" fill="#f39800" pointerEvents="none" />
+                  <circle
+                    cx={marker.cx}
+                    cy={marker.cy}
+                    r="5"
+                    fill="#f39800"
+                    pointerEvents="none"
+                  />
 
                   {/* 透明なクリック領域 */}
                   <circle

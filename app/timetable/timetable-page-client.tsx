@@ -4,8 +4,10 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import Logo from "@/components/logo";
 import Footer from "@/components/footer";
 import { SiteNav } from "@/components/festival/site-nav";
-import { KikakuSheet, type SheetState } from "@/components/festival/kikaku-sheet";
+import { KikakuSheet, isStageVenue, type SheetState } from "@/components/festival/kikaku-sheet";
 import { useNow, useLive } from "@/components/festival/hooks";
+import { useFavorites } from "@/components/festival/favorites";
+import { actFavId } from "@/lib/stage-acts";
 import {
   FESTIVAL_DAY1,
   FESTIVAL_DAY2,
@@ -52,7 +54,19 @@ export default function TimetablePageClient() {
     if (today) setDay(today);
   }, [today]);
 
-  const stages = useMemo(() => getStagesForDay(day), [day]);
+  // いいねした企画の会場を左（先頭）に。それ以外の順番はそのまま
+  const { favs } = useFavorites();
+  // 会場そのもの、またはその会場の公演をいいねしていれば「いいねした会場」
+  const isFavStage = (s: StageSchedule) =>
+    (s.locationIds ?? []).some((id) => favs.has(id)) ||
+    [...s.day1, ...s.day2].some((e) => favs.has(actFavId(s.stageId, e.act)));
+  const stages = useMemo(() => {
+    const list = getStagesForDay(day);
+    const fav = (s: StageSchedule) =>
+      (s.locationIds ?? []).some((id) => favs.has(id)) ||
+      [...s.day1, ...s.day2].some((e) => favs.has(actFavId(s.stageId, e.act)));
+    return [...list.filter(fav), ...list.filter((s) => !fav(s))];
+  }, [day, favs]);
   // 運営ページで入力した中止・時間変更を反映した公演（会場ごと）
   const actsByStage = useMemo(
     () => new Map(stages.map((s) => [s.stageId, applyActOverrides(s.stageId, day, s[day], live.acts)])),
@@ -175,9 +189,12 @@ export default function TimetablePageClient() {
                     key={s.stageId}
                     type="button"
                     onClick={() => openStage(s)}
-                    className="flex items-center justify-center border-b border-r border-border bg-slate-800 px-1 text-center text-xs font-bold leading-tight text-white"
+                    className={`flex items-center justify-center border-b border-r border-border px-1 text-center text-xs font-bold leading-tight text-white ${
+                      isFavStage(s) ? "bg-pink-600" : "bg-slate-800"
+                    }`}
                     style={{ width: COL_W, flex: "none" }}
                   >
+                    {isFavStage(s) && <span className="mr-0.5">♥</span>}
                     {s.stageName}
                   </button>
                 ))}
@@ -233,6 +250,7 @@ export default function TimetablePageClient() {
                       <ActBlock
                         key={s.stageId + e.originalStart}
                         entry={e}
+                        fav={favs.has(actFavId(s.stageId, e.act))}
                         left={col * COL_W}
                         top={(toMinutes(e.start) - startMin) * PX_PER_MIN}
                         height={(toMinutes(e.end) - toMinutes(e.start)) * PX_PER_MIN}
@@ -247,7 +265,12 @@ export default function TimetablePageClient() {
                                 ? "current"
                                 : "future"
                         }
-                        onClick={() => openStage(s)}
+                        onClick={() =>
+                          // ステージ・フィールドの公演はその公演の紹介、企画の中の公演（ちびっこショーなど）は企画の詳細
+                          isStageVenue(s)
+                            ? setSheet({ mode: "act", venueId: s.stageId, day, start: e.originalStart })
+                            : openStage(s)
+                        }
                       />
                     )),
                   )}
@@ -266,7 +289,7 @@ export default function TimetablePageClient() {
           </div>
         )}
         <p className="mx-auto max-w-md text-xs text-muted-foreground md:max-w-none">
-          公演をタップすると会場の詳細とKODAnnaiの経路案内が開きます。雨天時は会場が変更になる場合があります。
+          公演をタップすると、その公演の紹介とKODAnnaiの経路案内が開きます。雨天時は会場が変更になる場合があります。
         </p>
       </main>
       <Footer />
@@ -277,6 +300,7 @@ export default function TimetablePageClient() {
 
 function ActBlock({
   entry,
+  fav,
   left,
   top,
   height,
@@ -284,6 +308,7 @@ function ActBlock({
   onClick,
 }: {
   entry: EffectiveAct;
+  fav: boolean;
   left: number;
   top: number;
   height: number;
@@ -319,6 +344,7 @@ function ActBlock({
         {entry.start}〜{entry.end}
       </span>
       <span className={`block text-xs font-semibold leading-tight ${state === "canceled" ? "line-through opacity-60" : ""}`}>
+        {fav && <span className="mr-0.5 text-pink-500">♥</span>}
         {entry.act}
       </span>
       {entry.note && <span className="mt-0.5 block text-[10px] leading-tight text-muted-foreground">{entry.note}</span>}

@@ -3,26 +3,20 @@ import { KIKAKU_ROWS } from "@/lib/data";
 
 // 施設（トイレ・ゴミステーション・案内所など）。企画は data/kikaku.csv で管理する
 const FACILITY_LOCATIONS: Location[] = [
-  // 最寄りの男子トイレ（自動選択用）
+  // 最寄りのトイレ（自動選択用。男女どちらも共通で t として扱う）
   {
-    id: "m",
-    locid: "m",
-    name: "最寄りの男子トイレ",
-    category: "男子トイレ自動選択",
+    id: "t",
+    locid: "t",
+    name: "最寄りのトイレ",
+    category: "トイレ自動選択",
     organizer: "",
     position: "校内全域",
-    keywords: ["もよりのだんしといれ"],
-  },
-
-  // 最寄りの女子トイレ（自動選択用）
-  {
-    id: "f",
-    locid: "f",
-    name: "最寄りの女子トイレ",
-    category: "女子トイレ自動選択",
-    organizer: "",
-    position: "校内全域",
-    keywords: ["もよりのじょしといれ"],
+    keywords: [
+      "もよりのといれ",
+      "もよりのだんしといれ",
+      "もよりのじょしといれ",
+      "トイレ",
+    ],
   },
 
   // 最寄りのゴミステーション（自動選択用・新規）
@@ -631,7 +625,10 @@ const KIKAKU_LOCATIONS: Location[] = KIKAKU_ROWS.map((r) => ({
   keywords: r.keywords,
 }));
 
-export const LOCATIONS: Location[] = [...FACILITY_LOCATIONS, ...KIKAKU_LOCATIONS];
+export const LOCATIONS: Location[] = [
+  ...FACILITY_LOCATIONS,
+  ...KIKAKU_LOCATIONS,
+];
 
 type TransitNodeMeta = {
   name: string;

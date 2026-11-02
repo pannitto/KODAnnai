@@ -5,6 +5,7 @@ import { ChevronDown, MapPin } from "lucide-react";
 import type { Location } from "@/app/page";
 import { getCategoryStyle, showsCategoryBadge } from "@/lib/categories";
 import { useSearchParams } from "next/navigation";
+import { useFavorites } from "@/components/festival/favorites";
 import {
   LOCATIONS as SERVER_LOCATIONS,
   getLocationById as getLocationByIdFromServer,
@@ -48,6 +49,7 @@ export function LocationSelector({
   const [inputHighlight, setInputHighlight] = useState(false);
   const [hasOpened, setHasOpened] = useState(false);
   const [showInputBalloon, setShowInputBalloon] = useState(false);
+  const { favs } = useFavorites();
 
   const inputRef = useRef<HTMLInputElement>(null);
   const dropdownRef = useRef<HTMLDivElement>(null);
@@ -81,9 +83,10 @@ export function LocationSelector({
   useEffect(() => {
     const term = kanaToHira(searchTerm.toLowerCase());
     const hasSearchTerm = term.trim().length > 0;
-    const specialLocids = ["m", "f", "g", "r", "u"];
+    const specialLocids = ["t", "g", "r", "u"];
     const departureExcludeIds = ["122", "123"];
 
+    const seenSpecialNames = new Set<string>();
     const filtered = LOCATIONS.filter((location) => {
       const isSpecial = specialLocids.includes(location.locid);
       const isDeparturePreset =
@@ -98,12 +101,22 @@ export function LocationSelector({
         );
 
       // 出発地: 特殊IDは選択不可（出発地点プリセットは候補に含める）
-      if (departure) return isMatch && !isSpecial && !departureExcludeIds.includes(location.id);
+      if (departure)
+        return (
+          isMatch && !isSpecial && !departureExcludeIds.includes(location.id)
+        );
 
       // 目的地: 未入力時のみ特殊IDを常に候補表示（かつ先頭固定）
       // 出発地点プリセットは目的地には出さない
       if (isDeparturePreset) return false;
-      return hasSearchTerm ? isMatch : isSpecial || isMatch;
+
+      const shouldShow = hasSearchTerm ? isMatch : isSpecial || isMatch;
+      if (!hasSearchTerm && isSpecial) {
+        const key = `${location.name}::${location.category}`;
+        if (seenSpecialNames.has(key)) return false;
+        seenSpecialNames.add(key);
+      }
+      return shouldShow;
     })
       .map((location, index) => {
         let score = 0;
@@ -143,12 +156,21 @@ export function LocationSelector({
           }
         }
 
+        const aIsSpecial = specialLocids.includes(a.location.locid);
+        const bIsSpecial = specialLocids.includes(b.location.locid);
+
+        if (aIsSpecial !== bIsSpecial) {
+          return aIsSpecial ? -1 : 1;
+        }
+
+        const aIsFav = favs.has(a.location.id);
+        const bIsFav = favs.has(b.location.id);
+        if (aIsFav !== bIsFav) {
+          return aIsFav ? -1 : 1;
+        }
+
         if (!departure && !hasSearchTerm) {
-          const aIsSpecial = specialLocids.includes(a.location.locid);
-          const bIsSpecial = specialLocids.includes(b.location.locid);
-          if (aIsSpecial !== bIsSpecial) {
-            return aIsSpecial ? -1 : 1;
-          }
+          // auto-selected entries are handled above; keep the rest ordered by score.
         }
 
         if (b.score === a.score) {
@@ -159,7 +181,7 @@ export function LocationSelector({
       .map((item) => item.location);
 
     setFilteredLocations(filtered);
-  }, [searchTerm]);
+  }, [searchTerm, favs]);
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -198,7 +220,8 @@ export function LocationSelector({
     setSearchTerm("");
   };
 
-  const getCategoryColor = (category: string) => getCategoryStyle(category).badge;
+  const getCategoryColor = (category: string) =>
+    getCategoryStyle(category).badge;
 
   return (
     <div className="relative" ref={dropdownRef}>

@@ -9,10 +9,14 @@ import Image from "next/image";
 export default function Logo() {
   return (
     <div className="flex items-center justify-center pt-6">
-      <Link href="/" className="block w-72 max-w-full" aria-label="KODAIRA祭公式サイト トップへ">
+      <Link
+        href="/"
+        className="block w-72 max-w-full"
+        aria-label="KODAnnai トップへ"
+      >
         <Image
-          src="/site-logo.svg"
-          alt="KODAIRA祭公式サイト"
+          src="/kodannai.svg"
+          alt="KODAnnai"
           width={800}
           height={143}
           className="h-auto w-full brightness-0 dark:invert"

@@ -5,10 +5,21 @@ import { Plus, Minus, RotateCcw } from "lucide-react";
 import Logo from "@/components/logo";
 import Footer from "@/components/footer";
 import { SiteNav } from "@/components/festival/site-nav";
-import { KikakuSheet, type SheetState } from "@/components/festival/kikaku-sheet";
+import {
+  KikakuSheet,
+  type SheetState,
+} from "@/components/festival/kikaku-sheet";
 import { StageNowLabels } from "@/components/festival/stage-now-labels";
 import { BuildingBadge } from "@/components/festival/building-badge";
-import { useNow, useQueryParam, useLive, useIsDark } from "@/components/festival/hooks";
+import { FavoriteMark, useFavorites } from "@/components/festival/favorites";
+import { venueHasFavAct } from "@/lib/stage-acts";
+import { MAP_FACILITIES } from "@/lib/map-facilities";
+import {
+  useNow,
+  useQueryParam,
+  useLive,
+  useIsDark,
+} from "@/components/festival/hooks";
 import { clientToSvgPoint } from "@/lib/svg-point";
 import { getNodePoints } from "@/lib/route-geometry";
 import { getLocationById } from "@/app/locations-server";
@@ -58,7 +69,11 @@ function placeSpot(s: MapSpot): MapSpot {
   if (s.shape !== "pin" || s.node == null) return s;
   const p = NODE_PTS[s.node]?.[s.map];
   if (!p) return s;
-  return { ...s, x: p[0] + (s.offset?.[0] ?? 0), y: p[1] + (s.offset?.[1] ?? 0) };
+  return {
+    ...s,
+    x: p[0] + (s.offset?.[0] ?? 0),
+    y: p[1] + (s.offset?.[1] ?? 0),
+  };
 }
 
 // 地図に出ている企画のジャンルだけを凡例に出す
@@ -72,14 +87,22 @@ const LEGEND_GENRES = GENRES.filter((g) =>
 );
 
 /** スポット内の企画で一番混んでいる待ち時間 */
-function spotWait(spot: MapSpot, waits: WaitMap, now: Date | null): WaitLevel | null {
+function spotWait(
+  spot: MapSpot,
+  waits: WaitMap,
+  now: Date | null,
+): WaitLevel | null {
   if (!now) return null;
   let worst: WaitLevel | null = null;
   for (const id of spot.locationIds) {
     const loc = getLocationById(id);
     if (!loc || !isCommitteeKikaku(loc)) continue;
     const w = getFreshWait(waits, id, now);
-    if (w && (!worst || WAIT_LEVELS.indexOf(w.level) > WAIT_LEVELS.indexOf(worst))) worst = w.level;
+    if (
+      w &&
+      (!worst || WAIT_LEVELS.indexOf(w.level) > WAIT_LEVELS.indexOf(worst))
+    )
+      worst = w.level;
   }
   return worst;
 }
@@ -114,9 +137,12 @@ export default function MapPageClient() {
 
   const [mapId, setMapId] = useState<MapId>("outdoor");
   const [sheet, setSheet] = useState<SheetState>(null);
+  const [selectedFacility, setSelectedFacility] = useState<string | null>(null);
   const [selectedSpot, setSelectedSpot] = useState<string | null>(null);
   const [view, setView] = useState({ scale: 1, x: 0, y: 0 });
-  const [editPoint, setEditPoint] = useState<{ x: number; y: number } | null>(null);
+  const [editPoint, setEditPoint] = useState<{ x: number; y: number } | null>(
+    null,
+  );
 
   const containerRef = useRef<HTMLDivElement>(null);
   const svgRef = useRef<SVGSVGElement>(null);
@@ -132,6 +158,7 @@ export default function MapPageClient() {
 
   const map = MAPS.find((m) => m.id === mapId)!;
   const dark = useIsDark();
+  const { favs } = useFavorites();
   // 表示する日（開催日はその日、それ以外の日は両日分）。日によって同じ教室の団体が変わる
   const [day, setDay] = useState<FestivalDay | null>(null);
   const today = now ? getFestivalDay(now) : null;
@@ -203,16 +230,26 @@ export default function MapPageClient() {
     setView((v) => {
       const scale = Math.min(MAX_SCALE, Math.max(MIN_SCALE, v.scale * factor));
       const k = scale / v.scale;
-      return clampView({ scale, x: px - (px - v.x) * k, y: py - (py - v.y) * k });
+      return clampView({
+        scale,
+        x: px - (px - v.x) * k,
+        y: py - (py - v.y) * k,
+      });
     });
   };
 
   const onPointerDown = (e: React.PointerEvent) => {
     const rect = containerRef.current!.getBoundingClientRect();
-    pointers.current.set(e.pointerId, { x: e.clientX - rect.left, y: e.clientY - rect.top });
+    pointers.current.set(e.pointerId, {
+      x: e.clientX - rect.left,
+      y: e.clientY - rect.top,
+    });
     const pts = [...pointers.current.values()];
     gesture.current = {
-      startDist: pts.length >= 2 ? Math.hypot(pts[0].x - pts[1].x, pts[0].y - pts[1].y) : 0,
+      startDist:
+        pts.length >= 2
+          ? Math.hypot(pts[0].x - pts[1].x, pts[0].y - pts[1].y)
+          : 0,
       startScale: view.scale,
       lastX: pts.reduce((a, p) => a + p.x, 0) / pts.length,
       lastY: pts.reduce((a, p) => a + p.y, 0) / pts.length,
@@ -224,7 +261,10 @@ export default function MapPageClient() {
   const onPointerMove = (e: React.PointerEvent) => {
     if (!pointers.current.has(e.pointerId) || !gesture.current) return;
     const rect = containerRef.current!.getBoundingClientRect();
-    pointers.current.set(e.pointerId, { x: e.clientX - rect.left, y: e.clientY - rect.top });
+    pointers.current.set(e.pointerId, {
+      x: e.clientX - rect.left,
+      y: e.clientY - rect.top,
+    });
     const pts = [...pointers.current.values()];
     const cx = pts.reduce((a, p) => a + p.x, 0) / pts.length;
     const cy = pts.reduce((a, p) => a + p.y, 0) / pts.length;
@@ -240,7 +280,11 @@ export default function MapPageClient() {
       setView((v) => {
         const scale = Math.min(MAX_SCALE, Math.max(MIN_SCALE, target));
         const k = scale / v.scale;
-        return clampView({ scale, x: cx - (cx - v.x) * k + dx, y: cy - (cy - v.y) * k + dy });
+        return clampView({
+          scale,
+          x: cx - (cx - v.x) * k + dx,
+          y: cy - (cy - v.y) * k + dy,
+        });
       });
     } else if (view.scale > 1) {
       setView((v) => clampView({ ...v, x: v.x + dx, y: v.y + dy }));
@@ -267,14 +311,24 @@ export default function MapPageClient() {
   const openSpot = (spot: MapSpot) => {
     if (suppressClick.current) return;
     setSelectedSpot(spot.id);
-    if (spot.locationIds.length === 1) setSheet({ mode: "detail", id: spot.locationIds[0] });
+    setSelectedFacility(null);
+    if (spot.locationIds.length === 1)
+      setSheet({ mode: "detail", id: spot.locationIds[0] });
     else setSheet({ mode: "list", title: spot.label, ids: spot.locationIds });
+  };
+
+  const openFacility = (id: string) => {
+    if (suppressClick.current) return;
+    setSelectedSpot(null);
+    setSelectedFacility(id);
+    setSheet({ mode: "facility", id });
   };
 
   const switchMap = (id: MapId) => {
     if (suppressClick.current) return;
     setMapId(id);
     setSelectedSpot(null);
+    setSelectedFacility(null);
     resetView();
   };
 
@@ -292,7 +346,10 @@ export default function MapPageClient() {
       <Logo />
       <SiteNav />
       <main className="mx-auto max-w-md space-y-3 pt-4">
-        <div className="grid grid-cols-4 gap-1 rounded-xl border border-border p-1" role="tablist">
+        <div
+          className="grid grid-cols-4 gap-1 rounded-xl border border-border p-1"
+          role="tablist"
+        >
           {MAPS.map((m) => (
             <button
               key={m.id}
@@ -312,7 +369,11 @@ export default function MapPageClient() {
         </div>
 
         {/* 表示する日：1日目と2日目で同じ教室を別の団体が使うため、日ごとに地図の中身が変わる */}
-        <div className="grid grid-cols-3 gap-1 rounded-xl border border-border p-1" role="group" aria-label="表示する日">
+        <div
+          className="grid grid-cols-3 gap-1 rounded-xl border border-border p-1"
+          role="group"
+          aria-label="表示する日"
+        >
           {(
             [
               { id: "day1", label: "1日目", date: FESTIVAL_DAY1 },
@@ -341,7 +402,9 @@ export default function MapPageClient() {
                 </span>
               )}
               {today !== null && today === d.id && (
-                <span className="ml-1 rounded bg-red-500 px-1 text-[10px] text-white">今日</span>
+                <span className="ml-1 rounded bg-red-500 px-1 text-[10px] text-white">
+                  今日
+                </span>
               )}
             </button>
           ))}
@@ -404,9 +467,41 @@ export default function MapPageClient() {
                       />
                     ))}
                     {/* 「タップで館内の地図へ」の目印 */}
-                    <BuildingBadge x={b.badge.x} y={b.badge.y} k={k} dark={dark} />
+                    <BuildingBadge
+                      x={b.badge.x}
+                      y={b.badge.y}
+                      k={k}
+                      dark={dark}
+                    />
                   </g>
                 ))}
+
+              {/* ピクトグラム（トイレ・ゴミステーションなど）：タップで施設情報と経路案内（企画の丸・部屋より下に置く） */}
+              {MAP_FACILITIES.filter((f) => f.map === mapId).map((f) => {
+                const half = f.size / 2 + 0.6;
+                return (
+                  <rect
+                    key={f.id}
+                    role="button"
+                    aria-label={`${f.name}の情報`}
+                    x={f.x - half}
+                    y={f.y - half}
+                    width={half * 2}
+                    height={half * 2}
+                    rx={2}
+                    className={`cursor-pointer transition-colors ${
+                      selectedFacility === f.id
+                        ? "fill-orange-400/25 stroke-orange-500"
+                        : "fill-transparent stroke-transparent hover:fill-orange-400/20 active:fill-orange-400/30"
+                    }`}
+                    strokeWidth={0.8}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      openFacility(f.id);
+                    }}
+                  />
+                );
+              })}
 
               {spots.map((spot) => (
                 <SpotMark
@@ -417,6 +512,9 @@ export default function MapPageClient() {
                   wait={spotWait(spot, live.waits, now)}
                   performing={spotIsPerforming(spot, now, live.acts)}
                   dark={dark}
+                  fav={spot.locationIds.some(
+                    (id) => favs.has(id) || venueHasFavAct(id, favs),
+                  )}
                   onClick={(e) => {
                     e.stopPropagation();
                     openSpot(spot);
@@ -439,8 +537,22 @@ export default function MapPageClient() {
 
               {editMode && editPoint && (
                 <g pointerEvents="none">
-                  <line x1={editPoint.x - 6} x2={editPoint.x + 6} y1={editPoint.y} y2={editPoint.y} stroke="red" strokeWidth={0.5} />
-                  <line x1={editPoint.x} x2={editPoint.x} y1={editPoint.y - 6} y2={editPoint.y + 6} stroke="red" strokeWidth={0.5} />
+                  <line
+                    x1={editPoint.x - 6}
+                    x2={editPoint.x + 6}
+                    y1={editPoint.y}
+                    y2={editPoint.y}
+                    stroke="red"
+                    strokeWidth={0.5}
+                  />
+                  <line
+                    x1={editPoint.x}
+                    x2={editPoint.x}
+                    y1={editPoint.y - 6}
+                    y2={editPoint.y + 6}
+                    stroke="red"
+                    strokeWidth={0.5}
+                  />
                 </g>
               )}
             </svg>
@@ -470,28 +582,44 @@ export default function MapPageClient() {
           <div>
             <h2 className="mb-1 font-bold">マップの見方</h2>
             <p className="text-muted-foreground">
-              丸・団体名の入った部屋・ピンクの四角（ステージやインフォ）をタップすると、詳細が開きます。部屋には部屋番号の代わりに団体名（委員会の企画は企画名）が出ます。丸の数字は企画の数です。2本指で拡大・移動できます。屋外MAPで「館内MAP ›」の付いた建物をタップすると、その建物の地図に切り替わります。
+              丸・団体名の入った部屋・ピンクの四角（ステージやインフォ）をタップすると、詳細が開きます。丸の数字は企画の数です。2本指で拡大・移動できます。屋外MAPで「館内MAP
+              ›」の付いた建物をタップすると、その建物の地図に切り替わります。
+            </p>
+            <p className="mt-1 text-muted-foreground">
+              トイレ・ゴミステーションなどのマーク（ピクトグラム）をタップすると、その施設の情報が出て、KODAnnai でそこまでの道案内ができます。
             </p>
           </div>
           <div>
             <h2 className="mb-1.5 font-bold">委員会企画の待ち時間</h2>
-            <p className="mb-1.5 text-xs text-muted-foreground">丸や部屋の周辺に「15分」のように出ます。この時間以内に入れる目安です。</p>
+            <p className="mb-1.5 text-xs text-muted-foreground">
+              丸や部屋の周辺に「15分」のように出ます。この時間以内に入れる目安です。
+            </p>
             <ul className="grid grid-cols-2 gap-x-3 gap-y-1">
               {WAIT_LEVELS.map((lv) => (
-                <LegendDot key={lv} color={WAIT_LEVEL_INFO[lv].color} label={WAIT_LEVEL_INFO[lv].label} />
+                <LegendDot
+                  key={lv}
+                  color={WAIT_LEVEL_INFO[lv].color}
+                  label={WAIT_LEVEL_INFO[lv].label}
+                />
               ))}
             </ul>
           </div>
           <div>
             <h2 className="mb-1.5 font-bold">ジャンル</h2>
-            <p className="mb-1.5 text-xs text-muted-foreground">丸や部屋の色は、ジャンルの色です。</p>
+            <p className="mb-1.5 text-xs text-muted-foreground">
+              丸や部屋の色は、ジャンルの色です。
+            </p>
             <ul className="grid grid-cols-3 gap-x-3 gap-y-1">
               {LEGEND_GENRES.map((g) => (
                 <LegendDot key={g} color={GENRE_COLORS[g]} label={g} />
               ))}
               <LegendDot color="#475569" label="複数" />
             </ul>
-            <p className="mt-1.5 text-xs text-muted-foreground">緑のふちどりは、いま公演中の企画です。</p>
+            <p className="mt-1.5 text-xs text-muted-foreground">
+              緑のふちどりは、いま公演中の企画です。
+              <span className="text-pink-600 dark:text-pink-400">♥</span>
+              は、いいねした企画です。
+            </p>
           </div>
         </section>
       </main>
@@ -501,6 +629,7 @@ export default function MapPageClient() {
         onChange={(s) => {
           setSheet(s);
           if (!s) setSelectedSpot(null);
+          if (s?.mode !== "facility") setSelectedFacility(null);
         }}
         now={now}
         live={live}
@@ -517,11 +646,14 @@ function SpotMark({
   wait,
   performing,
   dark,
+  fav,
   onClick,
 }: {
   spot: MapSpot;
   k: number;
   dark: boolean;
+  /** いいねした企画が入っている */
+  fav: boolean;
   selected: boolean;
   wait: WaitLevel | null;
   performing: boolean;
@@ -535,7 +667,12 @@ function SpotMark({
   // ふだんは何も描かず、カーソルを合わせたとき・タップしたときだけ色を濃くする
   if (spot.shape === "area") {
     return (
-      <g className="group cursor-pointer" onClick={onClick} aria-label={spot.label} role="button">
+      <g
+        className="group cursor-pointer"
+        onClick={onClick}
+        aria-label={spot.label}
+        role="button"
+      >
         <rect
           x={spot.x}
           y={spot.y}
@@ -551,9 +688,15 @@ function SpotMark({
           strokeWidth={1.4 * k}
         >
           {performing && !selected && (
-            <animate attributeName="stroke-opacity" values="1;0.3;1" dur="2s" repeatCount="indefinite" />
+            <animate
+              attributeName="stroke-opacity"
+              values="1;0.3;1"
+              dur="2s"
+              repeatCount="indefinite"
+            />
           )}
         </rect>
+        {fav && <FavoriteMark x={spot.x + spot.w} y={spot.y} k={k} />}
       </g>
     );
   }
@@ -561,14 +704,27 @@ function SpotMark({
   if (spot.shape === "rect") {
     // 部屋：部屋番号の上から団体名で塗りつぶす（来場者には部屋番号より団体名のほうが分かりやすい）
     const names = roomNames(spot);
-    const lines = names.length > 2 ? [names[0], `ほか${names.length - 1}件`] : names;
+    const lines =
+      names.length > 2 ? [names[0], `ほか${names.length - 1}件`] : names;
     const fit = fitText(lines, spot.w - 2, spot.h - 2);
     const lineH = fit.size * 1.18;
-    const top = spot.y + spot.h / 2 - (lineH * fit.lines.length) / 2 + fit.size * 0.86;
+    const top =
+      spot.y + spot.h / 2 - (lineH * fit.lines.length) / 2 + fit.size * 0.86;
     return (
-      <g className="group cursor-pointer" onClick={onClick} aria-label={`${spot.label}：${names.join("、")}`} role="button">
+      <g
+        className="group cursor-pointer"
+        onClick={onClick}
+        aria-label={`${spot.label}：${names.join("、")}`}
+        role="button"
+      >
         {/* 下の部屋番号を隠す */}
-        <rect x={spot.x} y={spot.y} width={spot.w} height={spot.h} fill={dark ? "#0f172a" : "#ffffff"} />
+        <rect
+          x={spot.x}
+          y={spot.y}
+          width={spot.w}
+          height={spot.h}
+          fill={dark ? "#0f172a" : "#ffffff"}
+        />
         <rect
           x={spot.x}
           y={spot.y}
@@ -594,9 +750,16 @@ function SpotMark({
             </tspan>
           ))}
         </text>
+        {fav && (
+          <FavoriteMark x={spot.x + 3.6 * k} y={spot.y + 3.6 * k} k={k} />
+        )}
         {wait && (
           <WaitBubble
-            {...(spot.waitAt ?? { x: spot.x + spot.w - 0.8, y: spot.y + spot.h - 0.8, anchor: "end" })}
+            {...(spot.waitAt ?? {
+              x: spot.x + spot.w - 0.8,
+              y: spot.y + spot.h - 0.8,
+              anchor: "end",
+            })}
             k={k}
             level={wait}
           />
@@ -617,11 +780,26 @@ function SpotMark({
       <circle r={10} fill="transparent" />
       {performing && (
         <circle r={8.5} fill="none" stroke="#16a34a" strokeWidth={1.6}>
-          <animate attributeName="r" values="7;10;7" dur="2s" repeatCount="indefinite" />
-          <animate attributeName="opacity" values="1;0.3;1" dur="2s" repeatCount="indefinite" />
+          <animate
+            attributeName="r"
+            values="7;10;7"
+            dur="2s"
+            repeatCount="indefinite"
+          />
+          <animate
+            attributeName="opacity"
+            values="1;0.3;1"
+            dur="2s"
+            repeatCount="indefinite"
+          />
         </circle>
       )}
-      <circle r={selected ? 7 : 6} fill={color} stroke="white" strokeWidth={1.4} />
+      <circle
+        r={selected ? 7 : 6}
+        fill={color}
+        stroke="white"
+        strokeWidth={1.4}
+      />
       <text
         textAnchor="middle"
         dy={count >= 10 ? 1.7 : 2}
@@ -631,6 +809,7 @@ function SpotMark({
       >
         {count}
       </text>
+      {fav && <FavoriteMark x={-5.6} y={-5.6} />}
       {spot.caption && (
         <text
           y={10.2}
@@ -664,7 +843,8 @@ function roomNames(spot: MapSpot): string[] {
     const loc = getLocationById(id);
     if (!loc) continue;
     const org = getOrganizer(loc);
-    const name = !org || isCommitteeKikaku(loc) ? getDisplayName(loc) : shortOrgName(org);
+    const name =
+      !org || isCommitteeKikaku(loc) ? getDisplayName(loc) : shortOrgName(org);
     if (name && !out.includes(name)) out.push(name);
   }
   return out.length ? out : [spot.label];
@@ -716,14 +896,20 @@ function splitLine(l: string, n: number): string[] {
  * 四角（幅 w・高さ h）に収まる文字の大きさと行を決める。
  * 1〜4行に折り返したうち、いちばん大きく出せるものを選ぶ。それでも入らなければ「…」で切る。
  */
-function fitText(lines: string[], w: number, h: number): { size: number; lines: string[] } {
+function fitText(
+  lines: string[],
+  w: number,
+  h: number,
+): { size: number; lines: string[] } {
   const MAX = 4.4;
   const MIN = 2.2;
   const sizeFor = (ls: string[]) =>
     Math.min(MAX, w / Math.max(...ls.map(textEm)), h / (ls.length * 1.18));
   let best = { size: sizeFor(lines), lines };
   for (let n = 2; n <= 4; n++) {
-    const wrapped = lines.flatMap((l) => (textEm(l) < 5 ? [l] : splitLine(l, n)));
+    const wrapped = lines.flatMap((l) =>
+      textEm(l) < 5 ? [l] : splitLine(l, n),
+    );
     const sz = sizeFor(wrapped);
     if (sz > best.size + 0.05) best = { size: sz, lines: wrapped };
   }
@@ -742,7 +928,8 @@ function fitText(lines: string[], w: number, h: number): { size: number; lines: 
     }
     return outStr + "…";
   });
-  if (best.lines.length > maxLines) cut[maxLines - 1] = cut[maxLines - 1].replace(/…?$/, "…");
+  if (best.lines.length > maxLines)
+    cut[maxLines - 1] = cut[maxLines - 1].replace(/…?$/, "…");
   return { size: MIN, lines: cut };
 }
 
@@ -770,8 +957,25 @@ function WaitBubble({
   const left = anchor === "end" ? -w : 0;
   return (
     <g transform={`translate(${x} ${y}) scale(${k})`} pointerEvents="none">
-      <rect x={left} y={-h} width={w} height={h} rx={1.2} fill={WAIT_LEVEL_INFO[level].color} stroke="white" strokeWidth={0.5} />
-      <text x={left + w / 2} y={-1.25} textAnchor="middle" fontSize={3.4} fontWeight="bold" fill="white" fontFamily="sans-serif">
+      <rect
+        x={left}
+        y={-h}
+        width={w}
+        height={h}
+        rx={1.2}
+        fill={WAIT_LEVEL_INFO[level].color}
+        stroke="white"
+        strokeWidth={0.5}
+      />
+      <text
+        x={left + w / 2}
+        y={-1.25}
+        textAnchor="middle"
+        fontSize={3.4}
+        fontWeight="bold"
+        fill="white"
+        fontFamily="sans-serif"
+      >
         {text}
       </text>
     </g>
@@ -804,7 +1008,10 @@ function MapButton({
 function LegendDot({ color, label }: { color: string; label: string }) {
   return (
     <li className="flex items-center gap-1.5">
-      <span className="h-3 w-3 flex-shrink-0 rounded-full" style={{ background: color }} />
+      <span
+        className="h-3 w-3 flex-shrink-0 rounded-full"
+        style={{ background: color }}
+      />
       <span className="text-xs">{label}</span>
     </li>
   );

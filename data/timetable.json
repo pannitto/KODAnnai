@@ -8,7 +8,11 @@
     "day": "day1",
     "start": "10:00",
     "end": "11:30",
-    "act": "大学対抗クイズバトル"
+    "act": "大学対抗クイズバトル",
+    "org": "KODAIRA祭実行委員会",
+    "desc": "本企画では、一橋大学・東京大学・東京科学大学・早稲田大学のクイズ研究会を招き、KODAIRA祭実行委員が作成したクイズで熱いバトルを繰り広げていただきます。各大学は4色で区別され、早押しクイズに正解するとパネルを獲得。同じ色に挟まれたパネルは、オセロのように色が変わります。知識や思考力はもちろん、早押しのタイミングや戦略も勝敗を左右するポイントです。最後の最後まで勝負の行方が読めない、トップレベルのクイズバトルをぜひお楽しみください！",
+    "image": "https://storage.googleapis.com/studio-design-asset-files/projects/6kq94V9DOp/s-1800x600_v-frms_webp_84b19a3b-0788-42e8-869c-f2d142018562.webp",
+    "sns": ""
   },
   {
     "venueId": "gym",
@@ -19,7 +23,11 @@
     "day": "day1",
     "start": "12:10",
     "end": "13:40",
-    "act": "格付けチェック"
+    "act": "格付けチェック",
+    "org": "KODAIRA祭実行委員会",
+    "desc": "本物と偽物、人間とAI、新入生は果たして見抜けるのか？用意された難問に、新入生が全力チャレンジ。彼らは本当に一橋生としてふさわしいのか？自信満々の回答がまさかの結果に…？会場からのツッコミと笑いが止まらない、見てて楽しい格付けチェック企画です。",
+    "image": "https://storage.googleapis.com/studio-design-asset-files/projects/6kq94V9DOp/s-1800x600_v-frms_webp_8939c8f0-9cf0-4acd-b5b1-d4f4f0c75e78.webp",
+    "sns": ""
   },
   {
     "venueId": "gym",
@@ -30,7 +38,11 @@
     "day": "day1",
     "start": "13:55",
     "end": "14:15",
-    "act": "HITters ヲタ芸ステージ"
+    "act": "HITters ヲタ芸ステージ",
+    "org": "一橋大学ヲタ芸サークルHITters",
+    "desc": "",
+    "image": "/kikaku/act-gym-day1-1355.webp",
+    "sns": ""
   },
   {
     "venueId": "gym",
@@ -41,7 +53,11 @@
     "day": "day1",
     "start": "14:40",
     "end": "16:00",
-    "act": "FSCステージライブ"
+    "act": "FSCステージライブ",
+    "org": "一橋大学フォークソングクラブ",
+    "desc": "",
+    "image": "",
+    "sns": ""
   },
   {
     "venueId": "gym",
@@ -50,9 +66,13 @@
       "121"
     ],
     "day": "day2",
-    "start": "10:40",
+    "start": "10:00",
     "end": "11:30",
-    "act": "爆笑HIT-Uパレード"
+    "act": "爆笑HIT-Uパレード",
+    "org": "KODAIRA祭実行委員会",
+    "desc": "新入生たちが全力で笑いを届けるお笑い企画！勢い重視のモノボケからじわじわ来る大喜利まで、会場は終始爆笑必至。初めて見る人も思わず引き込まれるステージです。文化祭で一番アツくて一番笑える時間を、ぜひ体感してください！",
+    "image": "https://storage.googleapis.com/studio-design-asset-files/projects/6kq94V9DOp/s-1800x600_v-frms_webp_1d9a2f1b-5e17-490d-bf24-c80890780cba.webp",
+    "sns": ""
   },
   {
     "venueId": "gym",
@@ -63,7 +83,11 @@
     "day": "day2",
     "start": "11:40",
     "end": "13:10",
-    "act": "クイズイントロドン"
+    "act": "クイズイントロドン",
+    "org": "KODAIRA祭実行委員会",
+    "desc": "本企画は、厳しい予選を勝ち抜いた、音楽を愛してやまない新入生たちによるイントロクイズ大会です。出題範囲は邦楽・洋楽・K-POPの名曲から最新ヒットチャートまでと幅広く、回答者には圧倒的な知識と一瞬の判断力が求められます。観客の皆様も「この曲、知っている！」というあの快感を一緒に味わえる、参加型の一大バトル。新入生たちの真剣勝負を楽しみながら、ぜひ客席から挑戦してみてください！",
+    "image": "https://storage.googleapis.com/studio-design-asset-files/projects/6kq94V9DOp/s-1800x600_v-frms_webp_e15b7a7b-9cae-43b8-9ecd-5b9cf5d39b38.webp",
+    "sns": ""
   },
   {
     "venueId": "gym",
@@ -74,7 +98,11 @@
     "day": "day2",
     "start": "13:25",
     "end": "14:00",
-    "act": "ハルモニアライブ"
+    "act": "ハルモニアライブ",
+    "org": "学園アイドルハルモニア",
+    "desc": "",
+    "image": "/kikaku/act-gym-day2-1325.webp",
+    "sns": ""
   },
   {
     "venueId": "gym",
@@ -85,7 +113,11 @@
     "day": "day2",
     "start": "14:35",
     "end": "15:30",
-    "act": "一橋軽音ステージ企画"
+    "act": "一橋軽音ステージ企画",
+    "org": "一橋大学軽音学部",
+    "desc": "",
+    "image": "",
+    "sns": ""
   },
   {
     "venueId": "gym",
@@ -96,7 +128,11 @@
     "day": "day2",
     "start": "17:00",
     "end": "19:00",
-    "act": "後夜祭"
+    "act": "後夜祭",
+    "org": "KODAIRA祭実行委員会",
+    "desc": "KODAIRA祭の最後を飾るこの企画。FSCによるオープニングアクト、セファランセラ、HITters、Cherishによるダンスパフォーマンスで会場のボルテージは上がること間違いなし！そして歌うま王決定戦の決勝も開催！更に、クラス対抗屋台王No.1決定戦の結果発表や新歓期総合優勝クラスの発表を行います！約2か月半にわたる新歓期もいよいよラスト！新歓期ムービーを見て皆で思い出を振り返ってみましょう～！",
+    "image": "https://storage.googleapis.com/studio-design-asset-files/projects/6kq94V9DOp/s-2706x902_v-frms_webp_20a0d678-0456-4785-8f65-fdbc005f8553.webp",
+    "sns": ""
   },
   {
     "venueId": "koda",
@@ -107,7 +143,11 @@
     "day": "day1",
     "start": "10:00",
     "end": "11:20",
-    "act": "Opening Festival!"
+    "act": "Opening Festival!",
+    "org": "KODAIRA祭実行委員会",
+    "desc": "本企画では、弊会実行委員長による開催宣言ののち、一橋大学津田塾大学吹奏楽団・一橋大学淡成書道会・一橋大学体育会應援部によるオープニングアクトが、KODAIRA祭の幕開けを華々しく飾ります。また、本企画の後半では、ビンゴ大会を実施し、参加される皆様に各種豪華景品が当たるチャンスがあります。最高の2日間の幕開けを、ぜひ会場で体感してください！",
+    "image": "https://storage.googleapis.com/studio-design-asset-files/projects/6kq94V9DOp/s-1800x600_v-frms_webp_8418101f-e03e-49c8-952d-eab4a28de26f.webp",
+    "sns": ""
   },
   {
     "venueId": "koda",
@@ -118,7 +158,11 @@
     "day": "day1",
     "start": "11:40",
     "end": "13:20",
-    "act": "一橋の歌うま王決定戦!!"
+    "act": "一橋の歌うま王決定戦!!",
+    "org": "KODAIRA祭実行委員会",
+    "desc": "長年続くこの大人気企画が今年も開催！\n各クラスののど自慢がKODAIRA祭のステージに集結します！\n予選を勝ち抜いた20組の皆さんが2日間にわたって行われる本選にて観客の前で歌声を披露します！本選ではアカペラサークルTFCによる圧巻のパフォーマンスも注目です！\n見事本選を勝ち抜いた4組の方はKODAIRA祭を締めくくる後夜祭で行われる決勝に進みます。\n一橋の歌うま王者はいったい誰になるのか、、一緒に見届けましょう！",
+    "image": "https://storage.googleapis.com/studio-design-asset-files/projects/6kq94V9DOp/s-1016x339_v-fs_webp_6d7a65e8-0d82-4c65-a67c-e7c40d83162c.webp",
+    "sns": ""
   },
   {
     "venueId": "koda",
@@ -129,7 +173,11 @@
     "day": "day1",
     "start": "14:10",
     "end": "15:50",
-    "act": "Spica Dance Stage"
+    "act": "Spica Dance Stage",
+    "org": "一橋大学コピーダンスサークルSpica",
+    "desc": "",
+    "image": "",
+    "sns": ""
   },
   {
     "venueId": "koda",
@@ -140,7 +188,11 @@
     "day": "day1",
     "start": "16:30",
     "end": "18:20",
-    "act": "中夜祭"
+    "act": "中夜祭",
+    "org": "KODAIRA祭実行委員会",
+    "desc": "本企画は、1日目のラストを飾る新入生向けのスペシャルステージです。サークルによるバンド演奏やダンス、お笑いなど、会場が一体となって盛り上がる公演が盛りだくさん！さらに、1年生による新入生企画やクラス対抗屋台王決定戦の途中経過発表もあり、見どころ満載のステージとなっています！！！ここでしか味わえない熱気と一体感を楽しんで、最高の思い出を作りましょう。中夜祭の盛り上がりをそのまま2日目へ！！まだまだ続くぞKODAIRA祭！！",
+    "image": "https://storage.googleapis.com/studio-design-asset-files/projects/6kq94V9DOp/s-1800x600_v-frms_webp_6a2d548c-0dd6-4721-8a55-f1c3e208199f.webp",
+    "sns": ""
   },
   {
     "venueId": "koda",
@@ -151,7 +203,11 @@
     "day": "day2",
     "start": "10:10",
     "end": "11:10",
-    "act": "CHIERISH PIRTY"
+    "act": "CHERISH PARTY",
+    "org": "ストリートダンスサークル　CHERISH",
+    "desc": "",
+    "image": "",
+    "sns": ""
   },
   {
     "venueId": "koda",
@@ -162,7 +218,11 @@
     "day": "day2",
     "start": "11:40",
     "end": "13:20",
-    "act": "一橋の歌うま王決定戦!!"
+    "act": "一橋の歌うま王決定戦!!",
+    "org": "KODAIRA祭実行委員会",
+    "desc": "長年続くこの大人気企画が今年も開催！\n各クラスののど自慢がKODAIRA祭のステージに集結します！\n予選を勝ち抜いた20組の皆さんが2日間にわたって行われる本選にて観客の前で歌声を披露します！本選ではアカペラサークルTFCによる圧巻のパフォーマンスも注目です！\n見事本選を勝ち抜いた4組の方はKODAIRA祭を締めくくる後夜祭で行われる決勝に進みます。\n一橋の歌うま王者はいったい誰になるのか、、一緒に見届けましょう！",
+    "image": "https://storage.googleapis.com/studio-design-asset-files/projects/6kq94V9DOp/s-1016x339_v-fs_webp_6d7a65e8-0d82-4c65-a67c-e7c40d83162c.webp",
+    "sns": ""
   },
   {
     "venueId": "koda",
@@ -173,7 +233,11 @@
     "day": "day2",
     "start": "13:35",
     "end": "13:55",
-    "act": "Cepha Dance Stage"
+    "act": "Cepha Dance Stage",
+    "org": "ガールズスタイルダンスサークルセファランセラ",
+    "desc": "",
+    "image": "/kikaku/act-koda-day2-1335.webp",
+    "sns": ""
   },
   {
     "venueId": "koda",
@@ -184,7 +248,11 @@
     "day": "day2",
     "start": "14:13",
     "end": "14:53",
-    "act": "アコースティックライブ"
+    "act": "アコースティックライブ",
+    "org": "一橋・津田塾Unplugged",
+    "desc": "",
+    "image": "",
+    "sns": ""
   },
   {
     "venueId": "koda",
@@ -195,7 +263,11 @@
     "day": "day2",
     "start": "15:05",
     "end": "15:30",
-    "act": "TFCストリートライブ"
+    "act": "TFCストリートライブ",
+    "org": "一橋大学アカペラサークルThe First Cry",
+    "desc": "",
+    "image": "",
+    "sns": ""
   },
   {
     "venueId": "field",
@@ -206,7 +278,11 @@
     "day": "day1",
     "start": "11:15",
     "end": "11:35",
-    "act": "アンサンブルステージ"
+    "act": "アンサンブルステージ",
+    "org": "一橋大学津田塾大学吹奏楽団",
+    "desc": "",
+    "image": "/kikaku/act-field-day1-1115.webp",
+    "sns": ""
   },
   {
     "venueId": "field",
@@ -217,7 +293,11 @@
     "day": "day1",
     "start": "11:50",
     "end": "12:00",
-    "act": "書道パフォーマンス"
+    "act": "書道パフォーマンス",
+    "org": "一橋大学淡成書道会",
+    "desc": "",
+    "image": "",
+    "sns": ""
   },
   {
     "venueId": "field",
@@ -228,7 +308,11 @@
     "day": "day1",
     "start": "12:30",
     "end": "13:00",
-    "act": "ジャグリングパフォーマンス"
+    "act": "ジャグリングパフォーマンス",
+    "org": "パフォーマンスサークル まれひと",
+    "desc": "",
+    "image": "/kikaku/act-field-day1-1230.webp",
+    "sns": ""
   },
   {
     "venueId": "field",
@@ -239,7 +323,11 @@
     "day": "day1",
     "start": "13:15",
     "end": "13:35",
-    "act": "Cepha Dance Stage"
+    "act": "Cepha Dance Stage",
+    "org": "ガールズスタイルダンスサークルセファランセラ",
+    "desc": "",
+    "image": "/kikaku/act-field-day1-1315.webp",
+    "sns": ""
   },
   {
     "venueId": "field",
@@ -250,7 +338,11 @@
     "day": "day2",
     "start": "10:50",
     "end": "11:20",
-    "act": "Papalinaフラステージ"
+    "act": "Papalinaフラステージ",
+    "org": "フラサークルPapalina",
+    "desc": "",
+    "image": "/kikaku/act-field-day2-1050.webp",
+    "sns": ""
   },
   {
     "venueId": "field",
@@ -261,7 +353,11 @@
     "day": "day2",
     "start": "12:10",
     "end": "12:40",
-    "act": "ジャグリングパフォーマンス"
+    "act": "ジャグリングパフォーマンス",
+    "org": "パフォーマンスサークル まれひと",
+    "desc": "",
+    "image": "/kikaku/act-field-day2-1210.webp",
+    "sns": ""
   },
   {
     "venueId": "field",
@@ -272,6 +368,85 @@
     "day": "day2",
     "start": "13:00",
     "end": "13:15",
-    "act": "少林寺拳法ステージ演武"
+    "act": "少林寺拳法ステージ演武",
+    "org": "一橋津田塾大学少林寺拳法部",
+    "desc": "",
+    "image": "/kikaku/act-field-day2-1300.webp",
+    "sns": ""
+  },
+  {
+    "venueId": "chibikko",
+    "venueName": "ちびっこ館ショー",
+    "kikakuIds": [
+      "53"
+    ],
+    "day": "day1",
+    "start": "11:45",
+    "end": "12:15",
+    "act": "ちびっこショー（マジック・ジャグリング・ヒーローショー）",
+    "org": "",
+    "desc": "",
+    "image": "",
+    "sns": ""
+  },
+  {
+    "venueId": "chibikko",
+    "venueName": "ちびっこ館ショー",
+    "kikakuIds": [
+      "53"
+    ],
+    "day": "day1",
+    "start": "13:40",
+    "end": "14:10",
+    "act": "ちびっこショー（マジック・ジャグリング・ヒーローショー）",
+    "org": "",
+    "desc": "",
+    "image": "",
+    "sns": ""
+  },
+  {
+    "venueId": "chibikko",
+    "venueName": "ちびっこ館ショー",
+    "kikakuIds": [
+      "53"
+    ],
+    "day": "day2",
+    "start": "11:45",
+    "end": "12:15",
+    "act": "ちびっこショー（マジック・ジャグリング・ヒーローショー）",
+    "org": "",
+    "desc": "",
+    "image": "",
+    "sns": ""
+  },
+  {
+    "venueId": "chibikko",
+    "venueName": "ちびっこ館ショー",
+    "kikakuIds": [
+      "53"
+    ],
+    "day": "day2",
+    "start": "13:40",
+    "end": "14:10",
+    "act": "ちびっこショー（マジック・ジャグリング・ヒーローショー）",
+    "org": "",
+    "desc": "",
+    "image": "",
+    "sns": ""
+  },
+  {
+    "venueId": "kanematsu",
+    "venueName": "兼松講堂",
+    "kikakuIds": [
+      "122"
+    ],
+    "day": "day2",
+    "start": "14:00",
+    "end": "15:00",
+    "act": "松丸亮吾からの挑戦状～謎解きステージ～（開場13:20）",
+    "org": "",
+    "desc": "",
+    "image": "",
+    "sns": ""
   }
 ]

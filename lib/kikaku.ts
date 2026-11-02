@@ -8,7 +8,11 @@
 import { LOCATIONS } from "@/app/locations-server";
 import type { Location } from "@/app/page";
 import { getKikakuRow, type Days } from "@/lib/data";
-import { EVENT_CATEGORIES, getCategoryStyle, type EventCategory } from "@/lib/categories";
+import {
+  EVENT_CATEGORIES,
+  getCategoryStyle,
+  type EventCategory,
+} from "@/lib/categories";
 
 // ==========================================
 // 企画の一覧
@@ -46,7 +50,13 @@ export const GENRE_COLORS: Record<Genre, string> = Object.fromEntries(
   EVENT_CATEGORIES.map((c) => [c, getCategoryStyle(c).color]),
 ) as Record<Genre, string>;
 
-export const AREAS = ["屋外", "企画本館", "企画別館", "ちびっこ館", "その他"] as const;
+export const AREAS = [
+  "屋外",
+  "企画本館",
+  "企画別館",
+  "ちびっこ館",
+  "その他",
+] as const;
 export type Area = (typeof AREAS)[number];
 
 const OUTDOOR_AREAS = [
@@ -122,7 +132,11 @@ export function getSnsUrl(loc: Location): string | null {
 }
 
 /** 絞り込み用の条件（ジャンルとは別軸） */
-export const CONDITIONS = ["受験生向け", "ちびっこ向け", "雨でも楽しめる"] as const;
+export const CONDITIONS = [
+  "受験生向け",
+  "ちびっこ向け",
+  "雨でも楽しめる",
+] as const;
 export type Condition = (typeof CONDITIONS)[number];
 
 export function getConditions(loc: Location): Condition[] {
@@ -142,7 +156,28 @@ export function getPlaceLabel(loc: Location): string {
 
 /** 滞在の目安 */
 export function getStayLabel(id: string): string | null {
-  return getKikakuRow(id)?.stay || null;
+  const row = getKikakuRow(id);
+  if (row?.stay && row.stay.trim()) return row.stay.trim();
+
+  const loc = LOCATIONS.find((l) => l.id === id);
+  if (!loc) return null;
+
+  const fallbackByGenre: Record<Genre, string> = {
+    クラス模擬店: "約5分",
+    サークル飲食模擬店: "約10分",
+    "参加・体験": "約10分",
+    展示: "約10分",
+    講演: "約15分",
+    パフォーマンス: "約10分",
+    音楽: "約10分",
+    ダンス: "約10分",
+    "ステージ・フィールド": "約10分",
+    "販売・配布": "約5分",
+    休憩所: "約20分",
+    その他: "約5分",
+  };
+
+  return fallbackByGenre[getGenre(loc)] ?? "約10分";
 }
 
 /** KODAnnai（経路案内）でこの企画を目的地にするURL */

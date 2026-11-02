@@ -48,6 +48,11 @@ export type ActRow = {
   start: string;
   end: string;
   act: string;
+  /** 以下は公演の紹介（任意。ステージ・フィールドの公演をタップしたときに出す） */
+  org?: string;
+  desc?: string;
+  image?: string;
+  sns?: string;
 };
 
 export const KIKAKU_ROWS = kikakuJson as KikakuRow[];

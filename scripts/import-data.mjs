@@ -5,7 +5,7 @@
 // 使い方:  npm run import-data
 //
 //   data/kikaku.csv     … 1行1企画（Googleフォームの回答スプレッドシートをCSVで書き出したもの）
-//   data/timetable.csv  … 1行1公演
+//   data/timetable.csv  … 1行1公演（団体名・紹介文・画像・SNS の列は任意。ステージ・フィールドの公演の紹介に使う）
 //   data/images/        … フォームで集めた画像（「画像」列にファイル名を書いたものだけ使う）
 //
 // チェックに通ると data/kikaku.json と data/timetable.json を作り直す（サイトはこのJSONを読む）。
@@ -198,6 +198,23 @@ const timetable = ttRows.map((r) => {
     err(F, r.line, `終了（${end}）が開始（${start}）より前です`);
   for (const k of kikakuIds) if (!ids.has(k)) err(F, r.line, `企画ID「${k}」が kikaku.csv にありません`);
   if (!r.get("演目")) warn(F, r.line, "演目が空です");
+
+  // 公演の紹介（任意）。画像はファイル名なら data/images から public/kikaku/act-会場-日-時刻.拡張子 にコピー
+  let actImage = r.get("画像");
+  if (actImage && !/^https?:\/\//.test(actImage)) {
+    const src = path.join(imagesDir, actImage);
+    if (!fs.existsSync(src)) {
+      warn(F, r.line, `画像「${actImage}」が data/images にありません（画像なしで続けます）`);
+      actImage = "";
+    } else {
+      const dest = `act-${venueId}-${day === "2日目" ? "day2" : "day1"}-${start.replace(":", "")}${path.extname(actImage).toLowerCase()}`;
+      imageCopies.push([src, path.join(publicImages, dest)]);
+      actImage = `/kikaku/${dest}`;
+    }
+  }
+  const actSns = r.get("SNS");
+  if (actSns && !/^https?:\/\//.test(actSns)) warn(F, r.line, `SNS「${actSns}」がURLではありません`);
+
   return {
     venueId,
     venueName: r.get("会場名") || venueId,
@@ -206,6 +223,10 @@ const timetable = ttRows.map((r) => {
     start: start.padStart(5, "0"),
     end: end.padStart(5, "0"),
     act: r.get("演目"),
+    org: r.get("団体名"),
+    desc: r.get("紹介文").replace(/<br\s*\/?>/g, "\n"),
+    image: actImage,
+    sns: actSns,
   };
 });
 

@@ -22,7 +22,6 @@ import {
   type FestivalDay,
 } from "@/lib/timetable";
 
-const STORAGE_KEY = "kodannai-wait-admin-key";
 const COMMITTEE = KIKAKU_LIST.filter(isCommitteeKikaku);
 type Tab = "wait" | "stage" | "notice";
 
@@ -34,21 +33,8 @@ export default function AdminClient() {
   const [saving, setSaving] = useState<string | null>(null);
   const [message, setMessage] = useState<{ ok: boolean; text: string } | null>(null);
 
-  useEffect(() => {
-    try {
-      setKey(localStorage.getItem(STORAGE_KEY) ?? "");
-    } catch {
-      // 無視
-    }
-  }, []);
-
   const saveKey = (v: string) => {
     setKey(v);
-    try {
-      localStorage.setItem(STORAGE_KEY, v);
-    } catch {
-      // 無視
-    }
   };
 
   /** /api/live に送る。成功したら表示を更新 */

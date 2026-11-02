@@ -15,6 +15,11 @@ export interface TimetableEntry {
   start: string; // "HH:MM"
   end: string; // "HH:MM"
   act: string;
+  /** 公演の紹介（data/timetable.csv の 団体名・紹介文・画像・SNS。任意） */
+  org?: string;
+  desc?: string;
+  image?: string;
+  sns?: string;
 }
 
 export interface StageSchedule {
@@ -63,7 +68,15 @@ export const TIMETABLE: StageSchedule[] = (() => {
       venues.set(r.venueId, v);
     }
     for (const id of r.kikakuIds) if (!v.locationIds!.includes(id)) v.locationIds!.push(id);
-    v[r.day].push({ start: r.start, end: r.end, act: r.act });
+    v[r.day].push({
+      start: r.start,
+      end: r.end,
+      act: r.act,
+      org: r.org || undefined,
+      desc: r.desc || undefined,
+      image: r.image || undefined,
+      sns: r.sns || undefined,
+    });
   }
   for (const v of venues.values()) {
     v.day1.sort((a, b) => a.start.localeCompare(b.start));
@@ -244,4 +257,19 @@ export function applyActOverrides(
       };
     })
     .sort((a, b) => toMinutes(a.start) - toMinutes(b.start));
+}
+
+/** 会場の1公演（中止・時間変更を反映したもの）。見つからなければ null */
+export function findAct(
+  venueId: string,
+  day: FestivalDay,
+  originalStart: string,
+  acts: Record<string, ActOverride> = {},
+): { stage: StageSchedule; entry: EffectiveAct } | null {
+  const stage = TIMETABLE.find((s) => s.stageId === venueId);
+  if (!stage) return null;
+  const entry = applyActOverrides(venueId, day, stage[day], acts).find(
+    (e) => e.originalStart === originalStart,
+  );
+  return entry ? { stage, entry } : null;
 }
