@@ -65,13 +65,13 @@ export const NODE_POINTS: Record<number, NodePoints> = {
   33: { outdoor: [171.1, 300.1] }, // チョコ風呂浸かりばなな
   34: { outdoor: [178.8, 300] }, // フランクフルトとか無いんか？
   35: { outdoor: [185.1, 300] }, // 再履修確定餃子
-  36: { outdoor: [193.3, 300.5] }, // Hit-gyU
-  37: { outdoor: [202.6, 300.5] }, // wanna be わらびー！
-  38: { outdoor: [209.8, 300.5] }, // Koda Cola
+  36: { outdoor: [189.9, 300.1] }, // Hit-gyU
+  37: { outdoor: [196.9, 299.7] }, // wanna be わらびー！
+  38: { outdoor: [203.1, 299.7] }, // Koda Cola
   39: { outdoor: [175.8, 265] }, // ゴミステーション
   40: { outdoor: [138.4, 225.1] }, // KODAステージ
   41: { outdoor: [212.3, 339] }, // フィールド
-  42: { outdoor: [216.7, 300.5] }, // ゴミステーション
+  42: { outdoor: [212, 300.5] }, // ゴミステーション
   44: { outdoor: [228.3, 300.3] }, // 顔出しパネル
   45: { outdoor: [234.7, 300.3] }, // スノードーム工房
   46: { chibikko: [79, 109.6] }, // ちびっこ館トイレ
@@ -125,7 +125,7 @@ export const NODE_POINTS: Record<number, NodePoints> = {
   220: { outdoor: [152.6, 304.5] }, // クラス模擬店ロータリー
   222: { outdoor: [160.7, 309.2] }, // クラス模擬店ロータリー
   224: { outdoor: [195.1, 307.9] }, // クラス模擬店ロード
-  225: { outdoor: [203.6, 307.5] }, // クラス模擬店ロード
+  225: { outdoor: [200.2, 307.9] }, // クラス模擬店ロード
   226: { outdoor: [119.3, 237.5] }, // クラス模擬店ロード
   227: { outdoor: [113.8, 231.8] }, // クラス模擬店ロード
   228: { outdoor: [123.6, 231], bekkan: [51.6, 191.6] }, // クラス模擬店ロード
@@ -295,7 +295,7 @@ export function getMapIdForNode(nodeId: number): MapId {
 }
 
 export const NAV_MAP_SRC: Record<MapId, string> = {
-  outdoor: "/GRAND_MAP_kikaku.svg?v=20261031-1", // GRAND_MAP.svg は端末によって文字の大きさが変わるため使わない
+  outdoor: "/GRAND_MAP_kikaku.svg?v=20261102-1", // GRAND_MAP.svg は端末によって文字の大きさが変わるため使わない
   main: "/Main_building_MAP_fornavigate.svg",
   bekkan: "/Bekkan_MAP_fornavigate.svg",
   chibikko: "/Chibikko_MAP_fornavigate.svg",

@@ -3,7 +3,7 @@
 // 地図のピクトグラム（トイレ・ゴミステーションなど）をタップしたときの施設情報（lib/map-facilities.ts）
 
 import Link from "next/link";
-import { Accessibility, MapPin, Navigation, Info } from "lucide-react";
+import { Accessibility, MapPin, Navigation } from "lucide-react";
 import { getLocationById } from "@/app/locations-server";
 import { getNavigateUrl } from "@/lib/kikaku";
 import { FACILITY_ROLE, getFacility } from "@/lib/map-facilities";
@@ -30,10 +30,11 @@ export function FacilityDetail({ id }: { id: string }) {
             {f.multi}
           </Row>
         )}
-        <Row icon={<Info className="h-4 w-4" />} label="どんな所">
-          {f.note ?? FACILITY_ROLE[f.kind]}
-        </Row>
       </dl>
+
+      <p className="mt-4 rounded-xl bg-card px-3 py-2.5 text-sm leading-relaxed">
+        {f.note ?? FACILITY_ROLE[f.kind]}
+      </p>
 
       <div className="mt-5">
         {loc ? (

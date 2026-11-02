@@ -72,8 +72,8 @@ export function OutdoorNavigationMap({
   // （画像を差し替えたら ?v= の日付も変える）
   const mapImageUrl =
     resolvedTheme === "dark"
-      ? "/GRAND_MAP_kikaku_dark.svg?v=20261031-1"
-      : "/GRAND_MAP_kikaku.svg?v=20261031-1";
+      ? "/GRAND_MAP_kikaku_dark.svg?v=20261102-1"
+      : "/GRAND_MAP_kikaku.svg?v=20261102-1";
 
   const handleMarkerClick = (
     marker: (typeof OUTDOOR_START_POINT_MARKERS)[0],

@@ -163,10 +163,13 @@ export function LocationSelector({
           return aIsSpecial ? -1 : 1;
         }
 
-        const aIsFav = favs.has(a.location.id);
-        const bIsFav = favs.has(b.location.id);
-        if (aIsFav !== bIsFav) {
-          return aIsFav ? -1 : 1;
+        // いいねした企画を先頭に（目的地だけ。出発地点では並べ替えない）
+        if (!departure) {
+          const aIsFav = favs.has(a.location.id);
+          const bIsFav = favs.has(b.location.id);
+          if (aIsFav !== bIsFav) {
+            return aIsFav ? -1 : 1;
+          }
         }
 
         if (!departure && !hasSearchTerm) {
@@ -181,7 +184,7 @@ export function LocationSelector({
       .map((item) => item.location);
 
     setFilteredLocations(filtered);
-  }, [searchTerm, favs]);
+  }, [searchTerm, favs, departure]);
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {

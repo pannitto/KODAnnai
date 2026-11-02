@@ -80,7 +80,7 @@ export const MAP_FACILITIES: MapFacility[] = [
   { id: "out-trash-north", map: "outdoor", kind: "ゴミステーション", x: 91, y: 243, size: 10.2, name: "ゴミステーション", place: "北サークルロード", locationId: "106" },
   { id: "out-rest-stage", map: "outdoor", kind: "休憩所", x: 104.9, y: 243, size: 10.2, name: "メインステージ前休憩所", place: "北サークルロード", locationId: "105" },
   { id: "out-trash-rotary", map: "outdoor", kind: "ゴミステーション", x: 175.4, y: 265, size: 10.2, name: "ゴミステーション", place: "クラス模擬店ロータリー（企画本館の前）", locationId: "39" },
-  { id: "out-trash-road", map: "outdoor", kind: "ゴミステーション", x: 221, y: 302.8, size: 10.2, name: "ゴミステーション", place: "クラス模擬店ロード", locationId: "42" },
+  { id: "out-trash-road", map: "outdoor", kind: "ゴミステーション", x: 212, y: 302.8, size: 10.2, name: "ゴミステーション", place: "クラス模擬店ロード", locationId: "42" },
   { id: "out-rest-family", map: "outdoor", kind: "休憩所", x: 221.8, y: 328.4, size: 10.2, name: "ファミリーエリア休憩所", place: "ファミリーエリア", locationId: "43", note: "座って休めます（晴れた日だけ）。" },
 
   // ---------- 企画本館 ----------

@@ -20,15 +20,20 @@ export const MAPS: {
   image: string;
   /** ダークモード用の画像 */
   darkImage: string;
+  /**
+   * 企画マップに出す範囲（地図SVGの座標）。上の「KODAIRA祭○○MAP」のタイトルと、まわりの空白を切り落とす。
+   * 地図SVGを差し替えて絵の範囲が変わったら、ここの数字も直す。丸・部屋・マークの座標はそのまま使える。
+   */
+  view: { x: number; y: number; width: number; height: number };
 }[] = [
   // 屋外は GRAND_MAP_fornavigate.svg から「オレンジの丸」と「操作説明」を除いたもの。
   // 建物の *_dark.svg は *_fornavigate_dark.svg から同じように除いたもの。
   // 画像を差し替えたら ?v= の日付も変える（ブラウザが古い画像を使い続けないように）
   // GRAND_MAP.svg は文字がフォント指定のままで、端末によって文字の大きさが変わるため使わない。
-  { id: "outdoor", label: "屋外", image: "/GRAND_MAP_kikaku.svg?v=20261031-1", darkImage: "/GRAND_MAP_kikaku_dark.svg?v=20261031-1" },
-  { id: "main", label: "企画本館", image: "/Main_building_MAP.svg", darkImage: "/Main_building_MAP_dark.svg?v=20261031-1" },
-  { id: "bekkan", label: "企画別館", image: "/Bekkan_MAP.svg", darkImage: "/Bekkan_MAP_dark.svg?v=20261031-1" },
-  { id: "chibikko", label: "ちびっこ館", image: "/Chibikko_MAP.svg", darkImage: "/Chibikko_MAP_dark.svg?v=20261031-1" },
+  { id: "outdoor", label: "屋外", image: "/GRAND_MAP_kikaku.svg?v=20261102-1", darkImage: "/GRAND_MAP_kikaku_dark.svg?v=20261102-1", view: { x: 0, y: 48, width: 295.32, height: 360 } },
+  { id: "main", label: "企画本館", image: "/Main_building_MAP.svg", darkImage: "/Main_building_MAP_dark.svg?v=20261031-1", view: { x: 8, y: 85, width: 274, height: 236 } },
+  { id: "bekkan", label: "企画別館", image: "/Bekkan_MAP.svg", darkImage: "/Bekkan_MAP_dark.svg?v=20261031-1", view: { x: 14, y: 75, width: 274, height: 255 } },
+  { id: "chibikko", label: "ちびっこ館", image: "/Chibikko_MAP.svg", darkImage: "/Chibikko_MAP_dark.svg?v=20261031-1", view: { x: 8, y: 78, width: 280, height: 116 } },
 ];
 
 export const MAP_VIEWBOX = { width: 295.32, height: 413.16 };

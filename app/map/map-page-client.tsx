@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useRef, useState } from "react";
-import { Plus, Minus, RotateCcw } from "lucide-react";
+import { Plus, Minus, RotateCcw, ChevronDown } from "lucide-react";
 import Logo from "@/components/logo";
 import Footer from "@/components/footer";
 import { SiteNav } from "@/components/festival/site-nav";
@@ -414,7 +414,8 @@ export default function MapPageClient() {
           ref={containerRef}
           className="relative w-full select-none overflow-hidden rounded-2xl border border-border bg-white dark:bg-black"
           style={{
-            aspectRatio: `${MAP_VIEWBOX.width} / ${MAP_VIEWBOX.height}`,
+            // タイトルと空白を切り落とした範囲（lib/map-spots.ts の view）の縦横比
+            aspectRatio: `${map.view.width} / ${map.view.height}`,
             touchAction: view.scale > 1 ? "none" : "pan-y",
           }}
           onPointerDown={onPointerDown}
@@ -434,12 +435,19 @@ export default function MapPageClient() {
             <img
               src={dark ? map.darkImage : map.image}
               alt={`${map.label}の地図`}
-              className="pointer-events-none absolute inset-0 h-full w-full"
+              className="pointer-events-none absolute max-w-none"
+              style={{
+                // 地図全体を、view の範囲が枠にぴったり入る位置・大きさで置く
+                left: `${(-map.view.x / map.view.width) * 100}%`,
+                top: `${(-map.view.y / map.view.height) * 100}%`,
+                width: `${(MAP_VIEWBOX.width / map.view.width) * 100}%`,
+                height: `${(MAP_VIEWBOX.height / map.view.height) * 100}%`,
+              }}
               draggable={false}
             />
             <svg
               ref={svgRef}
-              viewBox={`0 0 ${MAP_VIEWBOX.width} ${MAP_VIEWBOX.height}`}
+              viewBox={`${map.view.x} ${map.view.y} ${map.view.width} ${map.view.height}`}
               className="absolute inset-0 h-full w-full"
               onClick={onBackgroundClick}
             >
@@ -558,7 +566,12 @@ export default function MapPageClient() {
             </svg>
           </div>
 
-          <div className="absolute right-2 top-2 flex flex-col gap-1.5">
+        </div>
+
+        {/* 拡大・縮小（地図の上に重ねると部屋や丸が隠れるので、地図の下に置く） */}
+        <div className="-mt-1 flex items-center justify-between gap-2">
+          <p className="text-xs text-muted-foreground">2本指でも拡大・移動できます</p>
+          <div className="flex gap-1">
             <MapButton label="拡大" onClick={() => zoomAt(1.5)}>
               <Plus className="h-4 w-4" />
             </MapButton>
@@ -578,9 +591,18 @@ export default function MapPageClient() {
           </p>
         )}
 
-        <section className="space-y-3 rounded-2xl border border-border bg-card p-4 text-sm">
+        {/* マップの見方：ふだんは閉じておき、地図が1画面に収まるようにする */}
+        <details className="group rounded-2xl border border-border bg-card text-sm">
+          <summary className="flex cursor-pointer list-none items-center justify-between px-4 py-3 font-bold [&::-webkit-details-marker]:hidden">
+            マップの見方
+            <span className="flex items-center gap-1 text-xs font-normal text-muted-foreground">
+              <span className="group-open:hidden">タップで開く</span>
+              <span className="hidden group-open:inline">閉じる</span>
+              <ChevronDown className="h-4 w-4 transition-transform group-open:rotate-180" />
+            </span>
+          </summary>
+          <div className="space-y-3 px-4 pb-4">
           <div>
-            <h2 className="mb-1 font-bold">マップの見方</h2>
             <p className="text-muted-foreground">
               丸・団体名の入った部屋・ピンクの四角（ステージやインフォ）をタップすると、詳細が開きます。丸の数字は企画の数です。2本指で拡大・移動できます。屋外MAPで「館内MAP
               ›」の付いた建物をタップすると、その建物の地図に切り替わります。
@@ -621,7 +643,8 @@ export default function MapPageClient() {
               は、いいねした企画です。
             </p>
           </div>
-        </section>
+          </div>
+        </details>
       </main>
       <Footer />
       <KikakuSheet
@@ -998,7 +1021,7 @@ function MapButton({
       title={label}
       onPointerDown={(e) => e.stopPropagation()}
       onClick={onClick}
-      className="flex h-9 w-9 items-center justify-center rounded-lg bg-slate-900/85 text-white shadow active:bg-slate-900"
+      className="flex h-8 w-8 items-center justify-center rounded-lg bg-slate-900/85 text-white shadow active:bg-slate-900"
     >
       {children}
     </button>
